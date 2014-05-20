@@ -70,6 +70,25 @@ module AADL
   syntax PackageSpecPropertySetList ::= PackageSpec | PropertySet
            |  PackageSpec PackageSpecPropertySetList
            |  PropertySet PackageSpecPropertySetList
+
+  configuration <SYSTEM color="red">
+                  <SoftwareComponent color="orange">
+                    <Process color="yellow">.Set</Process>
+                    <Thread color="cyan">.Set</Thread>
+                    <ThreadGroup color="blue">.Set</ThreadGroup>
+                    <Data color="green">.Set</Data>
+                    <Subprogram color="pink">.Set</Subprogram>
+                  </SoftwareComponent>
+                  
+                  <ExePlatform color="purple">
+                    <Processor color="violet">.Set</Processor>
+                    <Memory color="black">.Set</Memory>
+                    <Bus color="green">.Set</Bus>
+                    <Device color="white">.Set</Device>
+                  </ExePlatform>
+                  <genv color="pink"> .Map </genv>
+                  <store color="white"> .Map </store>
+                </SYSTEM>
 endmodule
 
 
