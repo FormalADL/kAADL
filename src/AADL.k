@@ -89,6 +89,7 @@ module AADL
                   <genv color="pink"> .Map </genv>
                   <store color="white"> .Map </store>
                 </SYSTEM>
+                
 endmodule
 
 
