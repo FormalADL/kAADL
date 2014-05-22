@@ -1,6 +1,6 @@
 module PACKAGE-SYNTAX
   syntax PackageSpec ::= "package" PackageName PackageDecls "end" PackageName ";"
-            | "package" PackageName PackageDecls PropertyDecls "end" PackageName ";"
+                       | "package" PackageName PackageDecls PropertyDecls "end" PackageName ";"
   syntax PackageName ::= Id
   syntax PackageName ::= PackageIdentifier "::" PackageName
   syntax PackageIdentifier ::= Id

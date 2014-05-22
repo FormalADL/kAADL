@@ -1,19 +1,19 @@
 module PROPERTYDEFINATION-SYNTAX
 // 11.1.2
-  syntax PropertyDefinitionDeclaration ::= PropertyNameIdentifier ":" PropertyDefinationDeclarationAssocDefination ";"
-    syntax PropertyNameIdentifier ::= Id
-    syntax PropertyDefinationDeclarationAssocDefination ::= "inherit " SingleValuedProperty "applies ""to " PropertyOwnerList 
-                     |  "inherit " MultiValuedProperty "applies ""to " PropertyOwnerList 
-                     |   SingleValuedProperty "applies ""to " PropertyOwnerList 
-                     |   MultiValuedProperty "applies ""to " PropertyOwnerList 
-      syntax SingleValuedProperty ::= PropertyTypeDesignator | PropertyTypeDesignator "=>" DefaultPropertyExpression
-        syntax DefaultPropertyExpression ::= PropertyExpression
-      syntax MultiValuedProperty ::= ListOf PropertyTypeDesignator "=>" DefaultPropertyListValue
-                | ListOf PropertyTypeDesignator 
+  syntax PpeDefinitionDeclaration ::= PpeNameIdentifier ":" PpeDefinationDeclarationAssocDefination ";"
+    syntax PpeNameIdentifier ::= Id
+    syntax PpeDefinationDeclarationAssocDefination ::= "inherit " SingleValuedPpe "applies ""to " PpeOwnerList 
+                     |  "inherit " MultiValuedPpe "applies ""to " PpeOwnerList 
+                     |   SingleValuedPpe "applies ""to " PpeOwnerList 
+                     |   MultiValuedPpe "applies ""to " PpeOwnerList 
+      syntax SingleValuedPpe ::= PpeTypeDesignator | PpeTypeDesignator "=>" DefaultPpeExpression
+        syntax DefaultPpeExpression ::= PpeExpression
+      syntax MultiValuedPpe ::= ListOf PpeTypeDesignator "=>" DefaultPpeListValue
+                | ListOf PpeTypeDesignator 
         syntax ListOf ::= "list ""of " |  "list ""of " ListOf 
-        syntax DefaultPropertyListValue ::= PropertyListValue
-      syntax PropertyOwnerList ::= PropertyOwner | PropertyOwner "," PropertyOwnerList
-        syntax PropertyOwner ::= NamedElementQualifiedMetaModelIdentifier | UniqueClassifierReference
+        syntax DefaultPpeListValue ::= PpeListValue
+      syntax PpeOwnerList ::= PpeOwner | PpeOwner "," PpeOwnerList
+        syntax PpeOwner ::= NamedElementQualifiedMetaModelIdentifier | UniqueClassifierReference
           syntax UniqueClassifierReference ::= UniqueComponentClassifierReference | UniqueFeatureGroupTypeReference
 
 

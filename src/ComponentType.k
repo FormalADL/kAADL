@@ -12,14 +12,14 @@ module COMPONENTTYPE-SYNTAX
                                  | "flows" FlowSpec | "flows" NoneStatement
 //                                    | ModesSubclause 
 //                                    | RequiresModesSubclause
-//                                    | "properties" ComponentTypePropertyAssociation
-//                                    | "properties" ContainedPropertyAssociation
+//                                    | "properties" ComponentTypePpeAssociation
+//                                    | "properties" ContainedPpeAssociation
 //                                    | "properties" NoneStatement
                                  | AnnexSubclause 
-  syntax ComponentTypePropertyAssociation ::=  NODEF
+  syntax ComponentTypePpeAssociation ::=  NODEF
   syntax AnnexSubclause ::= AnnexSubclause AnnexSubclause
   syntax AnnexSubclause ::= NoneStatement
 //  syntax ComponentTypeExtension ::= ComponentCategory ComponentTypeIdentifier "extends" UniqueComponentTypeReference  ComponentAssocDefination "end" ComponentTypeIdentifier ";"
 //                                 | ComponentCategory ComponentTypeIdentifier "extends" UniqueComponentTypeReference  ProtoTypeBindings ComponentAssocDefination "end" ComponentTypeIdentifier ";"
-  syntax UniqueComponentTypeReference ::= PackageName "::" ComponentTypeIdentifier |  ComponentTypeIdentifier
+  syntax UniqueComponentTypeReference ::= PkgName "::" ComponentTypeIdentifier |  ComponentTypeIdentifier
 endmodule

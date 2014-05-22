@@ -8,7 +8,7 @@ module SUBCOMPONENT-SYNTAX
                  | ArrayDimensions ArrayelementImplementionList
                  | ArrayDimensions
                  | "{" SubcomponentProtertyAssociation "}" // +
-                 | "{" ContainedPropertyAssociation "}"// +
+                 | "{" ContainedPpeAssociation "}"// +
                  | ComponentInModes 
       syntax UniqueComponentClassifierReference ::= UniqueComponentTypeReference
                    |  UniqueComponentImplementationReference
@@ -16,7 +16,7 @@ module SUBCOMPONENT-SYNTAX
       syntax ArrayDimensions ::= ArrayDimension // + but in 8.0,it is just [ArrayDimension]...i think here should be change
         syntax ArrayDimension ::= ArrayDimension ArrayDimension 
         syntax ArrayDimension ::= "[" ArrayDimensionSize "]"// [[...]]
-          syntax ArrayDimensionSize ::= Numberal | UniquePropertyConstantIdentifier  | UniquePropertyIdentifier
+          syntax ArrayDimensionSize ::= Numberal | UniquePpeConstantIdentifier  | UniquePpeIdentifier
             syntax Numberal ::= NODEF
       syntax ArrayelementImplementionList ::= "("ArrayelementImplementionListTmp")"
                     | "("ArrayelementImplementionListTmp "," ArrayelementImplementionListTmp ")"

@@ -1,6 +1,6 @@
 module FLOWIMPLEMENTATION-SYNTAX 
 // 10.2  check
-  syntax FlowImplementation ::= FlowSourceSinkPathImplementAssociationDefination PropertyAssociationInModes ";"
+  syntax FlowImplementation ::= FlowSourceSinkPathImplementAssociationDefination PpeAssociationInModes ";"
     syntax FlowSourceSinkPathImplementAssociationDefination ::= FlowSourceImplementation | FlowSinkImplementation | FlowPathImplementation
       syntax FlowSourceImplementation ::= FlowIdentifier ":" "flow " "source " SubcompentConnectionAssocDefination OutFlowFeatureIdentifier
         syntax SubcompentConnectionAssocDefination ::= NoneStatement
@@ -20,8 +20,8 @@ module FLOWIMPLEMENTATION-SYNTAX
               syntax FlowSpecIdentifier ::= Id
               syntax DataCompenentReference ::= DataSubcomponentIdentifier | RequiresDataAccessIdentifier | ProvidesDataAccessIdentifier
 
-    syntax PropertyAssociationInModes ::= "{"PropertyAssociationList"}" InModesAndTransitions
-               |  "{"PropertyAssociationList"}"
+    syntax PpeAssociationInModes ::= "{"PpeAssociationList"}" InModesAndTransitions
+               |  "{"PpeAssociationList"}"
                |  InModesAndTransitions
 
 endmodule

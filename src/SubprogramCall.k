@@ -1,10 +1,10 @@
 module SUBPROGRAMCALL-SYNTAX
 // 5.2 check
   syntax SubprogramCallSequence ::= CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" InModes ";"
-               |  CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePropertyAssociation /* + */ "}" InModes ";"
+               |  CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePpeAssociation /* + */ "}" InModes ";"
     syntax CallSequenceIdentifier ::= Id
     syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram ";"
-    syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram "{" CallSequencePropertyAssociation /* + */"}"";"
+    syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssociation /* + */"}"";"
       syntax CallIdentifier ::= Id
       syntax CalledSubprogram ::= SubprogramUniqueComponentClassifierReference
               | DataUniqueComponentTypeReference "." DataProvidesSubprogramAccessIdentifier
@@ -27,7 +27,7 @@ module SUBPROGRAMCALL-SYNTAX
         syntax ComponentProtoTypeIdentifier ::=  Id
         syntax SubprogramGoupSubcomponentIdentifier ::=  Id
         syntax RequiresSubprogramGroupAccessIdentifier ::=  Id
-      syntax CallSequencePropertyAssociation ::= CallSequencePropertyAssociation CallSequencePropertyAssociation // +
+      syntax CallSequencePpeAssociation ::= CallSequencePpeAssociation CallSequencePpeAssociation // +
 
 
 endmodule

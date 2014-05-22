@@ -1,20 +1,20 @@
 module CONNECTION-SYNTAX
 // 9.0  check
-  syntax Connection ::= ConnectionIdentifier ":" SomeConnections PropertyInMode ";"
+  syntax Connection ::= ConnectionIdentifier ":" SomeConnections PpeInMode ";"
   syntax ConnectionIdentifier ::= NODEF
   syntax SomeConnections ::= FeatureConnection 
 							 | PortConnection
                              | ParameterConnection
                              | AccessConnection
                              | FeatureGroupConnection    
-  syntax PropertyInMode ::= "{" PropertyAssociationList "}" InModesAndTransititions
-						 | "{" PropertyAssociationList "}"
+  syntax PpeInMode ::= "{" PpeAssociationList "}" InModesAndTransititions
+						 | "{" PpeAssociationList "}"
           | InModesAndTransititions
           | NoneStatement
       syntax InModesAndTransititions ::= NODEF
-      syntax PropertyAssociationList ::= PropertyAssociation | PropertyAssociation PropertyAssociationList
+      syntax PpeAssociationList ::= PpeAssociation | PpeAssociation PpeAssociationList
 
-  syntax ConnectionRefinement ::= ConnectionIdentifier ":" "refined ""to " SomeRefinements PropertyInMode ";"
+  syntax ConnectionRefinement ::= ConnectionIdentifier ":" "refined ""to " SomeRefinements PpeInMode ";"
     syntax SomeRefinements ::=  FeatureConnectionRefinement 
           |  PortConnectionRefinement
           |  ParameterConnectionRefinement

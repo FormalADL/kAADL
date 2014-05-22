@@ -1,21 +1,21 @@
 module PROPERTYASSOCIATION-SYNTAX
 // 11.3 check
-  syntax PropertyAssociation ::= UniquePropertyIdentifier "=>" "constant" Assignment InBinding ";"
-            |  UniquePropertyIdentifier "=>" "constant" Assignment  ";"
-            |  UniquePropertyIdentifier "=>"  Assignment InBinding ";"
-            |  UniquePropertyIdentifier "+=>" "constant" Assignment InBinding ";"
-            |  UniquePropertyIdentifier "+=>" "constant" Assignment  ";"
-            |  UniquePropertyIdentifier "+=>"  Assignment InBinding ";"
-    syntax UniquePropertyIdentifier ::=  PropertySetIdentifier "::" PropertyNameIdentifier 
-    syntax Assignment ::= PropertyValue | ModalPropertyValue
-      syntax PropertyValue ::= SinglePropertyValue  |  PropertyListValue
-        syntax SinglePropertyValue ::= PropertyExpression
-          syntax PropertyExpression ::= NODEF
-        syntax PropertyListValue ::=  NoneStatement  // funny
-                | PropertyExpression
-                | PropertyListValue "," PropertyListValue
+  syntax PpeAssociation ::= UniquePpeIdentifier "=>" "constant" Assignment InBinding ";"
+            |  UniquePpeIdentifier "=>" "constant" Assignment  ";"
+            |  UniquePpeIdentifier "=>"  Assignment InBinding ";"
+            |  UniquePpeIdentifier "+=>" "constant" Assignment InBinding ";"
+            |  UniquePpeIdentifier "+=>" "constant" Assignment  ";"
+            |  UniquePpeIdentifier "+=>"  Assignment InBinding ";"
+    syntax UniquePpeIdentifier ::=  PpeSetIdentifier "::" PpeNameIdentifier 
+    syntax Assignment ::= PpeValue | ModalPpeValue
+      syntax PpeValue ::= SinglePpeValue  |  PpeListValue
+        syntax SinglePpeValue ::= PpeExpression
+          syntax PpeExpression ::= NODEF
+        syntax PpeListValue ::=  NoneStatement  // funny
+                | PpeExpression
+                | PpeListValue "," PpeListValue
 
-      syntax ModalPropertyValue ::= PropertyValue InModes |  PropertyValue InModes "," ModalPropertyValue 
+      syntax ModalPpeValue ::= PpeValue InModes |  PpeValue InModes "," ModalPpeValue 
     syntax InBinding ::= "in ""binding " PlatformClassifierReferenceList 
       syntax PlatformClassifierReferenceList ::= PlatformClassifierReference | PlatformClassifierReference "," PlatformClassifierReferenceList
         syntax PlatformClassifierReference ::= ProcessorUniqueComponentClassifierReference
@@ -27,8 +27,8 @@ module PROPERTYASSOCIATION-SYNTAX
           syntax VirtualProcessorUniqueComponentClassifierReference ::= NODEF
           syntax VirtualBusUniqueComponentClassifierReference ::= NODEF
           syntax MemoryUniqueComponentClassifierReference ::= NODEF
-  syntax ContainedPropertyAssociation ::= UniquePropertyIdentifier "=>" "constant" Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
-               |  UniquePropertyIdentifier "=>"  Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
+  syntax ContainedPpeAssociation ::= UniquePpeIdentifier "=>" "constant" Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
+               |  UniquePpeIdentifier "=>"  Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
     syntax ContainedModelElementPathList ::= ContainedModelElementPath | ContainedModelElementPath "," ContainedModelElementPathList
       syntax ContainedModelElementPath ::= AnnexPath 
                 |  ContainedModelElementList AnnexPath

@@ -15,8 +15,8 @@ module COMPONENTIMPLEMENTATION-SYNTAX
                | "flows" EndToEndFlowSpec 
                | "flows" NoneStatement
 //               | ModesSubclause 
-               | "properties" PropertyAssociation
-               | "properties" ContainedPropertyAssociation
+               | "properties" PpeAssociation
+               | "properties" ContainedPpeAssociation
                | "properties" NoneStatement
                 | AnnexSubclause
   syntax ProtoType ::= ProtoType ProtoType  // "+"
@@ -25,10 +25,10 @@ module COMPONENTIMPLEMENTATION-SYNTAX
   syntax Connection ::= Connection Connection
   syntax FlowImplementation ::= FlowImplementation FlowImplementation
   syntax EndToEndFlowSpec ::= EndToEndFlowSpec EndToEndFlowSpec
-  syntax PropertyAssociation ::= PropertyAssociation PropertyAssociation
-  syntax ContainedPropertyAssociation ::= ContainedPropertyAssociation ContainedPropertyAssociation
+  syntax PpeAssociation ::= PpeAssociation PpeAssociation
+  syntax ContainedPpeAssociation ::= ContainedPpeAssociation ContainedPpeAssociation
   syntax ComponentImplementationExtension ::= ComponentCategory "implementation" ComponentImplementionName "extends" UniqueComponentImplementReference ComponentImplementationAssocDefination "end" ComponentImplementionName ";"
   syntax ComponentImplementionName ::= Id
-  syntax UniqueComponentImplementReference ::= ComponentImplementName | PackageName "::" ComponentImplementName
+  syntax UniqueComponentImplementReference ::= ComponentImplementName | PkgName "::" ComponentImplementName
   syntax ComponentImplementName ::=  Id
 endmodule

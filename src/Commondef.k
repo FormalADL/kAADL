@@ -20,7 +20,7 @@ module COMMONDEF
   syntax FeatureGroupIdentifier ::= NODEF
   syntax InOut ::=NODEF
   syntax ProtoTypeIdentifier ::= NODEF
-  syntax PropertyAssociationList ::=NODEF
+  syntax PpeAssociationList ::=NODEF
   syntax InModes ::= NODEF
   syntax InModesAndTransitions ::=NODEF
   syntax FeatureIdentifier ::= NODEF
@@ -30,11 +30,11 @@ module COMMONDEF
   syntax ProvidesDataAccessIdentifier ::=NODEF
   
   
-  syntax PropertySet ::= NODEF
+  syntax PpeSet ::= NODEF
   
   syntax ComponentInModes ::= NODEF
-  syntax UniquePropertyConstantIdentifier ::=NODEF
-  syntax UniquePropertyIdentifier ::=NODEF
+  syntax UniquePpeConstantIdentifier ::=NODEF
+  syntax UniquePpeIdentifier ::=NODEF
   syntax ParameterConnection ::=NODEF
   syntax ParameterConnectionRefinement ::=NODEF
   syntax FormatEffector ::= NODEF

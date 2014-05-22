@@ -1,7 +1,7 @@
 module FEATUREGROUPTYPE-SYNATX
 // 8.2 check
   syntax FeatureGroupType ::= "feature" "group" Identifier FeatureGroupTypeAssocDefination "end" Identifier ";"
-     syntax FeatureGroupTypeAssocDefination ::= ProtoTypeOfFeatureGroupType FeatureOfFeatureGroupType InverseOfFeatureGroupType PropertyOfFeatureGroupType AnnexOfFeatureGroupType
+     syntax FeatureGroupTypeAssocDefination ::= ProtoTypeOfFeatureGroupType FeatureOfFeatureGroupType InverseOfFeatureGroupType PpeOfFeatureGroupType AnnexOfFeatureGroupType
       syntax ProtoTypeOfFeatureGroupType ::= "prototypes" ProtoTypeOfFeatureGroupTypeTmp 
                   | NoneStatement
         syntax ProtoTypeOfFeatureGroupTypeTmp ::= ProtoType
@@ -13,16 +13,16 @@ module FEATUREGROUPTYPE-SYNATX
       syntax InverseOfFeatureGroupType ::= "inverse" "of" UniqueFeatureGroupTypeReference
                       |   NoneStatement
         syntax UniqueFeatureGroupTypeReference ::= FeatureGroupTypeReferenceIdentifier
-              |  PackageName "::" FeatureGroupTypeReferenceIdentifier
+              |  PkgName "::" FeatureGroupTypeReferenceIdentifier
           syntax FeatureGroupTypeReferenceIdentifier ::= NODEF
-      syntax PropertyOfFeatureGroupType ::= "properties" PropertyOfFeatureGroupTypeTmp
-        syntax PropertyOfFeatureGroupTypeTmp ::= FeatureGroupContainedPropertyAssociation
-                      |  FeatureGroupContainedPropertyAssociation PropertyOfFeatureGroupTypeTmp
+      syntax PpeOfFeatureGroupType ::= "properties" PpeOfFeatureGroupTypeTmp
+        syntax PpeOfFeatureGroupTypeTmp ::= FeatureGroupContainedPpeAssociation
+                      |  FeatureGroupContainedPpeAssociation PpeOfFeatureGroupTypeTmp
                       |  NoneStatement
-          syntax FeatureGroupContainedPropertyAssociation ::= NODEF
+          syntax FeatureGroupContainedPpeAssociation ::= NODEF
       syntax AnnexOfFeatureGroupType ::= NODEF
   syntax FeatureGroupTypeExtension ::= "feature" "group" Identifier "extends" UniqueFeatureGroupTypeReference FeatureGroupTypeExtensionAssocDefination "end" Identifier ";"  
-    syntax FeatureGroupTypeExtensionAssocDefination ::= ProtoTypeBindings ProtoTypeOfFeatureGroupTypeExtension FeatureOfFeatureGroupTypeExtension InverseOfFeatureGroupTypeExtension PropertyOfFeatureGroupTypeExtension AnnexOfFeatureGroupTypeExtension 
+    syntax FeatureGroupTypeExtensionAssocDefination ::= ProtoTypeBindings ProtoTypeOfFeatureGroupTypeExtension FeatureOfFeatureGroupTypeExtension InverseOfFeatureGroupTypeExtension PpeOfFeatureGroupTypeExtension AnnexOfFeatureGroupTypeExtension 
       syntax  ProtoTypeOfFeatureGroupTypeExtension ::=  "prototypes" ProtoTypeOfFeatureGroupTypeExtensionTmp
         syntax ProtoTypeOfFeatureGroupTypeExtensionTmp ::= ProtoTypeList
                     |  ProtoTypeRefinementList
@@ -34,7 +34,7 @@ module FEATUREGROUPTYPE-SYNATX
           syntax FeatureList ::= Feature | Feature FeatureList
           syntax FeatureRefinementList ::= FeatureRefinement | FeatureRefinement FeatureRefinementList
       syntax  InverseOfFeatureGroupTypeExtension  ::= InverseOfFeatureGroupType // they have the same syntax
-      syntax  PropertyOfFeatureGroupTypeExtension ::= PropertyOfFeatureGroupType
+      syntax  PpeOfFeatureGroupTypeExtension ::= PpeOfFeatureGroupType
       syntax  AnnexOfFeatureGroupTypeExtension ::= NoneStatement
                    | AnnexSubclause 
                    | AnnexSubclause AnnexOfFeatureGroupTypeExtension

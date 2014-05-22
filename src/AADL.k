@@ -23,12 +23,12 @@ require "FeatureGroupConnection.k"
 require "FlowSpecification.k"
 require "FlowImplementation1.k"
 require "EndToEndFlow.k"
-require "PropertySet.k"
-require "PropertyType.k"
-require "PropertyDefination.k"
-require "PropertyConstant.k"
-require "PropertyAssociation.k"
-require "PropertyExpression.k"
+require "PpeSet.k"
+require "PpeType.k"
+require "PpeDefination.k"
+require "PpeConstant.k"
+require "PpeAssociation.k"
+require "PpeExpression.k"
 require "ModesAndModeTransition.k"
 require "LexicalElement.k"
 
@@ -68,9 +68,6 @@ module AADL-SYNTAX
   imports ENDTOENDFLOW-SYNTAX
   imports BUSCOMPONENTACCESS-SYNTAX 
   imports MODESANDMODETRANSITION-SYNTAX
-
-  // not imports
-
   imports PROTOTYPE-SYNTAX
   imports PROPERTYASSOCIATION-SYNTAX
   imports PROPERTYTYPE-SYNTAX
@@ -79,16 +76,15 @@ module AADL-SYNTAX
   imports PROPERTYEXPRESSION-SYNTAX
 /*
   imports PROPERTYSET-SYNTAX
-
 */
 endmodule
 
 module AADL
   imports AADL-SYNTAX
-  syntax AADLSpecification ::= PackageSpecPropertySetList
-  syntax PackageSpecPropertySetList ::= PackageSpec | PropertySet
-           							  | PackageSpec PackageSpecPropertySetList
-           							  | PropertySet PackageSpecPropertySetList
+  syntax AADLSpecification ::= PkgSpecPpeSetList
+  syntax PkgSpecPpeSetList ::= PackageSpec 
+                             | PpeSet
+           					 | PkgSpecPpeSetList PkgSpecPpeSetList
 endmodule
 
 

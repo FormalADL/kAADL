@@ -1,10 +1,10 @@
 module PROTOTYPE-SYNTAX
   syntax ProtoType ::= ProtoTypeIdentifier ":" ProtoTypeAssocDefination ";"
   syntax ProtoTypeIdentifier ::= Id
-  syntax ProtoTypeAssocDefination ::= ComponentProtoType ProtoTypePropertyAssociation 
-              | FeatureGroupTypeProtoType ProtoTypePropertyAssociation
-              | "{" FeatureProtoType ProtoTypePropertyAssociation "}"
-  syntax ProtoTypePropertyAssociation ::= NoneStatement
+  syntax ProtoTypeAssocDefination ::= ComponentProtoType ProtoTypePpeAssociation 
+              | FeatureGroupTypeProtoType ProtoTypePpeAssociation
+              | "{" FeatureProtoType ProtoTypePpeAssociation "}"
+  syntax ProtoTypePpeAssociation ::= NoneStatement
   syntax ComponentProtoType ::= ComponentCategory UniqueComponentClassifierReference "[]" // i do not why "[]" is exist
   syntax ComponentProtoType ::= ComponentCategory UniqueComponentClassifierReference // [[]] ?
 

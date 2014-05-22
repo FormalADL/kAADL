@@ -2,8 +2,8 @@ module FEATURESHAREACCESS-SYNTAX
 // 8.0 check
   syntax Feature ::= AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"  
   syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
-              | "{" FeatrueContrainedPropertyAssociation "}"
-              | ArrayDimension "{" FeatrueContrainedPropertyAssociation /* + */ "}"
+              | "{" FeatrueContrainedPpeAssociation "}"
+              | ArrayDimension "{" FeatrueContrainedPpeAssociation /* + */ "}"
               | NoneStatement
 
     syntax AbstractPortGroupAccessParameter ::= AbstractFeatureSpec
@@ -16,7 +16,7 @@ module FEATURESHAREACCESS-SYNTAX
               | SubprogramGroupAccessSpec 
               | DataAccessSpec
               | BusAccessSpec
-    syntax FeatrueContrainedPropertyAssociation ::= FeatrueContrainedPropertyAssociation FeatrueContrainedPropertyAssociation // +
+    syntax FeatrueContrainedPpeAssociation ::= FeatrueContrainedPpeAssociation FeatrueContrainedPpeAssociation // +
   
 
   syntax FeatureRefinement ::= AbstractFeatureRefinement ArrayDimensionFeatrueContrained

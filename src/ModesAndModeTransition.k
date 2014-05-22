@@ -5,22 +5,22 @@ module MODESANDMODETRANSITION-SYNTAX
              |  Mode
              |  ModeTransition
              |  ModeTransitionList ModeTransitionList
-      syntax Mode ::=  ModeIdentifier ":" "initial" "mode" "{" ModePropertyAssociationList "}"";"
-             |   ModeIdentifier ":"  "mode" "{" ModePropertyAssociationList "}"";"
+      syntax Mode ::=  ModeIdentifier ":" "initial" "mode" "{" ModePpeAssociationList "}"";"
+             |   ModeIdentifier ":"  "mode" "{" ModePpeAssociationList "}"";"
              |   ModeIdentifier ":" "initial" "mode"";"
              |   ModeIdentifier ":" "mode" ";"
         syntax ModeIdentifier ::= NODEF
-        syntax ModePropertyAssociationList ::= ModePropertyAssociation | ModePropertyAssociation ModePropertyAssociationList
-          syntax ModePropertyAssociation ::= NODEF
+        syntax ModePpeAssociationList ::= ModePpeAssociation | ModePpeAssociation ModePpeAssociationList
+          syntax ModePpeAssociation ::= NODEF
 
   syntax RequiresModesSubclause ::= "requirs""modes" "(" ModeList")"
     syntax ModeList ::= NoneStatement
          |  Mode
          |  Mode ModeList
   
-  syntax ModeTransition ::= ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ModeTransitionPropertyAssociationList ";"
+  syntax ModeTransition ::= ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ModeTransitionPpeAssociationList ";"
         | ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ";"
-        | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ModeTransitionPropertyAssociationList ";"
+        | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ModeTransitionPpeAssociationList ";"
         | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ";"  
     syntax ModeTransitionIdnetifier ::= NODEF
     syntax SourceModeTrigger ::= UniquePortIdentifier 
@@ -30,8 +30,8 @@ module MODESANDMODETRANSITION-SYNTAX
         syntax SubcomponentFeatureGroupOrSubprogramCallIdentifier ::= NODEF
       syntax EventSourceIdentifier ::= NODEF
     syntax DestinationModeIdentifier ::= NODEF
-    syntax ModeTransitionPropertyAssociationList ::=  ModeTransitionPropertyAssociation |  ModeTransitionPropertyAssociation  ModeTransitionPropertyAssociationList
-      syntax ModeTransitionPropertyAssociation ::= NODEF
+    syntax ModeTransitionPpeAssociationList ::=  ModeTransitionPpeAssociation |  ModeTransitionPpeAssociation  ModeTransitionPpeAssociationList
+      syntax ModeTransitionPpeAssociation ::= NODEF
 
   syntax InModes ::= "in" " modes ""(" ModeIdentifierList ")"
     syntax ModeIdentifierList ::= ModeIdentifier | ModeIdentifier "," ModeIdentifierList

@@ -4,8 +4,8 @@ module FLOWSPECIFICATION-SYNTAX
     syntax FlowSourceSpec ::=  FlowIdentifier ":" "flow " "source " OutFlowFeatureIdentifier FlowSourceSpecAssocDefination ";"
       syntax FlowIdentifier ::= Id
       syntax OutFlowFeatureIdentifier ::=  Id
-      syntax FlowSourceSpecAssocDefination ::= "{" PropertyAssociationList "}" InModes ";"
-                    | "{"PropertyAssociationList "}" ";"
+      syntax FlowSourceSpecAssocDefination ::= "{" PpeAssociationList "}" InModes ";"
+                    | "{"PpeAssociationList "}" ";"
                     | InModes ";"
 
     syntax FlowSinkSpec ::= FlowIdentifier ":" "flow ""sink " InFlowFeatureIdentifier FlowSinkSpecAssocDefination ";"
@@ -17,8 +17,8 @@ module FLOWSPECIFICATION-SYNTAX
 
   syntax FlowSpecRefinement ::= FlowSourceSpecRefinement | FlowSinkSpecRefinement | FlowPathSpecRefinement
     syntax FlowSourceSpecRefinement ::= FlowIdentifier ":" "refined ""to ""flow ""source " FlowSourceSpecRefinementAssocDefination ";"
-      syntax FlowSourceSpecRefinementAssocDefination ::= "{" PropertyAssociationList "}" InModesAndTransitions 
-                  |  "{" PropertyAssociationList "}" 
+      syntax FlowSourceSpecRefinementAssocDefination ::= "{" PpeAssociationList "}" InModesAndTransitions 
+                  |  "{" PpeAssociationList "}" 
                   |   InModesAndTransitions
     syntax FlowSinkSpecRefinement ::=  FlowIdentifier ":" "refined ""to ""flow ""sink "  FlowSinkSpecRefinementAssocDefination ";"
       syntax FlowSinkSpecRefinementAssocDefination ::= FlowSourceSpecRefinementAssocDefination
