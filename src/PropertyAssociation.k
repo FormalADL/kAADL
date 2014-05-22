@@ -43,6 +43,6 @@ endmodule
 
 module PROPERTYASSOCIATION
   
-  imports PROPERTYASSOCIATION-SYNTAX
+//  imports PROPERTYASSOCIATION-SYNTAX
 
 endmodule

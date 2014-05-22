@@ -1,8 +1,11 @@
 module COMMONDEF
+
   syntax NODEF::="not define"
   syntax NoneStatement::="none"// | " "
+  
+  
+ 
   syntax ArrayDimension ::= NODEF
-//  syntax DataAccessSpec ::= NODEF
   syntax BusAccessSpec ::= NODEF
   syntax ParameterRefinement ::=NODEF
   syntax SubprogramAccessRefinement ::= NODEF
@@ -21,22 +24,28 @@ module COMMONDEF
   syntax InModes ::= NODEF
   syntax InModesAndTransitions ::=NODEF
   syntax FeatureIdentifier ::= NODEF
- // syntax ConnectionIdentifier ::=NODEF
   syntax SubcomponentIdentifier ::=NODEF
   syntax DataSubcomponentIdentifier ::= NODEF
   syntax RequiresDataAccessIdentifier ::= NODEF
   syntax ProvidesDataAccessIdentifier ::=NODEF
+  
+  
   syntax PropertySet ::= NODEF
+  
   syntax ComponentInModes ::= NODEF
   syntax UniquePropertyConstantIdentifier ::=NODEF
   syntax UniquePropertyIdentifier ::=NODEF
   syntax ParameterConnection ::=NODEF
   syntax ParameterConnectionRefinement ::=NODEF
-  syntax NonQuotationMarkGraphicCharacter ::= NODEF
-  syntax IdentifierLetter ::= NODEF
-  syntax Digit ::= NODEF
-  syntax SpaceCharacter ::= NODEF
-  syntax SpecialCharacter ::= NODEF
   syntax FormatEffector ::= NODEF
-  syntax OtherControlCharacter ::= NODEF
+  syntax OtherControlCharacter ::=NODEF
+  
+/*
+  keywords definition in AADL
+*/  
+
+  
+  
+  
+  
 endmodule 

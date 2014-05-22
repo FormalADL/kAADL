@@ -22,6 +22,6 @@ endmodule
 
 module  FEATURECONNECTION
 
-  imports FEATURECONNECTION-SYNTAX
+//  imports FEATURECONNECTION-SYNTAX
 
 endmodule

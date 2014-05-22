@@ -26,7 +26,6 @@ module SUBCOMPONENT-SYNTAX
       syntax SubcomponentProtertyAssociation ::= SubcomponentProtertyAssociation SubcomponentProtertyAssociation
       syntax SubcomponentProtertyAssociation ::= NODEF
   syntax ArraySelectionName ::= Identifier ArraySelection
-    syntax Identifier ::= Id 
     syntax ArraySelection ::= ArraySelection ArraySelection // +
     syntax ArraySelection ::= "[" SelectionRange "]"
       syntax SelectionRange ::= Numberal | Numberal ".." Numberal

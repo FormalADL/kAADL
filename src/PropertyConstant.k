@@ -11,5 +11,5 @@ endmodule
 
 module PROPERTYCONSTANT
 
-  imports  PROPERTYCONSTANT-SYNTAX
+//  imports  PROPERTYCONSTANT-SYNTAX
 endmodule

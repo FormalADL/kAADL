@@ -85,6 +85,6 @@ endmodule
 
 module PROPERTYTYPE
 
-  imports PROPERTYTYPE-SYNTAX
+ // imports PROPERTYTYPE-SYNTAX
 
 endmodule

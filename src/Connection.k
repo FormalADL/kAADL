@@ -24,6 +24,6 @@ endmodule
 
 module CONNECTION 
 
-  imports CONNECTION-SYNTAX
+//  imports CONNECTION-SYNTAX
 
 endmodule

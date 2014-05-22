@@ -25,6 +25,6 @@ endmodule
 
 module PARAMETERCONNECTION
   
-  imports PARAMETERCONNECTION-SYNTAX
+//  imports PARAMETERCONNECTION-SYNTAX
 
 endmodule

@@ -21,5 +21,5 @@ endmodule
 
 module PROPERTYSET
 
-  imports  PROPERTYSET-SYNTAX
+//  imports  PROPERTYSET-SYNTAX
 endmodule

@@ -12,6 +12,6 @@ endmodule
 
 module SUBPROGRAMPARAMETER
 
-  imports SUBPROGRAMPARAMETER-SYNTAX 
+//  imports SUBPROGRAMPARAMETER-SYNTAX 
 
 endmodule

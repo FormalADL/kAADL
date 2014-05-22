@@ -57,5 +57,5 @@ endmodule
 
 module PROPERTYEXPRESSION
 
-  imports PROPERTYEXPRESSION-SYNTAX
+//  imports PROPERTYEXPRESSION-SYNTAX
 endmodule

@@ -21,5 +21,5 @@ endmodule
 
 module PROPERTYDEFINATION
 
-  imports PROPERTYDEFINATION-SYNTAX
+//  imports PROPERTYDEFINATION-SYNTAX
 endmodule

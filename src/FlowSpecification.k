@@ -35,6 +35,6 @@ endmodule
 
 module  FLOWSPECIFICATION
 
-  imports FLOWSPECIFICATION-SYNTAX
+ // imports FLOWSPECIFICATION-SYNTAX
 
 endmodule

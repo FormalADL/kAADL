@@ -33,7 +33,10 @@ require "ModesAndModeTransition.k"
 require "LexicalElement.k"
 
 module AADL-SYNTAX
-
+/*
+  At first, we define the Core AAdl, includes Package,Component,Component Implementation
+  In Core, we can not handle SubComponent, Prototype
+*/
   imports COMMONDEF
   imports PACKAGE-SYNTAX
   imports COMPONENTTYPE-SYNTAX
@@ -52,44 +55,40 @@ module AADL-SYNTAX
   imports SUBPROGRAMPARAMETER-SYNTAX 
   imports FEATURECONNECTION-SYNTAX
   imports FEATUREGROUPCONNECTION-SYNTAX
+  
+  
+/*
+   Here is the extension of Core AADL.
+*/ 
   imports DATACOMPONENTACCESS-SYNTAX
   imports PORTCONNECTION-SYNTAX
   imports CONNECTION-SYNTAX
   imports ACCESSCONNECTION-SYNTAX
   imports PARAMETERCONNECTION-SYNTAX
   imports ENDTOENDFLOW-SYNTAX
-  imports BUSCOMPONENTACCESS-SYNTAX
+  imports BUSCOMPONENTACCESS-SYNTAX 
   imports MODESANDMODETRANSITION-SYNTAX
 
+  // not imports
 
+  imports PROTOTYPE-SYNTAX
+  imports PROPERTYASSOCIATION-SYNTAX
+  imports PROPERTYTYPE-SYNTAX
+  imports PROPERTYDEFINATION-SYNTAX
+  imports PROPERTYCONSTANT-SYNTAX
+  imports PROPERTYEXPRESSION-SYNTAX
+/*
+  imports PROPERTYSET-SYNTAX
+
+*/
 endmodule
 
 module AADL
   imports AADL-SYNTAX
   syntax AADLSpecification ::= PackageSpecPropertySetList
   syntax PackageSpecPropertySetList ::= PackageSpec | PropertySet
-           |  PackageSpec PackageSpecPropertySetList
-           |  PropertySet PackageSpecPropertySetList
-
-  configuration <SYSTEM color="red">
-                  <SoftwareComponent color="orange">
-                    <Process color="yellow">.Set</Process>
-                    <Thread color="cyan">.Set</Thread>
-                    <ThreadGroup color="blue">.Set</ThreadGroup>
-                    <Data color="green">.Set</Data>
-                    <Subprogram color="pink">.Set</Subprogram>
-                  </SoftwareComponent>
-                  
-                  <ExePlatform color="purple">
-                    <Processor color="violet">.Set</Processor>
-                    <Memory color="black">.Set</Memory>
-                    <Bus color="green">.Set</Bus>
-                    <Device color="white">.Set</Device>
-                  </ExePlatform>
-                  <genv color="pink"> .Map </genv>
-                  <store color="white"> .Map </store>
-                </SYSTEM>
-                
+           							  | PackageSpec PackageSpecPropertySetList
+           							  | PropertySet PackageSpecPropertySetList
 endmodule
 
 

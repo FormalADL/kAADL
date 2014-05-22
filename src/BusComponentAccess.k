@@ -15,6 +15,6 @@ endmodule
 
 module BUSCOMPONENTACCESS
 
-  imports BUSCOMPONENTACCESS-SYNTAX
+//  imports BUSCOMPONENTACCESS-SYNTAX
 
 endmodule

@@ -31,6 +31,6 @@ endmodule
 
 module PORTCONNECTION
   
-  imports PORTCONNECTION-SYNTAX
+//  imports PORTCONNECTION-SYNTAX
 
 endmodule

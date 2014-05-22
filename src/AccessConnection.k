@@ -22,5 +22,5 @@ endmodule
 
 module ACCESSCONNECTION
   
-  imports ACCESSCONNECTION-SYNTAX
+//  imports ACCESSCONNECTION-SYNTAX
 endmodule

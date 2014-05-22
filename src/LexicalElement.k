@@ -7,7 +7,11 @@ module LEXICALELEMENT-SYNTAX
 					  |  UnderLine LetterOrDigit
 					  |  LetterOrDigitList LetterOrDigitList
   syntax LetterOrDigit ::= IdentifierLetter | Digit
-  syntax UnderLine ::= "not define"
+  syntax IdentifierLetter ::=NODEF
+  syntax Digit ::= NODEF
+  syntax SpaceCharacter ::=NODEF
+  syntax SpecialCharacter ::=NODEF
+  syntax UnderLine ::= NODEF
   syntax NumericLiteral ::= IntegerLiteral | RealLiteral
   syntax IntegerLiteral ::= DecimalIntegerLiteral | BasedIntegerLiteral
   syntax DecimalIntegerLiteral ::= Numeral | Numeral PrositiveExponent
@@ -37,15 +41,16 @@ module LEXICALELEMENT-SYNTAX
 						  |  StringElement
 						  |  StringElementList StringElementList
   syntax StringElement ::= "\"" "\"" | NonQuotationMarkGraphicCharacter
+  syntax NonQuotationMarkGraphicCharacter ::= NODEF
   syntax Comment ::= "-" NonEndOfLineCharacterList
   syntax NonEndOfLineCharacterList ::= NoneStatement
 							  |  NonEndOfLineCharacter
 							  |  NonEndOfLineCharacterList NonEndOfLineCharacterList
-  syntax NonEndOfLineCharacter ::= "not define"
+  syntax NonEndOfLineCharacter ::= NODEF
 endmodule
 
 module  LEXICALELEMENT
 
-	imports LEXICALELEMENT-SYNTAX
+//	imports LEXICALELEMENT-SYNTAX
 
 endmodule
