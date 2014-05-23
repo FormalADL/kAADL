@@ -5,7 +5,7 @@ module FLOWSPECIFICATION-SYNTAX
       syntax FlowIdentifier ::= Id
       syntax OutFlowFetIdentifier ::=  Id
       syntax FlowSourceSpecAssocDef ::= "{" PpeAssocList "}" InModes ";"
-                    | "{"PpeAssocList "}" ";"
+                    | "{" PpeAssocList "}" ";"
                     | InModes ";"
 
     syntax FlowSinkSpec ::= FlowIdentifier ":" "flow ""sink " InFlowFetIdentifier FlowSinkSpecAssocDef ";"

@@ -1,5 +1,6 @@
 module COMPONENTTYPE-SYNTAX
-  syntax CmpType ::= CmpCategory CmpTypeIdentifier CmpAssocDef KeyEnd CmpTypeIdentifier ";"
+  syntax CmpType ::= CmpCategory CmpTypeIdentifier KeyEnd CmpTypeIdentifier ";"
+                   | CmpCategory CmpTypeIdentifier CmpAssocDef KeyEnd CmpTypeIdentifier ";"
   syntax CmpCategory ::= AbstractCmpCategory 
                        | SoftwareCategory 
 //					   | ExecutionPlateformCategory 

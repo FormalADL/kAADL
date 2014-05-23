@@ -1,0 +1,5 @@
+package test::b
+  public
+    data dd
+    end dd;
+end test::b;
