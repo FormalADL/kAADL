@@ -1,6 +1,6 @@
 module PROPERTYTYPE-SYNTAX
 // 11.1.1  check
-  syntax PpeTypeDeclaration ::= PpeTypeIdentifier ":" "type " PpeType ";"
+  syntax PpeTypeDecl ::= PpeTypeIdentifier ":" "type " PpeType ";"
     syntax PpeTypeIdentifier ::= Id
     syntax PpeType ::= "aadlboolen "
              |  "aadlstring "

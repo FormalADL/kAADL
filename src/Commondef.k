@@ -1,9 +1,20 @@
 module COMMONDEF
 
+/*
+  AADL Keywords definition
+*/
+  syntax KeyPkg ::= "package"
+  syntax KeyEnd ::= "end"
+  syntax KeyPublic  ::= "public"
+  syntax KeyPrivate ::= "private"
+  
+/*
+  end of AADL Keywords definition
+*/
   syntax NODEF::="not define"
   syntax NoneStatement::="none"// | " "
   
-  
+  syntax UniqueCmpTypeReference ::=NODEF
  
   syntax ArrayDimension ::= NODEF
   syntax BusAccessSpec ::= NODEF

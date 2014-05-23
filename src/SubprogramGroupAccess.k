@@ -2,7 +2,7 @@ module SUBPROGRAMGROUPACCESS-SYNTAX
   syntax SubprogramAccessSpec ::= SubprogramAccessIdentifier ":" "provides ""subprogram ""access " SubprogramAccessSpecAssocTmp
              |  SubprogramAccessIdentifier ":" "requires ""subprogram ""access " SubprogramAccessSpecAssocTmp
     syntax SubprogramAccessIdentifier ::= Id
-    syntax SubprogramAccessSpecAssocTmp ::= SubprogramUniqueComponentClassifierReference
+    syntax SubprogramAccessSpecAssocTmp ::= SubprogramUniqueCmpClassifierReference
                  |  ProtoTypeIdentifier
                  |  NoneStatement
 

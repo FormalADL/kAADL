@@ -1,17 +1,17 @@
 module ABSTRACTFEATURE-SYNTAX
 
-  syntax AbstractFeatureSpec ::= AbstractFeatureIdentifier ":" "in" "feature" FeatureProtoTypeIdentifier
-                               | AbstractFeatureIdentifier ":" "in" "feature" 
-                               | AbstractFeatureIdentifier ":" "out" "feature" FeatureProtoTypeIdentifier
-                               | AbstractFeatureIdentifier ":" "out" "feature" 
-  syntax AbstractFeatureIdentifier ::= Id
-  syntax FeatureProtoTypeIdentifier ::= Id
-  syntax AbstractFeatureRefinement ::= PortRefinement 
-                                     | FeatureGroupRefinement
+  syntax AbstractFetSpec ::= AbstractFetIdentifier ":" "in" "feature" FetProtoTypeIdentifier
+                               | AbstractFetIdentifier ":" "in" "feature" 
+                               | AbstractFetIdentifier ":" "out" "feature" FetProtoTypeIdentifier
+                               | AbstractFetIdentifier ":" "out" "feature" 
+  syntax AbstractFetIdentifier ::= Id
+  syntax FetProtoTypeIdentifier ::= Id
+  syntax AbstractFetRefinement ::= PortRefinement 
+                                     | FetGroupRefinement
                                      | SubcomponentAccessRefinement
                                      | ParameterRefinement
-            					     | AbstractFeatureIdentifier ":" "refined" "to" "in" "feature" FeatureProtoTypeIdentifier
-                                     | AbstractFeatureIdentifier ":" "refined" "to" "in" "feature" 
-                                     | AbstractFeatureIdentifier ":" "refined" "to" "out" "feature" FeatureProtoTypeIdentifier
-                                     | AbstractFeatureIdentifier ":" "refined" "to" "out" "feature" 
+            					     | AbstractFetIdentifier ":" "refined" "to" "in" "feature" FetProtoTypeIdentifier
+                                     | AbstractFetIdentifier ":" "refined" "to" "in" "feature" 
+                                     | AbstractFetIdentifier ":" "refined" "to" "out" "feature" FetProtoTypeIdentifier
+                                     | AbstractFetIdentifier ":" "refined" "to" "out" "feature" 
 endmodule

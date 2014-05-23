@@ -1,12 +1,12 @@
 module PROPERTYCONSTANT-SYNTAX
-// 11.1.3 check
+
   syntax PpeConstant ::= SigleValuedPpeConstant | MultiValuedPpeConstant 
-    syntax SigleValuedPpeConstant ::= PpeConstantIdentifier ":" "constant " PpeTypeDesignator "=>" ConstantPpeExpression ";"
-      syntax PpeConstantIdentifier ::= Id
-      syntax ConstantPpeExpression ::= PpeExpression // need rules
-    syntax MultiValuedPpeConstant ::= PpeConstantIdentifier ":" "constant " ListOf  PpeTypeDesignator "=>" ConstantPpeListValue ";"
-      syntax ConstantPpeListValue ::= PpeListValue // need rules
-    syntax UniquePpeConstantIdentifier ::= PpeConstantIdentifier | PpeSetIdentifier "::" PpeConstantIdentifier
+  syntax SigleValuedPpeConstant ::= PpeConstantIdentifier ":" "constant " PpeTypeDesignator "=>" ConstantPpeExpression ";"
+  syntax PpeConstantIdentifier ::= Id
+  syntax ConstantPpeExpression ::= PpeExpression // need rules
+  syntax MultiValuedPpeConstant ::= PpeConstantIdentifier ":" "constant " ListOf  PpeTypeDesignator "=>" ConstantPpeListValue ";"
+  syntax ConstantPpeListValue ::= PpeListValue // need rules
+  syntax UniquePpeConstantIdentifier ::= PpeConstantIdentifier | PpeSetIdentifier "::" PpeConstantIdentifier
 endmodule
 
 module PROPERTYCONSTANT

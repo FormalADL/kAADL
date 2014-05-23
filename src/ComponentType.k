@@ -1,5 +1,5 @@
 module COMPONENTTYPE-SYNTAX
-  syntax CmpType ::= CmpCategory CmpTypeIdentifier CmpAssocDef kEnd CmpTypeIdentifier ";"
+  syntax CmpType ::= CmpCategory CmpTypeIdentifier CmpAssocDef KeyEnd CmpTypeIdentifier ";"
   syntax CmpCategory ::= AbstractCmpCategory 
                        | SoftwareCategory 
 //					   | ExecutionPlateformCategory 
@@ -28,8 +28,8 @@ module COMPONENTTYPE-SYNTAX
   syntax CmpAssocDef ::= CmpAssocDef CmpAssocDef 
 
 /* do not support ComponentTypeExtension
-  syntax CmpTypeExt ::= CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeReference  CmpAssocDef kEnd CmpTypeIdentifier ";"
-                    | CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeReference  ProtoTypeBindings CmpAssocDef kEnd CmpTypeIdentifier ";"
+  syntax CmpTypeExt ::= CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeReference  CmpAssocDef KeyEnd CmpTypeIdentifier ";"
+                    | CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeReference  ProtoTypeBindings CmpAssocDef KeyEnd CmpTypeIdentifier ";"
   syntax UniqueCmpTypeReference ::= PkgName "::" CmpTypeIdentifier |  CmpTypeIdentifier
 */
 endmodule

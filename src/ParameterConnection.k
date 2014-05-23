@@ -6,19 +6,19 @@ module PARAMETERCONNECTION-SYNTAX
     syntax DestinationParameterReference ::= ParameterReference
 
   syntax ParameterConnectionRefinement ::= "paramenter"
-  syntax ParameterReference ::= ComponentTypeParameterIdentifier 
-            |  ComponentTypeParameterIdentifier "." DataSubcomponentIdentifier
+  syntax ParameterReference ::= CmpTypeParameterIdentifier 
+            |  CmpTypeParameterIdentifier "." DataSubcomponentIdentifier
             |  SubprogramCallIdentifier "." ParameterIdentifier
-            |  ComponentTypePortIdentifier
-            |  ComponentTypePortIdentifier "." DataSubcomponentIdentifier
+            |  CmpTypePortIdentifier
+            |  CmpTypePortIdentifier "." DataSubcomponentIdentifier
             |  DataSubcomponentIdentifier
             |  RequiresDataAccessIdentifier
-            |  ComponentTypeFeatureGroupIdentifier "." ElementDataAccessIdentifier
-            |  ComponentTypeFeatureFeatureGroupIdentifier "." ElementPortOrParameterIdentifier
+            |  CmpTypeFetGroupIdentifier "." ElementDataAccessIdentifier
+            |  CmpTypeFetFetGroupIdentifier "." ElementPortOrParameterIdentifier
     
-    syntax ComponentTypeParameterIdentifier ::= Id
+    syntax CmpTypeParameterIdentifier ::= Id
     syntax RequiresDataAccessIdentifier ::= Id
-    syntax ComponentTypeFeatureFeatureGroupIdentifier ::= Id
+    syntax CmpTypeFetFetGroupIdentifier ::= Id
     syntax ElementPortOrParameterIdentifier ::= Id
     
 endmodule

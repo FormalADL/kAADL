@@ -1,18 +1,18 @@
 module FLOWIMPLEMENTATION-SYNTAX 
 // 10.2  check
-  syntax FlowImplementation ::= FlowSourceSinkPathImplementAssociationDefination PpeAssociationInModes ";"
-    syntax FlowSourceSinkPathImplementAssociationDefination ::= FlowSourceImplementation | FlowSinkImplementation | FlowPathImplementation
-      syntax FlowSourceImplementation ::= FlowIdentifier ":" "flow " "source " SubcompentConnectionAssocDefination OutFlowFeatureIdentifier
-        syntax SubcompentConnectionAssocDefination ::= NoneStatement
+  syntax FlowImpl ::= FlowSourceSinkPathImplementAssocDef PpeAssocInModes ";"
+    syntax FlowSourceSinkPathImplementAssocDef ::= FlowSourceImpl | FlowSinkImpl | FlowPathImpl
+      syntax FlowSourceImpl ::= FlowIdentifier ":" "flow " "source " SubcompentConnectionAssocDef OutFlowFetIdentifier
+        syntax SubcompentConnectionAssocDef ::= NoneStatement
                       |  SubcompenentFlowIdentifier "->" ConnectionIdentifier "->"
-                            |  SubcompentConnectionAssocDefination SubcompentConnectionAssocDefination
+                            |  SubcompentConnectionAssocDef SubcompentConnectionAssocDef
           syntax SubcompenentFlowIdentifier ::= Id
-      syntax FlowSinkImplementation ::= FlowIdentifier ":" "flow ""sink "InFlowFeatureIdentifier ConnectionSubcompenentFlowAssociationDefination 
-        syntax ConnectionSubcompenentFlowAssociationDefination ::= NoneStatement 
+      syntax FlowSinkImpl ::= FlowIdentifier ":" "flow ""sink "InFlowFetIdentifier ConnectionSubcompenentFlowAssocDef 
+        syntax ConnectionSubcompenentFlowAssocDef ::= NoneStatement 
                       |  "->" ConnectionIdentifier"->"SubcompenentFlowIdentifier
-                      | ConnectionSubcompenentFlowAssociationDefination  ConnectionSubcompenentFlowAssociationDefination
-      syntax FlowPathImplementation ::= FlowIdentifier ":" "flow ""path " InFlowFeatureIdentifier FlowPathImplementationDefault "->" OutFlowFeatureIdentifier
-        syntax FlowPathImplementationDefault ::= ConnectIdentifierSubcompenentFlowIdnetifierList "->" OutFlowFeatureIdentifier
+                      | ConnectionSubcompenentFlowAssocDef  ConnectionSubcompenentFlowAssocDef
+      syntax FlowPathImpl ::= FlowIdentifier ":" "flow ""path " InFlowFetIdentifier FlowPathImplDefault "->" OutFlowFetIdentifier
+        syntax FlowPathImplDefault ::= ConnectIdentifierSubcompenentFlowIdnetifierList "->" OutFlowFetIdentifier
           syntax ConnectIdentifierSubcompenentFlowIdnetifierList ::= "->" ConnextionIdentifier "->" SubcomponentFlowIdentifier
                         |  ConnectIdentifierSubcompenentFlowIdnetifierList ConnectIdentifierSubcompenentFlowIdnetifierList
             syntax ConnextionIdentifier ::= Id
@@ -20,8 +20,8 @@ module FLOWIMPLEMENTATION-SYNTAX
               syntax FlowSpecIdentifier ::= Id
               syntax DataCompenentReference ::= DataSubcomponentIdentifier | RequiresDataAccessIdentifier | ProvidesDataAccessIdentifier
 
-    syntax PpeAssociationInModes ::= "{"PpeAssociationList"}" InModesAndTransitions
-               |  "{"PpeAssociationList"}"
+    syntax PpeAssocInModes ::= "{"PpeAssocList"}" InModesAndTransitions
+               |  "{"PpeAssocList"}"
                |  InModesAndTransitions
 
 endmodule

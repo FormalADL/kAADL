@@ -2,24 +2,24 @@ module CONNECTION-SYNTAX
 // 9.0  check
   syntax Connection ::= ConnectionIdentifier ":" SomeConnections PpeInMode ";"
   syntax ConnectionIdentifier ::= NODEF
-  syntax SomeConnections ::= FeatureConnection 
+  syntax SomeConnections ::= FetConnection 
 							 | PortConnection
                              | ParameterConnection
                              | AccessConnection
-                             | FeatureGroupConnection    
-  syntax PpeInMode ::= "{" PpeAssociationList "}" InModesAndTransititions
-						 | "{" PpeAssociationList "}"
+                             | FetGroupConnection    
+  syntax PpeInMode ::= "{" PpeAssocList "}" InModesAndTransititions
+						 | "{" PpeAssocList "}"
           | InModesAndTransititions
           | NoneStatement
       syntax InModesAndTransititions ::= NODEF
-      syntax PpeAssociationList ::= PpeAssociation | PpeAssociation PpeAssociationList
+      syntax PpeAssocList ::= PpeAssoc | PpeAssoc PpeAssocList
 
   syntax ConnectionRefinement ::= ConnectionIdentifier ":" "refined ""to " SomeRefinements PpeInMode ";"
-    syntax SomeRefinements ::=  FeatureConnectionRefinement 
+    syntax SomeRefinements ::=  FetConnectionRefinement 
           |  PortConnectionRefinement
           |  ParameterConnectionRefinement
           |  AccessConnectionRefinement
-          |  FeatureGroupConnectionRefinement  
+          |  FetGroupConnectionRefinement  
 endmodule
 
 module CONNECTION 

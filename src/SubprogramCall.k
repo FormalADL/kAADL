@@ -1,33 +1,33 @@
 module SUBPROGRAMCALL-SYNTAX
 // 5.2 check
   syntax SubprogramCallSequence ::= CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" InModes ";"
-               |  CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePpeAssociation /* + */ "}" InModes ";"
+               |  CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePpeAssoc /* + */ "}" InModes ";"
     syntax CallSequenceIdentifier ::= Id
     syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram ";"
-    syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssociation /* + */"}"";"
+    syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssoc /* + */"}"";"
       syntax CallIdentifier ::= Id
-      syntax CalledSubprogram ::= SubprogramUniqueComponentClassifierReference
-              | DataUniqueComponentTypeReference "." DataProvidesSubprogramAccessIdentifier
-              | SubprogramGroupUniqueComponentTypeReference "." ProvidesSubprogramAccessIdentifier
-              | AbstractUniqueComponentTypeReference "." ProvidesSubprogramAccessIdentifier
-              | FeatureGroupIdentifier "." RequiresSubprogramAccessIdentifier
-              | ComponentProtoTypeIdentifier
+      syntax CalledSubprogram ::= SubprogramUniqueCmpClassifierReference
+              | DataUniqueCmpTypeReference "." DataProvidesSubprogramAccessIdentifier
+              | SubprogramGroupUniqueCmpTypeReference "." ProvidesSubprogramAccessIdentifier
+              | AbstractUniqueCmpTypeReference "." ProvidesSubprogramAccessIdentifier
+              | FetGroupIdentifier "." RequiresSubprogramAccessIdentifier
+              | CmpProtoTypeIdentifier
               | "processor" "." ProvidesSubprogramAccessIdentifier
               | SubprogramGoupSubcomponentIdentifier "." ProvidesSubprogramAccessIdentifier
               | RequiresSubprogramAccessIdentifier
               | RequiresSubprogramGroupAccessIdentifier "." ProvidesSubprogramAccessIdentifier
-        syntax SubprogramUniqueComponentClassifierReference ::= NODEF
-        syntax DataUniqueComponentTypeReference ::= NODEF
+        syntax SubprogramUniqueCmpClassifierReference ::= NODEF
+        syntax DataUniqueCmpTypeReference ::= NODEF
         syntax DataProvidesSubprogramAccessIdentifier ::= Id
-        syntax SubprogramGroupUniqueComponentTypeReference ::= NODEF
+        syntax SubprogramGroupUniqueCmpTypeReference ::= NODEF
         syntax ProvidesSubprogramAccessIdentifier ::= Id
-        syntax AbstractUniqueComponentTypeReference ::= NODEF
-        syntax FeatureGroupIdentifier ::=  Id
+        syntax AbstractUniqueCmpTypeReference ::= NODEF
+        syntax FetGroupIdentifier ::=  Id
         syntax RequiresSubprogramAccessIdentifier ::=  Id
-        syntax ComponentProtoTypeIdentifier ::=  Id
+        syntax CmpProtoTypeIdentifier ::=  Id
         syntax SubprogramGoupSubcomponentIdentifier ::=  Id
         syntax RequiresSubprogramGroupAccessIdentifier ::=  Id
-      syntax CallSequencePpeAssociation ::= CallSequencePpeAssociation CallSequencePpeAssociation // +
+      syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc // +
 
 
 endmodule

@@ -4,7 +4,7 @@ module SUBPROGRAMPARAMETER-SYNTAX
     syntax ParameterIdentifier ::= Id
     syntax SubprogramParameterSamePart ::= InOut "parameter " DataUniqureProtoType
       syntax InOut ::= "in " | "out " | "in ""out "
-      syntax DataUniqureProtoType ::= DataUniqueComponentClassifierReference | ProtoTypeIdentifier | NoneStatement
+      syntax DataUniqureProtoType ::= DataUniqueCmpClassifierReference | ProtoTypeIdentifier | NoneStatement
 
   syntax ParameterRefinement ::= ParameterIdentifier ":" "refined ""to " SubprogramParameterSamePart
   

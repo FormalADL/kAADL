@@ -1,17 +1,17 @@
 module SUBCOMPONENT-SYNTAX
 // 4.5 check
-  syntax Subcomponent ::= SubcomponentIdentifier ":" ComponentCategory SubcomponentAssocDefination ";"
+  syntax Subcomponent ::= SubcomponentIdentifier ":" CmpCategory SubcomponentAssocDef ";"
     syntax SubcomponentIdentifier ::= Id
-    syntax SubcomponentAssocDefination ::= UniqueComponentClassifierReference ProtoTypeBindings
-                 | UniqueComponentClassifierReference
+    syntax SubcomponentAssocDef ::= UniqueCmpClassifierReference ProtoTypeBindings
+                 | UniqueCmpClassifierReference
                  | PrototypeIdentifier
                  | ArrayDimensions ArrayelementImplementionList
                  | ArrayDimensions
-                 | "{" SubcomponentProtertyAssociation "}" // +
-                 | "{" ContainedPpeAssociation "}"// +
-                 | ComponentInModes 
-      syntax UniqueComponentClassifierReference ::= UniqueComponentTypeReference
-                   |  UniqueComponentImplementationReference
+                 | "{" SubcomponentProtertyAssoc "}" // +
+                 | "{" ContainedPpeAssoc "}"// +
+                 | CmpInModes 
+      syntax UniqueCmpClassifierReference ::= UniqueCmpTypeReference
+                   |  UniqueCmpImplReference
       syntax PrototypeIdentifier ::= Id
       syntax ArrayDimensions ::= ArrayDimension // + but in 8.0,it is just [ArrayDimension]...i think here should be change
         syntax ArrayDimension ::= ArrayDimension ArrayDimension 
@@ -20,11 +20,11 @@ module SUBCOMPONENT-SYNTAX
             syntax Numberal ::= NODEF
       syntax ArrayelementImplementionList ::= "("ArrayelementImplementionListTmp")"
                     | "("ArrayelementImplementionListTmp "," ArrayelementImplementionListTmp ")"
-        syntax ArrayelementImplementionListTmp ::= UniqueComponentImplementationReference ProtoTypeBindings
-                        |  UniqueComponentImplementationReference
-          syntax UniqueComponentImplementationReference ::= NODEF            
-      syntax SubcomponentProtertyAssociation ::= SubcomponentProtertyAssociation SubcomponentProtertyAssociation
-      syntax SubcomponentProtertyAssociation ::= NODEF
+        syntax ArrayelementImplementionListTmp ::= UniqueCmpImplReference ProtoTypeBindings
+                        |  UniqueCmpImplReference
+          syntax UniqueCmpImplReference ::= NODEF            
+      syntax SubcomponentProtertyAssoc ::= SubcomponentProtertyAssoc SubcomponentProtertyAssoc
+      syntax SubcomponentProtertyAssoc ::= NODEF
   syntax ArraySelectionName ::= Identifier ArraySelection
     syntax ArraySelection ::= ArraySelection ArraySelection // +
     syntax ArraySelection ::= "[" SelectionRange "]"

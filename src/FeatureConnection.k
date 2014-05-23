@@ -1,22 +1,22 @@
 module FEATURECONNECTION-SYNTAX
 // 9.1 check
-  syntax FeatureConnection ::= "feature " SourceFeatureReference ConnectionSymbol DestinationFeatureReference
-    syntax SourceFeatureReference ::= FeatureReference
+  syntax FetConnection ::= "feature " SourceFetReference ConnectionSymbol DestinationFetReference
+    syntax SourceFetReference ::= FetReference
     syntax ConnectionSymbol ::= DirectionalConnectSymbol | BidirectionalConnectSymbol
       syntax DirectionalConnectSymbol ::= "->"
       syntax BidirectionalConnectSymbol ::= "<->"
-    syntax DestinationFeatureReference ::= FeatureReference
+    syntax DestinationFetReference ::= FetReference
 
-  syntax FeatureReference ::= ComponentTypeFeatureIdentifier
-          | ComponentTypeFeatureGroupIdentifier "." FeatureIdentifier
-          | SubcomponentIdentifier "." FeatureIdentifier
-          | SubprogramCallIdentifier "." FeatureIdentifier
-    syntax ComponentTypeFeatureIdentifier ::= Id
-    syntax ComponentTypeFeatureGroupIdentifier ::=  Id
-    syntax FeatureIdentifier ::= Id
+  syntax FetReference ::= CmpTypeFetIdentifier
+          | CmpTypeFetGroupIdentifier "." FetIdentifier
+          | SubcomponentIdentifier "." FetIdentifier
+          | SubprogramCallIdentifier "." FetIdentifier
+    syntax CmpTypeFetIdentifier ::= Id
+    syntax CmpTypeFetGroupIdentifier ::=  Id
+    syntax FetIdentifier ::= Id
     syntax SubprogramCallIdentifier ::= Id
 
-  syntax FeatureConnectionRefinement ::= "feature"
+  syntax FetConnectionRefinement ::= "feature"
 
 endmodule
 

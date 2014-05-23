@@ -8,8 +8,8 @@ module ACCESSCONNECTION-SYNTAX
   syntax AccessConnectionRefinement ::= AccessConnectionKeyword "access "
   syntax AccessReference ::= RequiresAccessIdentifier
         |  ProvidesAccessIdentifier
-        |  FeatureGroupIdentifier "." RequiresAccessIdentifier
-        |  FeatureGroupIdentifier "." ProvidesAccessIdentifier
+        |  FetGroupIdentifier "." RequiresAccessIdentifier
+        |  FetGroupIdentifier "." ProvidesAccessIdentifier
         |  SubcomponentIdentifier "." ProvidesAccessIdentifier
         |  SubcomponentIdentifier "." RequiresAccessIdentifier
         |  SubprogramCallIdentifier "." RequiresOrProvidesAccessIdentifier

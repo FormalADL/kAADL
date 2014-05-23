@@ -1,8 +1,8 @@
 module PROPERTYDEFINATION-SYNTAX
 // 11.1.2
-  syntax PpeDefinitionDeclaration ::= PpeNameIdentifier ":" PpeDefinationDeclarationAssocDefination ";"
+  syntax PpeDefinitionDecl ::= PpeNameIdentifier ":" PpeDefDeclAssocDef ";"
     syntax PpeNameIdentifier ::= Id
-    syntax PpeDefinationDeclarationAssocDefination ::= "inherit " SingleValuedPpe "applies ""to " PpeOwnerList 
+    syntax PpeDefDeclAssocDef ::= "inherit " SingleValuedPpe "applies ""to " PpeOwnerList 
                      |  "inherit " MultiValuedPpe "applies ""to " PpeOwnerList 
                      |   SingleValuedPpe "applies ""to " PpeOwnerList 
                      |   MultiValuedPpe "applies ""to " PpeOwnerList 
@@ -14,7 +14,7 @@ module PROPERTYDEFINATION-SYNTAX
         syntax DefaultPpeListValue ::= PpeListValue
       syntax PpeOwnerList ::= PpeOwner | PpeOwner "," PpeOwnerList
         syntax PpeOwner ::= NamedElementQualifiedMetaModelIdentifier | UniqueClassifierReference
-          syntax UniqueClassifierReference ::= UniqueComponentClassifierReference | UniqueFeatureGroupTypeReference
+          syntax UniqueClassifierReference ::= UniqueCmpClassifierReference | UniqueFetGroupTypeReference
 
 
 endmodule

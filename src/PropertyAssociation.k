@@ -1,6 +1,6 @@
 module PROPERTYASSOCIATION-SYNTAX
 // 11.3 check
-  syntax PpeAssociation ::= UniquePpeIdentifier "=>" "constant" Assignment InBinding ";"
+  syntax PpeAssoc ::= UniquePpeIdentifier "=>" "constant" Assignment InBinding ";"
             |  UniquePpeIdentifier "=>" "constant" Assignment  ";"
             |  UniquePpeIdentifier "=>"  Assignment InBinding ";"
             |  UniquePpeIdentifier "+=>" "constant" Assignment InBinding ";"
@@ -18,16 +18,16 @@ module PROPERTYASSOCIATION-SYNTAX
       syntax ModalPpeValue ::= PpeValue InModes |  PpeValue InModes "," ModalPpeValue 
     syntax InBinding ::= "in ""binding " PlatformClassifierReferenceList 
       syntax PlatformClassifierReferenceList ::= PlatformClassifierReference | PlatformClassifierReference "," PlatformClassifierReferenceList
-        syntax PlatformClassifierReference ::= ProcessorUniqueComponentClassifierReference
-                    |  VirtualProcessorUniqueComponentClassifierReference
-                    |  BusUniqueComponentClassifierReference
-                    |  VirtualBusUniqueComponentClassifierReference
-                    |  MemoryUniqueComponentClassifierReference
-          syntax ProcessorUniqueComponentClassifierReference ::= NODEF
-          syntax VirtualProcessorUniqueComponentClassifierReference ::= NODEF
-          syntax VirtualBusUniqueComponentClassifierReference ::= NODEF
-          syntax MemoryUniqueComponentClassifierReference ::= NODEF
-  syntax ContainedPpeAssociation ::= UniquePpeIdentifier "=>" "constant" Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
+        syntax PlatformClassifierReference ::= ProcessorUniqueCmpClassifierReference
+                    |  VirtualProcessorUniqueCmpClassifierReference
+                    |  BusUniqueCmpClassifierReference
+                    |  VirtualBusUniqueCmpClassifierReference
+                    |  MemoryUniqueCmpClassifierReference
+          syntax ProcessorUniqueCmpClassifierReference ::= NODEF
+          syntax VirtualProcessorUniqueCmpClassifierReference ::= NODEF
+          syntax VirtualBusUniqueCmpClassifierReference ::= NODEF
+          syntax MemoryUniqueCmpClassifierReference ::= NODEF
+  syntax ContainedPpeAssoc ::= UniquePpeIdentifier "=>" "constant" Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
                |  UniquePpeIdentifier "=>"  Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
     syntax ContainedModelElementPathList ::= ContainedModelElementPath | ContainedModelElementPath "," ContainedModelElementPathList
       syntax ContainedModelElementPath ::= AnnexPath 

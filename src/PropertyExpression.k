@@ -9,7 +9,7 @@ module PROPERTYEXPRESSION-SYNTAX
            |  RealRangeTerm
            |  IntegerRangeTerm
            |  PpeTerm
-           |  ComponentClassifierTerm 
+           |  CmpClassifierTerm 
            |  ReferenceTerm
            |  RecordTerm
            |  ComputedTerm
@@ -40,8 +40,8 @@ module PROPERTYEXPRESSION-SYNTAX
       syntax RealRangePpeConstantTerm ::= PpeConstantTerm // need rules
     syntax PpeTerm ::= PpeNameIdentifier
               | PpeSetIdentifier "::" PpeNameIdentifier
-    syntax ComponentClassifierTerm ::= "classifier" "(" UniqueComponentTypeReference ")"
-            |  "classifier" "(" UniqueComponentImplementationReference ")"
+    syntax CmpClassifierTerm ::= "classifier" "(" UniqueCmpTypeReference ")"
+            |  "classifier" "(" UniqueCmpImplReference ")"
     syntax ReferenceTerm ::= "reference" "(" ContainedModelElementPath ")"
     syntax RecordTerm ::= "(" RecordFieldIdentifierIdentifierList ")"
       syntax RecordFieldIdentifierIdentifierList ::= RecordFieldIdentifierIdentifier "=>" PpeValue ";"

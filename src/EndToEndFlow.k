@@ -6,15 +6,15 @@ module ENDTOENDFLOW-SYNTAX
     syntax ConnectionIdentifierFlowPathList ::= "->" ConnectionIdentifier "->" FlowPathSubcomponentFlowOrEtefIdentifier
                 | ConnectionIdentifierFlowPathList ConnectionIdentifierFlowPathList
       syntax FlowPathSubcomponentFlowOrEtefIdentifier ::= NODEF
-    syntax EndToEndFlowSpecAssocDefault ::=  "{" PpeAssociationList "}" InModesAndTransitions
-                |  "{" PpeAssociationList "}"
+    syntax EndToEndFlowSpecAssocDefault ::=  "{" PpeAssocList "}" InModesAndTransitions
+                |  "{" PpeAssocList "}"
                 |  InModesAndTransitions
                 |  NoneStatement
 
   syntax EndToEndSpecRefinement ::= EndToEndIdentifier ":" "refined ""to ""end ""to ""end ""flow " EndToEndSpecRefinementDefault ";"
     syntax EndToEndIdentifier ::=  Id
-    syntax EndToEndSpecRefinementDefault ::= "{" PpeAssociationList "}" InModesAndTransitions
-                |  "{" PpeAssociationList "}"
+    syntax EndToEndSpecRefinementDefault ::= "{" PpeAssocList "}" InModesAndTransitions
+                |  "{" PpeAssocList "}"
                 |  InModesAndTransitions
   syntax SubcomponentFlowOrEtefIdentifier ::= SubcomponentFlowIdentifier | EndToEndFlowIdentifier
 

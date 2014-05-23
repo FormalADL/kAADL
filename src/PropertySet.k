@@ -1,18 +1,18 @@
 module PROPERTYSET-SYNTAX
 // 11.1 check
-  syntax PpeSet ::= "property ""set " PpeSetIdentifier "is "PpeSetAssocDefination "end "PpeSetIdentifier";"
-    syntax PpeSetAssocDefination ::= ImportDeclarationList PpeTypeDeclarationList 
-               |  ImportDeclarationList PpeDefinitionDeclarationList
-               |  ImportDeclarationList PpeConstantList
-      syntax ImportDeclarationList ::= NoneStatement 
-                  |  ImportDeclaration
-                  |  ImportDeclarationList ImportDeclarationList
-      syntax PpeTypeDeclarationList ::= NoneStatement
-                   | PpeTypeDeclaration
-                   | PpeTypeDeclarationList PpeTypeDeclarationList
-      syntax PpeDefinitionDeclarationList ::= NoneStatement
-                   | PpeDefinitionDeclaration
-                   | PpeDefinitionDeclarationList PpeDefinitionDeclarationList
+  syntax PpeSet ::= "property ""set " PpeSetIdentifier "is "PpeSetAssocDef "end "PpeSetIdentifier";"
+    syntax PpeSetAssocDef ::= ImportDeclList PpeTypeDeclList 
+               |  ImportDeclList PpeDefinitionDeclList
+               |  ImportDeclList PpeConstantList
+      syntax ImportDeclList ::= NoneStatement 
+                  |  ImportDecl
+                  |  ImportDeclList ImportDeclList
+      syntax PpeTypeDeclList ::= NoneStatement
+                   | PpeTypeDecl
+                   | PpeTypeDeclList PpeTypeDeclList
+      syntax PpeDefinitionDeclList ::= NoneStatement
+                   | PpeDefinitionDecl
+                   | PpeDefinitionDeclList PpeDefinitionDeclList
       syntax PpeConstantList ::= NoneStatement
                  |  PpeConstant
                  |  PpeConstantList PpeConstantList

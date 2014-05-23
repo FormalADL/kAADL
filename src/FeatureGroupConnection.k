@@ -1,14 +1,14 @@
 module FEATUREGROUPCONNECTION-SYNTAX
 // 9.5 check
-  syntax FeatureGroupConnection ::= "feature " "group" SourceFeatureGroupReference ConnectionSymbol DestinationFeatureGroupReference
-  syntax SourceFeatureGroupReference ::= FeatureGroupReference
-  syntax DestinationFeatureGroupReference ::= FeatureGroupReference
-  syntax FeatureGroupConnectionRefinement ::= "feature " "group "
+  syntax FetGroupConnection ::= "feature " "group" SourceFetGroupReference ConnectionSymbol DestinationFetGroupReference
+  syntax SourceFetGroupReference ::= FetGroupReference
+  syntax DestinationFetGroupReference ::= FetGroupReference
+  syntax FetGroupConnectionRefinement ::= "feature " "group "
 
-  syntax FeatureGroupReference ::= ComponentTypeFeatureGroupIdentifier
-              |  SubcomponentIdentifier "." FeatureGroupIdentifier
-              |  ComponentTypeFeatureGroupIdentifier "." ElementFeatureGroupIdentifier
-    syntax ElementFeatureGroupIdentifier ::= Id
+  syntax FetGroupReference ::= CmpTypeFetGroupIdentifier
+              |  SubcomponentIdentifier "." FetGroupIdentifier
+              |  CmpTypeFetGroupIdentifier "." ElementFetGroupIdentifier
+    syntax ElementFetGroupIdentifier ::= Id
 
 endmodule
 

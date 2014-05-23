@@ -1,52 +1,52 @@
 module FEATUREGROUPTYPE-SYNATX
 // 8.2 check
-  syntax FeatureGroupType ::= "feature" "group" Identifier FeatureGroupTypeAssocDefination "end" Identifier ";"
-     syntax FeatureGroupTypeAssocDefination ::= ProtoTypeOfFeatureGroupType FeatureOfFeatureGroupType InverseOfFeatureGroupType PpeOfFeatureGroupType AnnexOfFeatureGroupType
-      syntax ProtoTypeOfFeatureGroupType ::= "prototypes" ProtoTypeOfFeatureGroupTypeTmp 
+  syntax FetGroupType ::= "feature" "group" Identifier FetGroupTypeAssocDef KeyEnd Identifier ";"
+     syntax FetGroupTypeAssocDef ::= ProtoTypeOfFetGroupType FetOfFetGroupType InverseOfFetGroupType PpeOfFetGroupType AnnexOfFetGroupType
+      syntax ProtoTypeOfFetGroupType ::= "prototypes" ProtoTypeOfFetGroupTypeTmp 
                   | NoneStatement
-        syntax ProtoTypeOfFeatureGroupTypeTmp ::= ProtoType
-                    | ProtoType ProtoTypeOfFeatureGroupTypeTmp 
-      syntax FeatureOfFeatureGroupType ::= "featrues" FeatureOfFeatureGroupTypeTmp
+        syntax ProtoTypeOfFetGroupTypeTmp ::= ProtoType
+                    | ProtoType ProtoTypeOfFetGroupTypeTmp 
+      syntax FetOfFetGroupType ::= "featrues" FetOfFetGroupTypeTmp
                  |  NoneStatement
-        syntax FeatureOfFeatureGroupTypeTmp ::= Feature
-                     |  Feature FeatureOfFeatureGroupTypeTmp
-      syntax InverseOfFeatureGroupType ::= "inverse" "of" UniqueFeatureGroupTypeReference
+        syntax FetOfFetGroupTypeTmp ::= Fet
+                     |  Fet FetOfFetGroupTypeTmp
+      syntax InverseOfFetGroupType ::= "inverse" "of" UniqueFetGroupTypeReference
                       |   NoneStatement
-        syntax UniqueFeatureGroupTypeReference ::= FeatureGroupTypeReferenceIdentifier
-              |  PkgName "::" FeatureGroupTypeReferenceIdentifier
-          syntax FeatureGroupTypeReferenceIdentifier ::= NODEF
-      syntax PpeOfFeatureGroupType ::= "properties" PpeOfFeatureGroupTypeTmp
-        syntax PpeOfFeatureGroupTypeTmp ::= FeatureGroupContainedPpeAssociation
-                      |  FeatureGroupContainedPpeAssociation PpeOfFeatureGroupTypeTmp
+        syntax UniqueFetGroupTypeReference ::= FetGroupTypeReferenceIdentifier
+              |  PkgName "::" FetGroupTypeReferenceIdentifier
+          syntax FetGroupTypeReferenceIdentifier ::= NODEF
+      syntax PpeOfFetGroupType ::= "properties" PpeOfFetGroupTypeTmp
+        syntax PpeOfFetGroupTypeTmp ::= FetGroupContainedPpeAssoc
+                      |  FetGroupContainedPpeAssoc PpeOfFetGroupTypeTmp
                       |  NoneStatement
-          syntax FeatureGroupContainedPpeAssociation ::= NODEF
-      syntax AnnexOfFeatureGroupType ::= NODEF
-  syntax FeatureGroupTypeExtension ::= "feature" "group" Identifier "extends" UniqueFeatureGroupTypeReference FeatureGroupTypeExtensionAssocDefination "end" Identifier ";"  
-    syntax FeatureGroupTypeExtensionAssocDefination ::= ProtoTypeBindings ProtoTypeOfFeatureGroupTypeExtension FeatureOfFeatureGroupTypeExtension InverseOfFeatureGroupTypeExtension PpeOfFeatureGroupTypeExtension AnnexOfFeatureGroupTypeExtension 
-      syntax  ProtoTypeOfFeatureGroupTypeExtension ::=  "prototypes" ProtoTypeOfFeatureGroupTypeExtensionTmp
-        syntax ProtoTypeOfFeatureGroupTypeExtensionTmp ::= ProtoTypeList
+          syntax FetGroupContainedPpeAssoc ::= NODEF
+      syntax AnnexOfFetGroupType ::= NODEF
+  syntax FetGroupTypeExt ::= "feature" "group" Identifier "extends" UniqueFetGroupTypeReference FetGroupTypeExtAssocDef KeyEnd Identifier ";"  
+    syntax FetGroupTypeExtAssocDef ::= ProtoTypeBindings ProtoTypeOfFetGroupTypeExt FetOfFetGroupTypeExt InverseOfFetGroupTypeExt PpeOfFetGroupTypeExt AnnexOfFetGroupTypeExt 
+      syntax  ProtoTypeOfFetGroupTypeExt ::=  "prototypes" ProtoTypeOfFetGroupTypeExtTmp
+        syntax ProtoTypeOfFetGroupTypeExtTmp ::= ProtoTypeList
                     |  ProtoTypeRefinementList
                     | NoneStatement
           syntax ProtoTypeList ::= ProtoType | ProtoType ProtoTypeList
           syntax ProtoTypeRefinementList ::= ProtoTypeRefinement | ProtoTypeRefinement ProtoTypeRefinementList
-      syntax  FeatureOfFeatureGroupTypeExtension ::= "features" FeatureOfFeatureGroupTypeExtensionTmp
-        syntax FeatureOfFeatureGroupTypeExtensionTmp ::= FeatureList | FeatureRefinementList | NoneStatement
-          syntax FeatureList ::= Feature | Feature FeatureList
-          syntax FeatureRefinementList ::= FeatureRefinement | FeatureRefinement FeatureRefinementList
-      syntax  InverseOfFeatureGroupTypeExtension  ::= InverseOfFeatureGroupType // they have the same syntax
-      syntax  PpeOfFeatureGroupTypeExtension ::= PpeOfFeatureGroupType
-      syntax  AnnexOfFeatureGroupTypeExtension ::= NoneStatement
+      syntax  FetOfFetGroupTypeExt ::= "features" FetOfFetGroupTypeExtTmp
+        syntax FetOfFetGroupTypeExtTmp ::= FetList | FetRefinementList | NoneStatement
+          syntax FetList ::= Fet | Fet FetList
+          syntax FetRefinementList ::= FetRefinement | FetRefinement FetRefinementList
+      syntax  InverseOfFetGroupTypeExt  ::= InverseOfFetGroupType // they have the same syntax
+      syntax  PpeOfFetGroupTypeExt ::= PpeOfFetGroupType
+      syntax  AnnexOfFetGroupTypeExt ::= NoneStatement
                    | AnnexSubclause 
-                   | AnnexSubclause AnnexOfFeatureGroupTypeExtension
+                   | AnnexSubclause AnnexOfFetGroupTypeExt
 
-  syntax FeatureGroupSpec ::= FeatureGroupIdentifier ":" FeatureGroupSpecAssocDefination 
-    syntax FeatureGroupSpecAssocDefination ::= InOut "feature" "group" InverseOfUniqueProtoType
-      syntax InverseOfUniqueProtoType ::= "inverse" "of" UniqueFeatureGroupTypeReference
+  syntax FetGroupSpec ::= FetGroupIdentifier ":" FetGroupSpecAssocDef 
+    syntax FetGroupSpecAssocDef ::= InOut "feature" "group" InverseOfUniqueProtoType
+      syntax InverseOfUniqueProtoType ::= "inverse" "of" UniqueFetGroupTypeReference
                 | "inverse" "of" ProtoTypeIdentifier
-                | UniqueFeatureGroupTypeReference
+                | UniqueFetGroupTypeReference
                 | ProtoTypeIdentifier
                 | NoneStatement
     
-  syntax FeatureGroupRefinement ::= FeatureGroupIdentifier ":" "refined " "to" FeatureGroupSpecAssocDefination
+  syntax FetGroupRefinement ::= FetGroupIdentifier ":" "refined " "to" FetGroupSpecAssocDef
 
 endmodule

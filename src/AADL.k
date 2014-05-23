@@ -23,18 +23,20 @@ require "FeatureGroupConnection.k"
 require "FlowSpecification.k"
 require "FlowImplementation1.k"
 require "EndToEndFlow.k"
-require "PpeSet.k"
-require "PpeType.k"
-require "PpeDefination.k"
-require "PpeConstant.k"
-require "PpeAssociation.k"
-require "PpeExpression.k"
+/*
+require "PropertySet.k"
+require "PropertyType.k"
+require "PropertyDefinition.k"
+require "PropertyConstant.k"
+require "PropertyAssociation.k"
+require "PropertyExpression.k"
+*/
 require "ModesAndModeTransition.k"
 require "LexicalElement.k"
 
 module AADL-SYNTAX
 /*
-  At first, we define the Core AAdl, includes Package,Component,Component Implementation
+  At first, we define the Core AAdl, includes Pkg,Component,Component Implementation
   In Core, we can not handle SubComponent, Prototype
 */
   imports COMMONDEF
@@ -68,23 +70,24 @@ module AADL-SYNTAX
   imports ENDTOENDFLOW-SYNTAX
   imports BUSCOMPONENTACCESS-SYNTAX 
   imports MODESANDMODETRANSITION-SYNTAX
+/*
   imports PROTOTYPE-SYNTAX
   imports PROPERTYASSOCIATION-SYNTAX
   imports PROPERTYTYPE-SYNTAX
   imports PROPERTYDEFINATION-SYNTAX
   imports PROPERTYCONSTANT-SYNTAX
   imports PROPERTYEXPRESSION-SYNTAX
-/*
   imports PROPERTYSET-SYNTAX
 */
 endmodule
 
+/*the PropertySet need to defined*/
 module AADL
   imports AADL-SYNTAX
-  syntax AADLSpecification ::= PkgSpecPpeSetList
-  syntax PkgSpecPpeSetList ::= PackageSpec 
-                             | PpeSet
-           					 | PkgSpecPpeSetList PkgSpecPpeSetList
+  syntax AADLSpecification ::= PkgSpecPropertySetList
+  syntax PkgSpecPropertySetList ::= PkgSpec 
+ //                          | PropertySet
+           					 | PkgSpecPropertySetList PkgSpecPropertySetList
 endmodule
 
 

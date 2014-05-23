@@ -1,14 +1,14 @@
 module PACKAGE-SYNTAX
-  syntax PkgSpec ::= kPkg PkgName PkgDecls kEnd PkgName ";"
-                   | kPkg PkgName PkgDecls PpeDecls kEnd PkgName ";"
+  syntax PkgSpec ::= KeyPkg PkgName PkgDecls KeyEnd PkgName ";"
+                   | KeyPkg PkgName PkgDecls PpeDecls KeyEnd PkgName ";"
   
   syntax PkgId ::= Id
   syntax PkgName ::= PkgId
                    | PkgId "::" PkgId 
 
-  syntax PkgDecls ::= kPublic PkgDeclations 
-                    | kPrivate PkgDeclations
-			        | kPublic PkgDeclations kPrivate PkgDeclations
+  syntax PkgDecls ::= KeyPublic PkgDeclations 
+                    | KeyPrivate PkgDeclations
+			        | KeyPublic PkgDeclations KeyPrivate PkgDeclations
 					
  // currently version do not support NameVisDecList,only support the AADLDecList 
  
