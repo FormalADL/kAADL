@@ -1,37 +1,58 @@
 module PACKAGE-SYNTAX
-  syntax PackageSpec ::= "package" PackageName PackageDecls "end" PackageName ";"
-                       | "package" PackageName PackageDecls PropertyDecls "end" PackageName ";"
-  syntax PackageName ::= Id
-  syntax PackageName ::= PackageIdentifier "::" PackageName
-  syntax PackageIdentifier ::= Id
-  syntax PackageDecls ::= "public" PackageDeclations 
-            | "public" PackageDeclations "private" PackageDeclations
-            | "private" PackageDeclations
-  syntax PackageDeclations ::= NameVisibilityDeclarationList AADLDeclarationList
-  syntax NameVisibilityDeclarationList ::= NoneStatement | NameVisibilityDeclaration | NameVisibilityDeclaration NameVisibilityDeclarationList
-  syntax AADLDeclarationList ::= NoneStatement | AADLDeclaration | AADLDeclaration AADLDeclarationList
-  syntax NameVisibilityDeclaration ::= ImportDeclaration | AliasDeclaration
-  syntax ImportDeclaration ::= "with" PackageName ImportDeclarationPlus | "with" PropertySetIdentifier ImportDeclarationPlus
-  syntax ImportDeclarationPlus ::= "," PackageName | "," PropertySetIdentifier
-  syntax ImportDeclarationPlus ::= ImportDeclarationPlus ImportDeclarationPlus
-  syntax PropertySetIdentifier ::= Id
-  syntax AliasDeclaration ::= DefiningIdentifier "renames package" PackageName ";"
-        | DefiningIdentifier "renames" ComponentCategory UniqueComponentTypeReference ";"
-        | DefiningIdentifier "renames" "feartur""group" UniqueFeatureGroupTypeReference ";"
-        | "renames" ComponentCategory UniqueComponentTypeReference ";"
-        | "renames" "feartur group" UniqueFeatureGroupTypeReference ";"
-        | "renames" PackageName "::" "all" ";"
-  syntax DefiningIdentifier ::= Id
-  syntax AADLDeclaration ::= ClassifierDeclaration | AnnexLibrary
-  syntax ClassifierDeclaration ::= ComponentClassifierDeclaration | FeatureGroupClassifierDeclaration
-  syntax ComponentClassifierDeclaration ::= ComponentType 
-//                    | ComponentTypeExtension 
-                    | ComponentImplementation 
-//                    | ComponentImplementationExtension
-  syntax FeatureGroupClassifierDeclaration ::= FeatureGroupType | FeatureGroupTypeExtension
-  syntax PropertyDecls ::= PropertyAssociation | NoneStatement
+  syntax PkgSpec ::= kPkg PkgName PkgDecls kEnd PkgName ";"
+                   | kPkg PkgName PkgDecls PpeDecls kEnd PkgName ";"
+  
+  syntax PkgId ::= Id
+  syntax PkgName ::= PkgId
+                   | PkgId "::" PkgId 
 
- /*for test use */
-  //  syntax UniqueCompenentTypeReference ::=  NODEF
-  syntax UniqueFeatureGroupTypeReference ::= NODEF
+  syntax PkgDecls ::= kPublic PkgDeclations 
+                    | kPrivate PkgDeclations
+			        | kPublic PkgDeclations kPrivate PkgDeclations
+					
+ // currently version do not support NameVisDecList,only support the AADLDecList 
+ 
+  syntax PkgDeclations ::= NoneStatement
+                         | AADLDeclList
+ //                      | NameVisDeclList 
+   
+       
+ /* NameVisDecl related definition
+  syntax NameVisDeclList ::= NameVisDecl 
+						   | NameVisDecl NameVisDeclList					
+  syntax NameVisDecl ::= ImportDecl | AliasDecl
+  syntax ImportDecl ::= "with" PkgName ImportDeclPlus | "with" PpeSetIdentifier ImportDeclPlus
+  syntax ImportDeclPlus ::= "," PkgName | "," PpeSetIdentifier
+  syntax ImportDeclPlus ::= ImportDeclPlus ImportDeclPlus
+  syntax PpeSetIdentifier ::= Id
+  syntax AliasDecl ::= DefiningIdentifier "renames package" PkgName ";"
+        | DefiningIdentifier "renames" CmpCategory UniqueCmpTypeReference ";"
+        | DefiningIdentifier "renames" "feartur""group" UniqueFetGroupTypeReference ";"
+        | "renames" CmpCategory UniqueCmpTypeReference ";"
+        | "renames" "feartur group" UniqueFetGroupTypeReference ";"
+        | "renames" PkgName "::" "all" ";"
+  syntax DefiningIdentifier ::= Id
+ */ 
+ 
+  syntax AADLDeclList ::= AADLDecl 
+						| AADLDecl AADLDeclList
+  syntax AADLDecl ::= ClassifierDecl 
+                    | AnnexLibrary
+  syntax ClassifierDecl ::= CmpClassifierDecl 
+                          | FetGroupClassifierDecl
+
+/* 
+  we do not support component type and implementation extension in first version
+*/
+  syntax CmpClassifierDecl ::= CmpType 
+                             | CmpImpl 
+//                           | CmpTypeExt 
+//                           | CmpImplExt
+
+/* we do not support FetGrouptypeExt
+*/
+  syntax FetGroupClassifierDecl ::= FetGroupType 
+//                                | FetGroupTypeExt
+  syntax PpeDecls ::= NoneStatement
+                    | PpeAssoc
 endmodule
