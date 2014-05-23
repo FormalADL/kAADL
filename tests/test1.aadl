@@ -1,0 +1,5 @@
+/*test ok!*/
+package test::a
+  public none
+  private none
+end test::a;
