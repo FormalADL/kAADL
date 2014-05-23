@@ -3,8 +3,8 @@ module  BUSCOMPONENTACCESS-SYNTAX
   syntax BusAccessSpec ::= DataCmpAccessIdentifier ":" BusCmpAccessSamePart
     syntax BusCmpAccessSamePart ::= "provides " "bus ""access " BusUniqueProtoType
                |  "requires " "bus ""access " BusUniqueProtoType
-      syntax BusUniqueProtoType ::= BusUniqueCmpClassifierReference | ProtoTypeIdentifier | NoneStatement
-        syntax BusUniqueCmpClassifierReference ::= NODEF
+      syntax BusUniqueProtoType ::= BusUniqueCmpClassifierRef | ProtoTypeIdentifier | NoneStatement
+        syntax BusUniqueCmpClassifierRef ::= NODEF
 
 
 

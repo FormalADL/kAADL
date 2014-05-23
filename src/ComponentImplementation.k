@@ -5,30 +5,30 @@ module COMPONENTIMPLEMENTATION-SYNTAX
   syntax CmpImplAssocDef ::= CmpImplAssocDef CmpImplAssocDef
   syntax CmpImplAssocDef ::= "prototypes" ProtoType 
                | "prototypes" NoneStatement 
-               | "subcomponents" Subcomponent
+               | "subcomponents" SubCmp
                | "subcomponents" NoneStatement
-               | "calls" SubprogramCallSequence 
+               | "calls" SubPgmCallSeq 
                | "calls" NoneStatement 
                | "connections" Connection
                | "connections" NoneStatement 
                | "flows" FlowImpl 
                | "flows" EndToEndFlowSpec 
                | "flows" NoneStatement
-//             | ModesSubclause 
-               | "properties" PpeAssoc
-               | "properties" ContainedPpeAssoc
+               | ModesSubclause 
+	           | AnnexSubclause
+//             | "properties" PpeAssoc
+//             | "properties" ContainedPpeAssoc
                | "properties" NoneStatement
-                | AnnexSubclause
-  syntax ProtoType ::= ProtoType ProtoType  // "+"
-  syntax Subcomponent ::= Subcomponent Subcomponent
-  syntax SubprogramCallSequence ::= SubprogramCallSequence SubprogramCallSequence
+
+  syntax ProtoType ::= ProtoType ProtoType
+  syntax SubCmp ::= SubCmp SubCmp
+  syntax SubPgmCallSeq ::= SubPgmCallSeq SubPgmCallSeq
   syntax Connection ::= Connection Connection
   syntax FlowImpl ::= FlowImpl FlowImpl
   syntax EndToEndFlowSpec ::= EndToEndFlowSpec EndToEndFlowSpec
-  syntax PpeAssoc ::= PpeAssoc PpeAssoc
-  syntax ContainedPpeAssoc ::= ContainedPpeAssoc ContainedPpeAssoc
-  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplementionName "extends" UniqueCmpImplementReference CmpImplAssocDef KeyEnd CmpImplementionName ";"
-  syntax CmpImplementionName ::= Id
-  syntax UniqueCmpImplementReference ::= CmpImplementName | PkgName "::" CmpImplementName
-  syntax CmpImplementName ::=  Id
+//  syntax PpeAssoc ::= PpeAssoc PpeAssoc
+//  syntax ContainedPpeAssoc ::= ContainedPpeAssoc ContainedPpeAssoc
+
+//  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplName "extends" UniqueCmpImplementRef CmpImplAssocDef KeyEnd CmpImplName ";"
+//  syntax UniqueCmpImplRef ::= CmpImplName | PkgName "::" CmpImplName
 endmodule

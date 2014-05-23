@@ -1,5 +1,8 @@
 module COMMONDEF
 
+  syntax NODEF::="not define"
+  syntax NoneStatement::="none"
+
 /*
   AADL Keywords definition
 */
@@ -7,15 +10,23 @@ module COMMONDEF
   syntax KeyEnd ::= "end"
   syntax KeyPublic  ::= "public"
   syntax KeyPrivate ::= "private"
-  
 /*
   end of AADL Keywords definition
 */
-  syntax NODEF::="not define"
-  syntax NoneStatement::="none"// | " "
+
+  syntax ProtoTypeBindings ::= NODEF
+  syntax UniqueCmpImplRef ::= NODEF
+  syntax UniqueCmpTypeRef ::= NODEF
+  syntax UniquePpeConstantIdentifier ::= NODEF
+  syntax UniquePpeIdentifier ::= NODEF
+  syntax ProtoTypeRefinement ::=NODEF
+  syntax ProtoTypeIdentifier ::= NODEF
+  syntax FormatEffector ::= NODEF  
+  syntax OtherControlCharacter ::=NODEF  
+  syntax PpeAssoc ::=NODEF
+  syntax ContainedPpeAssoc ::=NODEF
   
-  syntax UniqueCmpTypeReference ::=NODEF
- 
+/*   
   syntax ArrayDimension ::= NODEF
   syntax BusAccessSpec ::= NODEF
   syntax ParameterRefinement ::=NODEF
@@ -26,11 +37,8 @@ module COMMONDEF
   syntax SubprogramGroupAccessRefinement ::=NODEF
   syntax DataAccessRefinement ::= NODEF
   syntax BusAccessRefinement ::= NODEF
-  syntax ProtoTypeBindings ::=NODEF
-  syntax ProtoTypeRefinement ::=NODEF
   syntax FeatureGroupIdentifier ::= NODEF
   syntax InOut ::=NODEF
-  syntax ProtoTypeIdentifier ::= NODEF
   syntax PpeAssociationList ::=NODEF
   syntax InModes ::= NODEF
   syntax InModesAndTransitions ::=NODEF
@@ -39,24 +47,11 @@ module COMMONDEF
   syntax DataSubcomponentIdentifier ::= NODEF
   syntax RequiresDataAccessIdentifier ::= NODEF
   syntax ProvidesDataAccessIdentifier ::=NODEF
-  
-  
   syntax PpeSet ::= NODEF
-  
   syntax ComponentInModes ::= NODEF
-  syntax UniquePpeConstantIdentifier ::=NODEF
-  syntax UniquePpeIdentifier ::=NODEF
   syntax ParameterConnection ::=NODEF
   syntax ParameterConnectionRefinement ::=NODEF
-  syntax FormatEffector ::= NODEF
-  syntax OtherControlCharacter ::=NODEF
-  
-/*
-  keywords definition in AADL
+
 */  
 
-  
-  
-  
-  
 endmodule 

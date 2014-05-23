@@ -1,19 +1,19 @@
 module ACCESSCONNECTION-SYNTAX
 // 9.4 check
-  syntax AccessConnection ::= AccessConnectionKeyword "access " SourceAccessReference ConnectionSymbol DestinationAccessReference
+  syntax AccessConnection ::= AccessConnectionKeyword "access " SourceAccessRef ConnectionSymbol DestinationAccessRef
     syntax AccessConnectionKeyword ::= "bus " | "subprogram " | "subprogram ""group " | "data "
-    syntax SourceAccessReference ::= AccessReference
-    syntax DestinationAccessReference ::= AccessReference
+    syntax SourceAccessRef ::= AccessRef
+    syntax DestinationAccessRef ::= AccessRef
   
   syntax AccessConnectionRefinement ::= AccessConnectionKeyword "access "
-  syntax AccessReference ::= RequiresAccessIdentifier
+  syntax AccessRef ::= RequiresAccessIdentifier
         |  ProvidesAccessIdentifier
         |  FetGroupIdentifier "." RequiresAccessIdentifier
         |  FetGroupIdentifier "." ProvidesAccessIdentifier
-        |  SubcomponentIdentifier "." ProvidesAccessIdentifier
-        |  SubcomponentIdentifier "." RequiresAccessIdentifier
+        |  SubCmpIdentifier "." ProvidesAccessIdentifier
+        |  SubCmpIdentifier "." RequiresAccessIdentifier
         |  SubprogramCallIdentifier "." RequiresOrProvidesAccessIdentifier
-        |  SubcomponentIdentifier
+        |  SubCmpIdentifier
         |  "processor" "." ProvidesSubprogramAccessIdentifier
     syntax RequiresAccessIdentifier ::= Id
     syntax ProvidesAccessIdentifier ::= Id

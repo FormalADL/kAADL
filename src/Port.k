@@ -7,12 +7,12 @@ module PORT-SYNTAX
         |  PortIdentifer ":" "refined " "to " "out" PortType
         |  PortIdentifer ":" "refined " "to " "in " "out"  PortType
     syntax PortIdentifer ::= Id
-    syntax PortType ::= "data " "port" DataUniqueCmpClassifierReference
+    syntax PortType ::= "data " "port" DataUniqueCmpClassifierRef
          |  "data " "port" DataCmpProtoTypeIdentifier
-         |  "event " "data " "port" DataUniqueCmpClassifierReference
+         |  "event " "data " "port" DataUniqueCmpClassifierRef
          |  "event " "data " "port" DataCmpProtoTypeIdentifier
          |  "event " "port"
-      syntax DataUniqueCmpClassifierReference ::= NODEF
+      syntax DataUniqueCmpClassifierRef ::= NODEF
       syntax DataCmpProtoTypeIdentifier ::= Id
 
 endmodule

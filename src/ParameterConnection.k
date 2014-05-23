@@ -1,17 +1,17 @@
 module PARAMETERCONNECTION-SYNTAX
 // 9.3  check
-  syntax ParameterConnection ::= "parameter" SourceParameterReference DirectionalConnectionSymbol DestinationParameterReference
-    syntax SourceParameterReference ::= ParameterReference // need rules
-    syntax DirectionalConnectionSymbol ::= ParameterReference
-    syntax DestinationParameterReference ::= ParameterReference
+  syntax ParameterConnection ::= "parameter" SourceParameterRef DirectionalConnectionSymbol DestinationParameterRef
+    syntax SourceParameterRef ::= ParameterRef // need rules
+    syntax DirectionalConnectionSymbol ::= ParameterRef
+    syntax DestinationParameterRef ::= ParameterRef
 
   syntax ParameterConnectionRefinement ::= "paramenter"
-  syntax ParameterReference ::= CmpTypeParameterIdentifier 
-            |  CmpTypeParameterIdentifier "." DataSubcomponentIdentifier
+  syntax ParameterRef ::= CmpTypeParameterIdentifier 
+            |  CmpTypeParameterIdentifier "." DataSubCmpIdentifier
             |  SubprogramCallIdentifier "." ParameterIdentifier
             |  CmpTypePortIdentifier
-            |  CmpTypePortIdentifier "." DataSubcomponentIdentifier
-            |  DataSubcomponentIdentifier
+            |  CmpTypePortIdentifier "." DataSubCmpIdentifier
+            |  DataSubCmpIdentifier
             |  RequiresDataAccessIdentifier
             |  CmpTypeFetGroupIdentifier "." ElementDataAccessIdentifier
             |  CmpTypeFetFetGroupIdentifier "." ElementPortOrParameterIdentifier

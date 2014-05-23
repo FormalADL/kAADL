@@ -1,11 +1,11 @@
 module ENDTOENDFLOW-SYNTAX
 // 10.3  
-  syntax EndToEndFlowSpec ::= EndToEndFlowIdentifier ":" "end ""to ""end ""flow " StartSubcomponentFlowOrEtefIdentifier ConnectionIdentifierFlowPathList  EndToEndFlowSpecAssocDefault ";"
+  syntax EndToEndFlowSpec ::= EndToEndFlowIdentifier ":" "end ""to ""end ""flow " StartSubCmpFlowOrEtefIdentifier ConnectionIdentifierFlowPathList  EndToEndFlowSpecAssocDefault ";"
     syntax EndToEndFlowIdentifier ::= Id
-    syntax StartSubcomponentFlowOrEtefIdentifier ::= SubcomponentFlowOrEtefIdentifier
-    syntax ConnectionIdentifierFlowPathList ::= "->" ConnectionIdentifier "->" FlowPathSubcomponentFlowOrEtefIdentifier
+    syntax StartSubCmpFlowOrEtefIdentifier ::= SubCmpFlowOrEtefIdentifier
+    syntax ConnectionIdentifierFlowPathList ::= "->" ConnectionIdentifier "->" FlowPathSubCmpFlowOrEtefIdentifier
                 | ConnectionIdentifierFlowPathList ConnectionIdentifierFlowPathList
-      syntax FlowPathSubcomponentFlowOrEtefIdentifier ::= NODEF
+      syntax FlowPathSubCmpFlowOrEtefIdentifier ::= NODEF
     syntax EndToEndFlowSpecAssocDefault ::=  "{" PpeAssocList "}" InModesAndTransitions
                 |  "{" PpeAssocList "}"
                 |  InModesAndTransitions
@@ -16,7 +16,7 @@ module ENDTOENDFLOW-SYNTAX
     syntax EndToEndSpecRefinementDefault ::= "{" PpeAssocList "}" InModesAndTransitions
                 |  "{" PpeAssocList "}"
                 |  InModesAndTransitions
-  syntax SubcomponentFlowOrEtefIdentifier ::= SubcomponentFlowIdentifier | EndToEndFlowIdentifier
+  syntax SubCmpFlowOrEtefIdentifier ::= SubCmpFlowIdentifier | EndToEndFlowIdentifier
 
 endmodule
 

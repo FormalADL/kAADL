@@ -53,6 +53,7 @@ module PACKAGE-SYNTAX
 */
   syntax FetGroupClassifierDecl ::= FetGroupType 
 //                                | FetGroupTypeExt
+
   syntax PpeDecls ::= NoneStatement
-                    | PpeAssoc
+//                  | PpeAssoc
 endmodule

@@ -9,7 +9,7 @@ module PROPERTYTYPE-SYNTAX
              |  NumberType
              |  RangeType
              |  ClassifierType
-             |  ReferenceType
+             |  RefType
              |  RecordType
       syntax EnumerationType ::= "enumeration""(" EnumerationLiteralIdentifierList ")"
         syntax EnumerationLiteralIdentifierList ::= EnumerationLiteralIdentifier | EnumerationLiteralIdentifier "," EnumerationLiteralIdentifierList
@@ -58,14 +58,14 @@ module PROPERTYTYPE-SYNTAX
             |  "range ""of " NumberUniquePpeTypeIdentifier
         syntax NumberUniquePpeTypeIdentifier ::= Id
   
-      syntax ClassifierType ::= "classifier " | "classifier""("ClassifierCategoryReferenceList")"
-        syntax ClassifierCategoryReferenceList ::= ClassifierCategoryReference
-                  |  ClassifierCategoryReferenceList "," ClassifierCategoryReferenceList
-          syntax ClassifierCategoryReference ::= ClassifierQualifiedMetaModelIdentifier
+      syntax ClassifierType ::= "classifier " | "classifier""("ClassifierCategoryRefList")"
+        syntax ClassifierCategoryRefList ::= ClassifierCategoryRef
+                  |  ClassifierCategoryRefList "," ClassifierCategoryRefList
+          syntax ClassifierCategoryRef ::= ClassifierQualifiedMetaModelIdentifier
             syntax ClassifierQualifiedMetaModelIdentifier ::= QualifiedMetaModelIdentifier
-      syntax ReferenceType ::= "reference" | "reference " "(" ReferenceCategoryList ")"
-        syntax ReferenceCategoryList ::= ReferenceCategory | ReferenceCategoryList "," ReferenceCategoryList
-          syntax ReferenceCategory ::= NamedElementQualifiedMetaModelIdentifier
+      syntax RefType ::= "reference" | "reference " "(" RefCategoryList ")"
+        syntax RefCategoryList ::= RefCategory | RefCategoryList "," RefCategoryList
+          syntax RefCategory ::= NamedElementQualifiedMetaModelIdentifier
             syntax NamedElementQualifiedMetaModelIdentifier ::= NODEF
 
       syntax RecordType ::= "record""(" RecordFieldList ")"

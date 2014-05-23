@@ -1,6 +1,6 @@
 module FEATURESHAREACCESS-SYNTAX
 // 8.0 check
-  syntax Fet ::= AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"  
+  syntax Feature ::= AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"  
   syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
               | "{" FeatrueContrainedPpeAssoc "}"
               | ArrayDimension "{" FeatrueContrainedPpeAssoc /* + */ "}"
@@ -9,10 +9,10 @@ module FEATURESHAREACCESS-SYNTAX
     syntax AbstractPortGroupAccessParameter ::= AbstractFetSpec
                |  PortSpec
                |  FetGroupSpec
-               |  SubcomponentAccessSpec
+               |  SubCmpAccessSpec
                |  ParameterSpec
     
-      syntax SubcomponentAccessSpec ::= SubprogramAccessSpec 
+      syntax SubCmpAccessSpec ::= SubprogramAccessSpec 
               | SubprogramGroupAccessSpec 
               | DataAccessSpec
               | BusAccessSpec
@@ -22,9 +22,9 @@ module FEATURESHAREACCESS-SYNTAX
   syntax FetRefinement ::= AbstractFetRefinement ArrayDimensionFeatrueContrained
           |  PortRefinement ArrayDimensionFeatrueContrained
           |  FetGroupRefinement ArrayDimensionFeatrueContrained
-          |  SubcomponentAccessRefinement ArrayDimensionFeatrueContrained
+          |  SubCmpAccessRefinement ArrayDimensionFeatrueContrained
           |  ParameterRefinement ArrayDimensionFeatrueContrained
-    syntax SubcomponentAccessRefinement ::= SubprogramAccessRefinement
+    syntax SubCmpAccessRefinement ::= SubprogramAccessRefinement
                  |  SubprogramGroupAccessRefinement
                  |  DataAccessRefinement
                  |  BusAccessRefinement    

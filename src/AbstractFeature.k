@@ -8,7 +8,7 @@ module ABSTRACTFEATURE-SYNTAX
   syntax FetProtoTypeIdentifier ::= Id
   syntax AbstractFetRefinement ::= PortRefinement 
                                      | FetGroupRefinement
-                                     | SubcomponentAccessRefinement
+                                     | SubCmpAccessRefinement
                                      | ParameterRefinement
             					     | AbstractFetIdentifier ":" "refined" "to" "in" "feature" FetProtoTypeIdentifier
                                      | AbstractFetIdentifier ":" "refined" "to" "in" "feature" 

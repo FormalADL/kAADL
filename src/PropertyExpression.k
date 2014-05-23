@@ -10,7 +10,7 @@ module PROPERTYEXPRESSION-SYNTAX
            |  IntegerRangeTerm
            |  PpeTerm
            |  CmpClassifierTerm 
-           |  ReferenceTerm
+           |  RefTerm
            |  RecordTerm
            |  ComputedTerm
     syntax BooleanTerm ::= BooleanValue
@@ -40,9 +40,9 @@ module PROPERTYEXPRESSION-SYNTAX
       syntax RealRangePpeConstantTerm ::= PpeConstantTerm // need rules
     syntax PpeTerm ::= PpeNameIdentifier
               | PpeSetIdentifier "::" PpeNameIdentifier
-    syntax CmpClassifierTerm ::= "classifier" "(" UniqueCmpTypeReference ")"
-            |  "classifier" "(" UniqueCmpImplReference ")"
-    syntax ReferenceTerm ::= "reference" "(" ContainedModelElementPath ")"
+    syntax CmpClassifierTerm ::= "classifier" "(" UniqueCmpTypeRef ")"
+            |  "classifier" "(" UniqueCmpImplRef ")"
+    syntax RefTerm ::= "reference" "(" ContainedModelElementPath ")"
     syntax RecordTerm ::= "(" RecordFieldIdentifierIdentifierList ")"
       syntax RecordFieldIdentifierIdentifierList ::= RecordFieldIdentifierIdentifier "=>" PpeValue ";"
                     |  RecordFieldIdentifierIdentifier "=>" PpeValue ";" RecordFieldIdentifierIdentifierList 

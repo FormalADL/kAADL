@@ -8,20 +8,20 @@ module FEATUREGROUPTYPE-SYNATX
                     | ProtoType ProtoTypeOfFetGroupTypeTmp 
       syntax FetOfFetGroupType ::= "featrues" FetOfFetGroupTypeTmp
                  |  NoneStatement
-        syntax FetOfFetGroupTypeTmp ::= Fet
-                     |  Fet FetOfFetGroupTypeTmp
-      syntax InverseOfFetGroupType ::= "inverse" "of" UniqueFetGroupTypeReference
+        syntax FetOfFetGroupTypeTmp ::= Feature
+                     |  Feature FetOfFetGroupTypeTmp
+      syntax InverseOfFetGroupType ::= "inverse" "of" UniqueFetGroupTypeRef
                       |   NoneStatement
-        syntax UniqueFetGroupTypeReference ::= FetGroupTypeReferenceIdentifier
-              |  PkgName "::" FetGroupTypeReferenceIdentifier
-          syntax FetGroupTypeReferenceIdentifier ::= NODEF
+        syntax UniqueFetGroupTypeRef ::= FetGroupTypeRefIdentifier
+              |  PkgName "::" FetGroupTypeRefIdentifier
+          syntax FetGroupTypeRefIdentifier ::= NODEF
       syntax PpeOfFetGroupType ::= "properties" PpeOfFetGroupTypeTmp
         syntax PpeOfFetGroupTypeTmp ::= FetGroupContainedPpeAssoc
                       |  FetGroupContainedPpeAssoc PpeOfFetGroupTypeTmp
                       |  NoneStatement
           syntax FetGroupContainedPpeAssoc ::= NODEF
       syntax AnnexOfFetGroupType ::= NODEF
-  syntax FetGroupTypeExt ::= "feature" "group" Identifier "extends" UniqueFetGroupTypeReference FetGroupTypeExtAssocDef KeyEnd Identifier ";"  
+  syntax FetGroupTypeExt ::= "feature" "group" Identifier "extends" UniqueFetGroupTypeRef FetGroupTypeExtAssocDef KeyEnd Identifier ";"  
     syntax FetGroupTypeExtAssocDef ::= ProtoTypeBindings ProtoTypeOfFetGroupTypeExt FetOfFetGroupTypeExt InverseOfFetGroupTypeExt PpeOfFetGroupTypeExt AnnexOfFetGroupTypeExt 
       syntax  ProtoTypeOfFetGroupTypeExt ::=  "prototypes" ProtoTypeOfFetGroupTypeExtTmp
         syntax ProtoTypeOfFetGroupTypeExtTmp ::= ProtoTypeList
@@ -31,7 +31,7 @@ module FEATUREGROUPTYPE-SYNATX
           syntax ProtoTypeRefinementList ::= ProtoTypeRefinement | ProtoTypeRefinement ProtoTypeRefinementList
       syntax  FetOfFetGroupTypeExt ::= "features" FetOfFetGroupTypeExtTmp
         syntax FetOfFetGroupTypeExtTmp ::= FetList | FetRefinementList | NoneStatement
-          syntax FetList ::= Fet | Fet FetList
+          syntax FetList ::= Feature | Feature FetList
           syntax FetRefinementList ::= FetRefinement | FetRefinement FetRefinementList
       syntax  InverseOfFetGroupTypeExt  ::= InverseOfFetGroupType // they have the same syntax
       syntax  PpeOfFetGroupTypeExt ::= PpeOfFetGroupType
@@ -41,9 +41,9 @@ module FEATUREGROUPTYPE-SYNATX
 
   syntax FetGroupSpec ::= FetGroupIdentifier ":" FetGroupSpecAssocDef 
     syntax FetGroupSpecAssocDef ::= InOut "feature" "group" InverseOfUniqueProtoType
-      syntax InverseOfUniqueProtoType ::= "inverse" "of" UniqueFetGroupTypeReference
+      syntax InverseOfUniqueProtoType ::= "inverse" "of" UniqueFetGroupTypeRef
                 | "inverse" "of" ProtoTypeIdentifier
-                | UniqueFetGroupTypeReference
+                | UniqueFetGroupTypeRef
                 | ProtoTypeIdentifier
                 | NoneStatement
     

@@ -13,12 +13,12 @@ module FLOWIMPLEMENTATION-SYNTAX
                       | ConnectionSubcompenentFlowAssocDef  ConnectionSubcompenentFlowAssocDef
       syntax FlowPathImpl ::= FlowIdentifier ":" "flow ""path " InFlowFetIdentifier FlowPathImplDefault "->" OutFlowFetIdentifier
         syntax FlowPathImplDefault ::= ConnectIdentifierSubcompenentFlowIdnetifierList "->" OutFlowFetIdentifier
-          syntax ConnectIdentifierSubcompenentFlowIdnetifierList ::= "->" ConnextionIdentifier "->" SubcomponentFlowIdentifier
+          syntax ConnectIdentifierSubcompenentFlowIdnetifierList ::= "->" ConnextionIdentifier "->" SubCmpFlowIdentifier
                         |  ConnectIdentifierSubcompenentFlowIdnetifierList ConnectIdentifierSubcompenentFlowIdnetifierList
             syntax ConnextionIdentifier ::= Id
-            syntax SubcomponentFlowIdentifier ::= DataCompenentReference | SubcomponentIdentifier | SubcomponentIdentifier "." FlowSpecIdentifier
+            syntax SubCmpFlowIdentifier ::= DataCompenentRef | SubCmpIdentifier | SubCmpIdentifier "." FlowSpecIdentifier
               syntax FlowSpecIdentifier ::= Id
-              syntax DataCompenentReference ::= DataSubcomponentIdentifier | RequiresDataAccessIdentifier | ProvidesDataAccessIdentifier
+              syntax DataCompenentRef ::= DataSubCmpIdentifier | RequiresDataAccessIdentifier | ProvidesDataAccessIdentifier
 
     syntax PpeAssocInModes ::= "{"PpeAssocList"}" InModesAndTransitions
                |  "{"PpeAssocList"}"

@@ -1,26 +1,26 @@
 module PORTCONNECTION-SYNTAX
 // 9.2  check
-  syntax PortConnection ::= "port" SourcePortConnectionRefer ConnectionSymbol DesitinationPortConnectionReference
+  syntax PortConnection ::= "port" SourcePortConnectionRefer ConnectionSymbol DesitinationPortConnectionRef
     syntax SourcePortConnectionRefer ::= PortConnectionRefence
-    syntax DesitinationPortConnectionReference ::= PortConnectionRefence  
+    syntax DesitinationPortConnectionRef ::= PortConnectionRefence  
 
   syntax PortConnectionRefinement ::= "port"
   syntax PortConnectionRefence ::= CmpTypePortIdentifier
-              |  SubcomponentIdentifier "." PortIdentifier
+              |  SubCmpIdentifier "." PortIdentifier
               |  CmpTypeFetGroupIdentifier "." ElementPortIdentifier
-              |  CmpTypePortIdentifier "." DataSubcomponentIdentifier
+              |  CmpTypePortIdentifier "." DataSubCmpIdentifier
               |  CmpTypeRequiresDataAccessIdentifier
-              |  DataSubcomponentIdentifier
-              |  SubcomponentIdentifier "." ProvidesDataAccessIdentifier
+              |  DataSubCmpIdentifier
+              |  SubCmpIdentifier "." ProvidesDataAccessIdentifier
               |  CmpTypeFetGroupIdentifier "."ElementDataAccessIdentifier
-              |  DataSubcomponentIdentifier "." DataSubcomponentIdentifier
+              |  DataSubCmpIdentifier "." DataSubCmpIdentifier
               |  "processor" "." ProcessorPortIdentifier
               |  "self" "." EventOrEventDataSourceIdentifier
 
     syntax CmpTypePortIdentifier ::= Id
     syntax PortIdentifier ::= Id
     syntax ElementPortIdentifier ::=  Id
-    syntax DataSubcomponentIdentifier ::=  Id
+    syntax DataSubCmpIdentifier ::=  Id
     syntax CmpTypeRequiresDataAccessIdentifier ::=  Id
     syntax ProvidesDataAccessIdentifier ::= Id
     syntax ElementDataAccessIdentifier ::= Id

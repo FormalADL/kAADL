@@ -15,21 +15,22 @@ module COMPONENTTYPE-SYNTAX
 
   syntax CmpAssocDef ::= "prototypes" ProtoType 
                        | "prototypes" NoneStatement
-                       | "features" Fet 
+                       | "features" Feature 
 					   | "features" NoneStatement
                        | "flows" FlowSpec 
 					   | "flows" NoneStatement
                        | ModesSubclause 
                        | RequiresModesSubclause
+				       | AnnexSubclause 
 //                     | "properties" CmpTypePpeAssoc
 //                     | "properties" ContainedPpeAssoc
 //                     | "properties" NoneStatement
-                       | AnnexSubclause 
+
   syntax CmpAssocDef ::= CmpAssocDef CmpAssocDef 
 
 /* do not support ComponentTypeExtension
-  syntax CmpTypeExt ::= CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeReference  CmpAssocDef KeyEnd CmpTypeIdentifier ";"
-                    | CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeReference  ProtoTypeBindings CmpAssocDef KeyEnd CmpTypeIdentifier ";"
-  syntax UniqueCmpTypeReference ::= PkgName "::" CmpTypeIdentifier |  CmpTypeIdentifier
+  syntax CmpTypeExt ::= CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeRef  CmpAssocDef KeyEnd CmpTypeIdentifier ";"
+                    | CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeRef  ProtoTypeBindings CmpAssocDef KeyEnd CmpTypeIdentifier ";"
+  syntax UniqueCmpTypeRef ::= PkgName "::" CmpTypeIdentifier |  CmpTypeIdentifier
 */
 endmodule

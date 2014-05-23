@@ -1,15 +1,15 @@
 module FEATURECONNECTION-SYNTAX
 // 9.1 check
-  syntax FetConnection ::= "feature " SourceFetReference ConnectionSymbol DestinationFetReference
-    syntax SourceFetReference ::= FetReference
+  syntax FetConnection ::= "feature " SourceFetRef ConnectionSymbol DestinationFetRef
+    syntax SourceFetRef ::= FetRef
     syntax ConnectionSymbol ::= DirectionalConnectSymbol | BidirectionalConnectSymbol
       syntax DirectionalConnectSymbol ::= "->"
       syntax BidirectionalConnectSymbol ::= "<->"
-    syntax DestinationFetReference ::= FetReference
+    syntax DestinationFetRef ::= FetRef
 
-  syntax FetReference ::= CmpTypeFetIdentifier
+  syntax FetRef ::= CmpTypeFetIdentifier
           | CmpTypeFetGroupIdentifier "." FetIdentifier
-          | SubcomponentIdentifier "." FetIdentifier
+          | SubCmpIdentifier "." FetIdentifier
           | SubprogramCallIdentifier "." FetIdentifier
     syntax CmpTypeFetIdentifier ::= Id
     syntax CmpTypeFetGroupIdentifier ::=  Id

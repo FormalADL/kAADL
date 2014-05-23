@@ -16,17 +16,17 @@ module PROPERTYASSOCIATION-SYNTAX
                 | PpeListValue "," PpeListValue
 
       syntax ModalPpeValue ::= PpeValue InModes |  PpeValue InModes "," ModalPpeValue 
-    syntax InBinding ::= "in ""binding " PlatformClassifierReferenceList 
-      syntax PlatformClassifierReferenceList ::= PlatformClassifierReference | PlatformClassifierReference "," PlatformClassifierReferenceList
-        syntax PlatformClassifierReference ::= ProcessorUniqueCmpClassifierReference
-                    |  VirtualProcessorUniqueCmpClassifierReference
-                    |  BusUniqueCmpClassifierReference
-                    |  VirtualBusUniqueCmpClassifierReference
-                    |  MemoryUniqueCmpClassifierReference
-          syntax ProcessorUniqueCmpClassifierReference ::= NODEF
-          syntax VirtualProcessorUniqueCmpClassifierReference ::= NODEF
-          syntax VirtualBusUniqueCmpClassifierReference ::= NODEF
-          syntax MemoryUniqueCmpClassifierReference ::= NODEF
+    syntax InBinding ::= "in ""binding " PlatformClassifierRefList 
+      syntax PlatformClassifierRefList ::= PlatformClassifierRef | PlatformClassifierRef "," PlatformClassifierRefList
+        syntax PlatformClassifierRef ::= ProcessorUniqueCmpClassifierRef
+                    |  VirtualProcessorUniqueCmpClassifierRef
+                    |  BusUniqueCmpClassifierRef
+                    |  VirtualBusUniqueCmpClassifierRef
+                    |  MemoryUniqueCmpClassifierRef
+          syntax ProcessorUniqueCmpClassifierRef ::= NODEF
+          syntax VirtualProcessorUniqueCmpClassifierRef ::= NODEF
+          syntax VirtualBusUniqueCmpClassifierRef ::= NODEF
+          syntax MemoryUniqueCmpClassifierRef ::= NODEF
   syntax ContainedPpeAssoc ::= UniquePpeIdentifier "=>" "constant" Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
                |  UniquePpeIdentifier "=>"  Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
     syntax ContainedModelElementPathList ::= ContainedModelElementPath | ContainedModelElementPath "," ContainedModelElementPathList

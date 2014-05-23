@@ -13,8 +13,8 @@ module PROPERTYDEFINATION-SYNTAX
         syntax ListOf ::= "list ""of " |  "list ""of " ListOf 
         syntax DefaultPpeListValue ::= PpeListValue
       syntax PpeOwnerList ::= PpeOwner | PpeOwner "," PpeOwnerList
-        syntax PpeOwner ::= NamedElementQualifiedMetaModelIdentifier | UniqueClassifierRef
-          syntax UniqueClassifierRef ::= UniqueCmpClassifierRef | UniqueFetGroupTypeRef
+        syntax PpeOwner ::= NamedElementQualifiedMetaModelIdentifier | UniqueClassifierReference
+          syntax UniqueClassifierReference ::= UniqueCmpClassifierReference | UniqueFetGroupTypeReference
 
 
 endmodule

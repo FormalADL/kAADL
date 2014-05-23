@@ -26,8 +26,8 @@ module MODESANDMODETRANSITION-SYNTAX
     syntax SourceModeTrigger ::= UniquePortIdentifier 
             |  "self""."EventSourceIdentifier
             |  "processor""."PortIdentifier
-      syntax UniquePortIdentifier ::= PortIdentifier | SubcomponentFetGroupOrSubprogramCallIdentifier "." PortIdentifier
-        syntax SubcomponentFetGroupOrSubprogramCallIdentifier ::= NODEF
+      syntax UniquePortIdentifier ::= PortIdentifier | SubCmpFetGroupOrSubprogramCallIdentifier "." PortIdentifier
+        syntax SubCmpFetGroupOrSubprogramCallIdentifier ::= NODEF
       syntax EventSourceIdentifier ::= NODEF
     syntax DestinationModeIdentifier ::= NODEF
     syntax ModeTransitionPpeAssocList ::=  ModeTransitionPpeAssoc |  ModeTransitionPpeAssoc  ModeTransitionPpeAssocList
@@ -38,9 +38,9 @@ module MODESANDMODETRANSITION-SYNTAX
 
   syntax CmpInModes ::= "in ""modes " "("ModeNameList")"
     syntax ModeNameList ::= ModeName | ModeName "," ModeNameList
-      syntax ModeName ::= LocalModeIdentifier | LocalModeIdentifier "=>" SubcomponentModeIdentifier
+      syntax ModeName ::= LocalModeIdentifier | LocalModeIdentifier "=>" SubCmpModeIdentifier
         syntax LocalModeIdentifier ::= NODEF
-        syntax SubcomponentModeIdentifier ::= NODEF
+        syntax SubCmpModeIdentifier ::= NODEF
         
   syntax InModesAndTransitions ::= "in ""modes ""(" ModeOrTransitionList")"
     syntax ModeOrTransitionList ::= ModeOrTransition | ModeOrTransition "," ModeOrTransitionList 
