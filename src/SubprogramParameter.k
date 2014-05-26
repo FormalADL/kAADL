@@ -1,12 +1,12 @@
 module SUBPROGRAMPARAMETER-SYNTAX
 // 8.5 check
-  syntax ParameterSpec ::= ParameterIdentifier ":" SubprogramParameterSamePart 
-    syntax ParameterIdentifier ::= Id
-    syntax SubprogramParameterSamePart ::= InOut "parameter " DataUniqureProtoType
-      syntax InOut ::= "in " | "out " | "in ""out "
-      syntax DataUniqureProtoType ::= DataUniqueCmpClassifierRef | ProtoTypeIdentifier | NoneStatement
+  syntax ParameterSpec ::= ParameterId ":" SubprogramParameterSamePart 
+    syntax ParameterId ::= Id
+    syntax SubprogramParameterSamePart ::= InOut "parameter" DataUniqureProtoType
+      syntax InOut ::= "in" | "out " | "in" "out"
+      syntax DataUniqureProtoType ::= DataUniCmpClassifierRef | ProtoTypeId | NoneStatement
 
-  syntax ParameterRefinement ::= ParameterIdentifier ":" "refined ""to " SubprogramParameterSamePart
+  syntax ParameterRefinement ::= ParameterId ":" "refined" "to" SubprogramParameterSamePart
   
 endmodule
 

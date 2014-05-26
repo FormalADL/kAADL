@@ -15,8 +15,8 @@ module PROPERTYEXPRESSION-SYNTAX
            |  ComputedTerm
     syntax BooleanTerm ::= BooleanValue
             |  BooleanPpeConstantTerm
-            |  "not "BooleanTerm
-            |  BooleanTerm "and"BooleanTerm
+            |  "not" BooleanTerm
+            |  BooleanTerm "and" BooleanTerm
             |  BooleanTerm "or"BooleanTerm
       syntax BooleanValue ::= "true" | "false"
       syntax BooleanPpeConstantTerm ::= PpeConstantTerm // need rules
@@ -25,10 +25,10 @@ module PROPERTYEXPRESSION-SYNTAX
     syntax StringTerm ::= StringLiteral | StringPpeConstantTerm
       syntax StringLiteral ::= NODEF
       syntax StringPpeConstantTerm ::=  PpeConstantTerm // need rules
-    syntax EnumerationTerm ::= EnumerationIdentifier | EnumerationPpeConstantTerm
-      syntax EnumerationIdentifier ::= NODEF
+    syntax EnumerationTerm ::= EnumerationId | EnumerationPpeConstantTerm
+      syntax EnumerationId ::= NODEF
       syntax EnumerationPpeConstantTerm ::= PpeConstantTerm // need rules
-    syntax UnitTerm ::= UnitIdentifier | UnitPpeConstantTerm
+    syntax UnitTerm ::= UnitId | UnitPpeConstantTerm
       syntax UnitPpeConstantTerm ::= PpeConstantTerm // need rules
     syntax IntegerRangeTerm ::= IntegerTerm ".." IntegerTerm 
               |  IntegerTerm ".." IntegerTerm "delta" IntegerTerm
@@ -38,19 +38,19 @@ module PROPERTYEXPRESSION-SYNTAX
            |  RealTerm ".." RealTerm "delta" RealTerm
            |  RealRangePpeConstantTerm
       syntax RealRangePpeConstantTerm ::= PpeConstantTerm // need rules
-    syntax PpeTerm ::= PpeNameIdentifier
-              | PpeSetIdentifier "::" PpeNameIdentifier
-    syntax CmpClassifierTerm ::= "classifier" "(" UniqueCmpTypeRef ")"
-            |  "classifier" "(" UniqueCmpImplRef ")"
+    syntax PpeTerm ::= PpeNameId
+              | PpeSetId "::" PpeNameId
+    syntax CmpClassifierTerm ::= "classifier" "(" UniCmpTypeRef ")"
+            |  "classifier" "(" UniCmpImplRef ")"
     syntax RefTerm ::= "reference" "(" ContainedModelElementPath ")"
-    syntax RecordTerm ::= "(" RecordFieldIdentifierIdentifierList ")"
-      syntax RecordFieldIdentifierIdentifierList ::= RecordFieldIdentifierIdentifier "=>" PpeValue ";"
-                    |  RecordFieldIdentifierIdentifier "=>" PpeValue ";" RecordFieldIdentifierIdentifierList 
-        syntax RecordFieldIdentifierIdentifier ::= Id | Id "." Id | Id "_" Id
-    syntax ComputedTerm ::= "compute" "(" FunctionIdentifier ")"
-      syntax FunctionIdentifier ::= Id
-  syntax PpeConstantTerm ::= PpeConstantIdentifier 
-             |  PpeSetIdentifier "::" PpeConstantIdentifier
+    syntax RecordTerm ::= "(" RecordFieldIdIdList ")"
+      syntax RecordFieldIdIdList ::= RecordFieldIdId "=>" PpeValue ";"
+                    |  RecordFieldIdId "=>" PpeValue ";" RecordFieldIdIdList 
+        syntax RecordFieldIdId ::= Id | Id "." Id | Id "_" Id
+    syntax ComputedTerm ::= "compute" "(" FunctionId ")"
+      syntax FunctionId ::= Id
+  syntax PpeConstantTerm ::= PpeConstantId 
+             |  PpeSetId "::" PpeConstantId
          
 
 endmodule

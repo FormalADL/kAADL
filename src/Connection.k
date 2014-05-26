@@ -1,6 +1,6 @@
 module CONNECTION-SYNTAX
-  syntax Connection ::= ConnectionIdentifier ":" SomeConnections PpeInMode ";"
-  syntax ConnectionIdentifier ::= NODEF
+  syntax Connection ::= ConnectionId ":" SomeConnections PpeInMode ";"
+  syntax ConnectionId ::= NODEF
   syntax SomeConnections ::= FetConnection 
 							 | PortConnection
                              | ParameterConnection
@@ -13,7 +13,7 @@ module CONNECTION-SYNTAX
   syntax InModesAndTransititions ::= NODEF
   syntax PpeAssocList ::= PpeAssoc | PpeAssoc PpeAssocList
 
-  syntax ConnectionRefinement ::= ConnectionIdentifier ":" "refined ""to " SomeRefinements PpeInMode ";"
+  syntax ConnectionRefinement ::= ConnectionId ":" "refined" "to" SomeRefinements PpeInMode ";"
   syntax SomeRefinements ::= FetConnectionRefinement 
                            | PortConnectionRefinement
                            | ParameterConnectionRefinement

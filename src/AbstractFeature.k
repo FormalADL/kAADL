@@ -1,17 +1,17 @@
 module ABSTRACTFEATURE-SYNTAX
 
-  syntax AbstractFetSpec ::= AbstractFetIdentifier ":" "in" "feature" FetProtoTypeIdentifier
-                               | AbstractFetIdentifier ":" "in" "feature" 
-                               | AbstractFetIdentifier ":" "out" "feature" FetProtoTypeIdentifier
-                               | AbstractFetIdentifier ":" "out" "feature" 
-  syntax AbstractFetIdentifier ::= Id
-  syntax FetProtoTypeIdentifier ::= Id
+  syntax AbstractFetSpec ::= AbstractFetId ":" "in" "feature" FetProtoTypeId
+                               | AbstractFetId ":" "in" "feature" 
+                               | AbstractFetId ":" "out" "feature" FetProtoTypeId
+                               | AbstractFetId ":" "out" "feature" 
+  syntax AbstractFetId ::= Id
+  syntax FetProtoTypeId ::= Id
   syntax AbstractFetRefinement ::= PortRefinement 
                                      | FetGroupRefinement
                                      | SubCmpAccessRefinement
                                      | ParameterRefinement
-            					     | AbstractFetIdentifier ":" "refined" "to" "in" "feature" FetProtoTypeIdentifier
-                                     | AbstractFetIdentifier ":" "refined" "to" "in" "feature" 
-                                     | AbstractFetIdentifier ":" "refined" "to" "out" "feature" FetProtoTypeIdentifier
-                                     | AbstractFetIdentifier ":" "refined" "to" "out" "feature" 
+            					     | AbstractFetId ":" "refined" "to" "in" "feature" FetProtoTypeId
+                                     | AbstractFetId ":" "refined" "to" "in" "feature" 
+                                     | AbstractFetId ":" "refined" "to" "out" "feature" FetProtoTypeId
+                                     | AbstractFetId ":" "refined" "to" "out" "feature" 
 endmodule

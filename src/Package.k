@@ -21,17 +21,17 @@ module PACKAGE-SYNTAX
   syntax NameVisDeclList ::= NameVisDecl 
 						   | NameVisDecl NameVisDeclList					
   syntax NameVisDecl ::= ImportDecl | AliasDecl
-  syntax ImportDecl ::= "with" PkgName ImportDeclPlus | "with" PpeSetIdentifier ImportDeclPlus
-  syntax ImportDeclPlus ::= "," PkgName | "," PpeSetIdentifier
+  syntax ImportDecl ::= "with" PkgName ImportDeclPlus | "with" PpeSetId ImportDeclPlus
+  syntax ImportDeclPlus ::= "," PkgName | "," PpeSetId
   syntax ImportDeclPlus ::= ImportDeclPlus ImportDeclPlus
-  syntax PpeSetIdentifier ::= Id
-  syntax AliasDecl ::= DefiningIdentifier "renames package" PkgName ";"
-        | DefiningIdentifier "renames" CmpCategory UniqueCmpTypeReference ";"
-        | DefiningIdentifier "renames" "feartur""group" UniqueFetGroupTypeReference ";"
-        | "renames" CmpCategory UniqueCmpTypeReference ";"
-        | "renames" "feartur group" UniqueFetGroupTypeReference ";"
+  syntax PpeSetId ::= Id
+  syntax AliasDecl ::= DefiningId "renames" "package" PkgName ";"
+        | DefiningId "renames" CmpCategory UniCmpTypeReference ";"
+        | DefiningId "renames" "feartur""group" UniFetGroupTypeReference ";"
+        | "renames" CmpCategory UniCmpTypeReference ";"
+        | "renames" "feartur group" UniFetGroupTypeReference ";"
         | "renames" PkgName "::" "all" ";"
-  syntax DefiningIdentifier ::= Id
+  syntax DefiningId ::= Id
  */ 
  
   syntax AADLDeclList ::= AADLDecl 

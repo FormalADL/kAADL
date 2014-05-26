@@ -1,6 +1,7 @@
 module PROPERTYSET-SYNTAX
 // 11.1 check
-  syntax PpeSet ::= "property ""set " PpeSetIdentifier "is "PpeSetAssocDef "end "PpeSetIdentifier";"
+  syntax PpeSetId ::= Id
+  syntax PpeSet ::= "property" "set" PpeSetId "is" PpeSetAssocDef "end" PpeSetId ";"
     syntax PpeSetAssocDef ::= ImportDeclList PpeTypeDeclList 
                |  ImportDeclList PpeDefinitionDeclList
                |  ImportDeclList PpeConstantList

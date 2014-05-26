@@ -1,18 +1,18 @@
 module LEXICALELEMENT-SYNTAX 
 //  syntax Character ::= GraphicCharacter | FormatEffector | OtherControlCharacter
-//  syntax GraphicCharacter ::= IdentifierLetter | Digit | SpaceCharacter | SpecialCharacter
+//  syntax GraphicCharacter ::= IdLetter | Digit | SpaceCharacter | SpecialCharacter
   
 //  syntax LetterOrDigitList ::= NoneStatement
 //					  |  LetterOrDigit
 //					  |  UnderLine LetterOrDigit
 //					  |  LetterOrDigitList LetterOrDigitList
-//  syntax LetterOrDigit ::= IdentifierLetter | Digit
-//  syntax IdentifierLetter ::=NODEF
+//  syntax LetterOrDigit ::= IdLetter | Digit
+//  syntax IdLetter ::=NODEF
 //  syntax Digit ::= Int
 //  syntax SpaceCharacter ::=NODEF
 //  syntax SpecialCharacter ::=NODEF
 //  syntax UnderLine ::= NODEF
-  syntax Identifier ::= Id 
+//  syntax Id ::= Id 
   syntax NumericLiteral ::= IntegerLiteral 
                           | RealLiteral
   syntax IntegerLiteral ::= DecimalIntegerLiteral 
@@ -24,8 +24,8 @@ module LEXICALELEMENT-SYNTAX
 //				     | Digit 
 //					 | UnderLine Digit 
 //					 | DigitList DigitList
-  syntax PositiveExponent ::= "e" Numberal 
-                            | "e" "+" Numberal
+  syntax PositiveExponent ::= "e" Numeral 
+                            | "e" "+" Numeral
 //  syntax BasedIntegerLiteral ::= Base "#" BasedNumberal "#" 
 //						       | Base "#" BasedNumberal "#" PositiveExponent
 //  syntax Base ::= Digit 
@@ -39,8 +39,8 @@ module LEXICALELEMENT-SYNTAX
   syntax RealLiteral ::= DecimalRealLiteral
   syntax DecimalRealLiteral ::= Numeral "." Numeral 
 						      | Numeral"." Numeral Exponent
-  syntax Exponent ::= "E" Numberal 
-                    | "E" "+" Numberal
+  syntax Exponent ::= "E" Numeral 
+                    | "E" "+" Numeral
 
   syntax StringLiteral ::= String  //"\"" StringElementList "\""
 //  syntax StringElementList ::= NoneStatement

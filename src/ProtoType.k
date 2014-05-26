@@ -1,44 +1,56 @@
 module PROTOTYPE-SYNTAX
-  syntax ProtoType ::= ProtoTypeIdentifier ":" ProtoTypeAssocDef ";"
-  syntax ProtoTypeIdentifier ::= Id
-  syntax ProtoTypeAssocDef ::= CmpProtoType ProtoTypePpeAssoc 
-              | FetGroupTypeProtoType ProtoTypePpeAssoc
-              | "{" FetProtoType ProtoTypePpeAssoc "}"
-  syntax ProtoTypePpeAssoc ::= NoneStatement
-  syntax CmpProtoType ::= CmpCategory UniqueCmpClassifierRef "[]" // i do not why "[]" is exist
-  syntax CmpProtoType ::= CmpCategory UniqueCmpClassifierRef // [[]] ?
+  syntax ProtoType ::= ProtoTypeId ":" ProtoTypeDef ";"
+                     | ProtoTypeId ":" ProtoTypeDef "{" ProtoTypePpeAssoc "}" ";"
+  syntax ProtoTypeId ::= Id
+  syntax ProtoTypeDef ::= CmpProtoType 
+                        | FetGroupTypeProtoType
+                        | FetProtoType
 
-  syntax UniqueCmpClassifierRef ::= NoneStatement // because of '[...]'
-  syntax FetGroupTypeProtoType ::= "feature" "group" | "feature" "group" UniqueFetGroupTypeRef
+							 
+  syntax CmpProtoType ::= CmpCategory
+                        | CmpCategory "[]"
+                        | CmpCategory UniCmpClassifierRef
+                        | CmpCategory UniCmpClassifierRef "[]"
+  
+  syntax FetGroupTypeProtoType ::= "feature" "group" 
+                                 | "feature" "group" UniFetGroupTypeRef
 
-  syntax FetProtoType ::= "in" "feature" UniqueCmpClassifierRef
-                        | "out" "feature" UniqueCmpClassifierRef
-                        | "feature" UniqueCmpClassifierRef
+  syntax FetProtoType ::= "in" "feature" UniCmpClassifierRef
+                        | "out" "feature" UniCmpClassifierRef
+                        | "feature" UniCmpClassifierRef
 
-  syntax ProtoTypeRefinement ::= ProtoTypeIdentifier ":" "refined " "to" ProtoTypeAssocDef ";"
+  syntax ProtoTypeRefinement ::= ProtoTypeId ":" "refined" "to" ProtoTypeDef ";"
+                               | ProtoTypeId ":" "refined" "to" ProtoTypeDef "{" ProtoTypePpeAssoc "}" ";"
+							   
   syntax ProtoTypeBindings ::= "(" ProtoTypeBinding ")"
-  syntax ProtoTypeBindings ::= "(" ProtoTypeBinding "," ProtoTypeBinding ")"
-  syntax ProtoTypeBinding ::= ProtoTypeIdentifier "=>" CmpProtoTypeActual
-                            | ProtoTypeIdentifier "=>" CmpProtoTypeActualList
-                            | ProtoTypeIdentifier "=>" FetGroupTypeProtoTypeActual
-                            | ProtoTypeIdentifier "=>" FetProtoTypeActual
-  syntax CmpProtoTypeActual ::= CmpCategory UniqueCmpClassifierRef ProtoTypeBindings
-                              | CmpCategory UniqueCmpClassifierRef
-                              | CmpCategory ProtoTypeIdentifier
-  syntax CmpProtoTypeActualList ::= "(" CmpProtoTypeActual ")"
-  syntax CmpProtoTypeActualList ::= "(" CmpProtoTypeActual "," CmpProtoTypeActual ")"
-  syntax FetGroupTypeProtoTypeActual ::= "feature " "group" UniqueFetGroupTypeRef
-                                       | "feature " "group" UniqueFetGroupTypeRef ProtoTypeBindings
-                                       | "feature " "group" FetGroupTypeProtoTypeIdentifier
-  syntax FetGroupTypeProtoTypeIdentifier ::= Id
+  syntax ProtoTypeBinding ::= ProtoTypeBinding "," ProtoTypeBinding
+  
+  syntax ProtoTypeBinding ::= ProtoTypeId "=>" CmpProtoTypeActual
+                            | ProtoTypeId "=>" CmpProtoTypeActualList
+                            | ProtoTypeId "=>" FetGroupTypeProtoTypeActual
+                            | ProtoTypeId "=>" FetProtoTypeActual
+							
+  syntax CmpProtoTypeActual ::= CmpCategory UniCmpClassifierRef ProtoTypeBindings
+                              | CmpCategory UniCmpClassifierRef
+                              | CmpCategory ProtoTypeId
+							  
+  syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual
+  syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual "," CmpProtoTypeActual
+  syntax CmpProtoTypeActualList ::= "(" CmpProtoTypeActuralListTmp ")"
+  
+  syntax FetGroupTypeProtoTypeActual ::= "feature" "group" UniFetGroupTypeRef
+                                       | "feature" "group" UniFetGroupTypeRef ProtoTypeBindings
+                                       | "feature" "group" FetGroupTypeProtoTypeId
+  syntax FetGroupTypeProtoTypeId ::= Id
   syntax FetProtoTypeActual ::= InOut EventData "port"
-                              | "requires" BusDataSubprogram "access"
-                              | InOut EventData "port" UniqueCmpClassifierRef
-                              | "requires" BusDataSubprogram "access" UniqueCmpClassifierRef
-                              | "in " "feature" FetProtoTypeIdentifier
-                              | "out" "feature" FetProtoTypeIdentifier
-  syntax InOut ::= "in" | "out" | "in " "out"
-  syntax EventData ::= "event" | "data" | "event " "data"
-  syntax BusDataSubprogram ::= "bus" | "data" | "subprogram " "group" | "subprogram"
-
+                              | InOut EventData "port" UniCmpClassifierRef
+							  | Require BusDataSubprogram "access"
+                              | Require BusDataSubprogram "access" UniCmpClassifierRef
+							  | "in" "feature" FetProtoTypeId
+                              | "out" "feature" FetProtoTypeId
+							  
+  syntax InOut ::= "in" | "out" | "in" "out"
+  syntax EventData ::= "event" | "data" | "event" "data"
+  syntax Require ::= "requires" | "provides"
+  syntax BusDataSubprogram ::= "bus" | "data" | "subprogram" "group" | "subprogram"
 endmodule

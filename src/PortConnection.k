@@ -5,27 +5,27 @@ module PORTCONNECTION-SYNTAX
     syntax DesitinationPortConnectionRef ::= PortConnectionRefence  
 
   syntax PortConnectionRefinement ::= "port"
-  syntax PortConnectionRefence ::= CmpTypePortIdentifier
-              |  SubCmpIdentifier "." PortIdentifier
-              |  CmpTypeFetGroupIdentifier "." ElementPortIdentifier
-              |  CmpTypePortIdentifier "." DataSubCmpIdentifier
-              |  CmpTypeRequiresDataAccessIdentifier
-              |  DataSubCmpIdentifier
-              |  SubCmpIdentifier "." ProvidesDataAccessIdentifier
-              |  CmpTypeFetGroupIdentifier "."ElementDataAccessIdentifier
-              |  DataSubCmpIdentifier "." DataSubCmpIdentifier
-              |  "processor" "." ProcessorPortIdentifier
-              |  "self" "." EventOrEventDataSourceIdentifier
+  syntax PortConnectionRefence ::= CmpTypePortId
+              |  SubCmpId "." PortId
+              |  CmpTypeFetGroupId "." ElementPortId
+              |  CmpTypePortId "." DataSubCmpId
+              |  CmpTypeRequiresDataAccessId
+              |  DataSubCmpId
+              |  SubCmpId "." ProvidesDataAccessId
+              |  CmpTypeFetGroupId "."ElementDataAccessId
+              |  DataSubCmpId "." DataSubCmpId
+              |  "processor" "." ProcessorPortId
+              |  "self" "." EventOrEventDataSourceId
 
-    syntax CmpTypePortIdentifier ::= Id
-    syntax PortIdentifier ::= Id
-    syntax ElementPortIdentifier ::=  Id
-    syntax DataSubCmpIdentifier ::=  Id
-    syntax CmpTypeRequiresDataAccessIdentifier ::=  Id
-    syntax ProvidesDataAccessIdentifier ::= Id
-    syntax ElementDataAccessIdentifier ::= Id
-    syntax ProcessorPortIdentifier ::= Id
-    syntax EventOrEventDataSourceIdentifier ::= Id
+    syntax CmpTypePortId ::= Id
+    syntax PortId ::= Id
+    syntax ElementPortId ::=  Id
+    syntax DataSubCmpId ::=  Id
+    syntax CmpTypeRequiresDataAccessId ::=  Id
+    syntax ProvidesDataAccessId ::= Id
+    syntax ElementDataAccessId ::= Id
+    syntax ProcessorPortId ::= Id
+    syntax EventOrEventDataSourceId ::= Id
   
 endmodule
 

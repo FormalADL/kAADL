@@ -1,14 +1,14 @@
 module  BUSCOMPONENTACCESS-SYNTAX
 // 8.7 check
-  syntax BusAccessSpec ::= DataCmpAccessIdentifier ":" BusCmpAccessSamePart
-    syntax BusCmpAccessSamePart ::= "provides " "bus ""access " BusUniqueProtoType
-               |  "requires " "bus ""access " BusUniqueProtoType
-      syntax BusUniqueProtoType ::= BusUniqueCmpClassifierRef | ProtoTypeIdentifier | NoneStatement
-        syntax BusUniqueCmpClassifierRef ::= NODEF
+  syntax BusAccessSpec ::= DataCmpAccessId ":" BusCmpAccessSamePart
+    syntax BusCmpAccessSamePart ::= "provides" "bus" "access" BusUniProtoType
+               |  "requires" "bus" "access" BusUniProtoType
+      syntax BusUniProtoType ::= BusUniCmpClassifierRef | ProtoTypeId | NoneStatement
+        syntax BusUniCmpClassifierRef ::= NODEF
 
 
 
-  syntax BusAccessRefinement ::= DataCmpAccessIdentifier ": " "refined ""to "BusCmpAccessSamePart
+  syntax BusAccessRefinement ::= DataCmpAccessId ":" "refined" "to" BusCmpAccessSamePart
 
 
 endmodule

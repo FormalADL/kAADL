@@ -23,14 +23,14 @@ require "FeatureGroupConnection.k"
 require "FlowSpecification.k"
 require "FlowImplementation1.k"
 require "EndToEndFlow.k"
-/*
+
 require "PropertySet.k"
 require "PropertyType.k"
 require "PropertyDefinition.k"
 require "PropertyConstant.k"
 require "PropertyAssociation.k"
 require "PropertyExpression.k"
-*/
+
 require "ModesAndModeTransition.k"
 require "LexicalElement.k"
 
@@ -57,11 +57,7 @@ module AADL-SYNTAX
   imports SUBPROGRAMPARAMETER-SYNTAX 
   imports FEATURECONNECTION-SYNTAX
   imports FEATUREGROUPCONNECTION-SYNTAX
-  
-  
-/*
-   Here is the extension of Core AADL.
-*/ 
+  imports PROTOTYPE-SYNTAX 
   imports DATACOMPONENTACCESS-SYNTAX
   imports PORTCONNECTION-SYNTAX
   imports CONNECTION-SYNTAX
@@ -70,14 +66,15 @@ module AADL-SYNTAX
   imports ENDTOENDFLOW-SYNTAX
   imports BUSCOMPONENTACCESS-SYNTAX 
   imports MODESANDMODETRANSITION-SYNTAX
+ 
+/*  
+  imports PROPERTYCONSTANT-SYNTAX
+  imports PROPERTYTYPE-SYNTAX
+  imports PROPERTYEXPRESSION-SYNTAX
+  imports PROPERTYDEFINATION-SYNTAX
+  imports PROPERTYASSOCIATION-SYNTAX
   
 /*
-  imports PROTOTYPE-SYNTAX
-  imports PROPERTYASSOCIATION-SYNTAX
-  imports PROPERTYTYPE-SYNTAX
-  imports PROPERTYDEFINATION-SYNTAX
-  imports PROPERTYCONSTANT-SYNTAX
-  imports PROPERTYEXPRESSION-SYNTAX
   imports PROPERTYSET-SYNTAX
 */
 endmodule
@@ -85,10 +82,10 @@ endmodule
 /*the PropertySet need to defined*/
 module AADL
   imports AADL-SYNTAX
-  syntax AADLSpecification ::= PkgSpecPropertySetList
-  syntax PkgSpecPropertySetList ::= PkgSpec 
- //                          | PropertySet
-           					 | PkgSpecPropertySetList PkgSpecPropertySetList
+  syntax AADLSpecification ::= PkgSpecPpeSetList
+  syntax PkgSpecPpeSetList ::= PkgSpec 
+//                           | PpeSet
+           					 | PkgSpecPpeSetList PkgSpecPpeSetList
 endmodule
 
 

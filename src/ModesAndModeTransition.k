@@ -5,11 +5,11 @@ module MODESANDMODETRANSITION-SYNTAX
              |  Mode
              |  ModeTransition
              |  ModeTransitionList ModeTransitionList
-      syntax Mode ::=  ModeIdentifier ":" "initial" "mode" "{" ModePpeAssocList "}"";"
-             |   ModeIdentifier ":"  "mode" "{" ModePpeAssocList "}"";"
-             |   ModeIdentifier ":" "initial" "mode"";"
-             |   ModeIdentifier ":" "mode" ";"
-        syntax ModeIdentifier ::= NODEF
+      syntax Mode ::=  ModeId ":" "initial" "mode" "{" ModePpeAssocList "}"";"
+             |   ModeId ":"  "mode" "{" ModePpeAssocList "}"";"
+             |   ModeId ":" "initial" "mode"";"
+             |   ModeId ":" "mode" ";"
+        syntax ModeId ::= NODEF
         syntax ModePpeAssocList ::= ModePpeAssoc | ModePpeAssoc ModePpeAssocList
           syntax ModePpeAssoc ::= NODEF
 
@@ -18,31 +18,31 @@ module MODESANDMODETRANSITION-SYNTAX
          |  Mode
          |  Mode ModeList
   
-  syntax ModeTransition ::= ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ModeTransitionPpeAssocList ";"
-        | ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ";"
-        | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ModeTransitionPpeAssocList ";"
-        | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeIdentifier ";"  
+  syntax ModeTransition ::= ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
+        | ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeId ";"
+        | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
+        | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeId ";"  
     syntax ModeTransitionIdnetifier ::= NODEF
-    syntax SourceModeTrigger ::= UniquePortIdentifier 
-            |  "self""."EventSourceIdentifier
-            |  "processor""."PortIdentifier
-      syntax UniquePortIdentifier ::= PortIdentifier | SubCmpFetGroupOrSubprogramCallIdentifier "." PortIdentifier
-        syntax SubCmpFetGroupOrSubprogramCallIdentifier ::= NODEF
-      syntax EventSourceIdentifier ::= NODEF
-    syntax DestinationModeIdentifier ::= NODEF
+    syntax SourceModeTrigger ::= UniPortId 
+            |  "self" "." EventSourceId
+            |  "processor" "." PortId
+      syntax UniPortId ::= PortId | SubCmpFetGroupOrSubprogramCallId "." PortId
+        syntax SubCmpFetGroupOrSubprogramCallId ::= NODEF
+      syntax EventSourceId ::= NODEF
+    syntax DestinationModeId ::= NODEF
     syntax ModeTransitionPpeAssocList ::=  ModeTransitionPpeAssoc |  ModeTransitionPpeAssoc  ModeTransitionPpeAssocList
       syntax ModeTransitionPpeAssoc ::= NODEF
 
-  syntax InModes ::= "in" " modes ""(" ModeIdentifierList ")"
-    syntax ModeIdentifierList ::= ModeIdentifier | ModeIdentifier "," ModeIdentifierList
+  syntax InModes ::= "in" "modes" "(" ModeIdList ")"
+    syntax ModeIdList ::= ModeId | ModeId "," ModeIdList
 
-  syntax CmpInModes ::= "in ""modes " "("ModeNameList")"
+  syntax CmpInModes ::= "in" "modes" "(" ModeNameList ")"
     syntax ModeNameList ::= ModeName | ModeName "," ModeNameList
-      syntax ModeName ::= LocalModeIdentifier | LocalModeIdentifier "=>" SubCmpModeIdentifier
-        syntax LocalModeIdentifier ::= NODEF
-        syntax SubCmpModeIdentifier ::= NODEF
+      syntax ModeName ::= LocalModeId | LocalModeId "=>" SubCmpModeId
+        syntax LocalModeId ::= NODEF
+        syntax SubCmpModeId ::= NODEF
         
-  syntax InModesAndTransitions ::= "in ""modes ""(" ModeOrTransitionList")"
+  syntax InModesAndTransitions ::= "in" "modes" "(" ModeOrTransitionList ")"
     syntax ModeOrTransitionList ::= ModeOrTransition | ModeOrTransition "," ModeOrTransitionList 
       syntax ModeOrTransition ::= NODEF
   

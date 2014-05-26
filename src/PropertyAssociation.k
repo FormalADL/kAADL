@@ -1,12 +1,12 @@
 module PROPERTYASSOCIATION-SYNTAX
 // 11.3 check
-  syntax PpeAssoc ::= UniquePpeIdentifier "=>" "constant" Assignment InBinding ";"
-            |  UniquePpeIdentifier "=>" "constant" Assignment  ";"
-            |  UniquePpeIdentifier "=>"  Assignment InBinding ";"
-            |  UniquePpeIdentifier "+=>" "constant" Assignment InBinding ";"
-            |  UniquePpeIdentifier "+=>" "constant" Assignment  ";"
-            |  UniquePpeIdentifier "+=>"  Assignment InBinding ";"
-    syntax UniquePpeIdentifier ::=  PpeSetIdentifier "::" PpeNameIdentifier 
+  syntax PpeAssoc ::= UniPpeId "=>" "constant" Assignment InBinding ";"
+            |  UniPpeId "=>" "constant" Assignment  ";"
+            |  UniPpeId "=>"  Assignment InBinding ";"
+            |  UniPpeId "+=>" "constant" Assignment InBinding ";"
+            |  UniPpeId "+=>" "constant" Assignment  ";"
+            |  UniPpeId "+=>"  Assignment InBinding ";"
+    syntax UniPpeId ::=  PpeSetId "::" PpeNameId 
     syntax Assignment ::= PpeValue | ModalPpeValue
       syntax PpeValue ::= SinglePpeValue  |  PpeListValue
         syntax SinglePpeValue ::= PpeExpression
@@ -16,28 +16,28 @@ module PROPERTYASSOCIATION-SYNTAX
                 | PpeListValue "," PpeListValue
 
       syntax ModalPpeValue ::= PpeValue InModes |  PpeValue InModes "," ModalPpeValue 
-    syntax InBinding ::= "in ""binding " PlatformClassifierRefList 
+    syntax InBinding ::= "in" "binding" PlatformClassifierRefList 
       syntax PlatformClassifierRefList ::= PlatformClassifierRef | PlatformClassifierRef "," PlatformClassifierRefList
-        syntax PlatformClassifierRef ::= ProcessorUniqueCmpClassifierRef
-                    |  VirtualProcessorUniqueCmpClassifierRef
-                    |  BusUniqueCmpClassifierRef
-                    |  VirtualBusUniqueCmpClassifierRef
-                    |  MemoryUniqueCmpClassifierRef
-          syntax ProcessorUniqueCmpClassifierRef ::= NODEF
-          syntax VirtualProcessorUniqueCmpClassifierRef ::= NODEF
-          syntax VirtualBusUniqueCmpClassifierRef ::= NODEF
-          syntax MemoryUniqueCmpClassifierRef ::= NODEF
-  syntax ContainedPpeAssoc ::= UniquePpeIdentifier "=>" "constant" Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
-               |  UniquePpeIdentifier "=>"  Assignment "applies ""to " ContainedModelElementPathList InBinding ";"
+        syntax PlatformClassifierRef ::= ProcessorUniCmpClassifierRef
+                    |  VirtualProcessorUniCmpClassifierRef
+                    |  BusUniCmpClassifierRef
+                    |  VirtualBusUniCmpClassifierRef
+                    |  MemoryUniCmpClassifierRef
+          syntax ProcessorUniCmpClassifierRef ::= NODEF
+          syntax VirtualProcessorUniCmpClassifierRef ::= NODEF
+          syntax VirtualBusUniCmpClassifierRef ::= NODEF
+          syntax MemoryUniCmpClassifierRef ::= NODEF
+  syntax ContainedPpeAssoc ::= UniPpeId "=>" "constant" Assignment "applies" "to" ContainedModelElementPathList InBinding ";"
+               |  UniPpeId "=>"  Assignment "applies" "to" ContainedModelElementPathList InBinding ";"
     syntax ContainedModelElementPathList ::= ContainedModelElementPath | ContainedModelElementPath "," ContainedModelElementPathList
       syntax ContainedModelElementPath ::= AnnexPath 
                 |  ContainedModelElementList AnnexPath
                 |  ContainedModelElementList
-        syntax AnnexPath ::= "annex " AnnexIdentifier "{**" AnnexSpecificPath "**}"
-          syntax AnnexSpecificPath ::= "defined by annex"
+        syntax AnnexPath ::= "annex" AnnexId "{**" AnnexSpecificPath "**}"
+        syntax AnnexSpecificPath ::= "defined by annex"
         syntax ContainedModelElementList ::= ContainedModelElement | ContainedModelElement "." ContainedModelElementList
-          syntax ContainedModelElement ::=  NamedElementIdentifier | NamedElementArraySelectionName
-            syntax NamedElementIdentifier ::= Id
+          syntax ContainedModelElement ::=  NamedElementId | NamedElementArraySelectionName
+            syntax NamedElementId ::= Id
             syntax NamedElementArraySelectionName ::= NODEF
 endmodule
 

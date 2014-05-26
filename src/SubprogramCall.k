@@ -1,32 +1,32 @@
 module SUBPROGRAMCALL-SYNTAX
 // 5.2 check
-  syntax SubPgmCallSeq ::= CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" InModes ";"
-               |  CallSequenceIdentifier ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePpeAssoc /* + */ "}" InModes ";"
-    syntax CallSequenceIdentifier ::= Id
-    syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram ";"
-    syntax SubprogramCall ::= CallIdentifier ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssoc /* + */"}"";"
-      syntax CallIdentifier ::= Id
-      syntax CalledSubprogram ::= SubprogramUniqueCmpClassifierRef
-              | DataUniqueCmpTypeRef "." DataProvidesSubprogramAccessIdentifier
-              | SubprogramGroupUniqueCmpTypeRef "." ProvidesSubprogramAccessIdentifier
-              | AbstractUniqueCmpTypeRef "." ProvidesSubprogramAccessIdentifier
-              | FetGroupIdentifier "." RequiresSubprogramAccessIdentifier
-              | CmpProtoTypeIdentifier
-              | "processor" "." ProvidesSubprogramAccessIdentifier
-              | SubprogramGoupSubCmpIdentifier "." ProvidesSubprogramAccessIdentifier
-              | RequiresSubprogramAccessIdentifier
-              | RequiresSubprogramGroupAccessIdentifier "." ProvidesSubprogramAccessIdentifier
-        syntax SubprogramUniqueCmpClassifierRef ::= NODEF
-        syntax DataUniqueCmpTypeRef ::= NODEF
-        syntax DataProvidesSubprogramAccessIdentifier ::= Id
-        syntax SubprogramGroupUniqueCmpTypeRef ::= NODEF
-        syntax ProvidesSubprogramAccessIdentifier ::= Id
-        syntax AbstractUniqueCmpTypeRef ::= NODEF
-        syntax FetGroupIdentifier ::=  Id
-        syntax RequiresSubprogramAccessIdentifier ::=  Id
-        syntax CmpProtoTypeIdentifier ::=  Id
-        syntax SubprogramGoupSubCmpIdentifier ::=  Id
-        syntax RequiresSubprogramGroupAccessIdentifier ::=  Id
+  syntax SubPgmCallSeq ::= CallSequenceId ":" "{" SubprogramCall /* + */ "}" InModes ";"
+               |  CallSequenceId ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePpeAssoc /* + */ "}" InModes ";"
+    syntax CallSequenceId ::= Id
+    syntax SubprogramCall ::= CallId ":" "subprogram" CalledSubprogram ";"
+    syntax SubprogramCall ::= CallId ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssoc /* + */"}"";"
+      syntax CallId ::= Id
+      syntax CalledSubprogram ::= SubprogramUniCmpClassifierRef
+              | DataUniCmpTypeRef "." DataProvidesSubprogramAccessId
+              | SubprogramGroupUniCmpTypeRef "." ProvidesSubprogramAccessId
+              | AbstractUniCmpTypeRef "." ProvidesSubprogramAccessId
+              | FetGroupId "." RequiresSubprogramAccessId
+              | CmpProtoTypeId
+              | "processor" "." ProvidesSubprogramAccessId
+              | SubprogramGoupSubCmpId "." ProvidesSubprogramAccessId
+              | RequiresSubprogramAccessId
+              | RequiresSubprogramGroupAccessId "." ProvidesSubprogramAccessId
+        syntax SubprogramUniCmpClassifierRef ::= NODEF
+        syntax DataUniCmpTypeRef ::= NODEF
+        syntax DataProvidesSubprogramAccessId ::= Id
+        syntax SubprogramGroupUniCmpTypeRef ::= NODEF
+        syntax ProvidesSubprogramAccessId ::= Id
+        syntax AbstractUniCmpTypeRef ::= NODEF
+        syntax FetGroupId ::=  Id
+        syntax RequiresSubprogramAccessId ::=  Id
+        syntax CmpProtoTypeId ::=  Id
+        syntax SubprogramGoupSubCmpId ::=  Id
+        syntax RequiresSubprogramGroupAccessId ::=  Id
       syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc // +
 
 

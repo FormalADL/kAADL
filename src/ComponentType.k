@@ -1,6 +1,8 @@
 module COMPONENTTYPE-SYNTAX
-  syntax CmpType ::= CmpCategory CmpTypeIdentifier KeyEnd CmpTypeIdentifier ";"
-                   | CmpCategory CmpTypeIdentifier CmpAssocDef KeyEnd CmpTypeIdentifier ";"
+
+  syntax CmpType ::= CmpCategory CmpTypeId KeyEnd CmpTypeId ";"
+                   | CmpCategory CmpTypeId CmpAssocDef KeyEnd CmpTypeId ";"
+
   syntax CmpCategory ::= AbstractCmpCategory 
                        | SoftwareCategory 
 //					   | ExecutionPlateformCategory 
@@ -12,7 +14,7 @@ module COMPONENTTYPE-SYNTAX
 /*do not support hardware component*/
 //  syntax ExecutionPlateformCategory ::= "memory" | "processor" | "bus" | "device" | "virtual" "processor" | "virtrual bus" 
   
-  syntax CmpTypeIdentifier ::= Id
+  syntax CmpTypeId ::= Id
 
   syntax CmpAssocDef ::= "prototypes" ProtoType 
                        | "prototypes" NoneStatement
@@ -30,8 +32,9 @@ module COMPONENTTYPE-SYNTAX
   syntax CmpAssocDef ::= CmpAssocDef CmpAssocDef 
 
 /* do not support ComponentTypeExtension
-  syntax CmpTypeExt ::= CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeRef  CmpAssocDef KeyEnd CmpTypeIdentifier ";"
-                    | CmpCategory CmpTypeIdentifier "extends" UniqueCmpTypeRef  ProtoTypeBindings CmpAssocDef KeyEnd CmpTypeIdentifier ";"
-  syntax UniqueCmpTypeRef ::= PkgName "::" CmpTypeIdentifier |  CmpTypeIdentifier
+  syntax CmpTypeExt ::= CmpCategory CmpTypeId "extends" UniCmpTypeRef  CmpAssocDef KeyEnd CmpTypeId ";"
+                    | CmpCategory CmpTypeId "extends" UniCmpTypeRef  ProtoTypeBindings CmpAssocDef KeyEnd CmpTypeId ";"
 */
+  syntax UniCmpTypeRef ::= PkgName "::" CmpTypeId |  CmpTypeId
+
 endmodule

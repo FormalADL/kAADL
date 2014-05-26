@@ -2,23 +2,23 @@ module FLOWIMPLEMENTATION-SYNTAX
 // 10.2  check
   syntax FlowImpl ::= FlowSourceSinkPathImplementAssocDef PpeAssocInModes ";"
     syntax FlowSourceSinkPathImplementAssocDef ::= FlowSourceImpl | FlowSinkImpl | FlowPathImpl
-      syntax FlowSourceImpl ::= FlowIdentifier ":" "flow " "source " SubcompentConnectionAssocDef OutFlowFetIdentifier
+      syntax FlowSourceImpl ::= FlowId ":" "flow" "source" SubcompentConnectionAssocDef OutFlowFetId
         syntax SubcompentConnectionAssocDef ::= NoneStatement
-                      |  SubcompenentFlowIdentifier "->" ConnectionIdentifier "->"
+                      |  SubcompenentFlowId "->" ConnectionId "->"
                             |  SubcompentConnectionAssocDef SubcompentConnectionAssocDef
-          syntax SubcompenentFlowIdentifier ::= Id
-      syntax FlowSinkImpl ::= FlowIdentifier ":" "flow ""sink "InFlowFetIdentifier ConnectionSubcompenentFlowAssocDef 
+          syntax SubcompenentFlowId ::= Id
+      syntax FlowSinkImpl ::= FlowId ":" "flow" "sink" InFlowFetId ConnectionSubcompenentFlowAssocDef 
         syntax ConnectionSubcompenentFlowAssocDef ::= NoneStatement 
-                      |  "->" ConnectionIdentifier"->"SubcompenentFlowIdentifier
+                      |  "->" ConnectionId"->"SubcompenentFlowId
                       | ConnectionSubcompenentFlowAssocDef  ConnectionSubcompenentFlowAssocDef
-      syntax FlowPathImpl ::= FlowIdentifier ":" "flow ""path " InFlowFetIdentifier FlowPathImplDefault "->" OutFlowFetIdentifier
-        syntax FlowPathImplDefault ::= ConnectIdentifierSubcompenentFlowIdnetifierList "->" OutFlowFetIdentifier
-          syntax ConnectIdentifierSubcompenentFlowIdnetifierList ::= "->" ConnextionIdentifier "->" SubCmpFlowIdentifier
-                        |  ConnectIdentifierSubcompenentFlowIdnetifierList ConnectIdentifierSubcompenentFlowIdnetifierList
-            syntax ConnextionIdentifier ::= Id
-            syntax SubCmpFlowIdentifier ::= DataCompenentRef | SubCmpIdentifier | SubCmpIdentifier "." FlowSpecIdentifier
-              syntax FlowSpecIdentifier ::= Id
-              syntax DataCompenentRef ::= DataSubCmpIdentifier | RequiresDataAccessIdentifier | ProvidesDataAccessIdentifier
+      syntax FlowPathImpl ::= FlowId ":" "flow" "path" InFlowFetId FlowPathImplDefault "->" OutFlowFetId
+        syntax FlowPathImplDefault ::= ConnectIdSubcompenentFlowIdnetifierList "->" OutFlowFetId
+          syntax ConnectIdSubcompenentFlowIdnetifierList ::= "->" ConnextionId "->" SubCmpFlowId
+                        |  ConnectIdSubcompenentFlowIdnetifierList ConnectIdSubcompenentFlowIdnetifierList
+            syntax ConnextionId ::= Id
+            syntax SubCmpFlowId ::= DataCompenentRef | SubCmpId | SubCmpId "." FlowSpecId
+              syntax FlowSpecId ::= Id
+              syntax DataCompenentRef ::= DataSubCmpId | RequiresDataAccessId | ProvidesDataAccessId
 
     syntax PpeAssocInModes ::= "{"PpeAssocList"}" InModesAndTransitions
                |  "{"PpeAssocList"}"

@@ -3,8 +3,8 @@ module ANNEXSUBCLAUSELIBRARY-SYNTAX
 
   syntax AnnexSubclause ::= NoneStatement
   syntax AnnexSubclause ::= AnnexSubclause AnnexSubclause
-  syntax AnnexSubclause ::= "annex" AnnexIdentifier AnnexSubclauseAssocDef ";"
-  syntax AnnexIdentifier ::= Id
+  syntax AnnexSubclause ::= "annex" AnnexId AnnexSubclauseAssocDef ";"
+  syntax AnnexId ::= Id
   syntax AnnexSubclauseAssocDef ::= "{**" AnnexSpecificLanguageConstructs "**}" // **} i do not know
                   |  NoneStatement
 //                  |  "{**" AnnexSpecificLanguageConstructs "**}" InModes
@@ -12,7 +12,7 @@ module ANNEXSUBCLAUSELIBRARY-SYNTAX
   syntax AnnexSpecificLanguageConstructs ::= NODEF
 
   
-  syntax AnnexLibrary ::= "annex" AnnexIdentifier AnnexLibraryAssocDef ";"
+  syntax AnnexLibrary ::= "annex" AnnexId AnnexLibraryAssocDef ";"
   syntax AnnexLibraryAssocDef ::= "{**" AnnexSpecificReusableConstructs "**}"
                 | NoneStatement
 //                | "{**" AnnexSpecificReusableConstructs "**}" InModes

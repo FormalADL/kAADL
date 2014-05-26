@@ -1,7 +1,7 @@
 module COMPONENTIMPLEMENTATION-SYNTAX
   syntax CmpImpl ::= CmpCategory "implementation" CmpImplName CmpImplAssocDef KeyEnd CmpImplName ";"
-  syntax CmpImplName ::= CmpTypeIdentifier"."CmpImplIdentifier
-  syntax CmpImplIdentifier ::= Id
+  syntax CmpImplName ::= CmpTypeId"."CmpImplId
+  syntax CmpImplId ::= Id
   syntax CmpImplAssocDef ::= CmpImplAssocDef CmpImplAssocDef
   syntax CmpImplAssocDef ::= "prototypes" ProtoType 
                | "prototypes" NoneStatement 
@@ -29,6 +29,6 @@ module COMPONENTIMPLEMENTATION-SYNTAX
 //  syntax PpeAssoc ::= PpeAssoc PpeAssoc
 //  syntax ContainedPpeAssoc ::= ContainedPpeAssoc ContainedPpeAssoc
 
-//  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplName "extends" UniqueCmpImplementRef CmpImplAssocDef KeyEnd CmpImplName ";"
-//  syntax UniqueCmpImplRef ::= CmpImplName | PkgName "::" CmpImplName
+//  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplName "extends" UniCmpImplementRef CmpImplAssocDef KeyEnd CmpImplName ";"
+  syntax UniCmpImplRef ::= CmpImplName | PkgName "::" CmpImplName
 endmodule

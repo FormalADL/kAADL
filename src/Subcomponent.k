@@ -1,31 +1,39 @@
 module SUBCOMPONENT-SYNTAX
-  syntax SubCmp ::= SubCmpIdentifier ":" CmpCategory SubCmpAssocDef ";"
-  syntax SubCmpIdentifier ::= Id
-  syntax SubCmpAssocDef ::= UniqueCmpClassifierRef 
-                          | UniqueCmpClassifierRef ProtoTypeBindings
-                          | PrototypeIdentifier
+  syntax SubCmp ::= SubCmpId ":" CmpCategory SubCmpAssocDef ";"
+  syntax SubCmpId ::= Id
+  syntax SubCmpAssocDef ::= UniCmpClassifierRef 
+                          | UniCmpClassifierRef ProtoTypeBindings
+                          | ProtoTypeId
                           | ArrayDimensions 
-                          | ArrayDimensions ArrayelementImplementionList
+                          | ArrayDimensions ArrayElementImplList
                           | "{" SubCmpPpeAssoc "}"
                           | "{" ContainedPpeAssoc "}"
                           | CmpInModes 
-  syntax UniqueCmpClassifierRef ::= UniqueCmpTypeRef
-                                  | UniqueCmpImplRef
-  syntax PrototypeIdentifier ::= Id
-  syntax ArrayDimensions ::= ArrayDimension // + but in 8.0,it is just [ArrayDimension]...i think here should be change
-  syntax ArrayDimension ::= ArrayDimension ArrayDimension 
-  syntax ArrayDimension ::= "[" ArrayDimensionSize "]"
-  syntax Numberal ::= Int 
-  syntax ArrayDimensionSize ::= Numberal | UniquePpeConstantIdentifier  | UniquePpeIdentifier
+/*
+  subcomponent_refine is defined in component extension.
+*/						  
+//  syntax SubCmpRefinement ::= SubCmpId "refined" "to" CmpCategory SubCmpAssocDef ";"
+ 						  
+  syntax UniCmpClassifierRef ::= UniCmpTypeRef
+                               | UniCmpImplRef
 
-  syntax ArrayelementImplementionList ::= "("ArrayelementImplementionListTmp")"
-                    | "("ArrayelementImplementionListTmp "," ArrayelementImplementionListTmp ")"
-  syntax ArrayelementImplementionListTmp ::= UniqueCmpImplRef ProtoTypeBindings
-                        |  UniqueCmpImplRef
-         
-  syntax SubCmpPpeAssoc ::= SubCmpPpeAssoc SubCmpPpeAssoc
-  syntax ArraySelectionName ::= Identifier ArraySelection
-  syntax ArraySelection ::= ArraySelection ArraySelection
-  syntax ArraySelection ::= "[" SelectionRange "]"
-  syntax SelectionRange ::= Numberal | Numberal ".." Numberal
+  syntax ArrayDimensions ::= ArrayDimension
+                           | ArrayDimensions ArrayDimensions
+  syntax ArrayDimension ::= "[" ArrayDimensionSize "]"
+  syntax ArrayDimensionSize ::= Numeral 
+                              | UniPpeConstantId  
+							  | UniPpeId
+
+  syntax ArrayElementImplList ::= "(" ArrayElementImplListTmp ")"
+                                | "(" ArrayElementImplListTmp "," ArrayElementImplListTmp ")"
+  syntax ArrayElementImplListTmp ::= UniCmpImplRef ProtoTypeBindings
+                                   | UniCmpImplRef
+
+/* 
+    defined in standard, but no relation with other definition  
+*/	
+//  syntax ArraySelectionName ::= Id ArraySelection
+//  syntax ArraySelection ::= ArraySelection ArraySelection
+//  syntax ArraySelection ::= "[" SelectionRange "]"
+//  syntax SelectionRange ::= Numeral | Numeral ".." Numeral
 endmodule

@@ -1,22 +1,22 @@
 module ENDTOENDFLOW-SYNTAX
 // 10.3  
-  syntax EndToEndFlowSpec ::= EndToEndFlowIdentifier ":" "end ""to ""end ""flow " StartSubCmpFlowOrEtefIdentifier ConnectionIdentifierFlowPathList  EndToEndFlowSpecAssocDefault ";"
-    syntax EndToEndFlowIdentifier ::= Id
-    syntax StartSubCmpFlowOrEtefIdentifier ::= SubCmpFlowOrEtefIdentifier
-    syntax ConnectionIdentifierFlowPathList ::= "->" ConnectionIdentifier "->" FlowPathSubCmpFlowOrEtefIdentifier
-                | ConnectionIdentifierFlowPathList ConnectionIdentifierFlowPathList
-      syntax FlowPathSubCmpFlowOrEtefIdentifier ::= NODEF
+  syntax EndToEndFlowSpec ::= EndToEndFlowId ":" "end" "to" "end" "flow" StartSubCmpFlowOrEtefId ConnectionIdFlowPathList  EndToEndFlowSpecAssocDefault ";"
+    syntax EndToEndFlowId ::= Id
+    syntax StartSubCmpFlowOrEtefId ::= SubCmpFlowOrEtefId
+    syntax ConnectionIdFlowPathList ::= "->" ConnectionId "->" FlowPathSubCmpFlowOrEtefId
+                | ConnectionIdFlowPathList ConnectionIdFlowPathList
+      syntax FlowPathSubCmpFlowOrEtefId ::= NODEF
     syntax EndToEndFlowSpecAssocDefault ::=  "{" PpeAssocList "}" InModesAndTransitions
                 |  "{" PpeAssocList "}"
                 |  InModesAndTransitions
                 |  NoneStatement
 
-  syntax EndToEndSpecRefinement ::= EndToEndIdentifier ":" "refined ""to ""end ""to ""end ""flow " EndToEndSpecRefinementDefault ";"
-    syntax EndToEndIdentifier ::=  Id
+  syntax EndToEndSpecRefinement ::= EndToEndId ":" "refined" "to" "end" "to" "end" "flow" EndToEndSpecRefinementDefault ";"
+    syntax EndToEndId ::=  Id
     syntax EndToEndSpecRefinementDefault ::= "{" PpeAssocList "}" InModesAndTransitions
                 |  "{" PpeAssocList "}"
                 |  InModesAndTransitions
-  syntax SubCmpFlowOrEtefIdentifier ::= SubCmpFlowIdentifier | EndToEndFlowIdentifier
+  syntax SubCmpFlowOrEtefId ::= SubCmpFlowId | EndToEndFlowId
 
 endmodule
 
