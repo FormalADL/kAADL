@@ -53,4 +53,5 @@ module PROTOTYPE-SYNTAX
   syntax EventData ::= "event" | "data" | "event" "data"
   syntax Require ::= "requires" | "provides"
   syntax BusDataSubprogram ::= "bus" | "data" | "subprogram" "group" | "subprogram"
+  
 endmodule
