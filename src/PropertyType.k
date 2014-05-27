@@ -22,7 +22,7 @@ module PROPERTYTYPE-SYNTAX
                    |   "," UnitId "=>" UnitId "*" NumericLiteral  UnitIdList
 
       syntax NumberType ::= RealInteger 
-             |  RealInteger "units "  UnitsDesignator // i do not know is here the spares is needed
+             |  RealInteger "units"  UnitsDesignator // i do not know is here the spares is needed
         syntax RealInteger ::= "aadlreal" | "aadlinterger"
                 |  "aadlreal" RealRange
                 |  "aadlinterger" IntegerRange

@@ -5,28 +5,38 @@ module SUBPROGRAMCALL-SYNTAX
     syntax CallSequenceId ::= Id
     syntax SubprogramCall ::= CallId ":" "subprogram" CalledSubprogram ";"
     syntax SubprogramCall ::= CallId ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssoc /* + */"}"";"
+    syntax SubprogramCall ::= SubprogramCall SubprogramCall // + 
       syntax CallId ::= Id
       syntax CalledSubprogram ::= SubprogramUniCmpClassifierRef
+	      | CmpProtoTypeId
+	      | RequiresSubprogramAccessId
+
               | DataUniCmpTypeRef "." DataProvidesSubprogramAccessId
               | SubprogramGroupUniCmpTypeRef "." ProvidesSubprogramAccessId
               | AbstractUniCmpTypeRef "." ProvidesSubprogramAccessId
+	   
+	  //  | NODEF "." Id
+	  
               | FetGroupId "." RequiresSubprogramAccessId
-              | CmpProtoTypeId
               | "processor" "." ProvidesSubprogramAccessId
               | SubprogramGoupSubCmpId "." ProvidesSubprogramAccessId
-              | RequiresSubprogramAccessId
               | RequiresSubprogramGroupAccessId "." ProvidesSubprogramAccessId
-        syntax SubprogramUniCmpClassifierRef ::= NODEF
-        syntax DataUniCmpTypeRef ::= NODEF
-        syntax DataProvidesSubprogramAccessId ::= Id
-        syntax SubprogramGroupUniCmpTypeRef ::= NODEF
-        syntax ProvidesSubprogramAccessId ::= Id
-        syntax AbstractUniCmpTypeRef ::= NODEF
-        syntax FetGroupId ::=  Id
-        syntax RequiresSubprogramAccessId ::=  Id
-        syntax CmpProtoTypeId ::=  Id
-        syntax SubprogramGoupSubCmpId ::=  Id
-        syntax RequiresSubprogramGroupAccessId ::=  Id
+	   
+	  //  | Id"."Id
+
+	syntax RequiresSubprogramAccessId ::=  Id
+	syntax CmpProtoTypeId ::=  Id
+
+	syntax SubprogramUniCmpClassifierRef ::= NODEF
+	syntax DataUniCmpTypeRef ::= NODEF
+	syntax DataProvidesSubprogramAccessId ::= Id
+	syntax SubprogramGroupUniCmpTypeRef ::= NODEF
+	syntax ProvidesSubprogramAccessId ::= Id
+	syntax AbstractUniCmpTypeRef ::= NODEF
+	syntax FetGroupId ::=  Id
+	syntax SubprogramGoupSubCmpId ::=  Id
+	syntax RequiresSubprogramGroupAccessId ::=  Id
+
       syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc // +
 
 

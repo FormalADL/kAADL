@@ -10,7 +10,7 @@ module ABSTRACTFEATURE-SYNTAX
                                      | FetGroupRefinement
                                      | SubCmpAccessRefinement
                                      | ParameterRefinement
-            					     | AbstractFetId ":" "refined" "to" "in" "feature" FetProtoTypeId
+            			     | AbstractFetId ":" "refined" "to" "in" "feature" FetProtoTypeId
                                      | AbstractFetId ":" "refined" "to" "in" "feature" 
                                      | AbstractFetId ":" "refined" "to" "out" "feature" FetProtoTypeId
                                      | AbstractFetId ":" "refined" "to" "out" "feature" 
