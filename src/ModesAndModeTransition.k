@@ -17,8 +17,8 @@ module MODESANDMODETRANSITION-SYNTAX
          |  Mode
          |  Mode ModeList
   
-  syntax ModeTransition ::= ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
-        | ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ";"
+  syntax ModeTransition ::= ModeTransitionIdnetifier ":" SourceModeId "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
+        | ModeTransitionIdnetifier ":" SourceModeId "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ";"
         | SourceModeId "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
         | SourceModeId "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ";"  
     syntax ModeTransitionTriggerList ::= ","ModeTransitionTrigger
