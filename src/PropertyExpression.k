@@ -46,7 +46,7 @@ module PROPERTYEXPRESSION-SYNTAX
     syntax RecordTerm ::= "(" RecordFieldIdIdList ")"
       syntax RecordFieldIdIdList ::= RecordFieldIdId "=>" PpeValue ";"
                     |  RecordFieldIdId "=>" PpeValue ";" RecordFieldIdIdList 
-        syntax RecordFieldIdId ::= Id | Id "." Id | Id "_" Id
+        syntax RecordFieldIdId ::= Id 
     syntax ComputedTerm ::= "compute" "(" FunctionId ")"
       syntax FunctionId ::= Id
   syntax PpeConstantTerm ::= PpeConstantId 

@@ -5,17 +5,17 @@ module FLOWIMPLEMENTATION-SYNTAX
       syntax FlowSourceImpl ::= FlowId ":" "flow" "source" SubcompentConnectionAssocDef OutFlowFetId
         syntax SubcompentConnectionAssocDef ::= NoneStatement
                       |  SubcompenentFlowId "->" ConnectionId "->"
-                            |  SubcompentConnectionAssocDef SubcompentConnectionAssocDef
+                      |  SubcompentConnectionAssocDef SubcompentConnectionAssocDef
           syntax SubcompenentFlowId ::= Id
       syntax FlowSinkImpl ::= FlowId ":" "flow" "sink" InFlowFetId ConnectionSubcompenentFlowAssocDef 
         syntax ConnectionSubcompenentFlowAssocDef ::= NoneStatement 
                       |  "->" ConnectionId"->"SubcompenentFlowId
                       | ConnectionSubcompenentFlowAssocDef  ConnectionSubcompenentFlowAssocDef
       syntax FlowPathImpl ::= FlowId ":" "flow" "path" InFlowFetId FlowPathImplDefault "->" OutFlowFetId
-        syntax FlowPathImplDefault ::= ConnectIdSubcompenentFlowIdnetifierList "->" OutFlowFetId
-          syntax ConnectIdSubcompenentFlowIdnetifierList ::= "->" ConnextionId "->" SubCmpFlowId
+        syntax FlowPathImplDefault ::= ConnectIdSubcompenentFlowIdnetifierList "->" ConnectionId
+          syntax ConnectIdSubcompenentFlowIdnetifierList ::= "->" ConnectionId "->" SubCmpFlowId
                         |  ConnectIdSubcompenentFlowIdnetifierList ConnectIdSubcompenentFlowIdnetifierList
-            syntax ConnextionId ::= Id
+            syntax ConnectionId ::= Id
             syntax SubCmpFlowId ::= DataCompenentRef | SubCmpId | SubCmpId "." FlowSpecId
               syntax FlowSpecId ::= Id
               syntax DataCompenentRef ::= DataSubCmpId | RequiresDataAccessId | ProvidesDataAccessId

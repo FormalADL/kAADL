@@ -22,7 +22,7 @@ module PROPERTYTYPE-SYNTAX
                    |   "," UnitId "=>" UnitId "*" NumericLiteral  UnitIdList
 
       syntax NumberType ::= RealInteger 
-             |  RealInteger "units"  UnitsDesignator // i do not know is here the spares is needed
+             |  RealInteger "units"  UnitsDesignator 
         syntax RealInteger ::= "aadlreal" | "aadlinterger"
                 |  "aadlreal" RealRange
                 |  "aadlinterger" IntegerRange
@@ -60,11 +60,14 @@ module PROPERTYTYPE-SYNTAX
   
       syntax ClassifierType ::= "classifier" | "classifier" "(" ClassifierCategoryRefList ")"
         syntax ClassifierCategoryRefList ::= ClassifierCategoryRef
-                  |  ClassifierCategoryRefList "," ClassifierCategoryRefList
+                //  |  ClassifierCategoryRefList "," ClassifierCategoryRefList
+		   |  ClassifierCategoryRef "," ClassifierCategoryRefList
           syntax ClassifierCategoryRef ::= ClassifierQualifiedMetaModelId
             syntax ClassifierQualifiedMetaModelId ::= QualifiedMetaModelId
       syntax RefType ::= "reference" | "reference" "(" RefCategoryList ")"
-        syntax RefCategoryList ::= RefCategory | RefCategoryList "," RefCategoryList
+        syntax RefCategoryList ::= RefCategory 
+			//	| RefCategoryList "," RefCategoryList
+				| RefCategory "," RefCategoryList
           syntax RefCategory ::= NamedElementQualifiedMetaModelId
             syntax NamedElementQualifiedMetaModelId ::= NODEF
 

@@ -4,8 +4,8 @@ module FLOWSPECIFICATION-SYNTAX
     syntax FlowSourceSpec ::=  FlowId ":" "flow" "source" OutFlowFetId FlowSourceSpecAssocDef ";"
       syntax FlowId ::= Id
       syntax OutFlowFetId ::=  Id
-      syntax FlowSourceSpecAssocDef ::= "{" PpeAssocList "}" InModes ";"
-                    | "{" PpeAssocList "}" ";"
+      syntax FlowSourceSpecAssocDef ::= "{" PpeAssocList/*+*/ "}" InModes ";"
+                    | "{" PpeAssocList /*+*/"}" ";"
                     | InModes ";"
 
     syntax FlowSinkSpec ::= FlowId ":" "flow" "sink" InFlowFetId FlowSinkSpecAssocDef ";"
@@ -17,7 +17,7 @@ module FLOWSPECIFICATION-SYNTAX
 
   syntax FlowSpecRefinement ::= FlowSourceSpecRefinement | FlowSinkSpecRefinement | FlowPathSpecRefinement
     syntax FlowSourceSpecRefinement ::= FlowId ":" "refined" "to" "flow" "source" FlowSourceSpecRefinementAssocDef ";"
-      syntax FlowSourceSpecRefinementAssocDef ::= "{" PpeAssocList "}" InModesAndTransitions 
+      syntax FlowSourceSpecRefinementAssocDef ::= "{" PpeAssocList/*+*/ "}" InModesAndTransitions 
                   |  "{" PpeAssocList "}" 
                   |   InModesAndTransitions
     syntax FlowSinkSpecRefinement ::=  FlowId ":" "refined" "to" "flow" "sink"  FlowSinkSpecRefinementAssocDef ";"

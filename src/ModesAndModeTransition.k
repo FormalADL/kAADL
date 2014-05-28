@@ -1,10 +1,9 @@
 module MODESANDMODETRANSITION-SYNTAX
-
-  syntax ModesSubclause ::= "modes" "(" ModeTransitionList ")"
+// 12
+  syntax ModesSubclause ::= "modes" "(" ModeList ModeTransitionList ")"
     syntax ModeTransitionList ::= NoneStatement
-             |  Mode
              |  ModeTransition
-             |  ModeTransitionList ModeTransitionList
+             |  ModeTransition ModeTransitionList
       syntax Mode ::=  ModeId ":" "initial" "mode" "{" ModePpeAssocList "}"";"
              |   ModeId ":"  "mode" "{" ModePpeAssocList "}"";"
              |   ModeId ":" "initial" "mode"";"
@@ -18,12 +17,15 @@ module MODESANDMODETRANSITION-SYNTAX
          |  Mode
          |  Mode ModeList
   
-  syntax ModeTransition ::= ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
-        | ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeId ";"
-        | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
-        | SourceModeTrigger "-[" ModeTransitionList "]->" DestinationModeId ";"  
+  syntax ModeTransition ::= ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
+        | ModeTransitionIdnetifier ":" SourceModeTrigger "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ";"
+        | SourceModeId "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ModeTransitionPpeAssocList ";"
+        | SourceModeId "-[" ModeTransitionTrigger ModeTransitionTriggerList "]->" DestinationModeId ";"  
+    syntax ModeTransitionTriggerList ::= ","ModeTransitionTrigger
+				      | "," ModeTransitionTrigger ModeTransitionTriggerList
+	syntax SourceModeId ::= Id
     syntax ModeTransitionIdnetifier ::= NODEF
-    syntax SourceModeTrigger ::= UniPortId 
+    syntax ModeTransitionTrigger ::= UniPortId 
             |  "self" "." EventSourceId
             |  "processor" "." PortId
       syntax UniPortId ::= PortId | SubCmpFetGroupOrSubprogramCallId "." PortId
