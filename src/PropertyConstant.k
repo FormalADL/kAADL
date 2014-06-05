@@ -1,5 +1,5 @@
 module PROPERTYCONSTANT-SYNTAX
-  syntax PpeSetId ::= Id  //should defined in propertyset.k
+
   syntax PpeConstant ::= SigleValuedPpeConstant 
                        | MultiValuedPpeConstant 
   syntax SigleValuedPpeConstant ::= PpeConstantId ":" "constant" PpeTypeDesignator "=>" ConstantPpeExpression ";"

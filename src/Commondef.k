@@ -3,19 +3,10 @@ module COMMONDEF
   syntax NODEF::="not define"
   syntax NoneStatement::="none"
 
-/*
-  AADL Keywords definition
-*/
-  syntax KeyPkg ::= "package"
-  syntax KeyEnd ::= "end"
-  syntax KeyPublic  ::= "public"
-  syntax KeyPrivate ::= "private"
-  
   
 /*
   Temp NODEF
 */
-
   syntax UniPpeConstantId ::= NODEF
   syntax UniPpeId ::= NODEF
   syntax FormatEffector ::= NODEF  

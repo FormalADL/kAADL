@@ -1,59 +1,68 @@
 module PACKAGE-SYNTAX
-  syntax PkgSpec ::= KeyPkg PkgName PkgDecls KeyEnd PkgName ";"
-                   | KeyPkg PkgName PkgDecls PpeDecls KeyEnd PkgName ";"
+  syntax PkgSpec ::= "package" PkgName PkgDecls "end" PkgName ";"
+                   | "package" PkgName PkgDecls PpeDecls "end" PkgName ";"
   
   syntax PkgId ::= Id
   syntax PkgName ::= PkgId
-                   | PkgId "::" PkgId 
+                   | PkgName "::" PkgId 
 
-  syntax PkgDecls ::= KeyPublic PkgDeclations 
-                    | KeyPrivate PkgDeclations
-			        | KeyPublic PkgDeclations KeyPrivate PkgDeclations
+  syntax PkgDecls ::= "public"
+                    | "private"
+                    | "public" "private"
+                    | "public" PkgDeclations 
+                    | "private" PkgDeclations
+			        | "public"  "private" PkgDeclations
+					| "public" PkgDeclations "private" 
+					| "public" PkgDeclations "private" PkgDeclations
+
 					
- // currently version do not support NameVisDecList,only support the AADLDecList 
- 
-  syntax PkgDeclations ::= NoneStatement
-                         | AADLDeclList
- //                      | NameVisDeclList 
-   
-       
- /* NameVisDecl related definition
-  syntax NameVisDeclList ::= NameVisDecl 
-						   | NameVisDecl NameVisDeclList					
-  syntax NameVisDecl ::= ImportDecl | AliasDecl
-  syntax ImportDecl ::= "with" PkgName ImportDeclPlus | "with" PpeSetId ImportDeclPlus
-  syntax ImportDeclPlus ::= "," PkgName | "," PpeSetId
-  syntax ImportDeclPlus ::= ImportDeclPlus ImportDeclPlus
-  syntax PpeSetId ::= Id
-  syntax AliasDecl ::= DefiningId "renames" "package" PkgName ";"
-        | DefiningId "renames" CmpCategory UniCmpTypeReference ";"
-        | DefiningId "renames" "feartur""group" UniFetGroupTypeReference ";"
-        | "renames" CmpCategory UniCmpTypeReference ";"
-        | "renames" "feartur group" UniFetGroupTypeReference ";"
-        | "renames" PkgName "::" "all" ";"
-  syntax DefiningId ::= Id
- */ 
- 
+  syntax PpeDecls ::= "properties" NoneStatement
+                    | "properties" BasicPpeAssocList
+  
+  BasicPpeAssocList ::= BasicPpeAssoc
+                      | BasicPpeAssocList BasicPpeAssocList
+					
+  syntax PkgDeclations ::= AADLDeclList
+                         | NameVisDeclList 
+          
   syntax AADLDeclList ::= AADLDecl 
-						| AADLDecl AADLDeclList
+						| AADLDeclList AADLDeclList
+						
+  syntax NameVisDeclList ::= NameVisDecl 
+						   | NameVisDeclList NameVisDeclList	
+						
   syntax AADLDecl ::= ClassifierDecl 
                     | AnnexLibrary
+					
   syntax ClassifierDecl ::= CmpClassifierDecl 
                           | FetGroupClassifierDecl
 
-/* 
-  we do not support component type and implementation extension in first version
-*/
+						  
   syntax CmpClassifierDecl ::= CmpType 
                              | CmpImpl 
-//                           | CmpTypeExt 
-//                           | CmpImplExt
+                             | CmpTypeExt 
+                             | CmpImplExt
 
-/* we do not support FetGrouptypeExt
-*/
   syntax FetGroupClassifierDecl ::= FetGroupType 
-//                                | FetGroupTypeExt
+                                  | FetGroupTypeExt					  
+					   
+  syntax NameVisDecl ::= ImportDecl | AliasDecl
+  
+  syntax ImportDecl ::= "with" PkgName  
+                      | "with" PpeSetId
+					  | ImportDecl ImportDeclPlus
+					  
+  syntax ImportDeclPlus ::= "," PkgName 
+                          | "," PpeSetId
+						  | ImportDeclPlus ImportDeclPlus
 
-  syntax PpeDecls ::= NoneStatement
-//                  | PpeAssoc
+  syntax AliasDecl ::= AliasId "renames" "package" PkgName ";"
+  				     | AliasId "renames" CmpCategory UniCmpTypeRef ";"
+				     | "renames" CmpCategory UniCmpTypeRef ";"
+                     | AliasId "renames" "feartur" "group" UniFetGroupTypeRef ";"
+                     | "renames" "feartur" "group" UniFetGroupTypeRef ";"
+                     | "renames" PkgName "::" "all" ";"
+					 
+  syntax AliasId ::= Id
+
 endmodule

@@ -1,5 +1,10 @@
 module PROPERTYASSOCIATION-SYNTAX
 // 11.3 check
+  syntax BasicPpeAssoc ::= UniPpeId "=>" "constant" PpeValue ";"
+                         | UniPpeId "=>"  PpeValue ";"
+                         | UniPpeId "+=>" "constant" PpeValue ";"
+                         | UniPpeId "+=>"  PpeValue ";"
+						 
   syntax PpeAssoc ::= UniPpeId "=>" "constant" Assignment InBinding ";"
             |  UniPpeId "=>" "constant" Assignment  ";"
             |  UniPpeId "=>"  Assignment InBinding ";"

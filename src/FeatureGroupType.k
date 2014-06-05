@@ -1,6 +1,6 @@
 module FEATUREGROUPTYPE-SYNATX
 // 8.2 check
-  syntax FetGroupType ::= "feature" "group" Id FetGroupTypeAssocDef KeyEnd Id ";"
+  syntax FetGroupType ::= "feature" "group" Id FetGroupTypeAssocDef "end" Id ";"
      syntax FetGroupTypeAssocDef ::= ProtoTypeOfFetGroupType FetOfFetGroupType InverseOfFetGroupType PpeOfFetGroupType AnnexOfFetGroupType
       syntax ProtoTypeOfFetGroupType ::= "prototypes" ProtoTypeOfFetGroupTypeTmp 
                   | NoneStatement
@@ -21,7 +21,7 @@ module FEATUREGROUPTYPE-SYNATX
                       |  NoneStatement
           syntax FetGroupContainedPpeAssoc ::= NODEF
       syntax AnnexOfFetGroupType ::= NODEF
-  syntax FetGroupTypeExt ::= "feature" "group" Id "extends" UniFetGroupTypeRef FetGroupTypeExtAssocDef KeyEnd Id ";"  
+  syntax FetGroupTypeExt ::= "feature" "group" Id "extends" UniFetGroupTypeRef FetGroupTypeExtAssocDef "end" Id ";"  
     syntax FetGroupTypeExtAssocDef ::= ProtoTypeBindings ProtoTypeOfFetGroupTypeExt FetOfFetGroupTypeExt InverseOfFetGroupTypeExt PpeOfFetGroupTypeExt AnnexOfFetGroupTypeExt 
       syntax  ProtoTypeOfFetGroupTypeExt ::=  "prototypes" ProtoTypeOfFetGroupTypeExtTmp
 					  | NoneStatement // add 

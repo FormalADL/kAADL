@@ -1,6 +1,6 @@
 module PROPERTYDEFINATION-SYNTAX
 // 11.1.2
-  syntax PpeDefinitionDecl ::= PpeNameId ":" PpeDefDeclAssocDef ";"
+  syntax PpeDefDecl ::= PpeNameId ":" PpeDefDeclAssocDef ";"
     syntax PpeNameId ::= Id
     syntax PpeDefDeclAssocDef ::= "inherit" SingleValuedPpe "applies" "to" PpeOwnerList 
                      |  "inherit" MultiValuedPpe "applies" "to" PpeOwnerList 

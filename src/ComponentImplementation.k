@@ -1,5 +1,5 @@
 module COMPONENTIMPLEMENTATION-SYNTAX
-  syntax CmpImpl ::= CmpCategory "implementation" CmpImplName CmpImplAssocDef KeyEnd CmpImplName ";"
+  syntax CmpImpl ::= CmpCategory "implementation" CmpImplName CmpImplAssocDef "end" CmpImplName ";"
   syntax CmpImplName ::= CmpTypeId"."CmpImplId
   syntax CmpImplId ::= Id
   syntax CmpImplAssocDef ::= CmpImplAssocDef CmpImplAssocDef
@@ -29,6 +29,6 @@ module COMPONENTIMPLEMENTATION-SYNTAX
 //  syntax PpeAssoc ::= PpeAssoc PpeAssoc
 //  syntax ContainedPpeAssoc ::= ContainedPpeAssoc ContainedPpeAssoc
 
-//  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplName "extends" UniCmpImplementRef CmpImplAssocDef KeyEnd CmpImplName ";"
+//  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplName "extends" UniCmpImplementRef CmpImplAssocDef "end" CmpImplName ";"
   syntax UniCmpImplRef ::= CmpImplName | PkgName "::" CmpImplName
 endmodule
