@@ -1,1 +1,0 @@
-here is test case for kAADL.
