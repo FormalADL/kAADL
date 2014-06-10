@@ -9,16 +9,18 @@ module SUBCOMPONENT-SYNTAX
                           | "{" SubCmpPpeAssoc "}"
                           | "{" ContainedPpeAssoc "}"
                           | CmpInModes 
-/*
-  subcomponent_refine is defined in component extension.
-*/						  
-//  syntax SubCmpRefinement ::= SubCmpId "refined" "to" CmpCategory SubCmpAssocDef ";"
+						  | SubCmpAssocDef SubCmpAssocDef    //bug!
+
+  syntax SubCmpPpeAssoc ::= PpeAssoc
+  
+  syntax SubCmpRefinement ::= SubCmpId "refined" "to" CmpCategory SubCmpAssocDef ";"
  						  
   syntax UniCmpClassifierRef ::= UniCmpTypeRef
                                | UniCmpImplRef
 
   syntax ArrayDimensions ::= ArrayDimension
                            | ArrayDimensions ArrayDimensions
+						   
   syntax ArrayDimension ::= "[" ArrayDimensionSize "]"
   syntax ArrayDimensionSize ::= Numeral 
                               | UniPpeConstantId  
@@ -30,7 +32,8 @@ module SUBCOMPONENT-SYNTAX
                                    | UniCmpImplRef
 
 /* 
-    defined in standard, but no relation with other definition  
+    defined in standard, but it's very strange that no relation with other definition 
+    we move this definitions to commdef.k with nodef	
 */	
 //  syntax ArraySelectionName ::= Id ArraySelection
 //  syntax ArraySelection ::= ArraySelection ArraySelection

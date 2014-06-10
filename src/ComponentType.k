@@ -2,7 +2,7 @@ module COMPONENTTYPE-SYNTAX
 
   syntax CmpType ::= CmpCategory CmpTypeId "end" CmpTypeId ";"
                    | CmpCategory CmpTypeId CmpAssocDef "end" CmpTypeId ";"
-
+  syntax CmpTypeId ::= Id
   syntax CmpAssocDef ::= "prototypes" ProtoType 
                        | "prototypes" NoneStatement
                        | "features" Feature 
@@ -12,11 +12,10 @@ module COMPONENTTYPE-SYNTAX
                        | ModesSubclause 
                        | RequiresModesSubclause
 				       | AnnexSubclause 
-                       | "properties" CmpTypePpeAssoc
+                       | "properties" CmpTypePpeAssoc    //not define
                        | "properties" ContainedPpeAssoc
                        | "properties" NoneStatement
-
-  syntax CmpAssocDef ::= CmpAssocDef CmpAssocDef 
+					   | CmpAssocDef CmpAssocDef       //here is a bug!
   
   syntax CmpCategory ::= AbstractCmpCategory 
                        | SoftwareCategory 
@@ -34,14 +33,9 @@ module COMPONENTTYPE-SYNTAX
   syntax CompositeCategory ::= "system"
   syntax ExecPlateformCategory ::= "memory" | "processor" | "bus" | "device" | "virtual" "processor" | "virtrual bus" 
   
-  syntax CmpTypeId ::= Id
-
-
-
-/* do not support ComponentTypeExtension
   syntax CmpTypeExt ::= CmpCategory CmpTypeId "extends" UniCmpTypeRef  CmpAssocDef "end" CmpTypeId ";"
-                    | CmpCategory CmpTypeId "extends" UniCmpTypeRef  ProtoTypeBindings CmpAssocDef "end" CmpTypeId ";"
-*/
+                      | CmpCategory CmpTypeId "extends" UniCmpTypeRef  ProtoTypeBindings CmpAssocDef "end" CmpTypeId ";"
+
   syntax UniCmpTypeRef ::= PkgName "::" CmpTypeId 
                          | CmpTypeId
 

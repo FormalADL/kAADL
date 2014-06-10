@@ -11,15 +11,14 @@ module PACKAGE-SYNTAX
                     | "public" "private"
                     | "public" PkgDeclations 
                     | "private" PkgDeclations
-			        | "public"  "private" PkgDeclations
+			        | "public" "private" PkgDeclations
 					| "public" PkgDeclations "private" 
 					| "public" PkgDeclations "private" PkgDeclations
-
 					
   syntax PpeDecls ::= "properties" NoneStatement
                     | "properties" BasicPpeAssocList
-  
-  BasicPpeAssocList ::= BasicPpeAssoc
+					
+  syntax BasicPpeAssocList ::= BasicPpeAssoc
                       | BasicPpeAssocList BasicPpeAssocList
 					
   syntax PkgDeclations ::= AADLDeclList
@@ -59,8 +58,8 @@ module PACKAGE-SYNTAX
   syntax AliasDecl ::= AliasId "renames" "package" PkgName ";"
   				     | AliasId "renames" CmpCategory UniCmpTypeRef ";"
 				     | "renames" CmpCategory UniCmpTypeRef ";"
-                     | AliasId "renames" "feartur" "group" UniFetGroupTypeRef ";"
-                     | "renames" "feartur" "group" UniFetGroupTypeRef ";"
+                     | AliasId "renames" "feature" "group" UniFetGroupTypeRef ";"
+                     | "renames" "feature" "group" UniFetGroupTypeRef ";"
                      | "renames" PkgName "::" "all" ";"
 					 
   syntax AliasId ::= Id

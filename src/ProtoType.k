@@ -1,7 +1,10 @@
 module PROTOTYPE-SYNTAX
+
   syntax ProtoType ::= ProtoTypeId ":" ProtoTypeDef ";"
                      | ProtoTypeId ":" ProtoTypeDef "{" ProtoTypePpeAssoc "}" ";"
+					 
   syntax ProtoTypeId ::= Id
+  
   syntax ProtoTypeDef ::= CmpProtoType 
                         | FetGroupTypeProtoType
                         | FetProtoType

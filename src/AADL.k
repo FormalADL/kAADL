@@ -63,23 +63,21 @@ module AADL-SYNTAX
   imports MODESANDMODETRANSITION-SYNTAX
  
   imports PROPERTYSET-SYNTAX
-/*  
+  imports PROPERTYASSOCIATION-SYNTAX
   imports PROPERTYCONSTANT-SYNTAX
   imports PROPERTYTYPE-SYNTAX
-  imports PROPERTYEXPRESSION-SYNTAX
   imports PROPERTYDEFINATION-SYNTAX
-  imports PROPERTYASSOCIATION-SYNTAX
-  
-*/
+  imports PROPERTYEXPRESSION-SYNTAX
+
 endmodule
 
-/*the PropertySet need to defined*/
+
 module AADL
   imports AADL-SYNTAX
   syntax AADLSpecification ::= PkgSpecPpeSetList
   syntax PkgSpecPpeSetList ::= PkgSpec 
                              | PpeSet
-           					 | PkgSpecPpeSetList PkgSpecPpeSetListDecl
+           					 | PkgSpecPpeSetList PkgSpecPpeSetList
 endmodule
 
 

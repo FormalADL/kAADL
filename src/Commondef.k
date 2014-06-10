@@ -7,16 +7,18 @@ module COMMONDEF
 /*
   Temp NODEF
 */
-  syntax UniPpeConstantId ::= NODEF
-  syntax UniPpeId ::= NODEF
   syntax FormatEffector ::= NODEF  
   syntax OtherControlCharacter ::= NODEF  
-  syntax PpeAssoc ::= NODEF
-  syntax ContainedPpeAssoc ::= NODEF
-  syntax SubCmpPpeAssoc ::= NODEF  //I guess it's equal to CmpPpeAssoc
   
 //defined in Prototype.k, used in PrototypeAssocDef
-  syntax ProtoTypePpeAssoc ::= NODEF
+  syntax ProtoTypePpeAssoc ::= PpeAssoc
                              | ProtoTypePpeAssoc ProtoTypePpeAssoc
-  
+/* defined in sumcomponent, but no relation with others */
+
+  syntax ArraySelectionName ::= NODEF
+  syntax ArraySelection ::= NODEF
+  syntax SelectionRange ::= NODEF
+  syntax CmpTypePpeAssoc ::= NODEF
+  syntax FlowImplRefinement ::= NODEF
+  syntax EndToEndFlowSpecRefinement ::= NODEF
 endmodule 
