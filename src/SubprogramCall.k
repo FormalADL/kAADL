@@ -1,43 +1,34 @@
 module SUBPROGRAMCALL-SYNTAX
-// 5.2 check
-  syntax SubPgmCallSeq ::= CallSequenceId ":" "{" SubprogramCall /* + */ "}" InModes ";"
-               |  CallSequenceId ":" "{" SubprogramCall /* + */ "}" "{" CallSequencePpeAssoc /* + */ "}" InModes ";"
-    syntax CallSequenceId ::= Id
-    syntax SubprogramCall ::= CallId ":" "subprogram" CalledSubprogram ";"
-    syntax SubprogramCall ::= CallId ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssoc /* + */"}"";"
-    syntax SubprogramCall ::= SubprogramCall SubprogramCall // + 
-      syntax CallId ::= Id
-      syntax CalledSubprogram ::= SubprogramUniCmpClassifierRef
-	      | CmpProtoTypeId
-	      | RequiresSubprogramAccessId
+ 
+  syntax SubPgmCallSeq ::= CallSequenceId ":" "{" SubProgCall "}" ";"
+                         | CallSequenceId ":" "{" SubProgCall "}" "{" CallSequencePpeAssoc "}" InModes ";"
+						 | CallSequenceId ":" "{" SubProgCall "}" InModes ";"
+  syntax CallSequenceId ::= Id
+  syntax SubProgCall ::= CallId ":" "subprogram" CalledSubprogram ";"
+  syntax SubProgCall ::= CallId ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssoc "}" ";"
+  syntax SubProgCall ::= SubProgCall SubProgCall  
+  syntax CallId ::= Id
+  syntax CalledSubprogram ::= SubprogramUniCmpClassifierRef
+                            | DataUniCmpTypeRef "." DataProvidesSubprogramAccessId
+							| SubprogramGroupUniCmpTypeRef "." ProvidesSubprogramAccessId
+							| AbstractUniCmpTypeRef "." ProvidesSubprogramAccessId
+							| FetGroupId "." RequiresSubprogramAccessId
+	                        | CmpProtoTypeId
+							| "processor" "." ProvidesSubprogramAccessId
+							| SubprogramGoupSubCmpId "." ProvidesSubprogramAccessId
+							| RequiresSubprogramGroupAccessId "." ProvidesSubprogramAccessId
+	                        | RequiresSubprogramAccessId
 
-              | DataUniCmpTypeRef "." DataProvidesSubprogramAccessId
-              | SubprogramGroupUniCmpTypeRef "." ProvidesSubprogramAccessId
-              | AbstractUniCmpTypeRef "." ProvidesSubprogramAccessId
-	   
-	  //  | NODEF "." Id
-	  
-              | FetGroupId "." RequiresSubprogramAccessId
-              | "processor" "." ProvidesSubprogramAccessId
-              | SubprogramGoupSubCmpId "." ProvidesSubprogramAccessId
-              | RequiresSubprogramGroupAccessId "." ProvidesSubprogramAccessId
-	   
-	  //  | Id"."Id
-
-	syntax RequiresSubprogramAccessId ::=  Id
-	syntax CmpProtoTypeId ::=  Id
-
-	syntax SubprogramUniCmpClassifierRef ::= NODEF
-	syntax DataUniCmpTypeRef ::= NODEF
-	syntax DataProvidesSubprogramAccessId ::= Id
-	syntax SubprogramGroupUniCmpTypeRef ::= NODEF
-	syntax ProvidesSubprogramAccessId ::= Id
-	syntax AbstractUniCmpTypeRef ::= NODEF
-	syntax FetGroupId ::=  Id
-	syntax SubprogramGoupSubCmpId ::=  Id
-	syntax RequiresSubprogramGroupAccessId ::=  Id
-
-      syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc // +
-
-
+  syntax RequiresSubprogramAccessId ::=  Id
+  syntax CmpProtoTypeId ::=  Id
+  syntax SubprogramUniCmpClassifierRef ::= Id
+  syntax DataUniCmpTypeRef ::= Id
+  syntax DataProvidesSubprogramAccessId ::= Id
+  syntax SubprogramGroupUniCmpTypeRef ::= Id
+  syntax ProvidesSubprogramAccessId ::= Id
+  syntax AbstractUniCmpTypeRef ::= Id
+  syntax FetGroupId ::=  Id
+  syntax SubprogramGoupSubCmpId ::=  Id
+  syntax RequiresSubprogramGroupAccessId ::=  Id
+  syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc 
 endmodule

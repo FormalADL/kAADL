@@ -18,7 +18,13 @@ module COMMONDEF
   syntax ArraySelectionName ::= NODEF
   syntax ArraySelection ::= NODEF
   syntax SelectionRange ::= NODEF
+  
   syntax CmpTypePpeAssoc ::= NODEF
   syntax FlowImplRefinement ::= NODEF
   syntax EndToEndFlowSpecRefinement ::= NODEF
+  
+/*
+  Ppe
+*/
+syntax PpeConstantTerm ::=NODEF
 endmodule 

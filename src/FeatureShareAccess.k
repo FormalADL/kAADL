@@ -1,33 +1,41 @@
 module FEATURESHAREACCESS-SYNTAX
-// 8.0 check
-  syntax Feature ::= AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"  
-  syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
-              | "{" FeatrueContrainedPpeAssoc "}"
-              | ArrayDimension "{" FeatrueContrainedPpeAssoc /* + */ "}"
-              | NoneStatement
 
-    syntax AbstractPortGroupAccessParameter ::= AbstractFetSpec
-               |  PortSpec
-               |  FetGroupSpec
-               |  SubCmpAccessSpec
-               |  ParameterSpec
-    
-      syntax SubCmpAccessSpec ::= SubprogramAccessSpec 
-              | SubprogramGroupAccessSpec 
-              | DataAccessSpec
-              | BusAccessSpec
-    syntax FeatrueContrainedPpeAssoc ::= FeatrueContrainedPpeAssoc FeatrueContrainedPpeAssoc // +
+  syntax Feature ::= AbstractPortGroupAccessParameter ";" 
+                   | AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"  
+
+  syntax AbstractPortGroupAccessParameter ::= AbstractFetSpec
+                                            | PortSpec
+                                            | FetGroupSpec
+                                            | SubCmpAccessSpec
+                                            | ParameterSpec
   
+  syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
+                                           | "{" FeatrueContrainedPpeAssoc "}"
+                                           | ArrayDimension "{" FeatrueContrainedPpeAssoc "}"
+  syntax FeatrueContrainedPpeAssoc ::= FeatrueContrainedPpeAssoc FeatrueContrainedPpeAssoc 
+  syntax FeatrueContrainedPpeAssoc ::= ContainedPpeAssoc
+  
+  syntax SubCmpAccessSpec ::= SubprogramAccessSpec 
+                            | SubprogramGroupAccessSpec 
+                            | DataAccessSpec
+                            | BusAccessSpec
 
-  syntax FetRefinement ::= AbstractFetRefinement ArrayDimensionFeatrueContrained
-          |  PortRefinement ArrayDimensionFeatrueContrained
-          |  FetGroupRefinement ArrayDimensionFeatrueContrained
-          |  SubCmpAccessRefinement ArrayDimensionFeatrueContrained
-          |  ParameterRefinement ArrayDimensionFeatrueContrained
-    syntax SubCmpAccessRefinement ::= SubprogramAccessRefinement
-                 |  SubprogramGroupAccessRefinement
-                 |  DataAccessRefinement
-                 |  BusAccessRefinement    
+  
+  syntax FetRefinement ::= AbstractFetRefinement 
+                         | PortRefinement 
+                         | FetGroupRefinement 
+                         | SubCmpAccessRefinement 
+                         | ParameterRefinement 
+                         | AbstractFetRefinement ArrayDimensionFeatrueContrained
+                         | PortRefinement ArrayDimensionFeatrueContrained
+                         | FetGroupRefinement ArrayDimensionFeatrueContrained
+                         | SubCmpAccessRefinement ArrayDimensionFeatrueContrained
+                         | ParameterRefinement ArrayDimensionFeatrueContrained
+						 
+  syntax SubCmpAccessRefinement ::= SubprogramAccessRefinement
+                                  | SubprogramGroupAccessRefinement
+                                  | DataAccessRefinement
+                                  | BusAccessRefinement    
 endmodule
 
 module FEATURESHAREACCESS
