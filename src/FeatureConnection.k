@@ -10,11 +10,11 @@ module FEATURECONNECTION-SYNTAX
   syntax FetRef ::= CmpTypeFetId
           | CmpTypeFetGroupId "." FetId
           | SubCmpId "." FetId
-          | SubprogramCallId "." FetId
+          | SubPgmCallId "." FetId
     syntax CmpTypeFetId ::= Id
     syntax CmpTypeFetGroupId ::=  Id
     syntax FetId ::= Id
-    syntax SubprogramCallId ::= Id
+    syntax SubPgmCallId ::= Id
 
   syntax FetConnectionRefinement ::= "feature"
 

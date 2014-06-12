@@ -15,8 +15,8 @@ module FEATURESHAREACCESS-SYNTAX
   syntax FeatrueContrainedPpeAssoc ::= FeatrueContrainedPpeAssoc FeatrueContrainedPpeAssoc 
   syntax FeatrueContrainedPpeAssoc ::= ContainedPpeAssoc
   
-  syntax SubCmpAccessSpec ::= SubprogramAccessSpec 
-                            | SubprogramGroupAccessSpec 
+  syntax SubCmpAccessSpec ::= SubPgmAccessSpec 
+                            | SubPgmGroupAccessSpec 
                             | DataAccessSpec
                             | BusAccessSpec
 
@@ -32,8 +32,8 @@ module FEATURESHAREACCESS-SYNTAX
                          | SubCmpAccessRefinement ArrayDimensionFeatrueContrained
                          | ParameterRefinement ArrayDimensionFeatrueContrained
 						 
-  syntax SubCmpAccessRefinement ::= SubprogramAccessRefinement
-                                  | SubprogramGroupAccessRefinement
+  syntax SubCmpAccessRefinement ::= SubPgmAccessRefinement
+                                  | SubPgmGroupAccessRefinement
                                   | DataAccessRefinement
                                   | BusAccessRefinement    
 endmodule

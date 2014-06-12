@@ -18,7 +18,6 @@ module PORTCONNECTION-SYNTAX
               |  "self" "." EventOrEventDataSourceId
 
     syntax CmpTypePortId ::= Id
-    syntax PortId ::= Id
     syntax ElementPortId ::=  Id
     syntax DataSubCmpId ::=  Id
     syntax CmpTypeRequiresDataAccessId ::=  Id

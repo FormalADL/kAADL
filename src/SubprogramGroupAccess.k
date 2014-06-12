@@ -1,23 +1,21 @@
 module SUBPROGRAMGROUPACCESS-SYNTAX
-  syntax SubprogramAccessSpec ::= SubprogramAccessId ":" "provides" "subprogram" "access" SubprogramAccessSpecAssocTmp
-             |  SubprogramAccessId ":" "requires" "subprogram" "access" SubprogramAccessSpecAssocTmp
-    syntax SubprogramAccessId ::= Id
-    syntax SubprogramAccessSpecAssocTmp ::= SubprogramUniCmpClassifierRef
-                 |  ProtoTypeId
-                 |  NoneStatement
 
-
-
-  syntax SubprogramAccessRefinement ::= SubprogramAccessId ":" "refined" "to" "provides" "subprogram" "access" SubprogramAccessSpecAssocTmp
-             |  SubprogramAccessId ":" "refined" "to" "requires" "subprogram" "access" SubprogramAccessSpecAssocTmp
+  syntax SubPgmAccessSpec ::= SubPgmAccessId ":" "provides" "subprogram" "access" SubPgmAccessSpecAssoc
+                            | SubPgmAccessId ":" "requires" "subprogram" "access" SubPgmAccessSpecAssoc
+  syntax SubPgmAccessId ::= Id
   
+  syntax SubPgmAccessSpecAssoc ::= SubPgmUniCmpClassifierRef
+                                 | SubPgmProtoTypeId
+  syntax SubPgmProtoTypeId ::= Id
 
+  syntax SubPgmAccessRefinement ::= SubPgmAccessId ":" "refined" "to" "provides" "subprogram" "access" SubPgmAccessSpecAssoc
+                                  | SubPgmAccessId ":" "refined" "to" "requires" "subprogram" "access" SubPgmAccessSpecAssoc
+  
+  syntax SubPgmGroupAccessSpec ::= SubPgmGroupAccessId ":" "provides" "subprogram" "group" "access" SubPgmAccessSpecAssoc
+                                 | SubPgmGroupAccessId ":" "requires" "subprogram" "group" "access" SubPgmAccessSpecAssoc
+  syntax SubPgmGroupAccessId ::= Id
 
-  syntax SubprogramGroupAccessSpec ::= SubprogramGroupAccessId ":" "provides" "subprogram" "group" "access" SubprogramAccessSpecAssocTmp
-                  |  SubprogramGroupAccessId ":" "requires" "subprogram" "group" "access" SubprogramAccessSpecAssocTmp
-      syntax SubprogramGroupAccessId ::= Id
-
-  syntax SubprogramGroupAccessRefinement ::= SubprogramGroupAccessId ":" "refined" "to" "provides" "subprogram" "group" "access" SubprogramAccessSpecAssocTmp
-            |  SubprogramGroupAccessId ":" "refined" "to" "requires" "subprogram" "group" "access" SubprogramAccessSpecAssocTmp
-
+  syntax SubPgmGroupAccessRefinement ::= SubPgmGroupAccessId ":" "refined" "to" "provides" "subprogram" "group" "access" SubPgmAccessSpecAssoc
+                                       | SubPgmGroupAccessId ":" "refined" "to" "requires" "subprogram" "group" "access" SubPgmAccessSpecAssoc
+ 
 endmodule

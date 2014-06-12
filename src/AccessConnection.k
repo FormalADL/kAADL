@@ -12,9 +12,9 @@ module ACCESSCONNECTION-SYNTAX
         |  FetGroupId "." ProvidesAccessId
         |  SubCmpId "." ProvidesAccessId
         |  SubCmpId "." RequiresAccessId
-        |  SubprogramCallId "." RequiresOrProvidesAccessId
+        |  SubPgmCallId "." RequiresOrProvidesAccessId
         |  SubCmpId
-        |  "processor" "." ProvidesSubprogramAccessId
+        |  "processor" "." ProvidesSubPgmAccessId
     syntax RequiresAccessId ::= Id
     syntax ProvidesAccessId ::= Id
     syntax RequiresOrProvidesAccessId ::= Id

@@ -28,8 +28,8 @@ module MODESANDMODETRANSITION-SYNTAX
     syntax ModeTransitionTrigger ::= UniPortId 
             |  "self" "." EventSourceId
             |  "processor" "." PortId
-      syntax UniPortId ::= PortId | SubCmpFetGroupOrSubprogramCallId "." PortId
-        syntax SubCmpFetGroupOrSubprogramCallId ::= NODEF
+      syntax UniPortId ::= PortId | SubCmpFetGroupOrSubPgmCallId "." PortId
+        syntax SubCmpFetGroupOrSubPgmCallId ::= NODEF
       syntax EventSourceId ::= NODEF
     syntax DestinationModeId ::= NODEF
     syntax ModeTransitionPpeAssocList ::=  ModeTransitionPpeAssoc |  ModeTransitionPpeAssoc  ModeTransitionPpeAssocList

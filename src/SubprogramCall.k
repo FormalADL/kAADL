@@ -1,34 +1,34 @@
 module SUBPROGRAMCALL-SYNTAX
  
-  syntax SubPgmCallSeq ::= CallSequenceId ":" "{" SubProgCall "}" ";"
-                         | CallSequenceId ":" "{" SubProgCall "}" "{" CallSequencePpeAssoc "}" InModes ";"
-						 | CallSequenceId ":" "{" SubProgCall "}" InModes ";"
+  syntax SubPgmCallSeq ::= CallSequenceId ":" "{" SubPgmCall "}" ";"
+                         | CallSequenceId ":" "{" SubPgmCall "}" "{" CallSequencePpeAssoc "}" InModes ";"
+						 | CallSequenceId ":" "{" SubPgmCall "}" InModes ";"
   syntax CallSequenceId ::= Id
-  syntax SubProgCall ::= CallId ":" "subprogram" CalledSubprogram ";"
-  syntax SubProgCall ::= CallId ":" "subprogram" CalledSubprogram "{" CallSequencePpeAssoc "}" ";"
-  syntax SubProgCall ::= SubProgCall SubProgCall  
+  syntax SubPgmCall ::= CallId ":" "subprogram" CalledSubPgm ";"
+  syntax SubPgmCall ::= CallId ":" "subprogram" CalledSubPgm "{" CallSequencePpeAssoc "}" ";"
+  syntax SubPgmCall ::= SubPgmCall SubPgmCall  
   syntax CallId ::= Id
-  syntax CalledSubprogram ::= SubprogramUniCmpClassifierRef
-                            | DataUniCmpTypeRef "." DataProvidesSubprogramAccessId
-							| SubprogramGroupUniCmpTypeRef "." ProvidesSubprogramAccessId
-							| AbstractUniCmpTypeRef "." ProvidesSubprogramAccessId
-							| FetGroupId "." RequiresSubprogramAccessId
+  syntax CalledSubPgm ::= SubPgmUniCmpClassifierRef
+                            | DataUniCmpTypeRef "." DataProvidesSubPgmAccessId
+							| SubPgmGroupUniCmpTypeRef "." ProvidesSubPgmAccessId
+							| AbstractUniCmpTypeRef "." ProvidesSubPgmAccessId
+							| FetGroupId "." RequiresSubPgmAccessId
 	                        | CmpProtoTypeId
-							| "processor" "." ProvidesSubprogramAccessId
-							| SubprogramGoupSubCmpId "." ProvidesSubprogramAccessId
-							| RequiresSubprogramGroupAccessId "." ProvidesSubprogramAccessId
-	                        | RequiresSubprogramAccessId
+							| "processor" "." ProvidesSubPgmAccessId
+							| SubPgmGoupSubCmpId "." ProvidesSubPgmAccessId
+							| RequiresSubPgmGroupAccessId "." ProvidesSubPgmAccessId
+	                        | RequiresSubPgmAccessId
 
-  syntax RequiresSubprogramAccessId ::=  Id
+  syntax RequiresSubPgmAccessId ::=  Id
   syntax CmpProtoTypeId ::=  Id
-  syntax SubprogramUniCmpClassifierRef ::= Id
+  syntax SubPgmUniCmpClassifierRef ::= Id
   syntax DataUniCmpTypeRef ::= Id
-  syntax DataProvidesSubprogramAccessId ::= Id
-  syntax SubprogramGroupUniCmpTypeRef ::= Id
-  syntax ProvidesSubprogramAccessId ::= Id
+  syntax DataProvidesSubPgmAccessId ::= Id
+  syntax SubPgmGroupUniCmpTypeRef ::= Id
+  syntax ProvidesSubPgmAccessId ::= Id
   syntax AbstractUniCmpTypeRef ::= Id
   syntax FetGroupId ::=  Id
-  syntax SubprogramGoupSubCmpId ::=  Id
-  syntax RequiresSubprogramGroupAccessId ::=  Id
+  syntax SubPgmGoupSubCmpId ::=  Id
+  syntax RequiresSubPgmGroupAccessId ::=  Id
   syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc 
 endmodule

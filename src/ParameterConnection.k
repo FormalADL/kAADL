@@ -8,7 +8,7 @@ module PARAMETERCONNECTION-SYNTAX
   syntax ParameterConnectionRefinement ::= "paramenter"
   syntax ParameterRef ::= CmpTypeParameterId 
             |  CmpTypeParameterId "." DataSubCmpId
-            |  SubprogramCallId "." ParameterId
+            |  SubPgmCallId "." ParameterId
             |  CmpTypePortId
             |  CmpTypePortId "." DataSubCmpId
             |  DataSubCmpId

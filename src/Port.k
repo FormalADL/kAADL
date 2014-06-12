@@ -1,18 +1,19 @@
 module PORT-SYNTAX
-// 8.3 check
-  syntax PortSpec ::= PortIdentifer ":" "in" PortType
-        | PortIdentifer ":" "out" PortType
-        | PortIdentifer ":" "in" "out" PortType
-  syntax PortRefinement ::= PortIdentifer ":" "refined" "to" "in" PortType
-        |  PortIdentifer ":" "refined" "to" "out" PortType
-        |  PortIdentifer ":" "refined" "to" "in" "out"  PortType
-    syntax PortIdentifer ::= Id
-    syntax PortType ::= "data" "port" DataUniCmpClassifierRef
-         |  "data" "port" DataCmpProtoTypeId
-         |  "event" "data" "port" DataUniCmpClassifierRef
-         |  "event" "data" "port" DataCmpProtoTypeId
-         |  "event" "port"
-      syntax DataUniCmpClassifierRef ::= NODEF
-      syntax DataCmpProtoTypeId ::= Id
+
+  syntax PortSpec ::= PortId ":" "in" PortType
+                    | PortId ":" "out" PortType
+                    | PortId ":" "in" "out" PortType
+  syntax PortRefinement ::= PortId ":" "refined" "to" "in" PortType
+                          | PortId ":" "refined" "to" "out" PortType
+                          | PortId ":" "refined" "to" "in" "out"  PortType
+  syntax PortId ::= Id
+  syntax PortType ::= "data" "port" DataUniCmpClassifierRef
+                    | "data" "port" DataCmpProtoTypeId
+                    | "event" "data" "port" DataUniCmpClassifierRef
+                    | "event" "data" "port" DataCmpProtoTypeId
+                    | "event" "port"
+					
+  syntax DataUniCmpClassifierRef ::= Id
+  syntax DataCmpProtoTypeId ::= Id
 
 endmodule

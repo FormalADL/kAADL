@@ -47,14 +47,14 @@ module PROTOTYPE-SYNTAX
   syntax FetGroupTypeProtoTypeId ::= Id
   syntax FetProtoTypeActual ::= InOut EventData "port"
                               | InOut EventData "port" UniCmpClassifierRef
-							  | Require BusDataSubprogram "access"
-                              | Require BusDataSubprogram "access" UniCmpClassifierRef
+							  | Require BusDataSubPgm "access"
+                              | Require BusDataSubPgm "access" UniCmpClassifierRef
 							  | "in" "feature" FetProtoTypeId
                               | "out" "feature" FetProtoTypeId
 							  
   syntax InOut ::= "in" | "out" | "in" "out"
   syntax EventData ::= "event" | "data" | "event" "data"
   syntax Require ::= "requires" | "provides"
-  syntax BusDataSubprogram ::= "bus" | "data" | "subprogram" "group" | "subprogram"
+  syntax BusDataSubPgm ::= "bus" | "data" | "subprogram" "group" | "subprogram"
   
 endmodule
