@@ -1,0 +1,32 @@
+/*component type test!*/
+package AssociationExample
+  public
+    system File_System
+	prototypes 
+		ProtoTypeId1 : feature group
+		ProtoTypeId2 : in feature
+	features none
+	flows none
+    end File_System;
+    process Application
+    end Application;
+
+    thread Calculate
+    end Calculate;
+
+    thread Compute_Distance
+    end Compute_Distance;
+  private 
+    system File_System
+    end File_System;
+    process Application
+    end Application;
+
+    thread Calculate
+    end Calculate;
+
+    thread Compute_Distance
+    end Compute_Distance;
+    
+end AssociationExample;
+
