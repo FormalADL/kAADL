@@ -1,19 +1,19 @@
 module FEATURECONNECTION-SYNTAX
 
-  syntax FetConnection ::= "feature" SourceFetRef ConnectionSymbol DestinationFetRef
-  syntax SourceFetRef ::= FetRef
-  syntax ConnectionSymbol ::= DirectionalConnectSymbol | BidirectionalConnectSymbol
+  syntax FetConnection ::= "feature" SrcFetRef ConnectionSymbol DestFetRef
+  syntax SrcFetRef ::= FetRef
+  syntax DestFetRef ::= FetRef
   
-  syntax DirectionalConnectSymbol ::= "->"
-  syntax BidirectionalConnectSymbol ::= "<->"
-  
-  syntax DestinationFetRef ::= FetRef
-
+  syntax ConnectionSymbol ::= DirecConnectSymb | BidirectConnectSymb
+  syntax DirecConnectSymb ::= "->"
+  syntax BidirectConnectSymb ::= "<->"
+ 
   syntax FetRef ::= CmpTypeFetId
-          | CmpTypeFetGroupId "." FetId
-          | SubCmpId "." FetId
-          | SubPgmCallId "." FetId
-		  
+                  | CmpTypeFetGroupId "." FetId
+                  | SubCmpId "." FetId
+                  | SubPgmCallId "." FetId
+  
+/*here we need to fix it, we need solve Id map in namespace configuration*/  
   syntax CmpTypeFetId ::= Id
   syntax CmpTypeFetGroupId ::=  Id
   syntax FetId ::= Id
