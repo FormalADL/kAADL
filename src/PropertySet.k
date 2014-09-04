@@ -1,15 +1,15 @@
 module PROPERTYSET-SYNTAX
   syntax PpeSetId ::= Id
   syntax PpeSet ::= "property" "set" PpeSetId "is" PpeSetAssocDef "end" PpeSetId ";"
-  syntax PpeSetAssocDef ::= ImportDecls
+  syntax PpeSetAssocDef ::= ImportDecls 
                           | PpeTempDecls
-						  | ImportDecls PpeTempDecls
+			  | ImportDecls PpeTempDecls
   syntax ImportDecls ::= ImportDecl
                        | ImportDecls ImportDecls					  
   syntax PpeTempDecls ::= PpeTypeDecl
                         | PpeDefDecl
                         | PpeConstant
-						| PpeTempDecls PpeTempDecls
+			| PpeTempDecls PpeTempDecls
 endmodule
 
 module PROPERTYSET

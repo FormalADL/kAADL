@@ -38,7 +38,7 @@ module LEXICALELEMENT-SYNTAX
 //  syntax ExtendedDigit ::= Digit | "a" | "b" | "c" | "d" | "e" | "f" 
   syntax RealLiteral ::= DecimalRealLiteral
   syntax DecimalRealLiteral ::= Numeral "." Numeral 
-						      | Numeral"." Numeral Exponent
+			      | Numeral"." Numeral Exponent
   syntax Exponent ::= "E" Numeral 
                     | "E" "+" Numeral
 

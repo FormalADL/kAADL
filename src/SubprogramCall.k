@@ -1,12 +1,23 @@
 module SUBPROGRAMCALL-SYNTAX
  
-  syntax SubPgmCallSeq ::= CallSequenceId ":" "{" SubPgmCall "}" ";"
-                         | CallSequenceId ":" "{" SubPgmCall "}" "{" CallSequencePpeAssoc "}" InModes ";"
-						 | CallSequenceId ":" "{" SubPgmCall "}" InModes ";"
+  syntax SubPgmCallSeq ::= CallSequenceId ":" "{" SubPgmCallList "}" ";"
+                         | CallSequenceId ":" "{" SubPgmCallList "}" "{" CallSequencePpeAssocList "}" ";"
+						 | CallSequenceId ":" "{" SubPgmCallList "}" InModes ";"
+                         | CallSequenceId ":" "{" SubPgmCallList "}" "{" CallSequencePpeAssocList "}" InModes ";"	
+                         
+  syntax SubPgmCallList ::= SubPgmCall
+                          | SubPgmCallList SubPgmCallList                      
+                         
+  syntax CallSequencePpeAssocList ::= PpeAssoc
+                          | CallSequencePpeAssocList CallSequencePpeAssocList                         
+                                                 				
   syntax CallSequenceId ::= Id
   syntax SubPgmCall ::= CallId ":" "subprogram" CalledSubPgm ";"
-  syntax SubPgmCall ::= CallId ":" "subprogram" CalledSubPgm "{" CallSequencePpeAssoc "}" ";"
-  syntax SubPgmCall ::= SubPgmCall SubPgmCall  
+  syntax SubPgmCall ::= CallId ":" "subprogram" CalledSubPgm "{" SubPgmCallPpeAssocList "}" ";"
+  
+  syntax SubPgmCallPpeAssocList ::= PpeAssoc
+                                  | SubPgmCallPpeAssocList SubPgmCallPpeAssocList
+//  syntax SubPgmCall ::= SubPgmCall SubPgmCall  
   syntax CallId ::= Id
   syntax CalledSubPgm ::= SubPgmUniCmpClassifierRef
                             | DataUniCmpTypeRef "." DataProvidesSubPgmAccessId
@@ -30,5 +41,5 @@ module SUBPROGRAMCALL-SYNTAX
   syntax FetGroupId ::=  Id
   syntax SubPgmGoupSubCmpId ::=  Id
   syntax RequiresSubPgmGroupAccessId ::=  Id
-  syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc 
+//  syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc 
 endmodule

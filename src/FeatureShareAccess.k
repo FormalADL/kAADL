@@ -1,14 +1,25 @@
 module FEATURESHAREACCESS-SYNTAX
 
-  syntax Feature ::= AbstractPortGroupAccessParameter ";" 
-                   | AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"  
+//  syntax Feature ::= AbstractPortGroupAccessParameter ";" 
+//                   | AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"  
 
-  syntax AbstractPortGroupAccessParameter ::= AbstractFetSpec
-                                            | PortSpec
-                                            | FetGroupSpec
-                                            | SubCmpAccessSpec
-                                            | ParameterSpec
-  
+//  syntax AbstractPortGroupAccessParameter ::= AbstractFetSpec
+//                                            | PortSpec
+//                                            | FetGroupSpec
+//                                            | SubCmpAccessSpec
+//                                            | ParameterSpec
+
+  syntax Feature ::= AbstractFetSpec 
+                   | PortSpec 
+                   | FetGroupSpec 
+                   | SubCmpAccessSpec 
+                   | ParameterSpec 
+                   | AbstractFetSpec ArrayDimensionFeatrueContrained
+                   | PortSpec ArrayDimensionFeatrueContrained
+                   | FetGroupSpec ArrayDimensionFeatrueContrained
+                   | SubCmpAccessSpec ArrayDimensionFeatrueContrained
+                   | ParameterSpec ArrayDimensionFeatrueContrained  
+                   
   syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
                                            | "{" FeatrueContrainedPpeAssoc "}"
                                            | ArrayDimension "{" FeatrueContrainedPpeAssoc "}"

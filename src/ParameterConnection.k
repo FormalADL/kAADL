@@ -1,7 +1,7 @@
 module PARAMETERCONNECTION-SYNTAX
-// 9.3  check
+
   syntax ParameterConnection ::= "parameter" SourceParameterRef DirectionalConnectionSymbol DestinationParameterRef
-    syntax SourceParameterRef ::= ParameterRef // need rules
+    syntax SourceParameterRef ::= ParameterRef 
     syntax DirectionalConnectionSymbol ::= ParameterRef
     syntax DestinationParameterRef ::= ParameterRef
 

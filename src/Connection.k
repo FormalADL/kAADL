@@ -1,5 +1,6 @@
 module CONNECTION-SYNTAX
 
+  syntax Connection ::= ConnectionId ":" SomeConnections ";"  
   syntax Connection ::= ConnectionId ":" SomeConnections PpeInMode ";"
   syntax ConnectionId ::= Id
   syntax SomeConnections ::= FetConnection 
@@ -15,6 +16,7 @@ module CONNECTION-SYNTAX
   syntax PpeAssocList ::= PpeAssoc 
                         | PpeAssocList PpeAssocList
 
+  syntax ConnectionRefinement ::= ConnectionId ":" "refined" "to" SomeRefinements ";"
   syntax ConnectionRefinement ::= ConnectionId ":" "refined" "to" SomeRefinements PpeInMode ";"
   syntax SomeRefinements ::= FetConnectionRefinement 
                            | PortConnectionRefinement

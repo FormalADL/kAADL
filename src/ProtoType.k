@@ -1,7 +1,10 @@
 module PROTOTYPE-SYNTAX
 
   syntax ProtoType ::= ProtoTypeId ":" ProtoTypeDef ";"
-                     | ProtoTypeId ":" ProtoTypeDef "{" ProtoTypePpeAssoc "}" ";"
+                     | ProtoTypeId ":" ProtoTypeDef "{" ProtoTypePpeAssocList "}" ";"
+  
+  syntax ProtoTypePpeAssocList ::= PpeAssoc
+                                 | ProtoTypePpeAssocList ProtoTypePpeAssocList
 					 
   syntax ProtoTypeId ::= Id
   
@@ -18,7 +21,10 @@ module PROTOTYPE-SYNTAX
   syntax FetGroupTypeProtoType ::= "feature" "group" 
                                  | "feature" "group" UniFetGroupTypeRef
 
-  syntax FetProtoType ::= "in" "feature" UniCmpClassifierRef
+  syntax FetProtoType ::= "feature"
+                        | "in" "feature"
+                        | "out" "feature"
+                        | "in" "feature" UniCmpClassifierRef
                         | "out" "feature" UniCmpClassifierRef
                         | "feature" UniCmpClassifierRef
 

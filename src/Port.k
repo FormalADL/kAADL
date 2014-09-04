@@ -7,13 +7,14 @@ module PORT-SYNTAX
                           | PortId ":" "refined" "to" "out" PortType
                           | PortId ":" "refined" "to" "in" "out"  PortType
   syntax PortId ::= Id
+  
   syntax PortType ::= "data" "port" DataUniCmpClassifierRef
                     | "data" "port" DataCmpProtoTypeId
                     | "event" "data" "port" DataUniCmpClassifierRef
                     | "event" "data" "port" DataCmpProtoTypeId
                     | "event" "port"
 					
-  syntax DataUniCmpClassifierRef ::= Id
+  syntax DataUniCmpClassifierRef ::= UniCmpClassifierRef
   syntax DataCmpProtoTypeId ::= Id
 
 endmodule

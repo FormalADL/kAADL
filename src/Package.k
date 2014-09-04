@@ -18,7 +18,7 @@ module PACKAGE-SYNTAX
   syntax PpeDecls ::= "properties" NoneStatement
                     | "properties" BasicPpeAssocList
 					
-  syntax BasicPpeAssocList ::= BasicPpeAssoc
+  syntax BasicPpeAssocList ::= PpeAssoc
                       | BasicPpeAssocList BasicPpeAssocList
 					
   syntax PkgDeclations ::= AADLDeclList

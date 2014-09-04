@@ -6,12 +6,13 @@ module SUBCOMPONENT-SYNTAX
                           | ProtoTypeId
                           | ArrayDimensions 
                           | ArrayDimensions ArrayElementImplList
-                          | "{" SubCmpPpeAssoc "}"
-                          | "{" ContainedPpeAssoc "}"
+                          | "{" SubCmpPpeAssocList "}"
+                          | "{" ContainedPpeAssocList "}"
                           | CmpInModes 
 						  | SubCmpAssocDef SubCmpAssocDef    //bug!
 
-  syntax SubCmpPpeAssoc ::= PpeAssoc
+  syntax SubCmpPpeAssocList ::= PpeAssoc
+                              | SubCmpPpeAssocList SubCmpPpeAssocList
   
   syntax SubCmpRefinement ::= SubCmpId "refined" "to" CmpCategory SubCmpAssocDef ";"
  						  
@@ -26,11 +27,13 @@ module SUBCOMPONENT-SYNTAX
                               | UniPpeConstantId  
 							  | UniPpeId
 
-  syntax ArrayElementImplList ::= "(" ArrayElementImplListTmp ")"
-                                | "(" ArrayElementImplListTmp "," ArrayElementImplListTmp ")"
   syntax ArrayElementImplListTmp ::= UniCmpImplRef ProtoTypeBindings
                                    | UniCmpImplRef
 
+  syntax ArrayElementImplList ::= "(" ArrayElementImplListTmps ")"
+  
+  syntax ArrayElementImplListTmps ::= ArrayElementImplListTmp
+                                    | ArrayElementImplListTmp "," ArrayElementImplListTmp
 /* 
     defined in standard, but it's very strange that no relation with other definition 
     we move this definitions to commdef.k with nodef	

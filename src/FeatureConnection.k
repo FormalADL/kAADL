@@ -1,5 +1,7 @@
 module FEATURECONNECTION-SYNTAX
 
+//  syntax FetConnection ::= "feature" SrcFetRef "->" DestFetRef
+//  syntax FetConnection ::= "feature" SrcFetRef "<->" DestFetRef
   syntax FetConnection ::= "feature" SrcFetRef ConnectionSymbol DestFetRef
   syntax SrcFetRef ::= FetRef
   syntax DestFetRef ::= FetRef

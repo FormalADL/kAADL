@@ -1,6 +1,6 @@
 module ENDTOENDFLOW-SYNTAX
 // 10.3  
-  syntax EndToEndFlowSpec ::= EndToEndFlowId ":" "end" "to" "end" "flow" StartSubCmpFlowOrEtefId ConnectionIdFlowPathList  EndToEndFlowSpecAssocDefault ";"
+  syntax EndToEndFlowSpec ::= EndToEndFlowId ":" "end" "to" "end" "flow" StartSubCmpFlowOrEtefId ConnectionIdFlowPathList /* + */ EndToEndFlowSpecAssocDefault ";"
     syntax EndToEndFlowId ::= Id
     syntax StartSubCmpFlowOrEtefId ::= SubCmpFlowOrEtefId
     syntax ConnectionIdFlowPathList ::= "->" ConnectionId "->" FlowPathSubCmpFlowOrEtefId
