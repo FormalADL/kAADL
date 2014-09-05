@@ -5,7 +5,7 @@ module DATACOMPONENTACCESS-SYNTAX
 //  syntax DataCmpAccessSamePart ::= "provides" "data" "access" DataUniProtoType
 //                                 | "requires" "data" "access" DataUniProtoType
 //  syntax DataUniProtoType ::= DataUniCmpClassifierRef 
-                            | ProtoTypeId
+                            // | ProtoTypeId
 //  syntax DataAccessRefinement ::= DataCmpAccessId ":" "refined" "to" DataCmpAccessSamePart
 
     syntax DataAccessSpec ::= DataCmpAccessId ":" "provides" "data" "access" DataUniCmpClassifierRef

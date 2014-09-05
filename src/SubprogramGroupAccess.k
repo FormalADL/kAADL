@@ -25,7 +25,7 @@ module SUBPROGRAMGROUPACCESS-SYNTAX
  
  
    syntax SubPgmProtoTypeId ::= Id
-   SubPgmUniCmpClassifierRef ::= UniCmpClassifierRef
+   syntax SubPgmUniCmpClassifierRef ::= UniCmpClassifierRef
    syntax SubPgmAccessId ::= Id
    syntax SubPgmGroupAccessId ::= Id 
          

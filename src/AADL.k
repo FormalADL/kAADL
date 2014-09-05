@@ -21,7 +21,6 @@ require "ParameterConnection.k"
 require "AccessConnection.k"
 require "FeatureGroupConnection.k"
 require "FlowSpecification.k"
-require "FlowImplementation1.k"
 require "EndToEndFlow.k"
 require "PropertySet.k"
 require "PropertyType.k"
@@ -30,6 +29,7 @@ require "PropertyConstant.k"
 require "PropertyAssociation.k"
 require "PropertyExpression.k"
 require "ModesAndModeTransition.k"
+require "FlowImplementation.k"
 require "LexicalElement.k"
 
 module AADL-SYNTAX
@@ -67,9 +67,7 @@ module AADL-SYNTAX
   imports PROPERTYCONSTANT-SYNTAX
   imports PROPERTYTYPE-SYNTAX
   imports PROPERTYDEFINATION-SYNTAX
-/*
   imports PROPERTYEXPRESSION-SYNTAX
-*/
 endmodule
 
 

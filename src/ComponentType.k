@@ -12,8 +12,7 @@ module COMPONENTTYPE-SYNTAX
                        | ModesSubclause 
                        | RequiresModesSubclause
 				       | AnnexSubclause 
-                       | "properties" CmpTypePpeAssocList     //not define
-                       | "properties" ContainedPpeAssocList
+                       | "properties" PpeAssocList
                        | "properties" NoneStatement
 					   | CmpAssocDef CmpAssocDef       //here is a bug!
 
@@ -27,11 +26,16 @@ module COMPONENTTYPE-SYNTAX
                          | FlowSpecList FlowSpecList
 
   syntax CmpTypePpeAssocList ::= PpeAssoc
-                         | CmpTypePpeAssocList CmpTypePpeAssocTypeList
+                         | CmpTypePpeAssocList CmpTypePpeAssocList
 
   syntax ContainedPpeAssocList ::= ContainedPpeAssoc
                          | ContainedPpeAssocList ContainedPpeAssocList
                           
+ syntax PpeAssocList ::= CmpTypePpeAssocList
+			|ContainedPpeAssocList
+			|CmpTypePpeAssocList PpeAssocList
+			|ContainedPpeAssocList PpeAssocList
+
   syntax CmpCategory ::= AbstractCmpCategory 
                        | SoftwareCategory 
 					   | ExecPlateformCategory 

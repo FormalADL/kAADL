@@ -23,8 +23,6 @@ module SUBPROGRAMPARAMETER-SYNTAX
                                  | ParameterId ":"  "refined" "to" "out" "parameter" ProtoTypeId 
                                  | ParameterId ":"  "refined" "to" "in" "out" "parameter" ProtoTypeId 
     syntax ParameterId ::= Id
-    syntax ProtoTypeId ::= Id
-    syntax DataUniCmpClassifierRef ::= UniCmpClassifierRef                             
 endmodule
 
 module SUBPROGRAMPARAMETER

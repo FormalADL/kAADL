@@ -15,7 +15,6 @@ module FLOWIMPLEMENTATION-SYNTAX
   syntax FlowPathImplDefault ::= ConnectIdSubcompenentFlowIdnetifierList /* + */ "->" ConnectionId
   syntax ConnectIdSubcompenentFlowIdnetifierList ::= "->" ConnectionId "->" SubCmpFlowId
                         |  ConnectIdSubcompenentFlowIdnetifierList ConnectIdSubcompenentFlowIdnetifierList
-  syntax ConnectionId ::= Id
   syntax SubCmpFlowId ::= DataCompenentRef | SubCmpId | SubCmpId "." FlowSpecId
   syntax FlowSpecId ::= Id
   syntax DataCompenentRef ::= DataSubCmpId | RequiresDataAccessId | ProvidesDataAccessId

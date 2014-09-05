@@ -38,7 +38,6 @@ module SUBPROGRAMCALL-SYNTAX
   syntax SubPgmGroupUniCmpTypeRef ::= Id
   syntax ProvidesSubPgmAccessId ::= Id
   syntax AbstractUniCmpTypeRef ::= Id
-  syntax FetGroupId ::=  Id
   syntax SubPgmGoupSubCmpId ::=  Id
   syntax RequiresSubPgmGroupAccessId ::=  Id
 //  syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc 

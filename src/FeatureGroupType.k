@@ -29,7 +29,7 @@ module FEATUREGROUPTYPE-SYNATX
                                    | "prototypes" ProtoTypeRefinementList
                                    | "prototypes" NoneStatement
 								   | "features" FeatureList
-								   | "features" FeatureRefinementList
+								   | "features" FetRefinementList
 								   | "inverse" "of" UniFetGroupTypeRef  
 								   | "properties" FetGroupContainedPpeAssocList 
 								   | "properties" NoneStatement 
@@ -49,8 +49,8 @@ module FEATUREGROUPTYPE-SYNATX
 // syntax FetList ::= Feature 
 //                   | Feature FetList
 
-   syntax FeatureRefinementList ::= FeatureRefinement 
-                                  | FeatureRefinementList FeatureRefinementList
+   syntax FetRefinementList ::= FetRefinement 
+                                  | FetRefinementList FetRefinementList
 							 
   syntax FetGroupSpec ::= FetGroupId ":" FetGroupSpecAssocDef
    
