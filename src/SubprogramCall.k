@@ -1,9 +1,9 @@
 module SUBPROGRAMCALL-SYNTAX
  
-  syntax SubPgmCallSeq ::= CallSequenceId ":" "{" SubPgmCallList "}" ";"
-                         | CallSequenceId ":" "{" SubPgmCallList "}" "{" CallSequencePpeAssocList "}" ";"
-						 | CallSequenceId ":" "{" SubPgmCallList "}" InModes ";"
-                         | CallSequenceId ":" "{" SubPgmCallList "}" "{" CallSequencePpeAssocList "}" InModes ";"	
+  syntax SubPgmCallSeq ::= CallSequenceId  Mcolon   MBraceLeft  SubPgmCallList  MBraceRight   MSemicolon 
+                         | CallSequenceId  Mcolon   MBraceLeft  SubPgmCallList  MBraceRight   MBraceLeft  CallSequencePpeAssocList  MBraceRight   MSemicolon 
+						 | CallSequenceId  Mcolon   MBraceLeft  SubPgmCallList  MBraceRight  InModes  MSemicolon 
+                         | CallSequenceId  Mcolon   MBraceLeft  SubPgmCallList  MBraceRight   MBraceLeft  CallSequencePpeAssocList  MBraceRight  InModes  MSemicolon 	
                          
   syntax SubPgmCallList ::= SubPgmCall
                           | SubPgmCallList SubPgmCallList                      
@@ -12,22 +12,22 @@ module SUBPROGRAMCALL-SYNTAX
                           | CallSequencePpeAssocList CallSequencePpeAssocList                         
                                                  				
   syntax CallSequenceId ::= Id
-  syntax SubPgmCall ::= CallId ":" "subprogram" CalledSubPgm ";"
-  syntax SubPgmCall ::= CallId ":" "subprogram" CalledSubPgm "{" SubPgmCallPpeAssocList "}" ";"
+  syntax SubPgmCall ::= CallId  Mcolon   Msubprogram  CalledSubPgm  MSemicolon 
+  syntax SubPgmCall ::= CallId  Mcolon   Msubprogram  CalledSubPgm  MBraceLeft  SubPgmCallPpeAssocList  MBraceRight   MSemicolon 
   
   syntax SubPgmCallPpeAssocList ::= PpeAssoc
                                   | SubPgmCallPpeAssocList SubPgmCallPpeAssocList
 //  syntax SubPgmCall ::= SubPgmCall SubPgmCall  
   syntax CallId ::= Id
   syntax CalledSubPgm ::= SubPgmUniCmpClassifierRef
-                            | DataUniCmpTypeRef "." DataProvidesSubPgmAccessId
-							| SubPgmGroupUniCmpTypeRef "." ProvidesSubPgmAccessId
-							| AbstractUniCmpTypeRef "." ProvidesSubPgmAccessId
-							| FetGroupId "." RequiresSubPgmAccessId
+                            | DataUniCmpTypeRef  MPoint  DataProvidesSubPgmAccessId
+							| SubPgmGroupUniCmpTypeRef  MPoint  ProvidesSubPgmAccessId
+							| AbstractUniCmpTypeRef  MPoint  ProvidesSubPgmAccessId
+							| FetGroupId  MPoint  RequiresSubPgmAccessId
 	                        | CmpProtoTypeId
-							| "processor" "." ProvidesSubPgmAccessId
-							| SubPgmGoupSubCmpId "." ProvidesSubPgmAccessId
-							| RequiresSubPgmGroupAccessId "." ProvidesSubPgmAccessId
+							|  Mprocessor   MPoint  ProvidesSubPgmAccessId
+							| SubPgmGoupSubCmpId  MPoint  ProvidesSubPgmAccessId
+							| RequiresSubPgmGroupAccessId  MPoint  ProvidesSubPgmAccessId
 	                        | RequiresSubPgmAccessId
 
   syntax RequiresSubPgmAccessId ::=  Id
@@ -42,3 +42,4 @@ module SUBPROGRAMCALL-SYNTAX
   syntax RequiresSubPgmGroupAccessId ::=  Id
 //  syntax CallSequencePpeAssoc ::= CallSequencePpeAssoc CallSequencePpeAssoc 
 endmodule
+

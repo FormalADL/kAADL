@@ -1,23 +1,23 @@
 module  BUSCOMPONENTACCESS-SYNTAX
 
-//  syntax BusAccessSpec ::= DataCmpAccessId ":" BusCmpAccessSamePart
-//  syntax BusCmpAccessSamePart ::= "provides" "bus" "access" BusUniProtoType
-//                                | "requires" "bus" "access" BusUniProtoType
+//  syntax BusAccessSpec ::= DataCmpAccessId  Mcolon  BusCmpAccessSamePart
+//  syntax BusCmpAccessSamePart ::=  Mprovides   Mbus   Maccess  BusUniProtoType
+//                                |  Mrequires   Mbus   Maccess  BusUniProtoType
 //  syntax BusUniProtoType ::= BusUniCmpClassifierRef 
 //                           | ProtoTypeId 
 
 //  syntax BusUniCmpClassifierRef ::= Id
-//  syntax BusAccessRefinement ::= DataCmpAccessId ":" "refined" "to" BusCmpAccessSamePart
+//  syntax BusAccessRefinement ::= DataCmpAccessId  Mcolon   Mrefined   Mto  BusCmpAccessSamePart
 
-    syntax BusAccessSpec ::= DataCmpAccessId ":" "provides" "data" "access" BusUniCmpClassifierRef
-                            | DataCmpAccessId ":"  "requires" "data" "access" BusUniCmpClassifierRef
-                            | DataCmpAccessId ":" "provides" "data" "access" ProtoTypeId
-                            | DataCmpAccessId ":"  "requires" "data" "access" ProtoTypeId
+    syntax BusAccessSpec ::= DataCmpAccessId  Mcolon   Mprovides   Mdata   Maccess  BusUniCmpClassifierRef
+                            | DataCmpAccessId  Mcolon    Mrequires   Mdata   Maccess  BusUniCmpClassifierRef
+                            | DataCmpAccessId  Mcolon   Mprovides   Mdata   Maccess  ProtoTypeId
+                            | DataCmpAccessId  Mcolon    Mrequires   Mdata   Maccess  ProtoTypeId
                             
-    syntax BusAccessRefinement ::= DataCmpAccessId ":" "refined" "to" "provides" "data" "access" BusUniCmpClassifierRef
-                                  | DataCmpAccessId ":" "refined" "to" "requires" "data" "access" BusUniCmpClassifierRef
-                                  | DataCmpAccessId ":" "refined" "to" "provides" "data" "access" ProtoTypeId
-                                  | DataCmpAccessId ":" "refined" "to" "requires" "data" "access" ProtoTypeId
+    syntax BusAccessRefinement ::= DataCmpAccessId  Mcolon   Mrefined   Mto   Mprovides   Mdata   Maccess  BusUniCmpClassifierRef
+                                  | DataCmpAccessId  Mcolon   Mrefined   Mto   Mrequires   Mdata   Maccess  BusUniCmpClassifierRef
+                                  | DataCmpAccessId  Mcolon   Mrefined   Mto   Mprovides   Mdata   Maccess  ProtoTypeId
+                                  | DataCmpAccessId  Mcolon   Mrefined   Mto   Mrequires   Mdata   Maccess  ProtoTypeId
 
     syntax BusUniCmpClassifierRef ::= UniCmpClassifierRef 
 endmodule

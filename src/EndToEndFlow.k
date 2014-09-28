@@ -1,20 +1,20 @@
 module ENDTOENDFLOW-SYNTAX
 // 10.3  
-  syntax EndToEndFlowSpec ::= EndToEndFlowId ":" "end" "to" "end" "flow" StartSubCmpFlowOrEtefId ConnectionIdFlowPathList /* + */ EndToEndFlowSpecAssocDefault ";"
+  syntax EndToEndFlowSpec ::= EndToEndFlowId  Mcolon   Mend   Mto   Mend   Mflow  StartSubCmpFlowOrEtefId ConnectionIdFlowPathList /* + */ EndToEndFlowSpecAssocDefault  MSemicolon 
     syntax EndToEndFlowId ::= Id
     syntax StartSubCmpFlowOrEtefId ::= SubCmpFlowOrEtefId
-    syntax ConnectionIdFlowPathList ::= "->" ConnectionId "->" FlowPathSubCmpFlowOrEtefId
+    syntax ConnectionIdFlowPathList ::=  MArrows  ConnectionId  MArrows  FlowPathSubCmpFlowOrEtefId
                 | ConnectionIdFlowPathList ConnectionIdFlowPathList
       syntax FlowPathSubCmpFlowOrEtefId ::= NODEF
-    syntax EndToEndFlowSpecAssocDefault ::=  "{" PpeAssocList "}" InModesAndTransitions
-                |  "{" PpeAssocList "}"
+    syntax EndToEndFlowSpecAssocDefault ::=   MBraceLeft  PpeAssocList  MBraceRight  InModesAndTransitions
+                |   MBraceLeft  PpeAssocList  MBraceRight 
                 |  InModesAndTransitions
                 |  NoneStatement
 
-  syntax EndToEndSpecRefinement ::= EndToEndId ":" "refined" "to" "end" "to" "end" "flow" EndToEndSpecRefinementDefault ";"
+  syntax EndToEndSpecRefinement ::= EndToEndId  Mcolon   Mrefined   Mto   Mend   Mto   Mend   Mflow  EndToEndSpecRefinementDefault  MSemicolon 
     syntax EndToEndId ::=  Id
-    syntax EndToEndSpecRefinementDefault ::= "{" PpeAssocList "}" InModesAndTransitions
-                |  "{" PpeAssocList "}"
+    syntax EndToEndSpecRefinementDefault ::=  MBraceLeft  PpeAssocList  MBraceRight  InModesAndTransitions
+                |   MBraceLeft  PpeAssocList  MBraceRight 
                 |  InModesAndTransitions
   syntax SubCmpFlowOrEtefId ::= SubCmpFlowId | EndToEndFlowId
 

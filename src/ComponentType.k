@@ -1,19 +1,19 @@
 module COMPONENTTYPE-SYNTAX
 
-  syntax CmpType ::= CmpCategory CmpTypeId "end" CmpTypeId ";"
-                   | CmpCategory CmpTypeId CmpAssocDef "end" CmpTypeId ";"
+  syntax CmpType ::= CmpCategory CmpTypeId  Mend  CmpTypeId  MSemicolon 
+                   | CmpCategory CmpTypeId CmpAssocDef  Mend  CmpTypeId  MSemicolon 
   syntax CmpTypeId ::= Id
-  syntax CmpAssocDef ::= "prototypes" ProtoTypeList 
-                       | "prototypes" NoneStatement
-                       | "features" FeatureList 
-					   | "features" NoneStatement
-                       | "flows" FlowSpecList 
-					   | "flows" NoneStatement
+  syntax CmpAssocDef ::=  Mprototypes  ProtoTypeList 
+                       |  Mprototypes  NoneStatement
+                       |  Mfeatures  FeatureList 
+					   |  Mfeatures  NoneStatement
+                       |  Mflows  FlowSpecList 
+					   |  Mflows  NoneStatement
                        | ModesSubclause 
                        | RequiresModesSubclause
 				       | AnnexSubclause 
-                       | "properties" PpeAssocList
-                       | "properties" NoneStatement
+                       |  Mproperties  PpeAssocList
+                       |  Mproperties  NoneStatement
 					   | CmpAssocDef CmpAssocDef       //here is a bug!
 
   syntax ProtoTypeList ::= ProtoType
@@ -41,23 +41,23 @@ module COMPONENTTYPE-SYNTAX
 					   | ExecPlateformCategory 
 					   | CompositeCategory
 					   
-  syntax AbstractCmpCategory ::= "abstract"
-  syntax SoftwareCategory ::= "data" 
-                            | "subprogram" 
-							| "subprogram" "group" 
-							| "thread" 
-							| "thread" "group" 
-							| "process"
+  syntax AbstractCmpCategory ::=  Mabstract 
+  syntax SoftwareCategory ::=  Mdata  
+                            |  Msubprogram  
+							|  Msubprogram   Mgroup  
+							|  Mthread  
+							|  Mthread   Mgroup  
+							|  Mprocess 
 							
-  syntax CompositeCategory ::= "system"
-  syntax ExecPlateformCategory ::= "memory" | "processor" | "bus" | "device" | "virtual" "processor" | "virtrual bus" 
+  syntax CompositeCategory ::=  Msystem 
+  syntax ExecPlateformCategory ::=  Mmemory  |  Mprocessor  |  Mbus  |  Mdevice  |  Mvirtual   Mprocessor  |  Mvirtrual   Mbus  
   
-  syntax CmpTypeExt ::= CmpCategory CmpTypeId "extends" UniCmpTypeRef  "end" CmpTypeId ";"
-                      | CmpCategory CmpTypeId "extends" UniCmpTypeRef  ProtoTypeBindings "end" CmpTypeId ";"
-                      | CmpCategory CmpTypeId "extends" UniCmpTypeRef  CmpAssocDef "end" CmpTypeId ";"
-                      | CmpCategory CmpTypeId "extends" UniCmpTypeRef  ProtoTypeBindings CmpAssocDef "end" CmpTypeId ";"
+  syntax CmpTypeExt ::= CmpCategory CmpTypeId  Mextends  UniCmpTypeRef   Mend  CmpTypeId  MSemicolon 
+                      | CmpCategory CmpTypeId  Mextends  UniCmpTypeRef  ProtoTypeBindings  Mend  CmpTypeId  MSemicolon 
+                      | CmpCategory CmpTypeId  Mextends  UniCmpTypeRef  CmpAssocDef  Mend  CmpTypeId  MSemicolon 
+                      | CmpCategory CmpTypeId  Mextends  UniCmpTypeRef  ProtoTypeBindings CmpAssocDef  Mend  CmpTypeId  MSemicolon 
 
-  syntax UniCmpTypeRef ::= PkgName "::" CmpTypeId 
+  syntax UniCmpTypeRef ::= PkgName  MDoubleColon  CmpTypeId 
                          | CmpTypeId
                          
 //-----------------------------------------------------------------------------------------------------------------------
@@ -75,17 +75,17 @@ module COMPONENTTYPE-SYNTAX
                         | ContainedPpeAssoc
                         | PpeAssocList PpeAssocList
   
-  syntax ProtoTypeDef ::= "prototypes" ProtoTypeList 
-                        | "prototypes" NoneStatement
+  syntax ProtoTypeDef ::=  Mprototypes  ProtoTypeList 
+                        |  Mprototypes  NoneStatement
 
-  syntax FeatureDef   ::= "features" FeatureList 
-	 				    | "features" NoneStatement
+  syntax FeatureDef   ::=  Mfeatures  FeatureList 
+	 				    |  Mfeatures  NoneStatement
 
-  syntax FlowSpecDef  ::= "flows" FlowSpecList 
-					     | "flows" NoneStatement
+  syntax FlowSpecDef  ::=  Mflows  FlowSpecList 
+					     |  Mflows  NoneStatement
 
-  syntax PpeAssocDef  ::= "properties" PpeAssocList    
-                        | "properties" NoneStatement
+  syntax PpeAssocDef  ::=  Mproperties  PpeAssocList    
+                        |  Mproperties  NoneStatement
 
   syntax ModesDef ::= ModesSubclause
                     | RequiresModesSubclause
@@ -176,3 +176,4 @@ module COMPONENTTYPE-SYNTAX
 
                          
 endmodule
+

@@ -1,20 +1,20 @@
 module PARAMETERCONNECTION-SYNTAX
 
-  syntax ParameterConnection ::= "parameter" SourceParameterRef DirectionalConnectionSymbol DestinationParameterRef
+  syntax ParameterConnection ::=  Mparameter  SourceParameterRef DirectionalConnectionSymbol DestinationParameterRef
     syntax SourceParameterRef ::= ParameterRef 
     syntax DirectionalConnectionSymbol ::= ParameterRef
     syntax DestinationParameterRef ::= ParameterRef
 
-  syntax ParameterConnectionRefinement ::= "paramenter"
+  syntax ParameterConnectionRefinement ::=  Mparamenter 
   syntax ParameterRef ::= CmpTypeParameterId 
-            |  CmpTypeParameterId "." DataSubCmpId
-            |  SubPgmCallId "." ParameterId
+            |  CmpTypeParameterId  MPoint  DataSubCmpId
+            |  SubPgmCallId  MPoint  ParameterId
             |  CmpTypePortId
-            |  CmpTypePortId "." DataSubCmpId
+            |  CmpTypePortId  MPoint  DataSubCmpId
             |  DataSubCmpId
             |  RequiresDataAccessId
-            |  CmpTypeFetGroupId "." ElementDataAccessId
-            |  CmpTypeFetFetGroupId "." ElementPortOrParameterId
+            |  CmpTypeFetGroupId  MPoint  ElementDataAccessId
+            |  CmpTypeFetFetGroupId  MPoint  ElementPortOrParameterId
     
     syntax CmpTypeParameterId ::= Id
     syntax RequiresDataAccessId ::= Id

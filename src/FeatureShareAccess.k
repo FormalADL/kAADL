@@ -1,7 +1,7 @@
 module FEATURESHAREACCESS-SYNTAX
 
-//  syntax Feature ::= AbstractPortGroupAccessParameter ";" 
-//                   | AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained ";"  
+//  syntax Feature ::= AbstractPortGroupAccessParameter  MSemicolon  
+//                   | AbstractPortGroupAccessParameter ArrayDimensionFeatrueContrained  MSemicolon   
 
 //  syntax AbstractPortGroupAccessParameter ::= AbstractFetSpec
 //                                            | PortSpec
@@ -21,8 +21,8 @@ module FEATURESHAREACCESS-SYNTAX
                    | ParameterSpec ArrayDimensionFeatrueContrained  
                    
   syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
-                                           | "{" FeatrueContrainedPpeAssoc "}"
-                                           | ArrayDimension "{" FeatrueContrainedPpeAssoc "}"
+                                           |  MBraceLeft  FeatrueContrainedPpeAssoc  MBraceRight 
+                                           | ArrayDimension  MBraceLeft  FeatrueContrainedPpeAssoc  MBraceRight 
   syntax FeatrueContrainedPpeAssoc ::= FeatrueContrainedPpeAssoc FeatrueContrainedPpeAssoc 
   syntax FeatrueContrainedPpeAssoc ::= ContainedPpeAssoc
   

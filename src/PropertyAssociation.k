@@ -1,44 +1,44 @@
 module PROPERTYASSOCIATION-SYNTAX
 
-syntax PpeAssoc ::= UniPpeId "=>" "constant" Assignment InBinding ";"
-		   |  UniPpeId "=>" "constant" Assignment  ";"
-		   |  UniPpeId "=>"  Assignment InBinding ";"
-		   |  UniPpeId "+=>" "constant" Assignment InBinding ";"
-		   |  UniPpeId "+=>" "constant" Assignment  ";"
-		   |  UniPpeId "+=>"  Assignment InBinding ";"
-syntax UniPpeId ::=  PpeSetId "::" PpeNameId 
+syntax PpeAssoc ::= UniPpeId  MRoughArrow   Mconstant  Assignment InBinding  MSemicolon 
+		   |  UniPpeId  MRoughArrow   Mconstant  Assignment   MSemicolon 
+		   |  UniPpeId  MRoughArrow   Assignment InBinding  MSemicolon 
+		   |  UniPpeId  MPlusRoughArrow   Mconstant  Assignment InBinding  MSemicolon 
+		   |  UniPpeId  MPlusRoughArrow   Mconstant  Assignment   MSemicolon 
+		   |  UniPpeId  MPlusRoughArrow   Assignment InBinding  MSemicolon 
+syntax UniPpeId ::=  PpeSetId  MDoubleColon  PpeNameId 
 
-syntax ContainedPpeAssoc ::= UniPpeId "=>" "constant" Assignment "applies" "to" ContainedModelElementPathList InBinding ";"
-			    |  UniPpeId "=>"  Assignment "applies" "to" ContainedModelElementPathList InBinding ";"
-			    |  UniPpeId "=>" "constant" Assignment "applies" "to" ContainedModelElementPathList ";"
-			    |  UniPpeId "=>"  Assignment "applies" "to" ContainedModelElementPathList ";"
-syntax ContainedModelElementPathList ::= ContainedModelElementPath | ContainedModelElementPath "," ContainedModelElementPathList
+syntax ContainedPpeAssoc ::= UniPpeId  MRoughArrow   Mconstant  Assignment  Mapplies   Mto  ContainedModelElementPathList InBinding  MSemicolon 
+			    |  UniPpeId  MRoughArrow   Assignment  Mapplies   Mto  ContainedModelElementPathList InBinding  MSemicolon 
+			    |  UniPpeId  MRoughArrow   Mconstant  Assignment  Mapplies   Mto  ContainedModelElementPathList  MSemicolon 
+			    |  UniPpeId  MRoughArrow   Assignment  Mapplies   Mto  ContainedModelElementPathList  MSemicolon 
+syntax ContainedModelElementPathList ::= ContainedModelElementPath | ContainedModelElementPath  MComma  ContainedModelElementPathList
 syntax ContainedModelElementPath ::= AnnexPath 
 				  |  ContainedModelElementList AnnexPath
 				  |  ContainedModelElementList
 
-syntax ContainedModelElementList ::= ContainedModelElement | ContainedModelElement "." ContainedModelElementList
+syntax ContainedModelElementList ::= ContainedModelElement | ContainedModelElement  MPoint  ContainedModelElementList
 syntax ContainedModelElement ::=  NamedElementId | NamedElementArraySelectionName
 
-syntax AnnexPath ::= "annex" AnnexId "{**" AnnexSpecificPath "**}"
-syntax AnnexSpecificPath ::= "defined by annex"
+syntax AnnexPath ::=  Mannex  AnnexId  MAsteriskBrace1  AnnexSpecificPath  MAsteriskBrace2 
+syntax AnnexSpecificPath ::= NODEF 
 
 syntax Assignment ::= PpeValue | ModalPpeValue
 
 syntax ModalPpeValue ::= PpeValue InModes 
-		      |  PpeValue InModes "," ModalPpeValue 
+		      |  PpeValue InModes  MComma  ModalPpeValue 
 
 syntax PpeValue ::= SinglePpeValue  |  PpeListValue
 syntax SinglePpeValue ::= PpeExpression
 
-syntax PpeListValue ::=  "("")"
-		     |   "("PpeListValueMidSymbol")"
+syntax PpeListValue ::=   MBracketLeft  MBracketRight 
+		     |    MBracketLeft PpeListValueMidSymbol MBracketRight 
 syntax PpeListValueMidSymbol ::= PpeListValue
 			       | PpeExpression 
-			       | PpeListValueMidSymbol "," PpeListValueMidSymbol
+			       | PpeListValueMidSymbol  MComma  PpeListValueMidSymbol
 
-syntax InBinding ::= "in" "binding" PlatformClassifierRefList 
-syntax PlatformClassifierRefList ::= PlatformClassifierRef | PlatformClassifierRef "," PlatformClassifierRefList
+syntax InBinding ::=  Min   Mbinding  PlatformClassifierRefList 
+syntax PlatformClassifierRefList ::= PlatformClassifierRef | PlatformClassifierRef  MComma  PlatformClassifierRefList
 
 syntax PlatformClassifierRef ::= ProcessorUniCmpClassifierRef
 			      |  VirtualProcessorUniCmpClassifierRef
@@ -52,10 +52,10 @@ syntax MemoryUniCmpClassifierRef ::= NODEF
 syntax NamedElementId ::= Id
 syntax NamedElementArraySelectionName ::= NODEF
 
-syntax BasicPpeAssoc ::= UniPpeId "=>" "constant" PpeValue ";"
-                         | UniPpeId "=>"  PpeValue ";"
-                         | UniPpeId "+=>" "constant" PpeValue ";"
-                         | UniPpeId "+=>"  PpeValue ";"
+syntax BasicPpeAssoc ::= UniPpeId  MRoughArrow   Mconstant  PpeValue  MSemicolon 
+                         | UniPpeId  MRoughArrow   PpeValue  MSemicolon 
+                         | UniPpeId  MPlusRoughArrow   Mconstant  PpeValue  MSemicolon 
+                         | UniPpeId  MPlusRoughArrow   PpeValue  MSemicolon 
 						 
 
 endmodule

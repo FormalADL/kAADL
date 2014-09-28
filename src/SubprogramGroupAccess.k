@@ -1,27 +1,27 @@
 module SUBPROGRAMGROUPACCESS-SYNTAX
 
-  syntax SubPgmAccessSpec ::= SubPgmAccessId ":" "provides" "subprogram" "access" SubPgmUniCmpClassifierRef
-                            | SubPgmAccessId ":" "requires" "subprogram" "access" SubPgmUniCmpClassifierRef
-                            | SubPgmAccessId ":" "provides" "subprogram" "access" SubPgmProtoTypeId
-                            | SubPgmAccessId ":" "requires" "subprogram" "access" SubPgmProtoTypeId
+  syntax SubPgmAccessSpec ::= SubPgmAccessId  Mcolon   Mprovides   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
+                            | SubPgmAccessId  Mcolon   Mrequires   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
+                            | SubPgmAccessId  Mcolon   Mprovides   Msubprogram   Maccess  SubPgmProtoTypeId
+                            | SubPgmAccessId  Mcolon   Mrequires   Msubprogram   Maccess  SubPgmProtoTypeId
   
 //  syntax SubPgmAccessSpecAssoc ::= SubPgmUniCmpClassifierRef
 //                                 | SubPgmProtoTypeId
 
-  syntax SubPgmAccessRefinement ::= SubPgmAccessId ":" "refined" "to" "provides" "subprogram" "access" SubPgmUniCmpClassifierRef
-                                  | SubPgmAccessId ":" "refined" "to" "requires" "subprogram" "access" SubPgmUniCmpClassifierRef
-                                  | SubPgmAccessId ":" "refined" "to" "provides" "subprogram" "access" SubPgmProtoTypeId
-                                  | SubPgmAccessId ":" "refined" "to" "requires" "subprogram" "access" SubPgmProtoTypeId
+  syntax SubPgmAccessRefinement ::= SubPgmAccessId  Mcolon   Mrefined   Mto   Mprovides   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
+                                  | SubPgmAccessId  Mcolon   Mrefined   Mto   Mrequires   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
+                                  | SubPgmAccessId  Mcolon   Mrefined   Mto   Mprovides   Msubprogram   Maccess  SubPgmProtoTypeId
+                                  | SubPgmAccessId  Mcolon   Mrefined   Mto   Mrequires   Msubprogram   Maccess  SubPgmProtoTypeId
   
-  syntax SubPgmGroupAccessSpec ::= SubPgmGroupAccessId ":" "provides" "subprogram" "group" "access" SubPgmUniCmpClassifierRef
-                                 | SubPgmGroupAccessId ":" "requires" "subprogram" "group" "access" SubPgmUniCmpClassifierRef
-                                 | SubPgmGroupAccessId ":" "provides" "subprogram" "group" "access" SubPgmProtoTypeId
-                                 | SubPgmGroupAccessId ":" "requires" "subprogram" "group" "access" SubPgmProtoTypeId
+  syntax SubPgmGroupAccessSpec ::= SubPgmGroupAccessId  Mcolon   Mprovides   Msubprogram   Mgroup   Maccess  SubPgmUniCmpClassifierRef
+                                 | SubPgmGroupAccessId  Mcolon   Mrequires   Msubprogram   Mgroup   Maccess  SubPgmUniCmpClassifierRef
+                                 | SubPgmGroupAccessId  Mcolon   Mprovides   Msubprogram   Mgroup   Maccess  SubPgmProtoTypeId
+                                 | SubPgmGroupAccessId  Mcolon   Mrequires   Msubprogram   Mgroup   Maccess  SubPgmProtoTypeId
 
-  syntax SubPgmGroupAccessRefinement ::= SubPgmGroupAccessId ":" "refined" "to" "provides" "subprogram" "group" "access" SubPgmUniCmpClassifierRef
-                                       | SubPgmGroupAccessId ":" "refined" "to" "requires" "subprogram" "group" "access" SubPgmUniCmpClassifierRef
-                                       | SubPgmGroupAccessId ":" "refined" "to" "provides" "subprogram" "group" "access" SubPgmProtoTypeId
-                                       | SubPgmGroupAccessId ":" "refined" "to" "requires" "subprogram" "group" "access" SubPgmProtoTypeId
+  syntax SubPgmGroupAccessRefinement ::= SubPgmGroupAccessId  Mcolon   Mrefined   Mto   Mprovides   Msubprogram   Mgroup   Maccess  SubPgmUniCmpClassifierRef
+                                       | SubPgmGroupAccessId  Mcolon   Mrefined   Mto   Mrequires   Msubprogram   Mgroup   Maccess  SubPgmUniCmpClassifierRef
+                                       | SubPgmGroupAccessId  Mcolon   Mrefined   Mto   Mprovides   Msubprogram   Mgroup   Maccess  SubPgmProtoTypeId
+                                       | SubPgmGroupAccessId  Mcolon   Mrefined   Mto   Mrequires   Msubprogram   Mgroup   Maccess  SubPgmProtoTypeId
  
  
    syntax SubPgmProtoTypeId ::= Id
@@ -30,3 +30,4 @@ module SUBPROGRAMGROUPACCESS-SYNTAX
    syntax SubPgmGroupAccessId ::= Id 
          
 endmodule
+

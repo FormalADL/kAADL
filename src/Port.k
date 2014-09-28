@@ -1,18 +1,18 @@
 module PORT-SYNTAX
 
-  syntax PortSpec ::= PortId ":" "in" PortType
-                    | PortId ":" "out" PortType
-                    | PortId ":" "in" "out" PortType
-  syntax PortRefinement ::= PortId ":" "refined" "to" "in" PortType
-                          | PortId ":" "refined" "to" "out" PortType
-                          | PortId ":" "refined" "to" "in" "out"  PortType
+  syntax PortSpec ::= PortId  Mcolon   Min  PortType
+                    | PortId  Mcolon   Mout  PortType
+                    | PortId  Mcolon   Min   Mout  PortType
+  syntax PortRefinement ::= PortId  Mcolon   Mrefined   Mto   Min  PortType
+                          | PortId  Mcolon   Mrefined   Mto   Mout  PortType
+                          | PortId  Mcolon   Mrefined   Mto   Min   Mout   PortType
   syntax PortId ::= Id
   
-  syntax PortType ::= "data" "port" DataUniCmpClassifierRef
-                    | "data" "port" DataCmpProtoTypeId
-                    | "event" "data" "port" DataUniCmpClassifierRef
-                    | "event" "data" "port" DataCmpProtoTypeId
-                    | "event" "port"
+  syntax PortType ::=  Mdata   Mport  DataUniCmpClassifierRef
+                    |  Mdata   Mport  DataCmpProtoTypeId
+                    |  Mevent   Mdata   Mport  DataUniCmpClassifierRef
+                    |  Mevent   Mdata   Mport  DataCmpProtoTypeId
+                    |  Mevent   Mport 
 					
   syntax DataUniCmpClassifierRef ::= UniCmpClassifierRef
   syntax DataCmpProtoTypeId ::= Id

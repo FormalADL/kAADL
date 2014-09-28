@@ -1,7 +1,7 @@
 module CONNECTION-SYNTAX
 
-  syntax Connection ::= ConnectionId ":" SomeConnections ";"  
-  syntax Connection ::= ConnectionId ":" SomeConnections PpeInMode ";"
+  syntax Connection ::= ConnectionId  Mcolon  SomeConnections  MSemicolon   
+  syntax Connection ::= ConnectionId  Mcolon  SomeConnections PpeInMode  MSemicolon 
   syntax ConnectionId ::= Id
   syntax SomeConnections ::= FetConnection 
 			               | PortConnection
@@ -9,15 +9,15 @@ module CONNECTION-SYNTAX
                            | AccessConnection
                            | FetGroupConnection 
 						   
-  syntax PpeInMode ::= "{" PpeAssocList "}" InModesAndTransitions ";"
-		             | "{" PpeAssocList "}" ";"
-                     | InModesAndTransitions ";"
+  syntax PpeInMode ::=  MBraceLeft  PpeAssocList  MBraceRight  InModesAndTransitions  MSemicolon 
+		             |  MBraceLeft  PpeAssocList  MBraceRight   MSemicolon 
+                     | InModesAndTransitions  MSemicolon 
   
   syntax PpeAssocList ::= PpeAssoc 
                         | PpeAssocList PpeAssocList
 
-  syntax ConnectionRefinement ::= ConnectionId ":" "refined" "to" SomeRefinements ";"
-  syntax ConnectionRefinement ::= ConnectionId ":" "refined" "to" SomeRefinements PpeInMode ";"
+  syntax ConnectionRefinement ::= ConnectionId  Mcolon   Mrefined   Mto  SomeRefinements  MSemicolon 
+  syntax ConnectionRefinement ::= ConnectionId  Mcolon   Mrefined   Mto  SomeRefinements PpeInMode  MSemicolon 
   syntax SomeRefinements ::= FetConnectionRefinement 
                            | PortConnectionRefinement
                            | ParameterConnectionRefinement

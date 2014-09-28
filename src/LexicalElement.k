@@ -24,10 +24,10 @@ module LEXICALELEMENT-SYNTAX
 //				     | Digit 
 //					 | UnderLine Digit 
 //					 | DigitList DigitList
-  syntax PositiveExponent ::= "e" Numeral 
-                            | "e" "+" Numeral
-//  syntax BasedIntegerLiteral ::= Base "#" BasedNumberal "#" 
-//						       | Base "#" BasedNumberal "#" PositiveExponent
+  syntax PositiveExponent ::= Me  Numeral 
+                            | Me  MPlus  Numeral
+//  syntax BasedIntegerLiteral ::= Base   BasedNumberal   
+//						       | Base   BasedNumberal   PositiveExponent
 //  syntax Base ::= Digit 
 //                | Digit Digit
 //  syntax BasedNumberal ::= ExtendedDigit ExtendedDigitList
@@ -35,27 +35,7 @@ module LEXICALELEMENT-SYNTAX
 //				    		 | ExtendedDigit
 //						     | UnderLine ExtendedDigit
 //						     | ExtendedDigitList ExtendedDigitList
-//  syntax ExtendedDigit ::= Digit | "a" | "b" | "c" | "d" | "e" | "f" 
+//  syntax ExtendedDigit ::= Digit | Ma  | Mb  | Mc  | Md  | Me  | Mf  
   syntax RealLiteral ::= DecimalRealLiteral
-  syntax DecimalRealLiteral ::= Numeral "." Numeral 
-			      | Numeral"." Numeral Exponent
-  syntax Exponent ::= "E" Numeral 
-                    | "E" "+" Numeral
-
-  syntax StringLiteral ::= String  //"\"" StringElementList "\""
-//  syntax StringElementList ::= NoneStatement
-//						     | StringElement
-//						     | StringElementList StringElementList
-//  syntax StringElement ::= "\"" "\"" 
-//                         | NonQuotationMarkGraphicCharacter
-//  syntax NonQuotationMarkGraphicCharacter ::= NODEF
-//  syntax Comment ::= "-" NonEndOfLineCharacterList
-//  syntax NonEndOfLineCharacterList ::= NoneStatement
-//							         | NonEndOfLineCharacter
-//							         | NonEndOfLineCharacterList NonEndOfLineCharacterList
-//  syntax NonEndOfLineCharacter ::= NODEF
-endmodule
-
-module  LEXICALELEMENT
-//	imports LEXICALELEMENT-SYNTAX
-endmodule
+  syntax DecimalRealLiteral ::= Numeral MPoint  Numeral 
+			      | NumeralMPoint  Numeral Exponent

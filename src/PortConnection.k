@@ -1,21 +1,21 @@
 module PORTCONNECTION-SYNTAX
  
-  syntax PortConnection ::= "port" SrcPortConnectionRef ConnectionSymbol DestPortConnectionRef
+  syntax PortConnection ::=  Mport  SrcPortConnectionRef ConnectionSymbol DestPortConnectionRef
   syntax SrcPortConnectionRef ::= PortConnectionRefence
   syntax DestPortConnectionRef ::= PortConnectionRefence  
-  syntax PortConnectionRefinement ::= "port"
+  syntax PortConnectionRefinement ::=  Mport 
   
   syntax PortConnectionRefence ::= CmpTypePortId
-                                 | SubCmpId "." PortId
-                                 | CmpTypeFetGroupId "." ElementPortId
-                                 | CmpTypePortId "." DataSubCmpId
+                                 | SubCmpId  MPoint  PortId
+                                 | CmpTypeFetGroupId  MPoint  ElementPortId
+                                 | CmpTypePortId  MPoint  DataSubCmpId
                                  | CmpTypeRequiresDataAccessId
                                  | DataSubCmpId
-                                 | SubCmpId "." ProvidesDataAccessId
-                                 | CmpTypeFetGroupId "."ElementDataAccessId
-                                 | DataSubCmpId "." DataSubCmpId
-                                 | "processor" "." ProcessorPortId
-                                 | "self" "." EventOrEventDataSourceId
+                                 | SubCmpId  MPoint  ProvidesDataAccessId
+                                 | CmpTypeFetGroupId  MPoint ElementDataAccessId
+                                 | DataSubCmpId  MPoint  DataSubCmpId
+                                 |  Mprocessor   MPoint  ProcessorPortId
+                                 |  Mself   MPoint  EventOrEventDataSourceId
 
     syntax CmpTypePortId ::= Id
     syntax ElementPortId ::=  Id

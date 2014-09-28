@@ -1,22 +1,22 @@
 module ACCESSCONNECTION-SYNTAX
 
-  syntax AccessConnection ::= "access" SourceAccessRef ConnectionSymbol DestinationAccessRef
-			   |  AccessConnectionKeyword "access" SourceAccessRef ConnectionSymbol DestinationAccessRef
-    syntax AccessConnectionKeyword ::= "bus" | "subprogram" | "subprogram" "group" | "data"
+  syntax AccessConnection ::=  Maccess  SourceAccessRef ConnectionSymbol DestinationAccessRef
+			   |  AccessConnectionKeyword  Maccess  SourceAccessRef ConnectionSymbol DestinationAccessRef
+    syntax AccessConnectionKeyword ::=  Mbus  |  Msubprogram  |  Msubprogram   Mgroup  |  Mdata 
     syntax SourceAccessRef ::= AccessRef
     syntax DestinationAccessRef ::= AccessRef
   
-  syntax AccessConnectionRefinement ::= "access"
-				     |  AccessConnectionKeyword "access"
+  syntax AccessConnectionRefinement ::=  Maccess 
+				     |  AccessConnectionKeyword  Maccess 
   syntax AccessRef ::= RequiresAccessId
         |  ProvidesAccessId
-        |  FetGroupId "." RequiresAccessId
-        |  FetGroupId "." ProvidesAccessId
-        |  SubCmpId "." ProvidesAccessId
-        |  SubCmpId "." RequiresAccessId
-        |  SubPgmCallId "." RequiresOrProvidesAccessId
+        |  FetGroupId  MPoint  RequiresAccessId
+        |  FetGroupId  MPoint  ProvidesAccessId
+        |  SubCmpId  MPoint  ProvidesAccessId
+        |  SubCmpId  MPoint  RequiresAccessId
+        |  SubPgmCallId  MPoint  RequiresOrProvidesAccessId
         |  SubCmpId
-        |  "processor" "." ProvidesSubPgmAccessId
+        |   Mprocessor   MPoint  ProvidesSubPgmAccessId
     syntax RequiresAccessId ::= Id
     syntax ProvidesAccessId ::= Id
     syntax RequiresOrProvidesAccessId ::= Id
@@ -26,3 +26,4 @@ module ACCESSCONNECTION
   
 //  imports ACCESSCONNECTION-SYNTAX
 endmodule
+

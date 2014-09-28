@@ -1,7 +1,7 @@
 module PROTOTYPE-SYNTAX
 
-  syntax ProtoType ::= ProtoTypeId ":" ProtoTypeDef ";"
-                     | ProtoTypeId ":" ProtoTypeDef "{" ProtoTypePpeAssocList "}" ";"
+  syntax ProtoType ::= ProtoTypeId  Mcolon  ProtoTypeDef  MSemicolon 
+                     | ProtoTypeId  Mcolon  ProtoTypeDef  MBraceLeft  ProtoTypePpeAssocList  MBraceRight   MSemicolon 
   
   syntax ProtoTypePpeAssocList ::= PpeAssoc
                                  | ProtoTypePpeAssocList ProtoTypePpeAssocList
@@ -14,53 +14,53 @@ module PROTOTYPE-SYNTAX
 
 							 
   syntax CmpProtoType ::= CmpCategory
-                        | CmpCategory "[]"
+                        | CmpCategory  MDoubleBracket 
                         | CmpCategory UniCmpClassifierRef
-                        | CmpCategory UniCmpClassifierRef "[]"
+                        | CmpCategory UniCmpClassifierRef  MDoubleBracket 
   
-  syntax FetGroupTypeProtoType ::= "feature" "group" 
-                                 | "feature" "group" UniFetGroupTypeRef
+  syntax FetGroupTypeProtoType ::=  Mfeature   Mgroup  
+                                 |  Mfeature   Mgroup  UniFetGroupTypeRef
 
-  syntax FetProtoType ::= "feature"
-                        | "in" "feature"
-                        | "out" "feature"
-                        | "in" "feature" UniCmpClassifierRef
-                        | "out" "feature" UniCmpClassifierRef
-                        | "feature" UniCmpClassifierRef
+  syntax FetProtoType ::=  Mfeature 
+                        |  Min   Mfeature 
+                        |  Mout   Mfeature 
+                        |  Min   Mfeature  UniCmpClassifierRef
+                        |  Mout   Mfeature  UniCmpClassifierRef
+                        |  Mfeature  UniCmpClassifierRef
 
-  syntax ProtoTypeRefinement ::= ProtoTypeId ":" "refined" "to" ProtoTypeDef ";"
-                               | ProtoTypeId ":" "refined" "to" ProtoTypeDef "{" ProtoTypePpeAssoc "}" ";"
+  syntax ProtoTypeRefinement ::= ProtoTypeId  Mcolon   Mrefined   Mto  ProtoTypeDef  MSemicolon 
+                               | ProtoTypeId  Mcolon   Mrefined   Mto  ProtoTypeDef  MBraceLeft  ProtoTypePpeAssoc  MBraceRight   MSemicolon 
 							   
-  syntax ProtoTypeBindings ::= "(" ProtoTypeBinding ")"
-  syntax ProtoTypeBinding ::= ProtoTypeBinding "," ProtoTypeBinding
+  syntax ProtoTypeBindings ::=  MBracketLeft  ProtoTypeBinding  MBracketRight 
+  syntax ProtoTypeBinding ::= ProtoTypeBinding  MComma  ProtoTypeBinding
   
-  syntax ProtoTypeBinding ::= ProtoTypeId "=>" CmpProtoTypeActual
-                            | ProtoTypeId "=>" CmpProtoTypeActualList
-                            | ProtoTypeId "=>" FetGroupTypeProtoTypeActual
-                            | ProtoTypeId "=>" FetProtoTypeActual
+  syntax ProtoTypeBinding ::= ProtoTypeId  MRoughArrow  CmpProtoTypeActual
+                            | ProtoTypeId  MRoughArrow  CmpProtoTypeActualList
+                            | ProtoTypeId  MRoughArrow  FetGroupTypeProtoTypeActual
+                            | ProtoTypeId  MRoughArrow  FetProtoTypeActual
 							
   syntax CmpProtoTypeActual ::= CmpCategory UniCmpClassifierRef ProtoTypeBindings
                               | CmpCategory UniCmpClassifierRef
                               | CmpCategory ProtoTypeId
 							  
   syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual
-  syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual "," CmpProtoTypeActual
-  syntax CmpProtoTypeActualList ::= "(" CmpProtoTypeActuralListTmp ")"
+  syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual  MComma  CmpProtoTypeActual
+  syntax CmpProtoTypeActualList ::=  MBracketLeft  CmpProtoTypeActuralListTmp  MBracketRight 
   
-  syntax FetGroupTypeProtoTypeActual ::= "feature" "group" UniFetGroupTypeRef
-                                       | "feature" "group" UniFetGroupTypeRef ProtoTypeBindings
-                                       | "feature" "group" FetGroupTypeProtoTypeId
+  syntax FetGroupTypeProtoTypeActual ::=  Mfeature   Mgroup  UniFetGroupTypeRef
+                                       |  Mfeature   Mgroup  UniFetGroupTypeRef ProtoTypeBindings
+                                       |  Mfeature   Mgroup  FetGroupTypeProtoTypeId
   syntax FetGroupTypeProtoTypeId ::= Id
-  syntax FetProtoTypeActual ::= InOut EventData "port"
-                              | InOut EventData "port" UniCmpClassifierRef
-							  | Require BusDataSubPgm "access"
-                              | Require BusDataSubPgm "access" UniCmpClassifierRef
-							  | "in" "feature" FetProtoTypeId
-                              | "out" "feature" FetProtoTypeId
+  syntax FetProtoTypeActual ::= InOut EventData  Mport 
+                              | InOut EventData  Mport  UniCmpClassifierRef
+							  | Require BusDataSubPgm  Maccess 
+                              | Require BusDataSubPgm  Maccess  UniCmpClassifierRef
+							  |  Min   Mfeature  FetProtoTypeId
+                              |  Mout   Mfeature  FetProtoTypeId
 							  
-  syntax InOut ::= "in" | "out" | "in" "out"
-  syntax EventData ::= "event" | "data" | "event" "data"
-  syntax Require ::= "requires" | "provides"
-  syntax BusDataSubPgm ::= "bus" | "data" | "subprogram" "group" | "subprogram"
+  syntax InOut ::=  Min  |  Mout  |  Min   Mout 
+  syntax EventData ::=  Mevent  |  Mdata  |  Mevent   Mdata 
+  syntax Require ::=  Mrequires  |  Mprovides 
+  syntax BusDataSubPgm ::=  Mbus  |  Mdata  |  Msubprogram   Mgroup  |  Msubprogram 
   
 endmodule

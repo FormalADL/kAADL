@@ -1,22 +1,22 @@
 module PACKAGE-SYNTAX
-  syntax PkgSpec ::= "package" PkgName PkgDecls "end" PkgName ";"
-                   | "package" PkgName PkgDecls PpeDecls "end" PkgName ";"
+  syntax PkgSpec ::=  Mpackage  PkgName PkgDecls  Mend  PkgName  MSemicolon 
+                   |  Mpackage  PkgName PkgDecls PpeDecls  Mend  PkgName  MSemicolon 
   
   syntax PkgId ::= Id
   syntax PkgName ::= PkgId
-                   | PkgName "::" PkgId 
+                   | PkgName  MDoubleColon  PkgId 
 
-  syntax PkgDecls ::= "public"
-                    | "private"
-                    | "public" "private"
-                    | "public" PkgDeclations 
-                    | "private" PkgDeclations
-			        | "public" "private" PkgDeclations
-					| "public" PkgDeclations "private" 
-					| "public" PkgDeclations "private" PkgDeclations
+  syntax PkgDecls ::=  Mpublic 
+                    |  Mprivate 
+                    |  Mpublic   Mprivate 
+                    |  Mpublic  PkgDeclations 
+                    |  Mprivate  PkgDeclations
+			        |  Mpublic   Mprivate  PkgDeclations
+					|  Mpublic  PkgDeclations  Mprivate  
+					|  Mpublic  PkgDeclations  Mprivate  PkgDeclations
 					
-  syntax PpeDecls ::= "properties" NoneStatement
-                    | "properties" BasicPpeAssocList
+  syntax PpeDecls ::=  Mproperties  NoneStatement
+                    |  Mproperties  BasicPpeAssocList
 					
   syntax BasicPpeAssocList ::= PpeAssoc
                       | BasicPpeAssocList BasicPpeAssocList
@@ -47,21 +47,22 @@ module PACKAGE-SYNTAX
 					   
   syntax NameVisDecl ::= ImportDecl | AliasDecl
   
-  syntax ImportDecl ::= "with" PkgName  
-                      | "with" PpeSetId
+  syntax ImportDecl ::=  Mwith  PkgName  
+                      |  Mwith  PpeSetId
 					  | ImportDecl ImportDeclPlus
 					  
-  syntax ImportDeclPlus ::= "," PkgName 
-                          | "," PpeSetId
+  syntax ImportDeclPlus ::=  MComma  PkgName 
+                          |  MComma  PpeSetId
 						  | ImportDeclPlus ImportDeclPlus
 
-  syntax AliasDecl ::= AliasId "renames" "package" PkgName ";"
-  				     | AliasId "renames" CmpCategory UniCmpTypeRef ";"
-				     | "renames" CmpCategory UniCmpTypeRef ";"
-                     | AliasId "renames" "feature" "group" UniFetGroupTypeRef ";"
-                     | "renames" "feature" "group" UniFetGroupTypeRef ";"
-                     | "renames" PkgName "::" "all" ";"
+  syntax AliasDecl ::= AliasId  Mrenames   Mpackage  PkgName  MSemicolon 
+  				     | AliasId  Mrenames  CmpCategory UniCmpTypeRef  MSemicolon 
+				     |  Mrenames  CmpCategory UniCmpTypeRef  MSemicolon 
+                     | AliasId  Mrenames   Mfeature   Mgroup  UniFetGroupTypeRef  MSemicolon 
+                     |  Mrenames   Mfeature   Mgroup  UniFetGroupTypeRef  MSemicolon 
+                     |  Mrenames  PkgName  MDoubleColon   Mall   MSemicolon 
 					 
   syntax AliasId ::= Id
 
 endmodule
+

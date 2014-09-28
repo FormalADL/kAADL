@@ -1,6 +1,6 @@
 module PROPERTYSET-SYNTAX
   syntax PpeSetId ::= Id
-  syntax PpeSet ::= "property" "set" PpeSetId "is" PpeSetAssocDef "end" PpeSetId ";"
+  syntax PpeSet ::=  Mproperty   Mset  PpeSetId  Mis  PpeSetAssocDef  Mend  PpeSetId  MSemicolon 
   syntax PpeSetAssocDef ::= ImportDecls 
                           | PpeTempDecls
 			  | ImportDecls PpeTempDecls

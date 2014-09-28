@@ -1,9 +1,9 @@
 module PROPERTYTYPE-SYNTAX
 
-syntax PpeTypeDecl ::= PpeTypeId ":" "type" PpeType ";"
+syntax PpeTypeDecl ::= PpeTypeId  Mcolon   Mtype  PpeType  MSemicolon 
 	syntax PpeTypeId ::= Id
-syntax PpeType ::= "aadlboolen"
-             |  "aadlstring"
+syntax PpeType ::=  Maadlboolen 
+             |   Maadlstring 
              |  EnumerationType
              |  UnitsType
              |  NumberType
@@ -12,31 +12,31 @@ syntax PpeType ::= "aadlboolen"
              |  RefType
              |  RecordType
 
-syntax EnumerationType ::= "enumeration""(" EnumerationLiteralIdList ")"
-	 syntax EnumerationLiteralIdList ::= EnumerationLiteralId | EnumerationLiteralId "," EnumerationLiteralIdList
+syntax EnumerationType ::=  Menumeration  MBracketLeft  EnumerationLiteralIdList  MBracketRight 
+	 syntax EnumerationLiteralIdList ::= EnumerationLiteralId | EnumerationLiteralId  MComma  EnumerationLiteralIdList
          syntax EnumerationLiteralId ::= Id
 	 	
-syntax UnitsType ::= "units" UnitsList
-	 syntax UnitsList ::= "(" UnitId UnitIdList ")"
+syntax UnitsType ::=  Munits  UnitsList
+	 syntax UnitsList ::=  MBracketLeft  UnitId UnitIdList  MBracketRight 
 	 syntax UnitId ::= Id
 	 syntax UnitIdList ::= NoneStatement
-			     | "," UnitId "=>" UnitId "*" NumericLiteral 
-			     | "," UnitId "=>" UnitId "*" NumericLiteral  UnitIdList
+			     |  MComma  UnitId  MRoughArrow  UnitId  MBrace  NumericLiteral 
+			     |  MComma  UnitId  MRoughArrow  UnitId  MBrace  NumericLiteral  UnitIdList
 
 syntax NumberType ::= RealInteger 
-                   |  RealInteger "units"  UnitsDesignator 
-	syntax RealInteger ::= "aadlreal" | "aadlinterger"
-                            |  "aadlreal" RealRange
-                            |  "aadlinterger" IntegerRange
+                   |  RealInteger  Munits   UnitsDesignator 
+	syntax RealInteger ::=  Maadlreal  |  Maadlinterger 
+                            |   Maadlreal  RealRange
+                            |   Maadlinterger  IntegerRange
 
  syntax UnitsDesignator ::= UnitsUniPpeTypeId | UnitsList
 	syntax UnitsUniPpeTypeId ::= Id
 
-syntax RealRange ::= RealLowerBound ".." RealUpperBound
+syntax RealRange ::= RealLowerBound  MDoubleDiont  RealUpperBound
         syntax RealLowerBound ::= SignedAadlrealOrConstant
         syntax RealUpperBound ::= SignedAadlrealOrConstant
 
-syntax IntegerRange ::= IntegerLowerBound ".." IntegerUpperBound
+syntax IntegerRange ::= IntegerLowerBound  MDoubleDiont  IntegerUpperBound
         syntax IntegerLowerBound ::= SignedAadlintegerOrConstant
         syntax IntegerUpperBound ::= SignedAadlintegerOrConstant
 
@@ -49,7 +49,7 @@ syntax SignedAadlintegerOrConstant ::= SignedAadlinteger
 				| IntegerPpeConstantTerm
 				| Sign IntegerPpeConstantTerm
 
-syntax Sign ::= "-" | "+"
+syntax Sign ::=  MMinus  |  MPlus 
 
 syntax SignedAadlinteger ::= Sign IntegerLiteral UnitId
                          |  Sign IntegerLiteral
@@ -61,38 +61,38 @@ syntax SignedAadlreal ::= Sign RealLiteral UnitId
                          |  RealLiteral UnitId
                          |  RealLiteral 
 
-syntax RangeType ::= "range" "of" NumberType
-		  |  "range" "of" NumberUniPpeTypeId
+syntax RangeType ::=  Mrange   Mof  NumberType
+		  |   Mrange   Mof  NumberUniPpeTypeId
 	syntax NumberUniPpeTypeId ::= Id
 
-syntax ClassifierType ::= "classifier" 
-			| "classifier" "(" ClassifierCategoryRefList ")"
+syntax ClassifierType ::=  Mclassifier  
+			|  Mclassifier   MBracketLeft  ClassifierCategoryRefList  MBracketRight 
 
 syntax ClassifierCategoryRef ::= ClassifierQualifiedMetaModelId
 syntax ClassifierQualifiedMetaModelId ::= QualifiedMetaModelId
 syntax QualifiedMetaModelId ::= MetaModelClassId 
-			     |  "{" AnnexId "}**" MetaModelClassId
+			     |   MBraceLeft  AnnexId  MAsteriskBrace3  MetaModelClassId
 	syntax MetaModelClassId ::= Id | Id MetaModelClassId
 
-syntax RefType ::= "reference" | "reference" "(" RefCategoryList ")"
+syntax RefType ::=  Mreference  |  Mreference   MBracketLeft  RefCategoryList  MBracketRight 
 	 syntax RefCategoryList ::= RefCategory 
-				  | RefCategory "," RefCategoryList
+				  | RefCategory  MComma  RefCategoryList
 
 syntax RefCategory ::= NamedElementQualifiedMetaModelId
 
-syntax UniPpeTypeId ::= PpeTypeId | PpeSetId "::" PpeTypeId
+syntax UniPpeTypeId ::= PpeTypeId | PpeSetId  MDoubleColon  PpeTypeId
 
-syntax RecordType ::= "record" "(" RecordFieldList ")"
+syntax RecordType ::=  Mrecord   MBracketLeft  RecordFieldList  MBracketRight 
 	syntax RecordFieldList ::= RecordField 
 				 | RecordField RecordFieldList
 
-syntax RecordField ::= FieldId ":" "list" "of" PpeTypeDesignator ";"
-                     | FieldId ":" PpeTypeDesignator ";"
+syntax RecordField ::= FieldId  Mcolon   Mlist   Mof  PpeTypeDesignator  MSemicolon 
+                     | FieldId  Mcolon  PpeTypeDesignator  MSemicolon 
 		
 syntax PpeTypeDesignator ::= UniPpeTypeId | PpeType
 
  syntax ClassifierCategoryRefList ::= ClassifierCategoryRef
-				   |  ClassifierCategoryRef "," ClassifierCategoryRefList
+				   |  ClassifierCategoryRef  MComma  ClassifierCategoryRefList
 
 syntax IntegerLiteral ::= Int
 syntax IntegerPpeConstantTerm ::=  PpeConstantTerm 

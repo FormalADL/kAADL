@@ -30,7 +30,8 @@ require "PropertyAssociation.k"
 require "PropertyExpression.k"
 require "ModesAndModeTransition.k"
 require "FlowImplementation.k"
-require "LexicalElement.k"
+//require "LexicalElement.k"
+require "macro.k"
 
 module AADL-SYNTAX
 
@@ -45,7 +46,7 @@ module AADL-SYNTAX
   imports PORT-SYNTAX
   imports FLOWSPECIFICATION-SYNTAX
   imports FLOWIMPLEMENTATION-SYNTAX
-  imports LEXICALELEMENT-SYNTAX
+ // imports LEXICALELEMENT-SYNTAX
   imports SUBPROGRAMCALL-SYNTAX
   imports SUBCOMPONENT-SYNTAX
   imports SUBPROGRAMGROUPACCESS-SYNTAX
@@ -55,7 +56,7 @@ module AADL-SYNTAX
   imports PROTOTYPE-SYNTAX 
   imports DATACOMPONENTACCESS-SYNTAX
   imports PORTCONNECTION-SYNTAX
-  imports CONNECTION-SYNTAX
+  imports CONNECTION-SYNTAX 
   imports ACCESSCONNECTION-SYNTAX
   imports PARAMETERCONNECTION-SYNTAX
   imports ENDTOENDFLOW-SYNTAX
@@ -68,15 +69,54 @@ module AADL-SYNTAX
   imports PROPERTYTYPE-SYNTAX
   imports PROPERTYDEFINATION-SYNTAX
   imports PROPERTYEXPRESSION-SYNTAX
+
+  imports MACRO
+
 endmodule
 
 
 module AADL
   imports AADL-SYNTAX
+  syntax AADLSpecification ::= 		PkgSpec
+				|	CmpType
+				|	CmpImpl
+				|	AnnexSubclause
+				|	Feature
+				|	AbstractFetSpec
+				|	FetGroupType
+				|	PortSpec
+				|	FlowSpec
+				|	FlowImpl
+				// LexicalElement has not a start Unterminal
+				|	SubPgmCallSeq
+				|	SubCmp
+				|	SubPgmAccessSpec
+				|	FetConnection
+				|	FetGroupConnection
+				|	ProtoType
+				|	DataAccessSpec
+				|	PortConnection
+				|	Connection
+				|	AccessConnection
+				|	ParameterConnection
+				|	EndToEndFlowSpec
+				|	BusAccessSpec
+				|	ModesSubclause
+				// here kompile time mush longer 
+			//	|	PpeSet
+				|	PpeAssoc
+				|	PpeConstant
+				|	PpeTypeDecl
+				|	PpeDefDecl
+				|	PpeExpression
+				
+			    
+/*
   syntax AADLSpecification ::= PkgSpecPpeSetList
   syntax PkgSpecPpeSetList ::= PkgSpec 
                              | PpeSet
-           					 | PkgSpecPpeSetList PkgSpecPpeSetList
+           		     | PkgSpecPpeSetList PkgSpecPpeSetList
+*/
 endmodule
 
 

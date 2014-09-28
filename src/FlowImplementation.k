@@ -1,26 +1,26 @@
 module FLOWIMPLEMENTATION-SYNTAX 
  
-  syntax FlowImpl ::= FlowSourceSinkPathImplementAssocDef PpeAssocInModes ";"
+  syntax FlowImpl ::= FlowSourceSinkPathImplementAssocDef PpeAssocInModes  MSemicolon 
   syntax FlowSourceSinkPathImplementAssocDef ::= FlowSourceImpl | FlowSinkImpl | FlowPathImpl
-  syntax FlowSourceImpl ::= FlowId ":" "flow" "source" SubcompentConnectionAssocDef /* * */ OutFlowFetId
+  syntax FlowSourceImpl ::= FlowId  Mcolon   Mflow   Msource  SubcompentConnectionAssocDef /* * */ OutFlowFetId
   syntax SubcompentConnectionAssocDef ::= NoneStatement
-                      |  SubcompenentFlowId "->" ConnectionId "->"
+                      |  SubcompenentFlowId  MArrows  ConnectionId  MArrows 
                       |  SubcompentConnectionAssocDef SubcompentConnectionAssocDef
   syntax SubcompenentFlowId ::= Id
-  syntax FlowSinkImpl ::= FlowId ":" "flow" "sink" InFlowFetId ConnectionSubcompenentFlowAssocDef /* * */
+  syntax FlowSinkImpl ::= FlowId  Mcolon   Mflow   Msink  InFlowFetId ConnectionSubcompenentFlowAssocDef /* * */
   syntax ConnectionSubcompenentFlowAssocDef ::= NoneStatement 
-                      |  "->" ConnectionId"->"SubcompenentFlowId
+                      |   MArrows  ConnectionId MArrows SubcompenentFlowId
                       | ConnectionSubcompenentFlowAssocDef  ConnectionSubcompenentFlowAssocDef
-  syntax FlowPathImpl ::= FlowId ":" "flow" "path" InFlowFetId FlowPathImplDefault "->" OutFlowFetId
-  syntax FlowPathImplDefault ::= ConnectIdSubcompenentFlowIdnetifierList /* + */ "->" ConnectionId
-  syntax ConnectIdSubcompenentFlowIdnetifierList ::= "->" ConnectionId "->" SubCmpFlowId
+  syntax FlowPathImpl ::= FlowId  Mcolon   Mflow   Mpath  InFlowFetId FlowPathImplDefault  MArrows  OutFlowFetId
+  syntax FlowPathImplDefault ::= ConnectIdSubcompenentFlowIdnetifierList /* + */  MArrows  ConnectionId
+  syntax ConnectIdSubcompenentFlowIdnetifierList ::=  MArrows  ConnectionId  MArrows  SubCmpFlowId
                         |  ConnectIdSubcompenentFlowIdnetifierList ConnectIdSubcompenentFlowIdnetifierList
-  syntax SubCmpFlowId ::= DataCompenentRef | SubCmpId | SubCmpId "." FlowSpecId
+  syntax SubCmpFlowId ::= DataCompenentRef | SubCmpId | SubCmpId  MPoint  FlowSpecId
   syntax FlowSpecId ::= Id
   syntax DataCompenentRef ::= DataSubCmpId | RequiresDataAccessId | ProvidesDataAccessId
 
-  syntax PpeAssocInModes ::= "{"PpeAssocList"}" InModesAndTransitions
-               |  "{"PpeAssocList"}"
+  syntax PpeAssocInModes ::=  MBraceLeft PpeAssocList MBraceRight  InModesAndTransitions
+               |   MBraceLeft PpeAssocList MBraceRight 
                |  InModesAndTransitions
 	       |  NoneStatement
 
@@ -31,3 +31,4 @@ module FLOWIMPLEMENTATION
 //  imports FLOWIMPLEMENTATION-SYNTAX 
 
 endmodule
+

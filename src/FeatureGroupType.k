@@ -1,15 +1,15 @@
 module FEATUREGROUPTYPE-SYNATX
  
-  syntax FetGroupType ::= "feature" "group" FetGroupId "end" FetGroupId ";"
-                        | "feature" "group" FetGroupId FetGroupTypeAssocDef "end" FetGroupId ";"  
+  syntax FetGroupType ::=  Mfeature   Mgroup  FetGroupId  Mend  FetGroupId  MSemicolon 
+                        |  Mfeature   Mgroup  FetGroupId FetGroupTypeAssocDef  Mend  FetGroupId  MSemicolon   
   syntax FetGroupId ::= Id
   
-  syntax FetGroupTypeAssocDef ::= "prototypes" ProtoTypeList 
-                                | "prototypes" NoneStatement
-                                | "features" FeatureList
-								| "inverse" "of" UniFetGroupTypeRef 
-								| "properties" FetGroupContainedPpeAssocList 
-								| "properties" NoneStatement
+  syntax FetGroupTypeAssocDef ::=  Mprototypes  ProtoTypeList 
+                                |  Mprototypes  NoneStatement
+                                |  Mfeatures  FeatureList
+								|  Minverse   Mof  UniFetGroupTypeRef 
+								|  Mproperties  FetGroupContainedPpeAssocList 
+								|  Mproperties  NoneStatement
 								| AnnexSubclauseList
 
  syntax FetGroupTypeAssocDef ::= FetGroupTypeAssocDef FetGroupTypeAssocDef
@@ -20,19 +20,19 @@ module FEATUREGROUPTYPE-SYNATX
   syntax AnnexSubclauseList ::= AnnexSubclause
                               | AnnexSubclauseList AnnexSubclauseList
   
-  syntax FetGroupTypeExt ::= "feature" "group" FetGroupId "extends" UniFetGroupTypeRef  "end" FetGroupId ";"
-                           | "feature" "group" FetGroupId "extends" UniFetGroupTypeRef  ProtoTypeBindings "end" FetGroupId ";"
-                           | "feature" "group" FetGroupId "extends" UniFetGroupTypeRef  FetGroupTypeExtAssocDef "end" FetGroupId ";"
-                           | "feature" "group" FetGroupId "extends" UniFetGroupTypeRef  ProtoTypeBindings FetGroupTypeExtAssocDef "end" FetGroupId ";"    
+  syntax FetGroupTypeExt ::=  Mfeature   Mgroup  FetGroupId  Mextends  UniFetGroupTypeRef   Mend  FetGroupId  MSemicolon 
+                           |  Mfeature   Mgroup  FetGroupId  Mextends  UniFetGroupTypeRef  ProtoTypeBindings  Mend  FetGroupId  MSemicolon 
+                           |  Mfeature   Mgroup  FetGroupId  Mextends  UniFetGroupTypeRef  FetGroupTypeExtAssocDef  Mend  FetGroupId  MSemicolon 
+                           |  Mfeature   Mgroup  FetGroupId  Mextends  UniFetGroupTypeRef  ProtoTypeBindings FetGroupTypeExtAssocDef  Mend  FetGroupId  MSemicolon     
   
-  syntax FetGroupTypeExtAssocDef ::= "prototypes" ProtoTypeList
-                                   | "prototypes" ProtoTypeRefinementList
-                                   | "prototypes" NoneStatement
-								   | "features" FeatureList
-								   | "features" FetRefinementList
-								   | "inverse" "of" UniFetGroupTypeRef  
-								   | "properties" FetGroupContainedPpeAssocList 
-								   | "properties" NoneStatement 
+  syntax FetGroupTypeExtAssocDef ::=  Mprototypes  ProtoTypeList
+                                   |  Mprototypes  ProtoTypeRefinementList
+                                   |  Mprototypes  NoneStatement
+								   |  Mfeatures  FeatureList
+								   |  Mfeatures  FetRefinementList
+								   |  Minverse   Mof  UniFetGroupTypeRef  
+								   |  Mproperties  FetGroupContainedPpeAssocList 
+								   |  Mproperties  NoneStatement 
 								   | AnnexSubclauseList 
   syntax FetGroupTypeExtAssocDef ::= FetGroupTypeExtAssocDef FetGroupTypeExtAssocDef
   								   
@@ -52,26 +52,26 @@ module FEATUREGROUPTYPE-SYNATX
    syntax FetRefinementList ::= FetRefinement 
                                   | FetRefinementList FetRefinementList
 							 
-  syntax FetGroupSpec ::= FetGroupId ":" FetGroupSpecAssocDef
+  syntax FetGroupSpec ::= FetGroupId  Mcolon  FetGroupSpecAssocDef
    
-  syntax FetGroupSpecAssocDef ::= "in" "feature" "group" InverseOfUniProtoType
-				                | "out" "feature" "group" InverseOfUniProtoType
-				                | "feature" "group" InverseOfUniProtoType
+  syntax FetGroupSpecAssocDef ::=  Min   Mfeature   Mgroup  InverseOfUniProtoType
+				                |  Mout   Mfeature   Mgroup  InverseOfUniProtoType
+				                |  Mfeature   Mgroup  InverseOfUniProtoType
 				                
-  syntax InverseOfUniProtoType ::= "inverse" "of" UniFetGroupTypeRef
-                                 | "inverse" "of" FetProtoTypeId
+  syntax InverseOfUniProtoType ::=  Minverse   Mof  UniFetGroupTypeRef
+                                 |  Minverse   Mof  FetProtoTypeId
                                  | UniFetGroupTypeRef
                                  | FetProtoTypeId
           
-  syntax FetGroupRefinement ::= FetGroupId ":" "refined" "to" FetGroupSpecAssocDef
+  syntax FetGroupRefinement ::= FetGroupId  Mcolon   Mrefined   Mto  FetGroupSpecAssocDef
 
   syntax UniFetGroupTypeRef ::= FetGroupTypeRefId
-                              | PkgName "::" FetGroupTypeRefId
+                              | PkgName  MDoubleColon  FetGroupTypeRefId
                               
   syntax FetGroupTypeRefId ::= Id
 //---------------------------------------------------------------------------------------------------------------------
 /*
-  syntax FetDef ::= "inverse" "of" UniFetGroupTypeRef
+  syntax FetDef ::=  Minverse   Mof  UniFetGroupTypeRef
   
   //ProtoTypeDef FeatureDef FetDef PpeAssocDef AnnexSubclauseDef
   
@@ -142,3 +142,4 @@ module FEATUREGROUPTYPE-SYNATX
 
 //---------------------------------------------------------------------------------------------------------------------
 endmodule
+

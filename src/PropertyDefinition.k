@@ -1,18 +1,18 @@
 module PROPERTYDEFINATION-SYNTAX
 
-	syntax PpeDefDecl ::= PpeNameId ":" PpeDefDeclAssocDef ";"
+	syntax PpeDefDecl ::= PpeNameId  Mcolon  PpeDefDeclAssocDef  MSemicolon 
 	syntax PpeNameId ::= Id
-	syntax PpeDefDeclAssocDef ::= "inherit" SingleValuedPpe "applies" "to" PpeOwnerList 
-				   |  "inherit" MultiValuedPpe "applies" "to" PpeOwnerList 
-				   |   SingleValuedPpe "applies" "to" PpeOwnerList 
-				   |   MultiValuedPpe "applies" "to" PpeOwnerList 
-	syntax SingleValuedPpe ::= PpeTypeDesignator | PpeTypeDesignator "=>" DefaultPpeExpression
+	syntax PpeDefDeclAssocDef ::=  Minherit  SingleValuedPpe  Mapplies   Mto  PpeOwnerList 
+				   |   Minherit  MultiValuedPpe  Mapplies   Mto  PpeOwnerList 
+				   |   SingleValuedPpe  Mapplies   Mto  PpeOwnerList 
+				   |   MultiValuedPpe  Mapplies   Mto  PpeOwnerList 
+	syntax SingleValuedPpe ::= PpeTypeDesignator | PpeTypeDesignator  MRoughArrow  DefaultPpeExpression
         syntax DefaultPpeExpression ::= PpeExpression
-	syntax MultiValuedPpe ::= ListOf PpeTypeDesignator "=>" DefaultPpeListValue
+	syntax MultiValuedPpe ::= ListOf PpeTypeDesignator  MRoughArrow  DefaultPpeListValue
 				| ListOf PpeTypeDesignator 
-        syntax ListOf ::= "list" "of " |  "list" "of" ListOf 
+        syntax ListOf ::=  Mlist   Mof   |   Mlist   Mof  ListOf 
         syntax DefaultPpeListValue ::= PpeListValue
-	syntax PpeOwnerList ::= PpeOwner | PpeOwner "," PpeOwnerList
+	syntax PpeOwnerList ::= PpeOwner | PpeOwner  MComma  PpeOwnerList
         syntax PpeOwner ::= NamedElementQualifiedMetaModelId | UniClassifierRef
 	syntax UniClassifierRef ::= UniCmpClassifierRef | UniFetGroupTypeRef
 

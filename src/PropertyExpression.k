@@ -16,42 +16,42 @@ syntax PpeExpression ::=   BooleanTerm
 
 syntax BooleanTerm ::= BooleanValue
 		    |  BooleanPpeConstantTerm
-		    |  "not" BooleanTerm
-		    |  BooleanTerm "and" BooleanTerm
-		    |  BooleanTerm "or"BooleanTerm
-		    |  "(" BooleanTerm ")"
+		    |   Mnot  BooleanTerm
+		    |  BooleanTerm  Mand  BooleanTerm
+		    |  BooleanTerm  Mor BooleanTerm
+		    |   MBracketLeft  BooleanTerm  MBracketRight 
 
-syntax BooleanValue ::= "true" | "false"
+syntax BooleanValue ::=  Mtrue  |  Mfalse 
 syntax RealTerm::= SignedAadlrealOrConstant
 syntax IntegerTerm ::= SignedAadlintegerOrConstant
 syntax StringTerm ::= StringLiteral | StringPpeConstantTerm
 syntax EnumerationTerm ::= EnumerationId | EnumerationPpeConstantTerm
 syntax UnitTerm ::= UnitId | UnitPpeConstantTerm
-syntax IntegerRangeTerm ::= IntegerTerm ".." IntegerTerm 
-		         |  IntegerTerm ".." IntegerTerm "delta" IntegerTerm
+syntax IntegerRangeTerm ::= IntegerTerm  MDoubleDiont  IntegerTerm 
+		         |  IntegerTerm  MDoubleDiont  IntegerTerm  Mdelta  IntegerTerm
 		         |  IntegerRangePpeConstantTerm
 
-syntax RealRangeTerm ::= RealTerm ".." RealTerm
-		      |  RealTerm ".." RealTerm "delta" RealTerm
+syntax RealRangeTerm ::= RealTerm  MDoubleDiont  RealTerm
+		      |  RealTerm  MDoubleDiont  RealTerm  Mdelta  RealTerm
 		      |  RealRangePpeConstantTerm 
 
 syntax PpeTerm ::= PpeNameId
-                 | PpeSetId "::" PpeNameId
+                 | PpeSetId  MDoubleColon  PpeNameId
 
 syntax PpeConstantTerm ::= PpeConstantId 
-			|  PpeSetId "::" PpeConstantId
+			|  PpeSetId  MDoubleColon  PpeConstantId
 
-syntax CmpClassifierTerm ::= "classifier" "(" UniCmpTypeRef ")"
-			  |  "classifier" "(" UniCmpImplRef ")"
+syntax CmpClassifierTerm ::=  Mclassifier   MBracketLeft  UniCmpTypeRef  MBracketRight 
+			  |   Mclassifier   MBracketLeft  UniCmpImplRef  MBracketRight 
 
-syntax RefTerm ::= "reference" "(" ContainedModelElementPath ")"
+syntax RefTerm ::=  Mreference   MBracketLeft  ContainedModelElementPath  MBracketRight 
 
-syntax RecordTerm ::= "(" RecordFieldIdIdList ")"
-syntax RecordFieldIdIdList ::= RecordFieldIdId "=>" PpeValue ";"
-			   |  RecordFieldIdId "=>" PpeValue ";" RecordFieldIdIdList 
+syntax RecordTerm ::=  MBracketLeft  RecordFieldIdIdList  MBracketRight 
+syntax RecordFieldIdIdList ::= RecordFieldIdId  MRoughArrow  PpeValue  MSemicolon 
+			   |  RecordFieldIdId  MRoughArrow  PpeValue  MSemicolon  RecordFieldIdIdList 
 syntax RecordFieldIdId ::= Id 
 
-syntax ComputedTerm ::= "compute" "(" FunctionId ")"
+syntax ComputedTerm ::=  Mcompute   MBracketLeft  FunctionId  MBracketRight 
 syntax FunctionId ::= Id
 
 syntax BooleanPpeConstantTerm ::= PpeConstantTerm // need rules

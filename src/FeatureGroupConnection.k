@@ -1,13 +1,13 @@
 module FEATUREGROUPCONNECTION-SYNTAX
 // 9.5 check
-  syntax FetGroupConnection ::= "feature" "group" SourceFetGroupRef ConnectionSymbol DestinationFetGroupRef
+  syntax FetGroupConnection ::=  Mfeature   Mgroup  SourceFetGroupRef ConnectionSymbol DestinationFetGroupRef
   syntax SourceFetGroupRef ::= FetGroupRef
   syntax DestinationFetGroupRef ::= FetGroupRef
-  syntax FetGroupConnectionRefinement ::= "feature" "group"
+  syntax FetGroupConnectionRefinement ::=  Mfeature   Mgroup 
 
   syntax FetGroupRef ::= CmpTypeFetGroupId
-              |  SubCmpId "." FetGroupId
-              |  CmpTypeFetGroupId "." ElementFetGroupId
+              |  SubCmpId  MPoint  FetGroupId
+              |  CmpTypeFetGroupId  MPoint  ElementFetGroupId
     syntax ElementFetGroupId ::= Id
 
 endmodule

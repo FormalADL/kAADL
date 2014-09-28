@@ -1,26 +1,26 @@
 module COMPONENTIMPLEMENTATION-SYNTAX
 
-  syntax CmpImpl ::= CmpCategory "implementation" CmpImplName  "end" CmpImplName ";"
-  syntax CmpImpl ::= CmpCategory "implementation" CmpImplName CmpImplAssocDef "end" CmpImplName ";"
-  syntax CmpImplName ::= CmpTypeId "." CmpImplId
+  syntax CmpImpl ::= CmpCategory  Mimplementation  CmpImplName   Mend  CmpImplName  MSemicolon 
+  syntax CmpImpl ::= CmpCategory  Mimplementation  CmpImplName CmpImplAssocDef  Mend  CmpImplName  MSemicolon 
+  syntax CmpImplName ::= CmpTypeId  MPoint  CmpImplId
   syntax CmpImplId ::= Id
 
   syntax CmpImplAssocDef ::= ProtoTypeBindings
-                           | "prototypes" ProtoTypeList 
-                           | "prototypes" NoneStatement 
-                           | "subcomponents" SubCmpList 
-                           | "subcomponents" NoneStatement
-                           | "calls" SubPgmCallSeqList  
-                           | "calls" NoneStatement 
-                           | "connections" ConnectionList 
-                           | "connections" NoneStatement 
-                           | "flows" FlowImplList  
-                           | "flows" EndToEndFlowSpecList  
-                           | "flows" NoneStatement
+                           |  Mprototypes  ProtoTypeList 
+                           |  Mprototypes  NoneStatement 
+                           |  Msubcomponents  SubCmpList 
+                           |  Msubcomponents  NoneStatement
+                           |  Mcalls  SubPgmCallSeqList  
+                           |  Mcalls  NoneStatement 
+                           |  Mconnections  ConnectionList 
+                           |  Mconnections  NoneStatement 
+                           |  Mflows  FlowImplList  
+                           |  Mflows  EndToEndFlowSpecList  
+                           |  Mflows  NoneStatement
                            | ModesSubclause 
-                           | "properties" PpeAssocList 
-                           | "properties" ContainedPpeAssocList 
-                           | "properties" NoneStatement  
+                           |  Mproperties  PpeAssocList 
+                           |  Mproperties  ContainedPpeAssocList 
+                           |  Mproperties  NoneStatement  
 	                       | AnnexSubclause						   
   syntax CmpImplAssocDef ::= CmpImplAssocDef CmpImplAssocDef     //the same bug with componenttype define
 
@@ -41,31 +41,31 @@ module COMPONENTIMPLEMENTATION-SYNTAX
   
  
 //Ext have some problem. 
-  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplName "extends" UniCmpImplRef "end" CmpImplName ";"
-  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplName "extends" UniCmpImplRef CmpImplExtAssocDef "end" CmpImplName ";"
-  syntax UniCmpImplRef ::= CmpImplName | PkgName "::" CmpImplName
+  syntax CmpImplExt ::= CmpCategory  Mimplementation  CmpImplName  Mextends  UniCmpImplRef  Mend  CmpImplName  MSemicolon 
+  syntax CmpImplExt ::= CmpCategory  Mimplementation  CmpImplName  Mextends  UniCmpImplRef CmpImplExtAssocDef  Mend  CmpImplName  MSemicolon 
+  syntax UniCmpImplRef ::= CmpImplName | PkgName  MDoubleColon  CmpImplName
   
   syntax CmpImplExtAssocDef ::= ProtoTypeBindings
-                           | "prototypes" ProtoTypeList 
-						   | "prototypes" ProtoTypeRefinementList
-                           | "prototypes" NoneStatement 
-                           | "subcomponents" SubCmpList
-						   | "subcomponents" SubCmpRefinementList
-                           | "subcomponents" NoneStatement
-                           | "calls" SubPgmCallSeqList 
-                           | "calls" NoneStatement 
-                           | "connections" ConnectionList
-						   | "connections" ConnectionRefinementList
-                           | "connections" NoneStatement 
-                           | "flows" FlowImplList 
-						   | "flows" FlowImplRefinementList 
-                           | "flows" EndToEndFlowSpecList 
-						   | "flows" EndToEndFlowSpecRefinementList 
-                           | "flows" NoneStatement
+                           |  Mprototypes  ProtoTypeList 
+						   |  Mprototypes  ProtoTypeRefinementList
+                           |  Mprototypes  NoneStatement 
+                           |  Msubcomponents  SubCmpList
+						   |  Msubcomponents  SubCmpRefinementList
+                           |  Msubcomponents  NoneStatement
+                           |  Mcalls  SubPgmCallSeqList 
+                           |  Mcalls  NoneStatement 
+                           |  Mconnections  ConnectionList
+						   |  Mconnections  ConnectionRefinementList
+                           |  Mconnections  NoneStatement 
+                           |  Mflows  FlowImplList 
+						   |  Mflows  FlowImplRefinementList 
+                           |  Mflows  EndToEndFlowSpecList 
+						   |  Mflows  EndToEndFlowSpecRefinementList 
+                           |  Mflows  NoneStatement
                            | ModesSubclause 
-	                       | "properties" PpeAssocList
-                           | "properties" ContainedPpeAssocList
-                           | "properties" NoneStatement         
+	                       |  Mproperties  PpeAssocList
+                           |  Mproperties  ContainedPpeAssocList
+                           |  Mproperties  NoneStatement         
 						   | AnnexSubclause						   
   syntax CmpImplExtAssocDef ::= CmpImplExtAssocDef CmpImplExtAssocDef     //the same bug with componenttype define
   
@@ -90,28 +90,28 @@ module COMPONENTIMPLEMENTATION-SYNTAX
                        | EndToEndFlowSpec
                        | FlowSpecLists FlowSpecLists
 
-  syntax SubCmpDef ::= "subcomponents" SubCmpList 
-                       | "subcomponents" NoneStatement
+  syntax SubCmpDef ::=  Msubcomponents  SubCmpList 
+                       |  Msubcomponents  NoneStatement
 
-  syntax SubPgmCallSeqDef ::= "calls" SubPgmCallSeqList  
-                             | "calls" NoneStatement
+  syntax SubPgmCallSeqDef ::=  Mcalls  SubPgmCallSeqList  
+                             |  Mcalls  NoneStatement
 
-  syntax ConnectionDef ::= "connections" ConnectionList 
-                          | "connections" NoneStatement 
+  syntax ConnectionDef ::=  Mconnections  ConnectionList 
+                          |  Mconnections  NoneStatement 
                           
-  syntax FlowSpecDefs ::= "flows" FlowImplList  
-                        | "flows" EndToEndFlowSpecList  
-                        | "flows" NoneStatement                       
+  syntax FlowSpecDefs ::=  Mflows  FlowImplList  
+                        |  Mflows  EndToEndFlowSpecList  
+                        |  Mflows  NoneStatement                       
 
-  syntax CmpImpl ::= CmpCategory "implementation" CmpImplName  "end" CmpImplName ";"
-                   | CmpCategory "implementation" CmpImplName  ProtoTypeBindings"end" CmpImplName ";"
-                   | CmpCategory "implementation" CmpImplName CmpImplAssocDef "end" CmpImplName ";"
-                   | CmpCategory "implementation" CmpImplName ProtoTypeBindings CmpImplAssocDef "end" CmpImplName ";"
+  syntax CmpImpl ::= CmpCategory  Mimplementation  CmpImplName   Mend  CmpImplName  MSemicolon 
+                   | CmpCategory  Mimplementation  CmpImplName  ProtoTypeBindings Mend  CmpImplName  MSemicolon 
+                   | CmpCategory  Mimplementation  CmpImplName CmpImplAssocDef  Mend  CmpImplName  MSemicolon 
+                   | CmpCategory  Mimplementation  CmpImplName ProtoTypeBindings CmpImplAssocDef  Mend  CmpImplName  MSemicolon 
 
-  syntax CmpImplExt ::= CmpCategory "implementation" CmpImplName "extends" UniCmpImplRef "end" CmpImplName ";"
-                      | CmpCategory "implementation" CmpImplName "extends" UniCmpImplRef ProtoTypeBindings "end" CmpImplName ";"
-                      | CmpCategory "implementation" CmpImplName "extends" UniCmpImplRef CmpImplExtAssocDef "end" CmpImplName ";"
-                      | CmpCategory "implementation" CmpImplName "extends" UniCmpImplRef ProtoTypeBindings CmpImplExtAssocDef "end" CmpImplName ";"
+  syntax CmpImplExt ::= CmpCategory  Mimplementation  CmpImplName  Mextends  UniCmpImplRef  Mend  CmpImplName  MSemicolon 
+                      | CmpCategory  Mimplementation  CmpImplName  Mextends  UniCmpImplRef ProtoTypeBindings  Mend  CmpImplName  MSemicolon 
+                      | CmpCategory  Mimplementation  CmpImplName  Mextends  UniCmpImplRef CmpImplExtAssocDef  Mend  CmpImplName  MSemicolon 
+                      | CmpCategory  Mimplementation  CmpImplName  Mextends  UniCmpImplRef ProtoTypeBindings CmpImplExtAssocDef  Mend  CmpImplName  MSemicolon 
 
 // ProtoTypeDef SubCmpDef SubPgmCallSeqDef ConnectionDef FlowSpecDefs  ModesSubclause PpeAssocDef AnnexSubclause
   

@@ -1,15 +1,15 @@
 module ABSTRACTFEATURE-SYNTAX
 
-  syntax AbstractFetSpec ::= AbstractFetId ":" "in" "feature" FetProtoTypeId
-                           | AbstractFetId ":" "in" "feature" 
-                           | AbstractFetId ":" "out" "feature" FetProtoTypeId
-                           | AbstractFetId ":" "out" "feature" 
+  syntax AbstractFetSpec ::= AbstractFetId  Mcolon   Min   Mfeature  FetProtoTypeId
+                           | AbstractFetId  Mcolon   Min   Mfeature  
+                           | AbstractFetId  Mcolon   Mout   Mfeature  FetProtoTypeId
+                           | AbstractFetId  Mcolon   Mout   Mfeature  
   syntax AbstractFetId ::= Id
   syntax FetProtoTypeId ::= Id
-  syntax AbstractFetRefinement ::= AbstractFetId ":" "refined" "to" "in" "feature" FetProtoTypeId
-                                 | AbstractFetId ":" "refined" "to" "in" "feature" 
-                                 | AbstractFetId ":" "refined" "to" "out" "feature" FetProtoTypeId
-                                 | AbstractFetId ":" "refined" "to" "out" "feature" 
+  syntax AbstractFetRefinement ::= AbstractFetId  Mcolon   Mrefined   Mto   Min   Mfeature  FetProtoTypeId
+                                 | AbstractFetId  Mcolon   Mrefined   Mto   Min   Mfeature  
+                                 | AbstractFetId  Mcolon   Mrefined   Mto   Mout   Mfeature  FetProtoTypeId
+                                 | AbstractFetId  Mcolon   Mrefined   Mto   Mout   Mfeature  
 								 | PortRefinement 
                                  | FetGroupRefinement
                                  | SubCmpAccessRefinement

@@ -1,20 +1,20 @@
 module SUBCOMPONENT-SYNTAX
-  syntax SubCmp ::= SubCmpId ":" CmpCategory SubCmpAssocDef ";"
+  syntax SubCmp ::= SubCmpId  Mcolon  CmpCategory SubCmpAssocDef  MSemicolon 
   syntax SubCmpId ::= Id
   syntax SubCmpAssocDef ::= UniCmpClassifierRef 
                           | UniCmpClassifierRef ProtoTypeBindings
                           | ProtoTypeId
                           | ArrayDimensions 
                           | ArrayDimensions ArrayElementImplList
-                          | "{" SubCmpPpeAssocList "}"
-                          | "{" ContainedPpeAssocList "}"
+                          |  MBraceLeft  SubCmpPpeAssocList  MBraceRight 
+                          |  MBraceLeft  ContainedPpeAssocList  MBraceRight 
                           | CmpInModes 
 						  | SubCmpAssocDef SubCmpAssocDef    //bug!
 
   syntax SubCmpPpeAssocList ::= PpeAssoc
                               | SubCmpPpeAssocList SubCmpPpeAssocList
   
-  syntax SubCmpRefinement ::= SubCmpId "refined" "to" CmpCategory SubCmpAssocDef ";"
+  syntax SubCmpRefinement ::= SubCmpId  Mrefined   Mto  CmpCategory SubCmpAssocDef  MSemicolon 
  						  
   syntax UniCmpClassifierRef ::= UniCmpTypeRef
                                | UniCmpImplRef
@@ -22,7 +22,7 @@ module SUBCOMPONENT-SYNTAX
   syntax ArrayDimensions ::= ArrayDimension
                            | ArrayDimensions ArrayDimensions
 						   
-  syntax ArrayDimension ::= "[" ArrayDimensionSize "]"
+  syntax ArrayDimension ::=  MLeftBracket  ArrayDimensionSize  MRightBracket 
   syntax ArrayDimensionSize ::= Numeral 
                               | UniPpeConstantId  
 							  | UniPpeId
@@ -30,16 +30,16 @@ module SUBCOMPONENT-SYNTAX
   syntax ArrayElementImplListTmp ::= UniCmpImplRef ProtoTypeBindings
                                    | UniCmpImplRef
 
-  syntax ArrayElementImplList ::= "(" ArrayElementImplListTmps ")"
+  syntax ArrayElementImplList ::=  MBracketLeft  ArrayElementImplListTmps  MBracketRight 
   
   syntax ArrayElementImplListTmps ::= ArrayElementImplListTmp
-                                    | ArrayElementImplListTmp "," ArrayElementImplListTmp
+                                    | ArrayElementImplListTmp  MComma  ArrayElementImplListTmp
 /* 
     defined in standard, but it's very strange that no relation with other definition 
     we move this definitions to commdef.k with nodef	
 */	
 //  syntax ArraySelectionName ::= Id ArraySelection
 //  syntax ArraySelection ::= ArraySelection ArraySelection
-//  syntax ArraySelection ::= "[" SelectionRange "]"
-//  syntax SelectionRange ::= Numeral | Numeral ".." Numeral
+//  syntax ArraySelection ::=  MLeftBracket  SelectionRange  MRightBracket 
+//  syntax SelectionRange ::= Numeral | Numeral  MDoubleDiont  Numeral
 endmodule
