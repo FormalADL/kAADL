@@ -5,6 +5,9 @@ module PROTOTYPE-SYNTAX
   
   syntax ProtoTypePpeAssocList ::= PpeAssoc
                                  | ProtoTypePpeAssocList ProtoTypePpeAssocList
+
+   syntax ProtoTypePpeAssoc ::= PpeAssoc
+                             | ProtoTypePpeAssoc ProtoTypePpeAssoc
 					 
   syntax ProtoTypeId ::= Id
   

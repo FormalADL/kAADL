@@ -30,7 +30,7 @@ require "PropertyAssociation.k"
 require "PropertyExpression.k"
 require "ModesAndModeTransition.k"
 require "FlowImplementation.k"
-//require "LexicalElement.k"
+require "LexicalElement.k"
 require "macro.k"
 
 module AADL-SYNTAX
@@ -46,7 +46,7 @@ module AADL-SYNTAX
   imports PORT-SYNTAX
   imports FLOWSPECIFICATION-SYNTAX
   imports FLOWIMPLEMENTATION-SYNTAX
- // imports LEXICALELEMENT-SYNTAX
+  imports LEXICALELEMENT-SYNTAX
   imports SUBPROGRAMCALL-SYNTAX
   imports SUBCOMPONENT-SYNTAX
   imports SUBPROGRAMGROUPACCESS-SYNTAX
@@ -77,6 +77,7 @@ endmodule
 
 module AADL
   imports AADL-SYNTAX
+/*
   syntax AADLSpecification ::= 		PkgSpec
 				|	CmpType
 				|	CmpImpl
@@ -103,24 +104,18 @@ module AADL
 				|	BusAccessSpec
 				|	ModesSubclause
 				// here kompile time mush longer 
-			//	|	PpeSet
+				|	PpeSet
 				|	PpeAssoc
 				|	PpeConstant
 				|	PpeTypeDecl
 				|	PpeDefDecl
 				|	PpeExpression
 				
-			    
-/*
+*/			    
+
   syntax AADLSpecification ::= PkgSpecPpeSetList
   syntax PkgSpecPpeSetList ::= PkgSpec 
                              | PpeSet
            		     | PkgSpecPpeSetList PkgSpecPpeSetList
-*/
+
 endmodule
-
-
-
-
-
-

@@ -47,17 +47,17 @@ module PACKAGE-SYNTAX
 					   
   syntax NameVisDecl ::= ImportDecl | AliasDecl
   
-  syntax ImportDecl ::=  Mwith  PkgName  
-                      |  Mwith  PpeSetId
-					  | ImportDecl ImportDeclPlus
+  syntax ImportDecl ::=  Mwith  PkgName  MSemicolon
+                      |  Mwith  PpeSetId MSemicolon
+		      | ImportDecl ImportDeclPlus MSemicolon
 					  
   syntax ImportDeclPlus ::=  MComma  PkgName 
                           |  MComma  PpeSetId
 						  | ImportDeclPlus ImportDeclPlus
 
   syntax AliasDecl ::= AliasId  Mrenames   Mpackage  PkgName  MSemicolon 
-  				     | AliasId  Mrenames  CmpCategory UniCmpTypeRef  MSemicolon 
-				     |  Mrenames  CmpCategory UniCmpTypeRef  MSemicolon 
+  		     | AliasId  Mrenames  CmpCategory UniCmpTypeRef  MSemicolon 
+		     |  Mrenames  CmpCategory UniCmpTypeRef  MSemicolon 
                      | AliasId  Mrenames   Mfeature   Mgroup  UniFetGroupTypeRef  MSemicolon 
                      |  Mrenames   Mfeature   Mgroup  UniFetGroupTypeRef  MSemicolon 
                      |  Mrenames  PkgName  MDoubleColon   Mall   MSemicolon 

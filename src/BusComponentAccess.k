@@ -1,12 +1,13 @@
 module  BUSCOMPONENTACCESS-SYNTAX
 
-//  syntax BusAccessSpec ::= DataCmpAccessId  Mcolon  BusCmpAccessSamePart
+  syntax BusAccessSpec ::= DataCmpAccessId  Mcolon Mprovides Mbus Maccess BusUniProtoType
+		        | DataCmpAccessId Mcolon Mrequires Mbus Maccess BusUniProtoType 
 //  syntax BusCmpAccessSamePart ::=  Mprovides   Mbus   Maccess  BusUniProtoType
 //                                |  Mrequires   Mbus   Maccess  BusUniProtoType
-//  syntax BusUniProtoType ::= BusUniCmpClassifierRef 
-//                           | ProtoTypeId 
+  syntax BusUniProtoType ::= BusUniCmpClassifierRef 
+                           | ProtoTypeId 
 
-//  syntax BusUniCmpClassifierRef ::= Id
+  syntax BusUniCmpClassifierRef ::= Id
 //  syntax BusAccessRefinement ::= DataCmpAccessId  Mcolon   Mrefined   Mto  BusCmpAccessSamePart
 
     syntax BusAccessSpec ::= DataCmpAccessId  Mcolon   Mprovides   Mdata   Maccess  BusUniCmpClassifierRef
