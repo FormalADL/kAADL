@@ -4,6 +4,9 @@ module SUBPROGRAMGROUPACCESS-SYNTAX
                             | SubPgmAccessId  Mcolon   Mrequires   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
                             | SubPgmAccessId  Mcolon   Mprovides   Msubprogram   Maccess  SubPgmProtoTypeId
                             | SubPgmAccessId  Mcolon   Mrequires   Msubprogram   Maccess  SubPgmProtoTypeId
+                            | SubPgmAccessId  Mcolon   Mprovides   Msubprogram   Maccess  
+                            | SubPgmAccessId  Mcolon   Mrequires   Msubprogram   Maccess  
+
   
 //  syntax SubPgmAccessSpecAssoc ::= SubPgmUniCmpClassifierRef
 //                                 | SubPgmProtoTypeId

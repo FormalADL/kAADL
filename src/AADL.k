@@ -116,6 +116,10 @@ module AADL
   syntax AADLSpecification ::= PkgSpecPpeSetList
   syntax PkgSpecPpeSetList ::= PkgSpec 
                              | PpeSet
+                             | CmpType
+                             | CmpImpl
+                             | CmpTypeExt
+                             | CmpImplExt
            		     | PkgSpecPpeSetList PkgSpecPpeSetList
 
 endmodule

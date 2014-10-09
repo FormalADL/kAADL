@@ -23,13 +23,14 @@ module PACKAGE-SYNTAX
 					
   syntax PkgDeclations ::= AADLDeclList
                          | NameVisDeclList 
+			 | PkgDeclations PkgDeclations // add
           
   syntax AADLDeclList ::= AADLDecl 
-						| AADLDeclList AADLDeclList
+			//			| AADLDeclList AADLDeclList  // not need
 						
   syntax NameVisDeclList ::= NameVisDecl 
-						   | NameVisDeclList NameVisDeclList	
-						
+			//			   | NameVisDeclList NameVisDeclList	// not need
+						 
   syntax AADLDecl ::= ClassifierDecl 
                     | AnnexLibrary
 					
@@ -47,13 +48,15 @@ module PACKAGE-SYNTAX
 					   
   syntax NameVisDecl ::= ImportDecl | AliasDecl
   
-  syntax ImportDecl ::=  Mwith  PkgName  MSemicolon
-                      |  Mwith  PpeSetId MSemicolon
-		      | ImportDecl ImportDeclPlus MSemicolon
+  syntax ImportDecls ::= PkgName 
+                      |  PpeSetId 
+		      | ImportDecl ImportDeclPlus 
 					  
   syntax ImportDeclPlus ::=  MComma  PkgName 
                           |  MComma  PpeSetId
-						  | ImportDeclPlus ImportDeclPlus
+			  | ImportDeclPlus ImportDeclPlus
+
+  syntax ImportDecl  ::= Mwith ImportDecls MSemicolon
 
   syntax AliasDecl ::= AliasId  Mrenames   Mpackage  PkgName  MSemicolon 
   		     | AliasId  Mrenames  CmpCategory UniCmpTypeRef  MSemicolon 

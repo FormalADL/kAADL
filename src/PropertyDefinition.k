@@ -2,10 +2,10 @@ module PROPERTYDEFINATION-SYNTAX
 
 	syntax PpeDefDecl ::= PpeNameId  Mcolon  PpeDefDeclAssocDef  MSemicolon 
 	syntax PpeNameId ::= Id
-	syntax PpeDefDeclAssocDef ::=  Minherit  SingleValuedPpe  Mapplies   Mto  PpeOwnerList 
-				   |   Minherit  MultiValuedPpe  Mapplies   Mto  PpeOwnerList 
-				   |   SingleValuedPpe  Mapplies   Mto  PpeOwnerList 
-				   |   MultiValuedPpe  Mapplies   Mto  PpeOwnerList 
+	syntax PpeDefDeclAssocDef ::=  Minherit  SingleValuedPpe  Mapplies   Mto MBracketLeft PpeOwnerList MBracketRight
+				   |   Minherit  MultiValuedPpe  Mapplies   Mto  MBracketLeft PpeOwnerList MBracketRight
+				   |   SingleValuedPpe  Mapplies   Mto MBracketLeft PpeOwnerList MBracketRight
+				   |   MultiValuedPpe  Mapplies   Mto  MBracketLeft PpeOwnerList MBracketRight
 	syntax SingleValuedPpe ::= PpeTypeDesignator | PpeTypeDesignator  MRoughArrow  DefaultPpeExpression
         syntax DefaultPpeExpression ::= PpeExpression
 	syntax MultiValuedPpe ::= ListOf PpeTypeDesignator  MRoughArrow  DefaultPpeListValue

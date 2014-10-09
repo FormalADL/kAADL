@@ -77,7 +77,7 @@ module MACRO
 	syntax Mset ::= "set"
 	syntax Mis ::= "is"
 	syntax Mtype ::= "type"
-	syntax Maadlboolen ::= "aadlboolen"
+	syntax Maadlboolen ::= "aadlboolean"
 	syntax Maadlstring ::= "aadlstring"
 	syntax Menumeration ::= "enumeration"
 	syntax Munits ::= "units"

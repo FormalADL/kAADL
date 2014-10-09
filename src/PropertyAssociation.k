@@ -3,10 +3,13 @@ module PROPERTYASSOCIATION-SYNTAX
 syntax PpeAssoc ::= UniPpeId  MRoughArrow   Mconstant  Assignment InBinding  MSemicolon 
 		   |  UniPpeId  MRoughArrow   Mconstant  Assignment   MSemicolon 
 		   |  UniPpeId  MRoughArrow   Assignment InBinding  MSemicolon 
+		   |  UniPpeId  MRoughArrow   Assignment  MSemicolon 
 		   |  UniPpeId  MPlusRoughArrow   Mconstant  Assignment InBinding  MSemicolon 
 		   |  UniPpeId  MPlusRoughArrow   Mconstant  Assignment   MSemicolon 
 		   |  UniPpeId  MPlusRoughArrow   Assignment InBinding  MSemicolon 
+		    |  UniPpeId  MPlusRoughArrow   Assignment   MSemicolon 
 syntax UniPpeId ::=  PpeSetId  MDoubleColon  PpeNameId 
+		   |  PpeNameId
 
 syntax ContainedPpeAssoc ::= UniPpeId  MRoughArrow   Mconstant  Assignment  Mapplies   Mto  ContainedModelElementPathList InBinding  MSemicolon 
 			    |  UniPpeId  MRoughArrow   Assignment  Mapplies   Mto  ContainedModelElementPathList InBinding  MSemicolon 
@@ -37,7 +40,7 @@ syntax PpeListValueMidSymbol ::= PpeListValue
 			       | PpeExpression 
 			       | PpeListValueMidSymbol  MComma  PpeListValueMidSymbol
 
-syntax InBinding ::=  Min   Mbinding  PlatformClassifierRefList 
+syntax InBinding ::=  Min   Mbinding MBracketLeft PlatformClassifierRefList MBracketRight
 syntax PlatformClassifierRefList ::= PlatformClassifierRef | PlatformClassifierRef  MComma  PlatformClassifierRefList
 
 syntax PlatformClassifierRef ::= ProcessorUniCmpClassifierRef

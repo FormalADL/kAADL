@@ -1,0 +1,13 @@
+device sensor
+features
+  Incoming: in event data port;
+  Outgoing: out event data port;
+end sensor;
+system sensornet
+end sensornet;
+system implementation sensornet.impl
+subcomponents
+  sensorarray: device sensor [10][10];
+connections
+  rows: port sensorarray.outgoing -> sensorarray.incoming;
+end sensornet.impl;

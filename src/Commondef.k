@@ -2,6 +2,7 @@ module COMMONDEF
 
   syntax NODEF::="not define"
   syntax NoneStatement::="none" MSemicolon
+  syntax Id ::= Id MPoint Id
 
   
   syntax FormatEffector ::= NODEF  

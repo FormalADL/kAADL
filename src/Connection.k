@@ -1,17 +1,21 @@
 module CONNECTION-SYNTAX
 
-  syntax Connection ::= ConnectionId  Mcolon  SomeConnections  MSemicolon   
-  syntax Connection ::= ConnectionId  Mcolon  SomeConnections PpeInMode  MSemicolon 
+  syntax Connection ::= ConnectionId  Mcolon  SomeConnections  MSemicolon    
   syntax ConnectionId ::= Id
-  syntax SomeConnections ::= FetConnection 
-			               | PortConnection
-                           | ParameterConnection
-                           | AccessConnection
+  syntax SomeConnections ::= FetConnection PpeInMode
+			   | PortConnection PpeInMode
+                           | ParameterConnection PpeInMode
+                           | AccessConnection PpeInMode
+                           | FetGroupConnection PpeInMode
+                           | FetConnection 
+			   | PortConnection 
+                           | ParameterConnection 
+                           | AccessConnection 
                            | FetGroupConnection 
 						   
-  syntax PpeInMode ::=  MBraceLeft  PpeAssocList  MBraceRight  InModesAndTransitions  MSemicolon 
-		             |  MBraceLeft  PpeAssocList  MBraceRight   MSemicolon 
-                     | InModesAndTransitions  MSemicolon 
+  syntax PpeInMode ::=  MBraceLeft  PpeAssocList  MBraceRight  InModesAndTransitions  
+		             |  MBraceLeft  PpeAssocList  MBraceRight   
+                     | InModesAndTransitions  
   
   syntax PpeAssocList ::= PpeAssoc 
                         | PpeAssocList PpeAssocList

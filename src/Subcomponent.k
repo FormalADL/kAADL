@@ -1,5 +1,6 @@
 module SUBCOMPONENT-SYNTAX
-  syntax SubCmp ::= SubCmpId  Mcolon  CmpCategory SubCmpAssocDef  MSemicolon 
+  syntax SubCmp ::= SubCmpId  Mcolon  CmpCategory SubCmpAssocDef  MSemicolon
+                   | SubCmpId  Mcolon  CmpCategory  MSemicolon
   syntax SubCmpId ::= Id
   syntax SubCmpAssocDef ::= UniCmpClassifierRef 
                           | UniCmpClassifierRef ProtoTypeBindings
@@ -9,7 +10,7 @@ module SUBCOMPONENT-SYNTAX
                           |  MBraceLeft  SubCmpPpeAssocList  MBraceRight 
                           |  MBraceLeft  ContainedPpeAssocList  MBraceRight 
                           | CmpInModes 
-						  | SubCmpAssocDef SubCmpAssocDef    //bug!
+			  | SubCmpAssocDef SubCmpAssocDef    //bug!
 
   syntax SubCmpPpeAssocList ::= PpeAssoc
                               | SubCmpPpeAssocList SubCmpPpeAssocList

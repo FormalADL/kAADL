@@ -1,0 +1,41 @@
+
+package Patterns
+public
+thread Voter
+features
+  Input: in data port  [3] ;
+  Output: out data port ;
+end Voter;
+
+thread Processing
+features
+  Input: in data port ;
+  Result: out data port ;
+end Processing;
+
+thread group Redundant_Processing
+features
+  Input: in data port  ;
+  Result: out data port ;
+end Redundant_Processing;
+
+thread group implementation Redundant_Processing.basic
+subcomponents
+  processing: thread Processing [3];
+  voting: thread voter;
+connections
+  voteconn: port processing.Result -> voting.Input {Connection_Pattern => (One_To_One);};
+  procconn: port Input -> processing.Input;
+  recon: port voting.Output -> Result;
+end Redundant_Processing.basic;
+
+thread TightLoop
+features
+  sensor: in data port 
+    {Input_Time => (Time=>Start;Offset=>10 us .. 15 us;) applies to ggg;} ;
+  actuator: out data port 
+    {Output_Time => (Time=>Completion;Offset=>10 us .. 11 us;) applies to ggg;} ;
+end TightLoop;
+
+
+end Patterns;

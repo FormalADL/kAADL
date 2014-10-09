@@ -1,18 +1,21 @@
 module FLOWSPECIFICATION-SYNTAX
 // 10.1 check
   syntax FlowSpec ::= FlowSourceSpec | FlowSinkSpec | FlowPathSpec 
-    syntax FlowSourceSpec ::=  FlowId  Mcolon   Mflow   Msource  OutFlowFetId FlowSourceSpecAssocDef  MSemicolon 
+    syntax FlowSourceSpec ::=  FlowId  Mcolon   Mflow   Msource  OutFlowFetId FlowSourceSpecAssocDef  MSemicolon
+                            |  FlowId  Mcolon   Mflow   Msource  OutFlowFetId  MSemicolon
       syntax FlowId ::= Id
       syntax OutFlowFetId ::=  Id
-      syntax FlowSourceSpecAssocDef ::=  MBraceLeft  PpeAssocList/*+*/  MBraceRight  InModes  MSemicolon 
-                    |  MBraceLeft  PpeAssocList /*+*/ MBraceRight   MSemicolon 
+      syntax FlowSourceSpecAssocDef ::=  MBraceLeft  PpeAssocList MBraceRight  InModes  MSemicolon 
+                    |  MBraceLeft  PpeAssocList  MBraceRight   MSemicolon 
                     | InModes  MSemicolon 
 
     syntax FlowSinkSpec ::= FlowId  Mcolon   Mflow   Msink  InFlowFetId FlowSinkSpecAssocDef  MSemicolon 
+                          | FlowId  Mcolon   Mflow   Msink  InFlowFetId MSemicolon 
       syntax InFlowFetId ::= Id
       syntax FlowSinkSpecAssocDef ::= FlowSourceSpecAssocDef
     
     syntax FlowPathSpec ::= FlowId  Mcolon   Mflow   Mpath  InFlowFetId  MArrows  OutFlowFetId  FlowPathSpecAssocDef  MSemicolon 
+                          | FlowId  Mcolon   Mflow   Mpath  InFlowFetId  MArrows  OutFlowFetId  MSemicolon 
       syntax FlowPathSpecAssocDef ::= FlowSourceSpecAssocDef
 
   syntax FlowSpecRefinement ::= FlowSourceSpecRefinement | FlowSinkSpecRefinement | FlowPathSpecRefinement

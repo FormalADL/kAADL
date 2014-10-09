@@ -10,8 +10,10 @@ module PORT-SYNTAX
   
   syntax PortType ::=  Mdata   Mport  DataUniCmpClassifierRef
                     |  Mdata   Mport  DataCmpProtoTypeId
+                    |  Mdata   Mport 
                     |  Mevent   Mdata   Mport  DataUniCmpClassifierRef
                     |  Mevent   Mdata   Mport  DataCmpProtoTypeId
+                    |  Mevent   Mdata   Mport
                     |  Mevent   Mport 
 					
   syntax DataUniCmpClassifierRef ::= UniCmpClassifierRef

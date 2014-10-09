@@ -18,6 +18,7 @@ syntax EnumerationType ::=  Menumeration  MBracketLeft  EnumerationLiteralIdList
 	 	
 syntax UnitsType ::=  Munits  UnitsList
 	 syntax UnitsList ::=  MBracketLeft  UnitId UnitIdList  MBracketRight 
+			   |   MBracketLeft  UnitId   MBracketRight 
 	 syntax UnitId ::= Id
 	 syntax UnitIdList ::= NoneStatement
 			     |  MComma  UnitId  MRoughArrow  UnitId  MBrace  NumericLiteral 
@@ -31,6 +32,8 @@ syntax NumberType ::= RealInteger
 
  syntax UnitsDesignator ::= UnitsUniPpeTypeId | UnitsList
 	syntax UnitsUniPpeTypeId ::= Id
+                                  | Id MDoubleColon Id
+
 
 syntax RealRange ::= RealLowerBound  MDoubleDiont  RealUpperBound
         syntax RealLowerBound ::= SignedAadlrealOrConstant
@@ -97,7 +100,7 @@ syntax PpeTypeDesignator ::= UniPpeTypeId | PpeType
 syntax IntegerLiteral ::= Int
 syntax IntegerPpeConstantTerm ::=  PpeConstantTerm 
 syntax NamedElementQualifiedMetaModelId ::= NODEF
-syntax FieldId ::= NODEF
+syntax FieldId ::= Id
 
 endmodule
 

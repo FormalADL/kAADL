@@ -1,0 +1,33 @@
+package Equipment
+public 
+with Simulation;
+device Camera
+features
+  usbport: requires bus access Buses::USB.USB2;
+  image: out event data port UserTypes::imageformat.jpg;
+end Camera;
+
+device temperature_sensor
+features
+  serialline: requires bus access Buses::RS232;
+  temp_reading: out data port UserTypes::Temperature.Celsius;
+end temperature_sensor;
+
+device implementation temperature_sensor.hardware
+properties
+  Hardware_Description_Source_Text => ( TemperatureSensorHardwareModel );
+end temperature_sensor.hardware;
+
+device implementation temperature_sensor.simulation
+properties
+  Simulation::SensorReadings => SensorTrace1xls;
+end temperature_sensor.simulation;
+
+device Timer
+features
+  SignalWire: requires bus access Wire.Gauge12;
+  SetTime: in event data port UserTypes::Time;
+  TimeExpired: out event port;
+end Timer;
+
+end Equipment;

@@ -17,6 +17,7 @@ module COMPONENTTYPE-SYNTAX
 					   | CmpAssocDef CmpAssocDef       //here is a bug!
 
   syntax ProtoTypeList ::= ProtoType
+                         | ProtoTypeRefinementList
                          | ProtoTypeList ProtoTypeList
   
   syntax FeatureList ::= Feature
@@ -33,8 +34,7 @@ module COMPONENTTYPE-SYNTAX
                           
  syntax PpeAssocList ::= CmpTypePpeAssocList
 			|ContainedPpeAssocList
-			|CmpTypePpeAssocList PpeAssocList
-			|ContainedPpeAssocList PpeAssocList
+			| PpeAssocList PpeAssocList
 
   syntax CmpCategory ::= AbstractCmpCategory 
                        | SoftwareCategory 

@@ -1,0 +1,12 @@
+property set set_of_faults is
+comm_error_status: aadlboolean applies to system11,device11;
+Speed_Range: type range of aadlreal 0.0 ..150.0 units mph;
+Maximum_Faults: constant aadlinteger => 3;
+end set_of_faults;
+system implementation data_processing.accelerometer_data
+properties
+    set_of_faults::comm_error_status => true;
+end data_processing.accelerometer_data;
+
+
+
