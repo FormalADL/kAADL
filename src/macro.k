@@ -42,7 +42,7 @@ module MACRO
 	syntax Mc ::= "c"
 	syntax Md ::= "d"
 	syntax Mf ::= "f"
-	syntax Mvirtrual ::= "virtrual"
+	syntax Mvirtrual ::= "virtual"
 	syntax Mmodes ::= "modes"
 	syntax Mrequirs ::= "requires"
 	syntax Minitial ::= "initial"

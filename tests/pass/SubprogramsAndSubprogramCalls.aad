@@ -1,0 +1,53 @@
+data matrix
+end matrix;
+
+data weather_forecast
+end weather_forecast;
+
+data date
+end date;
+
+subprogram Matrix_delta
+features
+  A: in parameter matrix;
+  B: in parameter matrix;
+  result: out parameter matrix;
+end Matrix_delta;
+
+subprogram Interpret_result
+features
+  A: in parameter matrix;
+  result: out parameter weather_forecast;
+end Interpret_result;
+
+
+subprogram getCurrent
+features
+  result: out parameter Matrix;
+end getCurrent;
+
+subprogram getFuture
+features
+  date: in parameter date;
+  result: out parameter Matrix;
+end getFuture;
+
+thread Predict_Weather
+end Predict_Weather;
+
+thread implementation Predict_Weather.others
+calls main : {
+  current: subprogram weather_DB.getCurrent;
+  future: subprogram weather_DB.getFuture;
+  diff: subprogram Matrix_delta;
+  interpret: subprogram Interpret_result;
+};
+connections
+  fdconn: parameter target_date -> future.date;
+  pdconn: port future.bad_date -> past_date;
+  daconn: parameter current.result -> diff.A;
+  dbconn: parameter future.result -> diff.B;
+  iaconn: parameter diff.result -> interpret.A;
+  pconn: parameter interpret.result -> prediction;
+  fwconn: data access weather_database <-> future.wdb;
+end Predict_Weather.others;

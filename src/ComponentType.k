@@ -6,7 +6,7 @@ module COMPONENTTYPE-SYNTAX
   syntax CmpAssocDef ::=  Mprototypes  ProtoTypeList 
                        |  Mprototypes  NoneStatement
                        |  Mfeatures  FeatureList 
-			|  Mfeatures  NoneStatement
+		       |  Mfeatures  NoneStatement
                        |  Mflows  FlowSpecList 
 					   |  Mflows  NoneStatement
                        | ModesSubclause 
@@ -21,6 +21,7 @@ module COMPONENTTYPE-SYNTAX
                          | ProtoTypeList ProtoTypeList
   
   syntax FeatureList ::= Feature
+                         | FetRefinement
                          | FeatureList FeatureList
                          
   syntax FlowSpecList ::= FlowSpec

@@ -99,7 +99,7 @@ syntax PpeTypeDesignator ::= UniPpeTypeId | PpeType
 
 syntax IntegerLiteral ::= Int
 syntax IntegerPpeConstantTerm ::=  PpeConstantTerm 
-syntax NamedElementQualifiedMetaModelId ::= NODEF
+syntax NamedElementQualifiedMetaModelId ::= Id
 syntax FieldId ::= Id
 
 endmodule

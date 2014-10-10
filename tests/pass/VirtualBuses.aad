@@ -1,0 +1,22 @@
+package Hardware
+public
+bus Ethernet
+end Ethernet;
+
+virtual bus IP_TCP
+end IP_TCP;
+
+virtual bus HTTP
+properties
+  Allowed_Connection_Binding_Class => classifier (IP_TCP);
+end HTTP;
+
+processor PowerPC
+end PowerPC;
+
+processor implementation PowerPC.Linux
+subcomponents
+  IP_TCP: virtual bus IP_TCP;
+end PowerPC.Linux;
+
+end Hardware;

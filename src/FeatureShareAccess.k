@@ -13,7 +13,6 @@ module FEATURESHAREACCESS-SYNTAX
                    | PortSpec MSemicolon
                    | FetGroupSpec MSemicolon
                    | SubCmpAccessSpec MSemicolon
-                   | ParameterSpec MSemicolon
                    | AbstractFetSpec ArrayDimensionFeatrueContrained MSemicolon
                    | PortSpec ArrayDimensionFeatrueContrained MSemicolon
                    | FetGroupSpec ArrayDimensionFeatrueContrained MSemicolon
@@ -25,6 +24,7 @@ module FEATURESHAREACCESS-SYNTAX
                                            | ArrayDimension  MBraceLeft  FeatrueContrainedPpeAssoc  MBraceRight 
   syntax FeatrueContrainedPpeAssoc ::= FeatrueContrainedPpeAssoc FeatrueContrainedPpeAssoc 
   syntax FeatrueContrainedPpeAssoc ::= ContainedPpeAssoc
+                                     | PpeAssoc
   
   syntax SubCmpAccessSpec ::= SubPgmAccessSpec 
                             | SubPgmGroupAccessSpec 
@@ -32,16 +32,16 @@ module FEATURESHAREACCESS-SYNTAX
                             | BusAccessSpec
 
   
-  syntax FetRefinement ::= AbstractFetRefinement 
-                         | PortRefinement 
-                         | FetGroupRefinement 
-                         | SubCmpAccessRefinement 
-                         | ParameterRefinement 
-                         | AbstractFetRefinement ArrayDimensionFeatrueContrained
-                         | PortRefinement ArrayDimensionFeatrueContrained
-                         | FetGroupRefinement ArrayDimensionFeatrueContrained
-                         | SubCmpAccessRefinement ArrayDimensionFeatrueContrained
-                         | ParameterRefinement ArrayDimensionFeatrueContrained
+  syntax FetRefinement ::= AbstractFetRefinement MSemicolon
+                         | PortRefinement MSemicolon
+                         | FetGroupRefinement MSemicolon
+                         | SubCmpAccessRefinement MSemicolon
+                         | ParameterRefinement MSemicolon
+                         | AbstractFetRefinement ArrayDimensionFeatrueContrained MSemicolon
+                         | PortRefinement ArrayDimensionFeatrueContrained MSemicolon
+                         | FetGroupRefinement ArrayDimensionFeatrueContrained MSemicolon
+                         | SubCmpAccessRefinement ArrayDimensionFeatrueContrained MSemicolon
+                         | ParameterRefinement ArrayDimensionFeatrueContrained MSemicolon
 						 
   syntax SubCmpAccessRefinement ::= SubPgmAccessRefinement
                                   | SubPgmGroupAccessRefinement

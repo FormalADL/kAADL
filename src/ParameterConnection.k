@@ -2,7 +2,7 @@ module PARAMETERCONNECTION-SYNTAX
 
   syntax ParameterConnection ::=  Mparameter  SourceParameterRef DirectionalConnectionSymbol DestinationParameterRef
     syntax SourceParameterRef ::= ParameterRef 
-    syntax DirectionalConnectionSymbol ::= ParameterRef
+    syntax DirectionalConnectionSymbol ::= MArrows
     syntax DestinationParameterRef ::= ParameterRef
 
   syntax ParameterConnectionRefinement ::=  Mparamenter 
