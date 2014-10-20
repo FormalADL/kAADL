@@ -1,0 +1,21 @@
+process implementation foo.basic
+subcomponents
+  A: thread bar.basic;
+  B: thread baz.basic;
+connections
+  conn1: port signal -> A.p1;
+  conn2: port A.p2 -> B.p1;
+  conn3: port B.p2 -> result2;
+  conn4: port A.p2 -> result1;
+  conn6: port A.p3 -> status;
+  connToThread: port initcmd -> B.reset;
+flows
+  Flow1: flow path
+      signal -> conn1 -> A.fs1 -> conn4 -> result1;
+  Flow2: flow path
+     signal -> conn1 -> A.fs1 -> conn2 ->
+     B.fs1 -> conn3 -> result2;
+  Flow3: flow sink initcmd -> connToThread -> C.fsink;
+ 
+  Flow4: flow source A.fs2 -> conn6 -> status;
+end foo.basic;

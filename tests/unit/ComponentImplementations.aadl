@@ -1,0 +1,27 @@
+package ImplementationExample
+public
+data Bool_Type
+end Bool_Type;
+
+thread DriverModeLogic
+features
+  BreakPedalPressed : in data port Bool_Type;
+  ClutchPedalPressed : in data port Bool_Type;
+  Activate : in data port Bool_Type;
+  Cancel : in data port Bool_Type;
+  OnNotOff : in data port Bool_Type;
+  CruiseActive : out data port Bool_Type;
+end DriverModeLogic;
+thread implementation DriverModeLogic.Simulink
+properties
+  B::Dispatch_Protocol => constant Periodic;
+end DriverModeLogic.Simulink;
+thread implementation DriverModeLogic.C
+properties
+  B::Period => constant 10 ms;
+  B::Source_Name => constant CruiseControlActive applies to CruiseActive;
+  B::Dispatch_Protocol=>constant Periodic;
+  B::Period => constant 10 ms;
+  B::Source_Name => constant CCActive applies to CruiseActive;
+end DriverModeLogic.C;
+end ImplementationExample;

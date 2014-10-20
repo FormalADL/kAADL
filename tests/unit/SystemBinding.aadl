@@ -1,0 +1,50 @@
+package Deployment
+public
+system smp
+end smp;
+
+system implementation smp.s1
+subcomponents
+  p1: processor cpu.u1;
+  p2: processor cpu.u1;
+  p3: processor cpu.u1;
+end smp.s1;
+
+process p1
+end p1;
+
+process implementation p1.i1
+subcomponents
+  ta: thread t1.i1;
+  tb: thread t1.i1;
+end p1.i1;
+
+thread t1
+end t1;
+
+thread implementation t1.i1
+end t1.i1;
+
+processor cpu
+end cpu;
+
+processor implementation cpu.u1
+end cpu.u1;
+
+system S
+end S;
+
+system implementation S.I
+subcomponents
+  p_a: process p1.i1;
+  p_b: process p1.i1;
+  up1: processor cpu.u1;
+  up2: processor cpu.u1;
+  ss1: system smp.s1;
+properties
+  Allowed_Processor_Binding => ( reference (up1), reference (up2) ) applies to p_a.ta;
+  Allowed_Processor_Binding => ( reference (up1), reference (up2) ) applies to p_a.tb;
+  Allowed_Processor_Binding => reference (ss1.p3 ) applies to p_b.ta;
+  Allowed_Processor_Binding => reference (ss1 ) applies to p_b.tb;
+end S.I;
+end Deployment;
