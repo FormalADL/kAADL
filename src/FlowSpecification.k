@@ -1,43 +1,30 @@
 module FLOWSPECIFICATION-SYNTAX
-// 10.1 check
-  syntax FlowSpec ::= FlowSourceSpec | FlowSinkSpec | FlowPathSpec 
-    syntax FlowSourceSpec ::=  FlowId  Mcolon   Mflow   Msource  OutFlowFetId FlowSourceSpecAssocDef  MSemicolon
-                            |  FlowId  Mcolon   Mflow   Msource  OutFlowFetId  MSemicolon
-      syntax FlowId ::= Id
-      syntax OutFlowFetId ::=  Id
-      syntax FlowSourceSpecAssocDef ::=  MBraceLeft  PpeAssocList MBraceRight  InModes  MSemicolon 
-                    |  MBraceLeft  PpeAssocList  MBraceRight   MSemicolon 
-                    | InModes  MSemicolon 
 
-    syntax FlowSinkSpec ::= FlowId  Mcolon   Mflow   Msink  InFlowFetId FlowSinkSpecAssocDef  MSemicolon 
-                          | FlowId  Mcolon   Mflow   Msink  InFlowFetId MSemicolon 
-      syntax InFlowFetId ::= Id
-      syntax FlowSinkSpecAssocDef ::= FlowSourceSpecAssocDef
-    
-    syntax FlowPathSpec ::= FlowId  Mcolon   Mflow   Mpath  InFlowFetId  MArrows  OutFlowFetId  FlowPathSpecAssocDef  MSemicolon 
-                          | FlowId  Mcolon   Mflow   Mpath  InFlowFetId  MArrows  OutFlowFetId  MSemicolon 
-      syntax FlowPathSpecAssocDef ::= FlowSourceSpecAssocDef
-
-  syntax FlowSpecRefinement ::= FlowSourceSpecRefinement | FlowSinkSpecRefinement | FlowPathSpecRefinement
-    syntax FlowSourceSpecRefinement ::= FlowId  Mcolon   Mrefined   Mto   Mflow   Msource  FlowSourceSpecRefinementAssocDef  MSemicolon 
-      syntax FlowSourceSpecRefinementAssocDef ::=  MBraceLeft  PpeAssocList/*+*/  MBraceRight  InModesAndTransitions 
-                  |   MBraceLeft  PpeAssocList  MBraceRight  
-                  |   InModesAndTransitions
-    syntax FlowSinkSpecRefinement ::=  FlowId  Mcolon   Mrefined   Mto   Mflow   Msink   FlowSinkSpecRefinementAssocDef  MSemicolon 
-      syntax FlowSinkSpecRefinementAssocDef ::= FlowSourceSpecRefinementAssocDef
-
-    syntax FlowPathSpecRefinement ::=   FlowId  Mcolon   Mrefined   Mto   Mflow   Mpath   FlowPathSpecRefinementAssocDef  MSemicolon 
-      syntax FlowPathSpecRefinementAssocDef ::= FlowSourceSpecRefinementAssocDef
-    
-    syntax FlowFetIdentifer ::= FetId | FetGroupId
-               |  FetGroupId  MPoint  FetId
-               |  FetGroupId  MPoint  FetGroupId
-
-
-endmodule
-
-module  FLOWSPECIFICATION
-
- // imports FLOWSPECIFICATION-SYNTAX
-
+syntax FlowSpec ::= FlowSourceSpec 
+			| FlowSinkSpec 
+			| FlowPathSpec 
+syntax FlowSourceSpec ::= Id Mcolon Mflow Msource Id FlowSourceSpecAssocDef MSemicolon 
+			| Id Mcolon Mflow Msource Id MSemicolon 
+syntax FlowSourceSpecAssocDef ::= MBraceLeft PpeAssocList MBraceRight InModes MSemicolon 
+			| MBraceLeft PpeAssocList MBraceRight MSemicolon 
+			| InModes MSemicolon 
+syntax FlowSinkSpec ::= Id Mcolon Mflow Msink Id FlowSinkSpecAssocDef MSemicolon 
+			| Id Mcolon Mflow Msink Id MSemicolon 
+syntax FlowSinkSpecAssocDef ::= FlowSourceSpecAssocDef 
+syntax FlowPathSpec ::= Id Mcolon Mflow Mpath Id MArrows Id FlowPathSpecAssocDef MSemicolon 
+			| Id Mcolon Mflow Mpath Id MArrows Id MSemicolon 
+syntax FlowPathSpecAssocDef ::= FlowSourceSpecAssocDef 
+syntax FlowSpecRefinement ::= FlowSourceSpecRefinement 
+			| FlowSinkSpecRefinement 
+			| FlowPathSpecRefinement 
+syntax FlowSourceSpecRefinement ::= Id Mcolon Mrefined Mto Mflow Msource FlowSourceSpecRefinementAssocDef MSemicolon 
+syntax FlowSourceSpecRefinementAssocDef ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
+			| MBraceLeft PpeAssocList MBraceRight 
+			| InModesAndTransitions 
+syntax FlowSinkSpecRefinement ::= Id Mcolon Mrefined Mto Mflow Msink FlowSinkSpecRefinementAssocDef MSemicolon 
+syntax FlowSinkSpecRefinementAssocDef ::= FlowSourceSpecRefinementAssocDef 
+syntax FlowPathSpecRefinement ::= Id Mcolon Mrefined Mto Mflow Mpath FlowPathSpecRefinementAssocDef MSemicolon 
+syntax FlowPathSpecRefinementAssocDef ::= FlowSourceSpecRefinementAssocDef 
+syntax FlowFetIdentifer ::= Id 
+			| Id MPoint Id 
 endmodule

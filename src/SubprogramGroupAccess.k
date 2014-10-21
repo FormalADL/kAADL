@@ -1,36 +1,14 @@
 module SUBPROGRAMGROUPACCESS-SYNTAX
 
-  syntax SubPgmAccessSpec ::= SubPgmAccessId  Mcolon   Mprovides   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
-                            | SubPgmAccessId  Mcolon   Mrequires   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
-                            | SubPgmAccessId  Mcolon   Mprovides   Msubprogram   Maccess  SubPgmProtoTypeId
-                            | SubPgmAccessId  Mcolon   Mrequires   Msubprogram   Maccess  SubPgmProtoTypeId
-                            | SubPgmAccessId  Mcolon   Mprovides   Msubprogram   Maccess  
-                            | SubPgmAccessId  Mcolon   Mrequires   Msubprogram   Maccess  
-
-  
-//  syntax SubPgmAccessSpecAssoc ::= SubPgmUniCmpClassifierRef
-//                                 | SubPgmProtoTypeId
-
-  syntax SubPgmAccessRefinement ::= SubPgmAccessId  Mcolon   Mrefined   Mto   Mprovides   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
-                                  | SubPgmAccessId  Mcolon   Mrefined   Mto   Mrequires   Msubprogram   Maccess  SubPgmUniCmpClassifierRef
-                                  | SubPgmAccessId  Mcolon   Mrefined   Mto   Mprovides   Msubprogram   Maccess  SubPgmProtoTypeId
-                                  | SubPgmAccessId  Mcolon   Mrefined   Mto   Mrequires   Msubprogram   Maccess  SubPgmProtoTypeId
-  
-  syntax SubPgmGroupAccessSpec ::= SubPgmGroupAccessId  Mcolon   Mprovides   Msubprogram   Mgroup   Maccess  SubPgmUniCmpClassifierRef
-                                 | SubPgmGroupAccessId  Mcolon   Mrequires   Msubprogram   Mgroup   Maccess  SubPgmUniCmpClassifierRef
-                                 | SubPgmGroupAccessId  Mcolon   Mprovides   Msubprogram   Mgroup   Maccess  SubPgmProtoTypeId
-                                 | SubPgmGroupAccessId  Mcolon   Mrequires   Msubprogram   Mgroup   Maccess  SubPgmProtoTypeId
-
-  syntax SubPgmGroupAccessRefinement ::= SubPgmGroupAccessId  Mcolon   Mrefined   Mto   Mprovides   Msubprogram   Mgroup   Maccess  SubPgmUniCmpClassifierRef
-                                       | SubPgmGroupAccessId  Mcolon   Mrefined   Mto   Mrequires   Msubprogram   Mgroup   Maccess  SubPgmUniCmpClassifierRef
-                                       | SubPgmGroupAccessId  Mcolon   Mrefined   Mto   Mprovides   Msubprogram   Mgroup   Maccess  SubPgmProtoTypeId
-                                       | SubPgmGroupAccessId  Mcolon   Mrefined   Mto   Mrequires   Msubprogram   Mgroup   Maccess  SubPgmProtoTypeId
- 
- 
-   syntax SubPgmProtoTypeId ::= Id
-   syntax SubPgmUniCmpClassifierRef ::= UniCmpClassifierRef
-   syntax SubPgmAccessId ::= Id
-   syntax SubPgmGroupAccessId ::= Id 
-         
+syntax SubPgmAccessSpec ::= Id Mcolon Mprovides Msubprogram Maccess Id 
+			| Id Mcolon Mrequires Msubprogram Maccess Id 
+			| Id Mcolon Mprovides Msubprogram Maccess 
+			| Id Mcolon Mrequires Msubprogram Maccess 
+syntax SubPgmAccessRefinement ::= Id Mcolon Mrefined Mto Mprovides Msubprogram Maccess Id 
+			| Id Mcolon Mrefined Mto Mrequires Msubprogram Maccess Id 
+syntax SubPgmGroupAccessSpec ::= Id Mcolon Mprovides Msubprogram Mgroup Maccess Id 
+			| Id Mcolon Mrequires Msubprogram Mgroup Maccess Id 
+syntax SubPgmGroupAccessRefinement ::= Id Mcolon Mrefined Mto Mprovides Msubprogram Mgroup Maccess Id 
+			| Id Mcolon Mrefined Mto Mrequires Msubprogram Mgroup Maccess Id 
+syntax SubPgmUniCmpClassifierRef ::= UniCmpClassifierRef 
 endmodule
-

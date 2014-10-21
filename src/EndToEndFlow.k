@@ -1,27 +1,17 @@
 module ENDTOENDFLOW-SYNTAX
-// 10.3  
-  syntax EndToEndFlowSpec ::= EndToEndFlowId  Mcolon   Mend   Mto   Mend   Mflow  StartSubCmpFlowOrEtefId ConnectionIdFlowPathList /* + */ EndToEndFlowSpecAssocDefault  MSemicolon 
-                           | EndToEndFlowId  Mcolon   Mend   Mto   Mend   Mflow  StartSubCmpFlowOrEtefId ConnectionIdFlowPathList /* + */  MSemicolon
-    syntax EndToEndFlowId ::= Id
-    syntax StartSubCmpFlowOrEtefId ::= SubCmpFlowOrEtefId
-    syntax ConnectionIdFlowPathList ::=  MArrows  ConnectionId  MArrows  FlowPathSubCmpFlowOrEtefId
-                | ConnectionIdFlowPathList ConnectionIdFlowPathList
-      syntax FlowPathSubCmpFlowOrEtefId ::= Id
-    syntax EndToEndFlowSpecAssocDefault ::=   MBraceLeft  PpeAssocList  MBraceRight  InModesAndTransitions
-                |  MBraceLeft  PpeAssocList  MBraceRight 
-                |  InModesAndTransitions
 
-  syntax EndToEndSpecRefinement ::= EndToEndId  Mcolon   Mrefined   Mto   Mend   Mto   Mend   Mflow  EndToEndSpecRefinementDefault  MSemicolon 
-    syntax EndToEndId ::=  Id
-    syntax EndToEndSpecRefinementDefault ::=  MBraceLeft  PpeAssocList  MBraceRight  InModesAndTransitions
-                |  MBraceLeft  PpeAssocList  MBraceRight 
-                |  InModesAndTransitions
-  syntax SubCmpFlowOrEtefId ::= SubCmpFlowId | EndToEndFlowId
-
-endmodule
-
-module ENDTOENDFLOW
-  
- // imports ENDTOENDFLOW-SYNTAX
-
+syntax EndToEndFlowSpec ::= Id Mcolon Mend Mto Mend Mflow StartSubCmpFlowOrEtefId ConnectionIdFlowPathList EndToEndFlowSpecAssocDefault MSemicolon 
+			| Id Mcolon Mend Mto Mend Mflow StartSubCmpFlowOrEtefId ConnectionIdFlowPathList MSemicolon 
+syntax StartSubCmpFlowOrEtefId ::= SubCmpFlowOrEtefId 
+syntax ConnectionIdFlowPathList ::= MArrows Id MArrows Id 
+			| ConnectionIdFlowPathList ConnectionIdFlowPathList 
+syntax EndToEndFlowSpecAssocDefault ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
+			| MBraceLeft PpeAssocList MBraceRight 
+			| InModesAndTransitions 
+syntax EndToEndSpecRefinement ::= Id Mcolon Mrefined Mto Mend Mto Mend Mflow EndToEndSpecRefinementDefault MSemicolon 
+syntax EndToEndSpecRefinementDefault ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
+			| MBraceLeft PpeAssocList MBraceRight 
+			| InModesAndTransitions 
+syntax SubCmpFlowOrEtefId ::= SubCmpFlowId 
+			| Id 
 endmodule

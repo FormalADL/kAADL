@@ -77,49 +77,16 @@ endmodule
 
 module AADL
   imports AADL-SYNTAX
-/*
-  syntax AADLSpecification ::= 		PkgSpec
-				|	CmpType
-				|	CmpImpl
-				|	AnnexSubclause
-				|	Feature
-				|	AbstractFetSpec
-				|	FetGroupType
-				|	PortSpec
-				|	FlowSpec
-				|	FlowImpl
-				// LexicalElement has not a start Unterminal
-				|	SubPgmCallSeq
-				|	SubCmp
-				|	SubPgmAccessSpec
-				|	FetConnection
-				|	FetGroupConnection
-				|	ProtoType
-				|	DataAccessSpec
-				|	PortConnection
-				|	Connection
-				|	AccessConnection
-				|	ParameterConnection
-				|	EndToEndFlowSpec
-				|	BusAccessSpec
-				|	ModesSubclause
-				// here kompile time mush longer 
-				|	PpeSet
-				|	PpeAssoc
-				|	PpeConstant
-				|	PpeTypeDecl
-				|	PpeDefDecl
-				|	PpeExpression
-				
-*/			    
 
   syntax AADLSpecification ::= PkgSpecPpeSetList
-  syntax PkgSpecPpeSetList ::= PkgSpec 
+  syntax PkgSpecPpeSetList ::= PkgSpecPpeSetListElem 
+				     | PkgSpecPpeSetListElem PkgSpecPpeSetList
+  syntax PkgSpecPpeSetListElem ::= PkgSpec 
                              | PpeSet
                              | CmpType
                              | CmpImpl
                              | CmpTypeExt
                              | CmpImplExt
-           		     | PkgSpecPpeSetList PkgSpecPpeSetList
-
+  
 endmodule
+
