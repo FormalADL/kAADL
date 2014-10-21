@@ -3,7 +3,7 @@ module COMPONENTIMPLEMENTATION-SYNTAX
 syntax CmpImpl ::= CmpCategory Mimplementation CmpImplName Mend CmpImplName MSemicolon 
 syntax CmpImpl ::= CmpCategory Mimplementation CmpImplName CmpImplAssocDef Mend CmpImplName MSemicolon 
 syntax CmpImplName ::= Id MPoint Id 
-syntax CmpImplAssocDef ::= ProtoTypeBindings 
+syntax CmpImplAssocDefElem ::= ProtoTypeBindings 
 			| Mprototypes ProtoTypeList 
 			| Mprototypes NoneStatement 
 			| Msubcomponents SubCmpList 
@@ -19,25 +19,29 @@ syntax CmpImplAssocDef ::= ProtoTypeBindings
 			| Mproperties ContainedPpeAssocList 
 			| Mproperties NoneStatement 
 			| AnnexSubclause 
-syntax CmpImplAssocDef ::= CmpImplAssocDef CmpImplAssocDef 
+syntax CmpImplAssocDef ::= CmpImplAssocDefElem 
+			|  CmpImplAssocDefElem CmpImplAssocDef 
 syntax SubCmpList ::= SubCmp 
 			| SubCmpRefinement 
-			| SubCmpList SubCmpList 
+			| SubCmp SubCmpList 
+			| SubCmpRefinement SubCmpList 
 syntax SubPgmCallSeqList ::= SubPgmCallSeq 
-			| SubPgmCallSeqList SubPgmCallSeqList 
+			| SubPgmCallSeq SubPgmCallSeqList 
 syntax ConnectionList ::= Connection 
 			| ConnectionRefinement 
-			| ConnectionList ConnectionList 
-syntax FlowImplList ::= FlowImpl 
+			| Connection ConnectionList 
+			| ConnectionRefinement ConnectionList 
+syntax FlowImplListElem ::= FlowImpl 
 			| EndToEndFlowSpec 
 			| FlowImplRefinement 
 			| EndToEndFlowSpecRefinement 
-			| FlowImplList FlowImplList 
+syntax FlowImplList ::= FlowImplListElem 
+			| FlowImplListElem FlowImplList 
 syntax CmpImplExt ::= CmpCategory Mimplementation CmpImplName Mextends UniCmpImplRef Mend CmpImplName MSemicolon 
 syntax CmpImplExt ::= CmpCategory Mimplementation CmpImplName Mextends UniCmpImplRef CmpImplExtAssocDef Mend CmpImplName MSemicolon 
 syntax UniCmpImplRef ::= CmpImplName 
 			| PkgName MDoubleColon CmpImplName 
-syntax CmpImplExtAssocDef ::= ProtoTypeBindings 
+syntax CmpImplExtAssocDefElem ::= ProtoTypeBindings 
 			| Mprototypes ProtoTypeList 
 			| Mprototypes NoneStatement 
 			| Msubcomponents SubCmpList 
@@ -53,11 +57,12 @@ syntax CmpImplExtAssocDef ::= ProtoTypeBindings
 			| Mproperties ContainedPpeAssocList 
 			| Mproperties NoneStatement 
 			| AnnexSubclause 
-syntax CmpImplExtAssocDef ::= CmpImplExtAssocDef CmpImplExtAssocDef 
+syntax CmpImplExtAssocDef ::= CmpImplExtAssocDefElem 
+			| CmpImplExtAssocDefElem CmpImplExtAssocDef 
 syntax SubCmpRefinementList ::= SubCmpRefinement 
-			| SubCmpRefinementList SubCmpRefinementList 
+			| SubCmpRefinement SubCmpRefinementList 
 syntax ConnectionRefinementList ::= ConnectionRefinement 
-			| ConnectionRefinementList ConnectionRefinementList 
+			| ConnectionRefinement ConnectionRefinementList 
 syntax ProtoTypeRefinementList ::= ProtoTypeRefinement 
-			| ProtoTypeRefinementList ProtoTypeRefinementList 
+			| ProtoTypeRefinement ProtoTypeRefinementList 
 endmodule

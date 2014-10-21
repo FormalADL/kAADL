@@ -15,10 +15,11 @@ syntax PkgDecls ::= Mpublic
 syntax PpeDecls ::= Mproperties NoneStatement 
 			| Mproperties BasicPpeAssocList 
 syntax BasicPpeAssocList ::= PpeAssoc 
-			| BasicPpeAssocList BasicPpeAssocList 
+			| PpeAssoc BasicPpeAssocList 
 syntax PkgDeclations ::= AADLDeclList 
 			| NameVisDeclList 
-			| PkgDeclations PkgDeclations 
+			| AADLDeclList PkgDeclations 
+			| NameVisDeclList PkgDeclations
 syntax AADLDeclList ::= AADLDecl 
 syntax NameVisDeclList ::= NameVisDecl 
 syntax AADLDecl ::= ClassifierDecl 
@@ -38,7 +39,8 @@ syntax ImportDecls ::= PkgName
 			| ImportDecl ImportDeclPlus 
 syntax ImportDeclPlus ::= MComma PkgName 
 			| MComma Id 
-			| ImportDeclPlus ImportDeclPlus 
+			| MComma PkgName  ImportDeclPlus 
+			| MComma Id ImportDeclPlus 
 syntax ImportDecl ::= Mwith ImportDecls MSemicolon 
 syntax AliasDecl ::= Id Mrenames Mpackage PkgName MSemicolon 
 			| Id Mrenames CmpCategory UniCmpTypeRef MSemicolon 

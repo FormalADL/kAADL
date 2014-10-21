@@ -3,9 +3,9 @@ module PROTOTYPE-SYNTAX
 syntax ProtoType ::= Id Mcolon ProtoTypeDef MSemicolon 
 			| Id Mcolon ProtoTypeDef MBraceLeft ProtoTypePpeAssocList MBraceRight MSemicolon 
 syntax ProtoTypePpeAssocList ::= PpeAssoc 
-			| ProtoTypePpeAssocList ProtoTypePpeAssocList 
+			| PpeAssoc ProtoTypePpeAssocList 
 syntax ProtoTypePpeAssoc ::= PpeAssoc 
-			| ProtoTypePpeAssoc ProtoTypePpeAssoc 
+			| PpeAssoc ProtoTypePpeAssoc 
 syntax ProtoTypeDef ::= CmpProtoType 
 			| FetGroupTypeProtoType 
 			| FetProtoType 

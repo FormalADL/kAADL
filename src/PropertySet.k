@@ -5,9 +5,11 @@ syntax PpeSetAssocDef ::= ImportDecls
 			| PpeTempDecls 
 			| ImportDecls PpeTempDecls 
 syntax ImportDecls ::= ImportDecl 
-			| ImportDecls ImportDecls 
+			| ImportDecl ImportDecls 
 syntax PpeTempDecls ::= PpeTypeDecl 
 			| PpeDefDecl 
 			| PpeConstant 
-			| PpeTempDecls PpeTempDecls 
+			| PpeTypeDecl PpeTempDecls 
+			| PpeDefDecl PpeTempDecls 
+			| PpeConstant PpeTempDecls 
 endmodule

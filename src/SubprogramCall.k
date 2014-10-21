@@ -5,13 +5,13 @@ syntax SubPgmCallSeq ::= Id Mcolon MBraceLeft SubPgmCallList MBraceRight MSemico
 			| Id Mcolon MBraceLeft SubPgmCallList MBraceRight InModes MSemicolon 
 			| Id Mcolon MBraceLeft SubPgmCallList MBraceRight MBraceLeft CallSequencePpeAssocList MBraceRight InModes MSemicolon 
 syntax SubPgmCallList ::= SubPgmCall 
-			| SubPgmCallList SubPgmCallList 
+			| SubPgmCall SubPgmCallList 
 syntax CallSequencePpeAssocList ::= PpeAssoc 
-			| CallSequencePpeAssocList CallSequencePpeAssocList 
+			| PpeAssoc CallSequencePpeAssocList 
 syntax SubPgmCall ::= Id Mcolon Msubprogram CalledSubPgm MSemicolon 
 syntax SubPgmCall ::= Id Mcolon Msubprogram CalledSubPgm MBraceLeft SubPgmCallPpeAssocList MBraceRight MSemicolon 
 syntax SubPgmCallPpeAssocList ::= PpeAssoc 
-			| SubPgmCallPpeAssocList SubPgmCallPpeAssocList 
+			| PpeAssoc SubPgmCallPpeAssocList 
 syntax CalledSubPgm ::= Id 
 			| Id MPoint Id 
 			| Mprocessor MPoint Id 

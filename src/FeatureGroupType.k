@@ -2,23 +2,24 @@ module FEATUREGROUPTYPE-SYNATX
 
 syntax FetGroupType ::= Mfeature Mgroup Id Mend Id MSemicolon 
 			| Mfeature Mgroup Id FetGroupTypeAssocDef Mend Id MSemicolon 
-syntax FetGroupTypeAssocDef ::= Mprototypes ProtoTypeList 
+syntax FetGroupTypeAssocDefElem ::= Mprototypes ProtoTypeList 
 			| Mprototypes NoneStatement 
 			| Mfeatures FeatureList 
 			| Minverse Mof UniFetGroupTypeRef 
 			| Mproperties FetGroupContainedPpeAssocList 
 			| Mproperties NoneStatement 
 			| AnnexSubclauseList 
-syntax FetGroupTypeAssocDef ::= FetGroupTypeAssocDef FetGroupTypeAssocDef 
+syntax FetGroupTypeAssocDef ::= FetGroupTypeAssocDefElem 
+			| FetGroupTypeAssocDefElem FetGroupTypeAssocDef 
 syntax FetGroupContainedPpeAssocList ::= ContainedPpeAssoc 
-			| FetGroupContainedPpeAssocList FetGroupContainedPpeAssocList 
+			| ContainedPpeAssoc FetGroupContainedPpeAssocList 
 syntax AnnexSubclauseList ::= AnnexSubclause 
-			| AnnexSubclauseList AnnexSubclauseList 
+			| AnnexSubclause AnnexSubclauseList 
 syntax FetGroupTypeExt ::= Mfeature Mgroup Id Mextends UniFetGroupTypeRef Mend Id MSemicolon 
 			| Mfeature Mgroup Id Mextends UniFetGroupTypeRef ProtoTypeBindings Mend Id MSemicolon 
 			| Mfeature Mgroup Id Mextends UniFetGroupTypeRef FetGroupTypeExtAssocDef Mend Id MSemicolon 
 			| Mfeature Mgroup Id Mextends UniFetGroupTypeRef ProtoTypeBindings FetGroupTypeExtAssocDef Mend Id MSemicolon 
-syntax FetGroupTypeExtAssocDef ::= Mprototypes ProtoTypeList 
+syntax FetGroupTypeExtAssocDefElem ::= Mprototypes ProtoTypeList 
 			| Mprototypes ProtoTypeRefinementList 
 			| Mprototypes NoneStatement 
 			| Mfeatures FeatureList 
@@ -27,9 +28,10 @@ syntax FetGroupTypeExtAssocDef ::= Mprototypes ProtoTypeList
 			| Mproperties FetGroupContainedPpeAssocList 
 			| Mproperties NoneStatement 
 			| AnnexSubclauseList 
-syntax FetGroupTypeExtAssocDef ::= FetGroupTypeExtAssocDef FetGroupTypeExtAssocDef 
+syntax FetGroupTypeExtAssocDef ::= FetGroupTypeExtAssocDefElem 
+			| FetGroupTypeExtAssocDefElem FetGroupTypeExtAssocDef 
 syntax FetRefinementList ::= FetRefinement 
-			| FetRefinementList FetRefinementList 
+			| FetRefinement FetRefinementList 
 syntax FetGroupSpec ::= Id Mcolon FetGroupSpecAssocDef 
 syntax FetGroupSpecAssocDef ::= Min Mfeature Mgroup InverseOfUniProtoType 
 			| Mout Mfeature Mgroup InverseOfUniProtoType 

@@ -12,9 +12,10 @@ syntax Feature ::= AbstractFetSpec MSemicolon
 syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
 			| MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 
 			| ArrayDimension MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 
-syntax FeatrueContrainedPpeAssoc ::= FeatrueContrainedPpeAssoc FeatrueContrainedPpeAssoc 
 syntax FeatrueContrainedPpeAssoc ::= ContainedPpeAssoc 
 			| PpeAssoc 
+			| ContainedPpeAssoc FeatrueContrainedPpeAssoc
+			| PpeAssoc FeatrueContrainedPpeAssoc
 syntax SubCmpAccessSpec ::= SubPgmAccessSpec 
 			| SubPgmGroupAccessSpec 
 			| DataAccessSpec 

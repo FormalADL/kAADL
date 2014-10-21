@@ -2,7 +2,7 @@ module COMPONENTTYPE-SYNTAX
 
 syntax CmpType ::= CmpCategory Id Mend Id MSemicolon 
 			| CmpCategory Id CmpAssocDef Mend Id MSemicolon 
-syntax CmpAssocDef ::= Mprototypes ProtoTypeList 
+syntax CmpAssocDefElem ::= Mprototypes ProtoTypeList 
 			| Mprototypes NoneStatement 
 			| Mfeatures FeatureList 
 			| Mfeatures NoneStatement 
@@ -13,21 +13,26 @@ syntax CmpAssocDef ::= Mprototypes ProtoTypeList
 			| AnnexSubclause 
 			| Mproperties PpeAssocList 
 			| Mproperties NoneStatement 
-			| CmpAssocDef CmpAssocDef 
+syntax CmpAssocDef ::= CmpAssocDefElem 
+			| CmpAssocDefElemCmpAssocDef 
 syntax ProtoTypeList ::= ProtoType 
 			| ProtoTypeRefinementList 
-			| ProtoTypeList ProtoTypeList 
+			| ProtoType ProtoTypeList 
+			| ProtoTypeRefinementList ProtoTypeList 
 syntax FeatureList ::= Feature 
 			| FetRefinement 
-			| FeatureList FeatureList 
+			| Feature FeatureList 
+			| FetRefinement FeatureList 
 syntax FlowSpecList ::= FlowSpec 
-			| FlowSpecList FlowSpecList 
+			| FlowSpec FlowSpecList 
 syntax CmpTypePpeAssocList ::= PpeAssoc 
-			| CmpTypePpeAssocList CmpTypePpeAssocList 
+			| PpeAssoc CmpTypePpeAssocList 
 syntax ContainedPpeAssocList ::= ContainedPpeAssoc 
-			| ContainedPpeAssocList ContainedPpeAssocList 
-syntax PpeAssocList ::= CmpTypePpeAssocList |ContainedPpeAssocList 
-			| PpeAssocList PpeAssocList 
+			| ContainedPpeAssoc ContainedPpeAssocList 
+syntax PpeAssocList ::= CmpTypePpeAssocList 
+			| ContainedPpeAssocList 
+			| CmpTypePpeAssocList PpeAssocList 
+			| ContainedPpeAssocList PpeAssocList 
 syntax CmpCategory ::= AbstractCmpCategory 
 			| SoftwareCategory 
 			| ExecPlateformCategory 

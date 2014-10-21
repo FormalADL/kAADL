@@ -2,7 +2,7 @@ module SUBCOMPONENT-SYNTAX
 
 syntax SubCmp ::= Id Mcolon CmpCategory SubCmpAssocDef MSemicolon 
 			| Id Mcolon CmpCategory MSemicolon 
-syntax SubCmpAssocDef ::= UniCmpClassifierRef 
+syntax SubCmpAssocDefElem ::= UniCmpClassifierRef 
 			| UniCmpClassifierRef ProtoTypeBindings 
 			| Id 
 			| ArrayDimensions 
@@ -10,14 +10,15 @@ syntax SubCmpAssocDef ::= UniCmpClassifierRef
 			| MBraceLeft SubCmpPpeAssocList MBraceRight 
 			| MBraceLeft ContainedPpeAssocList MBraceRight 
 			| CmpInModes 
-			| SubCmpAssocDef SubCmpAssocDef 
+syntax SubCmpAssocDef ::= SubCmpAssocDefElem 
+			| SubCmpAssocDefElem SubCmpAssocDef 
 syntax SubCmpPpeAssocList ::= PpeAssoc 
-			| SubCmpPpeAssocList SubCmpPpeAssocList 
+			| PpeAssoc SubCmpPpeAssocList 
 syntax SubCmpRefinement ::= Id Mrefined Mto CmpCategory SubCmpAssocDef MSemicolon 
 syntax UniCmpClassifierRef ::= UniCmpTypeRef 
 			| UniCmpImplRef 
 syntax ArrayDimensions ::= ArrayDimension 
-			| ArrayDimensions ArrayDimensions 
+			| ArrayDimension ArrayDimensions 
 syntax ArrayDimension ::= MLeftBracket ArrayDimensionSize MRightBracket 
 syntax ArrayDimensionSize ::= Numeral 
 			| UniPpeConstantId 

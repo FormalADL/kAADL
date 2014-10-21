@@ -15,7 +15,7 @@ syntax PpeInMode ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions
 			| MBraceLeft PpeAssocList MBraceRight 
 			| InModesAndTransitions 
 syntax PpeAssocList ::= PpeAssoc 
-			| PpeAssocList PpeAssocList 
+			| PpeAssoc PpeAssocList 
 syntax ConnectionRefinement ::= Id Mcolon Mrefined Mto SomeRefinements MSemicolon 
 syntax ConnectionRefinement ::= Id Mcolon Mrefined Mto SomeRefinements PpeInMode MSemicolon 
 syntax SomeRefinements ::= FetConnectionRefinement 

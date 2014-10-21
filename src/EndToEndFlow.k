@@ -4,7 +4,7 @@ syntax EndToEndFlowSpec ::= Id Mcolon Mend Mto Mend Mflow StartSubCmpFlowOrEtefI
 			| Id Mcolon Mend Mto Mend Mflow StartSubCmpFlowOrEtefId ConnectionIdFlowPathList MSemicolon 
 syntax StartSubCmpFlowOrEtefId ::= SubCmpFlowOrEtefId 
 syntax ConnectionIdFlowPathList ::= MArrows Id MArrows Id 
-			| ConnectionIdFlowPathList ConnectionIdFlowPathList 
+			| MArrows Id MArrows Id ConnectionIdFlowPathList 
 syntax EndToEndFlowSpecAssocDefault ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
 			| MBraceLeft PpeAssocList MBraceRight 
 			| InModesAndTransitions 
