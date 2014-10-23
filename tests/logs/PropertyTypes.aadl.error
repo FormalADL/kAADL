@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character 'n'
+	File: ../tests/unit/PropertyTypes.aadl
+	Location: (3,23,3,23)

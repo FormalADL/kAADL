@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character ','
+	File: ../tests/unit/Packages.aadl
+	Location: (3,31,3,31)

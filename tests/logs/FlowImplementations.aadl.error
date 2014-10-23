@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character '.'
+	File: ../tests/unit/FlowImplementations.aadl
+	Location: (18,48,18,48)
