@@ -14,7 +14,7 @@ syntax CmpAssocDefElem ::= Mprototypes ProtoTypeList
 			| Mproperties PpeAssocList 
 			| Mproperties NoneStatement 
 syntax CmpAssocDef ::= CmpAssocDefElem 
-			| CmpAssocDefElemCmpAssocDef 
+			| CmpAssocDefElem CmpAssocDef 
 syntax ProtoTypeList ::= ProtoType 
 			| ProtoTypeRefinementList 
 			| ProtoType ProtoTypeList 
