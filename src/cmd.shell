@@ -38,8 +38,6 @@ krun ../tests/unit/PropertyTypes.aadl  2> ../tests/logs/PropertyTypes.aadl.error
 
 krun ../tests/unit/Prototypes.aadl  2> ../tests/logs/Prototypes.aadl.error
 
-krun ../tests/unit/README.md  2> ../tests/logs/README.md.error
-
 krun ../tests/unit/SubprogramAndSubprogramGroupAccess.aadl  2> ../tests/logs/SubprogramAndSubprogramGroupAccess.aadl.error
 
 krun ../tests/unit/SubprogramGroupsAndSubprogramGroupTypes.aadl  2> ../tests/logs/SubprogramGroupsAndSubprogramGroupTypes.aadl.error
