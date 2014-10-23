@@ -36,7 +36,8 @@ syntax NameVisDecl ::= ImportDecl
 			| AliasDecl 
 syntax ImportDecls ::= PkgName 
 			| Id 
-			| ImportDecl ImportDeclPlus 
+			| PkgName ImportDeclPlus
+			| Id ImportDeclPlus
 syntax ImportDeclPlus ::= MComma PkgName 
 			| MComma Id 
 			| MComma PkgName  ImportDeclPlus 

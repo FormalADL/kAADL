@@ -3,7 +3,8 @@ module FEATURESHAREACCESS-SYNTAX
 syntax Feature ::= AbstractFetSpec MSemicolon 
 			| PortSpec MSemicolon 
 			| FetGroupSpec MSemicolon 
-			| SubCmpAccessSpec MSemicolon 
+			| SubCmpAccessSpec MSemicolon
+			| ParameterSpec MSemicolon
 			| AbstractFetSpec ArrayDimensionFeatrueContrained MSemicolon 
 			| PortSpec ArrayDimensionFeatrueContrained MSemicolon 
 			| FetGroupSpec ArrayDimensionFeatrueContrained MSemicolon 
