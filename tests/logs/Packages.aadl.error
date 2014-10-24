@@ -1,3 +1,16 @@
-[Error] Critical: Parse error: Syntax error near unexpected character ','
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ImportDeclPlus ::= MComma Id 
+   , Safety_Properties
+2: ImportDeclPlus ::= MComma PkgName 
+   , Safety_Properties
 	File: ../tests/unit/Packages.aadl
-	Location: (3,31,3,31)
+	Location: (3,31,3,49)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: PortType ::= Mdata Mport Id 
+   data port AirData
+2: PortType ::= Mdata Mport DataUniCmpClassifierRef 
+   data port AirData
+	File: ../tests/unit/Packages.aadl
+	Location: (7,19,7,36)
+	Compilation Phase: Ambiguity filter

@@ -4,7 +4,7 @@ end Position_Type;
 process Gps_Sender
 features
   Position: out data port Position_Type;
-  SecondaryPosition: in data port Position_Type { Required_Connection => false applies to ;};
+  SecondaryPosition: in data port Position_Type { Required_Connection => false applies to ggg;};
 end Gps_Sender;
 
 process implementation Gps_Sender.Basic
@@ -49,7 +49,7 @@ system implementation Gps.Secure extends Gps.Dual
 subcomponents
   Secure_Gps: process Gps_Sender.Secure in modes ( Securemode );
 connections
-  secureconn: port Secure_Gps.Position -> Position in modes ( Securemode );
+  secureconn: port Secure_Gps.Position -> Position in modes ( Securemode );;
 modes
   (Securemode: mode;
   SingleSecuremode: mode;) 
@@ -57,8 +57,8 @@ end Gps.Secure;
 
 thread Calculate
 features
-  Incoming: in event data port ;
-  Outgoing: out event data port ;
+  Incoming: in event data port ggg;
+  Outgoing: out event data port ggg;
 modes
   (HighFidelity: initial mode;
   LowFidelity: mode;)
@@ -68,8 +68,8 @@ process Altitude
 features
   doHigh: in event port;
   doLow: in event port;
-  Incoming: in event data port ;
-  Outgoing: out event data port ;
+  Incoming: in event data port ggg;
+  Outgoing: out event data port ggg;
 end Altitude;
 
 process implementation Altitude.impl

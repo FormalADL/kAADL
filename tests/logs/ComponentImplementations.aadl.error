@@ -46,8 +46,6 @@
 	File: ../tests/unit/ComponentImplementations.aadl
 	Location: (13,22,13,41)
 	Compilation Phase: Ambiguity filter
-
-
 [Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
 1: PpeAssocList ::= CmpTypePpeAssocList PpeAssocList 
    ((B :: Period) => constant (10 ms) ;) (((B :: Source_Name) => constant 

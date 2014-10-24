@@ -29,10 +29,10 @@ syntax FlowSpecList ::= FlowSpec
 //			| PpeAssoc CmpTypePpeAssocList 
 //syntax ContainedPpeAssocList ::= ContainedPpeAssoc 
 //			| ContainedPpeAssoc ContainedPpeAssocList 
-syntax PpeAssocList ::= PpeAssoc
-			| ContainedPpeAssoc 
-			| PpeAssoc PpeAssocList 
-			| ContainedPpeAssoc PpeAssocList 
+syntax PpeAssocList ::= CmpTypePpeAssocList 
+			| ContainedPpeAssocList 
+			| CmpTypePpeAssocList PpeAssocList 
+			| ContainedPpeAssocList PpeAssocList 
 syntax CmpCategory ::= AbstractCmpCategory 
 			| SoftwareCategory 
 			| ExecPlateformCategory 

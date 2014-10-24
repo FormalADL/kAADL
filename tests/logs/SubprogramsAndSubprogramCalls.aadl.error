@@ -1,3 +1,64 @@
-[Error] Critical: Parse error: Syntax error near unexpected character ';'
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ParameterSpec ::= Id Mcolon Min Mparameter Id 
+   A : in parameter matrix
+2: ParameterSpec ::= Id Mcolon Min Mparameter DataUniCmpClassifierRef 
+   A : in parameter matrix
 	File: ../tests/unit/SubprogramsAndSubprogramCalls.aadl
-	Location: (12,25,12,25)
+	Location: (12,3,12,25)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ParameterSpec ::= Id Mcolon Min Mparameter Id 
+   B : in parameter matrix
+2: ParameterSpec ::= Id Mcolon Min Mparameter DataUniCmpClassifierRef 
+   B : in parameter matrix
+	File: ../tests/unit/SubprogramsAndSubprogramCalls.aadl
+	Location: (13,3,13,25)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ParameterSpec ::= Id Mcolon Mout Mparameter Id 
+   result : out parameter matrix
+2: ParameterSpec ::= Id Mcolon Mout Mparameter DataUniCmpClassifierRef 
+   result : out parameter matrix
+	File: ../tests/unit/SubprogramsAndSubprogramCalls.aadl
+	Location: (14,3,14,31)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ParameterSpec ::= Id Mcolon Min Mparameter Id 
+   A : in parameter matrix
+2: ParameterSpec ::= Id Mcolon Min Mparameter DataUniCmpClassifierRef 
+   A : in parameter matrix
+	File: ../tests/unit/SubprogramsAndSubprogramCalls.aadl
+	Location: (19,3,19,25)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ParameterSpec ::= Id Mcolon Mout Mparameter Id 
+   result : out parameter weather_forecast
+2: ParameterSpec ::= Id Mcolon Mout Mparameter DataUniCmpClassifierRef 
+   result : out parameter weather_forecast
+	File: ../tests/unit/SubprogramsAndSubprogramCalls.aadl
+	Location: (20,3,20,41)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ParameterSpec ::= Id Mcolon Mout Mparameter Id 
+   result : out parameter Matrix
+2: ParameterSpec ::= Id Mcolon Mout Mparameter DataUniCmpClassifierRef 
+   result : out parameter Matrix
+	File: ../tests/unit/SubprogramsAndSubprogramCalls.aadl
+	Location: (26,3,26,31)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ParameterSpec ::= Id Mcolon Min Mparameter Id 
+   date : in parameter date
+2: ParameterSpec ::= Id Mcolon Min Mparameter DataUniCmpClassifierRef 
+   date : in parameter date
+	File: ../tests/unit/SubprogramsAndSubprogramCalls.aadl
+	Location: (31,3,31,26)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: ParameterSpec ::= Id Mcolon Mout Mparameter Id 
+   result : out parameter Matrix
+2: ParameterSpec ::= Id Mcolon Mout Mparameter DataUniCmpClassifierRef 
+   result : out parameter Matrix
+	File: ../tests/unit/SubprogramsAndSubprogramCalls.aadl
+	Location: (32,3,32,31)
+	Compilation Phase: Ambiguity filter

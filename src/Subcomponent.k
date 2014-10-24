@@ -7,8 +7,7 @@ syntax SubCmpAssocDefElem ::= UniCmpClassifierRef
 			| Id 
 			| ArrayDimensions 
 			| ArrayDimensions ArrayElementImplList 
-			| MBraceLeft SubCmpPpeAssocList MBraceRight 
-			| MBraceLeft ContainedPpeAssocList MBraceRight 
+			| MBraceLeft PpeAssocList MBraceRight 
 			| CmpInModes 
 syntax SubCmpAssocDef ::= SubCmpAssocDefElem 
 			| SubCmpAssocDefElem SubCmpAssocDef 
