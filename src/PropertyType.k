@@ -29,12 +29,10 @@ syntax UnitsDesignator ::= UnitsUniPpeTypeId
 			| UnitsList 
 syntax UnitsUniPpeTypeId ::= Id 
 			| Id MDoubleColon Id 
-syntax RealRange ::= RealLowerBound MDoubleDiont RealUpperBound 
-syntax RealLowerBound ::= SignedAadlrealOrConstant 
-syntax RealUpperBound ::= SignedAadlrealOrConstant 
-syntax IntegerRange ::= IntegerLowerBound MDoubleDiont IntegerUpperBound 
-syntax IntegerLowerBound ::= SignedAadlintegerOrConstant 
-syntax IntegerUpperBound ::= SignedAadlintegerOrConstant 
+syntax RealRange ::= SignedAadlrealOrConstant MDoubleDiont SignedAadlrealOrConstant 
+
+syntax IntegerRange ::= SignedAadlintegerOrConstant MDoubleDiont SignedAadlintegerOrConstant 
+
 syntax SignedAadlrealOrConstant ::= SignedAadlreal 
 			| RealPpeConstantTerm 
 			| Sign RealPpeConstantTerm 
