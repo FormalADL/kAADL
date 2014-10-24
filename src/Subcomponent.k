@@ -7,7 +7,7 @@ syntax SubCmpAssocDefElem ::= UniCmpClassifierRef
 			| Id 
 			| ArrayDimensions 
 			| ArrayDimensions ArrayElementImplList 
-			| MBraceLeft PpeAssocList MBraceRight 
+			| MBraceLeft PpeContainedPpeAssocList MBraceRight 
 			| CmpInModes 
 syntax SubCmpAssocDef ::= SubCmpAssocDefElem 
 			| SubCmpAssocDefElem SubCmpAssocDef 
@@ -26,5 +26,5 @@ syntax ArrayElementImplListTmp ::= UniCmpImplRef ProtoTypeBindings
 			| UniCmpImplRef 
 syntax ArrayElementImplList ::= MBracketLeft ArrayElementImplListTmps MBracketRight 
 syntax ArrayElementImplListTmps ::= ArrayElementImplListTmp 
-			| ArrayElementImplListTmp MComma ArrayElementImplListTmp 
+			| ArrayElementImplListTmp MComma ArrayElementImplListTmps 
 endmodule

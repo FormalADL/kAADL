@@ -16,8 +16,7 @@ syntax EnumerationLiteralIdList ::= Id
 syntax UnitsType ::= Munits UnitsList 
 syntax UnitsList ::= MBracketLeft Id UnitIdList MBracketRight 
 			| MBracketLeft Id MBracketRight 
-syntax UnitIdList ::= NoneStatement 
-			| MComma Id MRoughArrow Id MBrace NumericLiteral 
+syntax UnitIdList ::= MComma Id MRoughArrow Id MBrace NumericLiteral 
 			| MComma Id MRoughArrow Id MBrace NumericLiteral UnitIdList 
 syntax NumberType ::= RealInteger 
 			| RealInteger Munits UnitsDesignator 

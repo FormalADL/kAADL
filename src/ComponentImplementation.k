@@ -15,7 +15,7 @@ syntax CmpImplAssocDefElem ::= ProtoTypeBindings
 			| Mflows FlowImplList 
 			| Mflows NoneStatement 
 			| ModesSubclause 
-			| Mproperties PpeAssocList 
+			| Mproperties PpeContainedPpeAssocList
 			| Mproperties NoneStatement 
 			| AnnexSubclause 
 syntax CmpImplAssocDef ::= CmpImplAssocDefElem 
@@ -52,7 +52,7 @@ syntax CmpImplExtAssocDefElem ::= ProtoTypeBindings
 			| Mflows FlowImplList 
 			| Mflows NoneStatement 
 			| ModesSubclause 
-			| Mproperties PpeAssocList  
+			| Mproperties PpeContainedPpeAssocList
 			| Mproperties NoneStatement 
 			| AnnexSubclause 
 syntax CmpImplExtAssocDef ::= CmpImplExtAssocDefElem 
