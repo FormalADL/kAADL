@@ -1,16 +1,18 @@
 [Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: PortType ::= Mdata Mport Id 
-   data port data_type
-2: PortType ::= Mdata Mport DataUniCmpClassifierRef 
-   data port data_type
+1: DataAccessSpec ::= Id Mcolon Mrequires Mdata Maccess DataUniCmpClassifierRef
+
+   root : requires data access (FileSystem :: (Directory . hashed))
+2: BusAccessSpec ::= Id Mcolon Mrequires Mdata Maccess BusUniCmpClassifierRef 
+   root : requires data access (FileSystem :: (Directory . hashed))
 	File: ../tests/unit/ComponentTypes.aadl
-	Location: (18,14,18,33)
+	Location: (5,3,5,58)
 	Compilation Phase: Ambiguity filter
 [Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: PortType ::= Mdata Mport Id 
-   data port data_type
-2: PortType ::= Mdata Mport DataUniCmpClassifierRef 
-   data port data_type
+1: DataAccessSpec ::= Id Mcolon Mrequires Mdata Maccess DataUniCmpClassifierRef
+
+   home : requires data access (FileSystem :: (Directory . hashed))
+2: BusAccessSpec ::= Id Mcolon Mrequires Mdata Maccess BusUniCmpClassifierRef 
+   home : requires data access (FileSystem :: (Directory . hashed))
 	File: ../tests/unit/ComponentTypes.aadl
-	Location: (19,16,19,35)
+	Location: (11,4,11,59)
 	Compilation Phase: Ambiguity filter

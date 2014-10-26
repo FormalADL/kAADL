@@ -1,8 +1,0 @@
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: PpeListValue ::= MBracketLeft PpeListValueMidSymbol MBracketRight 
-   ( One_To_One )
-2: BooleanTerm ::= MBracketLeft BooleanTerm MBracketRight 
-   ( One_To_One )
-	File: ../tests/unit/Ports.aadl
-	Location: (27,75,27,87)
-	Compilation Phase: Ambiguity filter

@@ -1,3 +1,17 @@
-[Error] Critical: Parse error: Syntax error near unexpected character ' '
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: FetRefinement ::= AbstractFetRefinement ArrayDimensionFeatrueContrained
+MSemicolon 
+   (Received_Prime : refined to in (event data port (Base_Types :: Integer)))
+({ 
+     (Compute_Entrypoint_Source_Text => "Primes.Report_One" applies to (Primes
+. 
+     On_Received_Prime_One) ;) }) ;
+2: FetRefinement ::= PortRefinement ArrayDimensionFeatrueContrained MSemicolon 
+   (Received_Prime : refined to in (event data port (Base_Types :: Integer)))
+({ 
+     (Compute_Entrypoint_Source_Text => "Primes.Report_One" applies to (Primes
+. 
+     On_Received_Prime_One) ;) }) ;
 	File: ../tests/unit/SubprogramGroupsAndSubprogramGroupTypes.aadl
-	Location: (10,28,10,28)
+	Location: (10,4,10,169)
+	Compilation Phase: Ambiguity filter
