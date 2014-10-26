@@ -43,7 +43,7 @@ syntax PlatformClassifierRefList ::= PlatformClassifierRef
 syntax PlatformClassifierRef ::= ProcessorUniCmpClassifierRef 
 			| VirtualProcessorUniCmpClassifierRef 
 			| Id 
-			| Id Mpoint Id
+			| Id MPoint Id
 			| VirtualBusUniCmpClassifierRef 
 			| MemoryUniCmpClassifierRef 
 syntax ProcessorUniCmpClassifierRef ::= NODEF 
