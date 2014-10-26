@@ -39,14 +39,14 @@ syntax ImportDecls ::= PkgName
 			| PkgName ImportDeclPlus
 			| Id ImportDeclPlus
 syntax ImportDeclPlus ::= MComma PkgName 
-			| MComma Id 
+		//	| MComma Id 
 			| MComma PkgName  ImportDeclPlus 
-			| MComma Id ImportDeclPlus 
+		//	| MComma Id ImportDeclPlus 
 syntax ImportDecl ::= Mwith ImportDecls MSemicolon 
 syntax AliasDecl ::= Id Mrenames Mpackage PkgName MSemicolon 
-			| Id Mrenames CmpCategory UniCmpTypeRef MSemicolon 
-			| Mrenames CmpCategory UniCmpTypeRef MSemicolon 
-			| Id Mrenames Mfeature Mgroup UniFetGroupTypeRef MSemicolon 
-			| Mrenames Mfeature Mgroup UniFetGroupTypeRef MSemicolon 
+		        | Id Mrenames CmpCategory UniCmpTypeRef MSemicolon 
+		        | Mrenames CmpCategory UniCmpTypeRef MSemicolon 
+		        | Id Mrenames Mfeature Mgroup UniFetGroupTypeRef MSemicolon 
+		        | Mrenames Mfeature Mgroup UniFetGroupTypeRef MSemicolon 
 			| Mrenames PkgName MDoubleColon Mall MSemicolon 
 endmodule

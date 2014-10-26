@@ -5,7 +5,7 @@ syntax SubCmp ::= Id Mcolon CmpCategory SubCmpAssocDef MSemicolon
 syntax SubCmpAssocDefElem ::= UniCmpClassifierRef 
 			| UniCmpClassifierRef ProtoTypeBindings 
 			| Id 
-			| ArrayDimensions 
+			| ArrayDimension
 			| ArrayDimensions ArrayElementImplList 
 			| MBraceLeft PpeContainedPpeAssocList MBraceRight 
 			| CmpInModes 
@@ -19,9 +19,10 @@ syntax UniCmpClassifierRef ::= UniCmpTypeRef
 syntax ArrayDimensions ::= ArrayDimension 
 			| ArrayDimension ArrayDimensions 
 syntax ArrayDimension ::= MLeftBracket ArrayDimensionSize MRightBracket 
+			| MLeftBracket  MRightBracket
 syntax ArrayDimensionSize ::= Numeral 
 			| UniPpeConstantId 
-			| UniPpeId 
+		// 	| UniPpeId  // its defination same as UniPpeConstantId
 syntax ArrayElementImplListTmp ::= UniCmpImplRef ProtoTypeBindings 
 			| UniCmpImplRef 
 syntax ArrayElementImplList ::= MBracketLeft ArrayElementImplListTmps MBracketRight 

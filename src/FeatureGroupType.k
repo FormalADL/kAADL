@@ -37,9 +37,9 @@ syntax FetGroupSpecAssocDef ::= Min Mfeature Mgroup InverseOfUniProtoType
 			| Mout Mfeature Mgroup InverseOfUniProtoType 
 			| Mfeature Mgroup InverseOfUniProtoType 
 syntax InverseOfUniProtoType ::= Minverse Mof UniFetGroupTypeRef 
-			| Minverse Mof Id 
+		//	| Minverse Mof Id 
 			| UniFetGroupTypeRef 
-			| Id 
+		//	| Id 
 syntax FetGroupRefinement ::= Id Mcolon Mrefined Mto FetGroupSpecAssocDef 
 syntax UniFetGroupTypeRef ::= Id 
 			| PkgName MDoubleColon Id 

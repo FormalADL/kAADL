@@ -18,7 +18,7 @@ syntax BooleanTerm ::= BooleanValue
 			| Mnot BooleanTerm 
 			| BooleanTerm Mand BooleanTerm 
 			| BooleanTerm Mor BooleanTerm 
-			| MBracketLeft BooleanTerm MBracketRight 
+	//		| MBracketLeft BooleanTerm MBracketRight 
 syntax BooleanValue ::= Mtrue 
 			| Mfalse 
 syntax RealTerm::= SignedAadlrealOrConstant  

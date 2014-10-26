@@ -5,18 +5,18 @@ syntax CmpImpl ::= CmpCategory Mimplementation CmpImplName CmpImplAssocDef Mend 
 syntax CmpImplName ::= Id MPoint Id 
 syntax CmpImplAssocDefElem ::= ProtoTypeBindings 
 			| Mprototypes ProtoTypeList 
-			| Mprototypes NoneStatement 
+			| Mprototypes  
 			| Msubcomponents SubCmpList 
-			| Msubcomponents NoneStatement 
+			| Msubcomponents 
 			| Mcalls SubPgmCallSeqList 
-			| Mcalls NoneStatement 
+			| Mcalls  
 			| Mconnections ConnectionList 
-			| Mconnections NoneStatement 
+			| Mconnections  
 			| Mflows FlowImplList 
-			| Mflows NoneStatement 
+			| Mflows  
 			| ModesSubclause 
 			| Mproperties PpeContainedPpeAssocList
-			| Mproperties NoneStatement 
+			| Mproperties 
 			| AnnexSubclause 
 syntax CmpImplAssocDef ::= CmpImplAssocDefElem 
 			|  CmpImplAssocDefElem CmpImplAssocDef 
@@ -42,18 +42,18 @@ syntax UniCmpImplRef ::= CmpImplName
 			| PkgName MDoubleColon CmpImplName 
 syntax CmpImplExtAssocDefElem ::= ProtoTypeBindings 
 			| Mprototypes ProtoTypeList 
-			| Mprototypes NoneStatement 
+			| Mprototypes  
 			| Msubcomponents SubCmpList 
-			| Msubcomponents NoneStatement 
+			| Msubcomponents  
 			| Mcalls SubPgmCallSeqList 
-			| Mcalls NoneStatement 
+			| Mcalls  
 			| Mconnections ConnectionList 
-			| Mconnections NoneStatement 
+			| Mconnections 
 			| Mflows FlowImplList 
-			| Mflows NoneStatement 
+			| Mflows  
 			| ModesSubclause 
 			| Mproperties PpeContainedPpeAssocList
-			| Mproperties NoneStatement 
+			| Mproperties  
 			| AnnexSubclause 
 syntax CmpImplExtAssocDef ::= CmpImplExtAssocDefElem 
 			| CmpImplExtAssocDefElem CmpImplExtAssocDef 

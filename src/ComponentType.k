@@ -3,16 +3,16 @@ module COMPONENTTYPE-SYNTAX
 syntax CmpType ::= CmpCategory Id Mend Id MSemicolon 
 			| CmpCategory Id CmpAssocDef Mend Id MSemicolon 
 syntax CmpAssocDefElem ::= Mprototypes ProtoTypeList 
-			| Mprototypes NoneStatement 
+			| Mprototypes  
 			| Mfeatures FeatureList 
-			| Mfeatures NoneStatement 
+			| Mfeatures  
 			| Mflows FlowSpecList 
-			| Mflows NoneStatement 
+			| Mflows  
 			| ModesSubclause 
 			| RequiresModesSubclause 
 			| AnnexSubclause 
 			| Mproperties PpeAssocList 
-			| Mproperties NoneStatement 
+			| Mproperties  
 syntax CmpAssocDef ::= CmpAssocDefElem 
 			| CmpAssocDefElem CmpAssocDef 
 syntax ProtoTypeList ::= ProtoType 
