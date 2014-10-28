@@ -1,3 +1,0 @@
-[Error] Critical: Parse error: Syntax error near unexpected character 'q'
-	File: ../tests/unit/ComponentTypes.aadl
-	Location: (5,11,5,11)

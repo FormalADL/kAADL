@@ -1,3 +1,0 @@
-[Error] Critical: Parse error: Syntax error near unexpected character 'd'
-	File: ../tests/unit/Ports.aadl
-	Location: (6,13,6,13)
