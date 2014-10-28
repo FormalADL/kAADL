@@ -1,8 +1,3 @@
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: InverseOfUniProtoType ::= Minverse Mof Id 
-   inverse of GPSbasic_socket
-2: InverseOfUniProtoType ::= Minverse Mof UniFetGroupTypeRef 
-   inverse of GPSbasic_socket
+[Error] Critical: Parse error: Syntax error near unexpected character 'e'
 	File: ../tests/unit/FeatureGroupsAndFeatureGroupTypes.aadl
-	Location: (35,27,35,53)
-	Compilation Phase: Ambiguity filter
+	Location: (7,14,7,14)

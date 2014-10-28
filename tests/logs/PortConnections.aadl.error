@@ -1,8 +1,3 @@
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: ArrayDimensions ::= ArrayDimension ArrayDimensions 
-   ([ 10 ]) ([ 10 ])
-2: SubCmpAssocDef ::= SubCmpAssocDefElem SubCmpAssocDef 
-   ([ 10 ]) ([ 10 ])
+[Error] Critical: Parse error: Syntax error near unexpected character 'e'
 	File: ../tests/unit/PortConnections.aadl
-	Location: (10,30,10,38)
-	Compilation Phase: Ambiguity filter
+	Location: (3,16,3,16)

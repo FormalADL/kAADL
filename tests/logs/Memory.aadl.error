@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character 'q'
+	File: ../tests/unit/Memory.aadl
+	Location: (9,22,9,22)

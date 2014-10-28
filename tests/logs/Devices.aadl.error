@@ -1,3 +1,3 @@
-[Error] Critical: Parse error: Syntax error near unexpected character ':'
+[Error] Critical: Parse error: Syntax error near unexpected character 'q'
 	File: ../tests/unit/Devices.aadl
-	Location: (6,37,6,37)
+	Location: (6,14,6,14)

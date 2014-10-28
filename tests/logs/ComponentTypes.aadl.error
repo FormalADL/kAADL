@@ -1,16 +1,3 @@
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: PortType ::= Mdata Mport Id 
-   data port data_type
-2: PortType ::= Mdata Mport DataUniCmpClassifierRef 
-   data port data_type
+[Error] Critical: Parse error: Syntax error near unexpected character 'q'
 	File: ../tests/unit/ComponentTypes.aadl
-	Location: (18,14,18,33)
-	Compilation Phase: Ambiguity filter
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: PortType ::= Mdata Mport Id 
-   data port data_type
-2: PortType ::= Mdata Mport DataUniCmpClassifierRef 
-   data port data_type
-	File: ../tests/unit/ComponentTypes.aadl
-	Location: (19,16,19,35)
-	Compilation Phase: Ambiguity filter
+	Location: (5,11,5,11)

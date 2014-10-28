@@ -1,3 +1,3 @@
-[Error] Critical: Parse error: Syntax error near unexpected character ':'
+[Error] Critical: Parse error: Syntax error near unexpected character 'p'
 	File: ../tests/unit/BusComponentAccess.aadl
-	Location: (17,34,17,34)
+	Location: (17,9,17,9)

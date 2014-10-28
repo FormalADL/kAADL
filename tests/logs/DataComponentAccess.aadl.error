@@ -1,33 +1,3 @@
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: DataAccessSpec ::= Id Mcolon Mprovides Mdata Maccess Id 
-   Dataset : provides data access dataset_type
-2: DataAccessSpec ::= Id Mcolon Mprovides Mdata Maccess DataUniCmpClassifierRef
-
-   Dataset : provides data access dataset_type
-3: BusAccessSpec ::= Id Mcolon Mprovides Mdata Maccess Id 
-   Dataset : provides data access dataset_type
+[Error] Critical: Parse error: Syntax error near unexpected character 'p'
 	File: ../tests/unit/DataComponentAccess.aadl
-	Location: (16,2,16,44)
-	Compilation Phase: Ambiguity filter
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: DataAccessSpec ::= Id Mcolon Mrequires Mdata Maccess Id 
-   Reqdataset : requires data access dataset_type
-2: DataAccessSpec ::= Id Mcolon Mrequires Mdata Maccess DataUniCmpClassifierRef
-
-   Reqdataset : requires data access dataset_type
-3: BusAccessSpec ::= Id Mcolon Mrequires Mdata Maccess Id 
-   Reqdataset : requires data access dataset_type
-	File: ../tests/unit/DataComponentAccess.aadl
-	Location: (28,3,28,48)
-	Compilation Phase: Ambiguity filter
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: DataAccessSpec ::= Id Mcolon Mrequires Mdata Maccess Id 
-   Req1 : requires data access dataset_type
-2: DataAccessSpec ::= Id Mcolon Mrequires Mdata Maccess DataUniCmpClassifierRef
-
-   Req1 : requires data access dataset_type
-3: BusAccessSpec ::= Id Mcolon Mrequires Mdata Maccess Id 
-   Req1 : requires data access dataset_type
-	File: ../tests/unit/DataComponentAccess.aadl
-	Location: (40,3,40,42)
-	Compilation Phase: Ambiguity filter
+	Location: (16,11,16,11)
