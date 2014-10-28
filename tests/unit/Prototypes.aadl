@@ -9,8 +9,6 @@ features
   insignal: in feature incoming;
   outsignal: out data port dt;
 end flowComponent;
-
--- a dual redundant component pattern
 abstract implementation flowComponent.primaryBackup
 prototypes
   control: abstract flowComponent;

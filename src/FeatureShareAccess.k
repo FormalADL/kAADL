@@ -1,15 +1,15 @@
 module FEATURESHAREACCESS-SYNTAX
 
 syntax Feature ::= AbstractFetSpec MSemicolon 
-		//	| PortSpec MSemicolon 
-		//	| FetGroupSpec MSemicolon 
-		//	| SubCmpAccessSpec MSemicolon
-		//	| ParameterSpec MSemicolon
+			| PortSpec MSemicolon 
+			| FetGroupSpec MSemicolon 
+			| SubCmpAccessSpec MSemicolon
+			| ParameterSpec MSemicolon
 			| AbstractFetSpec ArrayDimensionFeatrueContrained MSemicolon 
-		//	| PortSpec ArrayDimensionFeatrueContrained MSemicolon 
-		//	| FetGroupSpec ArrayDimensionFeatrueContrained MSemicolon 
-		//	| SubCmpAccessSpec ArrayDimensionFeatrueContrained MSemicolon 
-		//	| ParameterSpec ArrayDimensionFeatrueContrained MSemicolon 
+			| PortSpec ArrayDimensionFeatrueContrained MSemicolon 
+			| FetGroupSpec ArrayDimensionFeatrueContrained MSemicolon 
+			| SubCmpAccessSpec ArrayDimensionFeatrueContrained MSemicolon 
+			| ParameterSpec ArrayDimensionFeatrueContrained MSemicolon 
 syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
 			| MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 
 			| ArrayDimension MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 

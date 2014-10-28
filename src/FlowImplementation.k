@@ -13,7 +13,7 @@ syntax FlowSinkImpl ::= Id Mcolon Mflow Msink Id
 syntax ConnectionSubcompenentFlowAssocDef ::=  MArrows Id MArrows SubCmpFlowId
 			| MArrows Id MArrows SubCmpFlowId  ConnectionSubcompenentFlowAssocDef 
 syntax FlowPathImpl ::= Id Mcolon Mflow Mpath Id FlowPathImplDefault MArrows SubCmpFlowId 
-			| Id Mcolon Mflow Mpath Id MArrows SubCmpFlowId 
+			| Id Mcolon Mflow Mpath Id MArrows SubCmpFlowId
 syntax FlowPathImplDefault ::= ConnectIdSubcompenentFlowIdnetifierList MArrows SubCmpFlowId 
 syntax ConnectIdSubcompenentFlowIdnetifierList ::= MArrows Id MArrows SubCmpFlowId 
 			| MArrows Id MArrows SubCmpFlowId  ConnectIdSubcompenentFlowIdnetifierList 

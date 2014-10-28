@@ -1,8 +1,0 @@
-property set mine is
-Value_Type: type enumeration ( estimate, benchmark, measured );
-Rotation_Units: type units ( rpm );
-Position : type record (
-int1: aadlinteger;
-int2: aadlinteger; );
-GPS_Position : mine::Position applies to ( system1 );
-end mine;
