@@ -4,7 +4,7 @@ end Position_Type;
 process Gps_Sender
 features
   Position: out data port Position_Type;
-  SecondaryPosition: in data port Position_Type { Required_Connection => false applies to ;};
+  SecondaryPosition: in data port Position_Type { Required_Connection => false applies to  Position_Type;};
 end Gps_Sender;
 
 process implementation Gps_Sender.Basic

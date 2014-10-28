@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character 'd'
+	File: ../tests/unit/ComponentImplementations.aadl
+	Location: (8,26,8,26)

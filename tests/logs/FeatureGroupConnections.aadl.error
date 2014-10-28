@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character 'd'
+	File: ../tests/unit/FeatureGroupConnections.aadl
+	Location: (10,15,10,15)

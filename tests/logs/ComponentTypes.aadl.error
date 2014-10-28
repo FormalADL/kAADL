@@ -1,18 +1,3 @@
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: DataAccessSpec ::= Id Mcolon Mrequires Mdata Maccess DataUniCmpClassifierRef
-
-   root : requires data access (FileSystem :: (Directory . hashed))
-2: BusAccessSpec ::= Id Mcolon Mrequires Mdata Maccess BusUniCmpClassifierRef 
-   root : requires data access (FileSystem :: (Directory . hashed))
+[Error] Critical: Parse error: Syntax error near unexpected character 'q'
 	File: ../tests/unit/ComponentTypes.aadl
-	Location: (5,3,5,58)
-	Compilation Phase: Ambiguity filter
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: DataAccessSpec ::= Id Mcolon Mrequires Mdata Maccess DataUniCmpClassifierRef
-
-   home : requires data access (FileSystem :: (Directory . hashed))
-2: BusAccessSpec ::= Id Mcolon Mrequires Mdata Maccess BusUniCmpClassifierRef 
-   home : requires data access (FileSystem :: (Directory . hashed))
-	File: ../tests/unit/ComponentTypes.aadl
-	Location: (11,4,11,59)
-	Compilation Phase: Ambiguity filter
+	Location: (5,11,5,11)

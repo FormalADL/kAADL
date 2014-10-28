@@ -1,3 +1,3 @@
-[Error] Critical: Parse error: Syntax error near unexpected character '-'
+[Error] Critical: Parse error: Syntax error near unexpected character 'd'
 	File: ../tests/unit/Prototypes.aadl
-	Location: (13,2,13,2)
+	Location: (10,18,10,18)

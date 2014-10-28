@@ -1,3 +1,0 @@
-[Error] Critical: Parse error: Syntax error near unexpected character ':'
-	File: ../tests/unit/PropertyDefinitions.aadl
-	Location: (5,4,5,4)

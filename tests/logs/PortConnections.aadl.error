@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character 'e'
+	File: ../tests/unit/PortConnections.aadl
+	Location: (3,16,3,16)
