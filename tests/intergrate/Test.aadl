@@ -84,9 +84,9 @@ thread implementation Drivermodelogic.Simulink
       llamado: subprogram subp2_1.impl;
       };
   connections
-    in_valor: parameter Onnotoff ggg llamado.in_parameter;
+    in_valor: parameter Onnotoff -> llamado.in_parameter;
     referencia: data access Breakpedalpressed -> llamado.p1;
-    out_valor: parameter llamado.out_parameter ggg Cruiseactive;
+    out_valor: parameter llamado.out_parameter -> Cruiseactive;
   properties
     Dispatch_Protocol => Periodic;
     Period => 20 Ms;
