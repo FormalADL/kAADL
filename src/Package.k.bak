@@ -12,7 +12,7 @@ syntax PkgDecls ::= Mpublic
 			| Mpublic Mprivate PkgDeclations 
 			| Mpublic PkgDeclations Mprivate 
 			| Mpublic PkgDeclations Mprivate PkgDeclations 
-syntax PpeDecls ::= Mproperties 
+syntax PpeDecls ::= Mproperties NoneStatement 
 			| Mproperties BasicPpeAssocList 
 syntax BasicPpeAssocList ::= PpeAssoc 
 			| PpeAssoc BasicPpeAssocList 
