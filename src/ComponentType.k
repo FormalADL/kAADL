@@ -50,7 +50,7 @@ syntax ExecPlateformCategory ::= Mmemory
 			| Mbus 
 			| Mdevice 
 			| Mvirtual Mprocessor 
-			| Mvirtrual Mbus 
+			| Mvirtual Mbus 
 syntax CmpTypeExt ::= CmpCategory Id Mextends UniCmpTypeRef Mend Id MSemicolon 
 			| CmpCategory Id Mextends UniCmpTypeRef ProtoTypeBindings Mend Id MSemicolon 
 			| CmpCategory Id Mextends UniCmpTypeRef CmpAssocDef Mend Id MSemicolon 

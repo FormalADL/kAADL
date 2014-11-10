@@ -6,8 +6,8 @@ syntax ModeTransitionList ::= Mode
 			| ModeTransition 
 			| ModeTransition ModeTransitionList 
 			| Mode ModeTransitionList 
-syntax RequiresModesSubclause ::= Mrequirs Mmodes MBracketLeft MBracketRight 
-			| Mrequirs Mmodes MBracketLeft ModeList MBracketRight 
+syntax RequiresModesSubclause ::= Mrequires Mmodes MBracketLeft MBracketRight 
+			| Mrequires Mmodes MBracketLeft ModeList MBracketRight 
 syntax ModeList ::= Mode 
 			| Mode ModeList 
 syntax Mode ::= Id Mcolon Minitial Mmode MBraceLeft ModePpeAssocList MBraceRight MSemicolon 
