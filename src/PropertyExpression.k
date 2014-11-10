@@ -29,7 +29,7 @@ syntax EnumerationTerm ::= EnumerationId
 			| EnumerationPpeConstantTerm 
 syntax UnitTerm ::= Id 
 			| UnitPpeConstantTerm 
-syntax IntegerRangeTerm ::= IntegerTerm MDoubleDiont IntegerTerm 
+syntax IntegerRangeTerm ::= RealRange //IntegerTerm MDoubleDiont IntegerTerm 
 			| IntegerTerm MDoubleDiont IntegerTerm Mdelta IntegerTerm 
 			| IntegerRangePpeConstantTerm 
 syntax RealRangeTerm ::= RealTerm MDoubleDiont RealTerm 
