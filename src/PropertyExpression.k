@@ -35,15 +35,13 @@ syntax IntegerRangeTerm ::= IntegerTerm MDoubleDiont IntegerTerm
 syntax RealRangeTerm ::= RealRange // RealTerm MDoubleDiont RealTerm 
 			| RealTerm MDoubleDiont RealTerm Mdelta RealTerm 
 			| RealRangePpeConstantTerm 
-syntax PpeTerm ::= Id 
-			| Id MDoubleColon Id 
-syntax PpeConstantTerm ::= Id 
-			| Id MDoubleColon Id 
+syntax PpeTerm ::= AmbDoubleColonId
+syntax PpeConstantTerm ::= AmbDoubleColonId
 syntax CmpClassifierTerm ::= Mclassifier MBracketLeft UniCmpTypeRef MBracketRight 
 			| Mclassifier MBracketLeft UniCmpImplRef MBracketRight 
 syntax RefTerm ::= Mreference MBracketLeft ContainedModelElementPath MBracketRight 
 syntax RecordTerm ::= MBracketLeft RecordFieldIdIdList MBracketRight 
-syntax RecordFieldIdIdList ::= Id MRoughArrow PpeValue MSemicolon 
+syntax RecordFieldIdIdList ::= AmbIdRoughArrowPpeValue 
 			| Id MRoughArrow PpeValue MSemicolon RecordFieldIdIdList 
 syntax ComputedTerm ::= Mcompute MBracketLeft Id MBracketRight 
 syntax BooleanPpeConstantTerm ::= PpeConstantTerm 

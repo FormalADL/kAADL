@@ -25,6 +25,5 @@ syntax FlowSinkSpecRefinement ::= Id Mcolon Mrefined Mto Mflow Msink FlowSinkSpe
 syntax FlowSinkSpecRefinementAssocDef ::= FlowSourceSpecRefinementAssocDef 
 syntax FlowPathSpecRefinement ::= Id Mcolon Mrefined Mto Mflow Mpath FlowPathSpecRefinementAssocDef MSemicolon 
 syntax FlowPathSpecRefinementAssocDef ::= FlowSourceSpecRefinementAssocDef 
-syntax FlowFetIdentifer ::= Id 
-			| Id MPoint Id 
+syntax FlowFetIdentifer ::= AmbIdPointId
 endmodule

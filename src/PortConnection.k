@@ -4,8 +4,7 @@ syntax PortConnection ::= Mport SrcPortConnectionRef ConnectionSymbol DestPortCo
 syntax SrcPortConnectionRef ::= PortConnectionRefence 
 syntax DestPortConnectionRef ::= PortConnectionRefence 
 syntax PortConnectionRefinement ::= Mport 
-syntax PortConnectionRefence ::= Id 
-			| Id MPoint Id 
-			| Mprocessor MPoint Id 
+syntax PortConnectionRefence ::= AmbIdPointId
+			| AmbProcessorPointId 
 			| Mself MPoint Id 
 endmodule

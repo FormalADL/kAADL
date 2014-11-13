@@ -26,8 +26,7 @@ syntax RealInteger ::= Maadlreal
 			| Maadlinterger IntegerRange 
 syntax UnitsDesignator ::= UnitsUniPpeTypeId 
 			| UnitsList 
-syntax UnitsUniPpeTypeId ::= Id 
-			| Id MDoubleColon Id 
+syntax UnitsUniPpeTypeId ::= AmbDoubleColonId
 syntax RealRange ::= SignedAadlrealOrConstant MDoubleDiont SignedAadlrealOrConstant 
 
 syntax IntegerRange ::= SignedAadlintegerOrConstant MDoubleDiont SignedAadlintegerOrConstant 
@@ -63,8 +62,7 @@ syntax RefType ::= Mreference
 			| Mreference MBracketLeft RefCategoryList MBracketRight 
 syntax RefCategoryList ::= Id 
 			| Id MComma RefCategoryList 
-syntax UniPpeTypeId ::= Id 
-			| Id MDoubleColon Id 
+syntax UniPpeTypeId ::= AmbDoubleColonId
 syntax RecordType ::= Mrecord MBracketLeft RecordFieldList MBracketRight 
 syntax RecordFieldList ::= RecordField 
 			| RecordField RecordFieldList 

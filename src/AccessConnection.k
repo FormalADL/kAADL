@@ -10,7 +10,6 @@ syntax SourceAccessRef ::= AccessRef
 syntax DestinationAccessRef ::= AccessRef 
 syntax AccessConnectionRefinement ::= Maccess 
 			| AccessConnectionKeyword Maccess 
-syntax AccessRef ::= Id 
-			| Id MPoint Id 
-			| Mprocessor MPoint Id 
+syntax AccessRef ::= AmbIdPointId
+			| AmbProcessorPointId 
 endmodule

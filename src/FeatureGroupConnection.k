@@ -1,9 +1,8 @@
 module FEATUREGROUPCONNECTION-SYNTAX
 
 syntax FetGroupConnection ::= Mfeature Mgroup SourceFetGroupRef ConnectionSymbol DestinationFetGroupRef 
-syntax SourceFetGroupRef ::= FetGroupRef 
-syntax DestinationFetGroupRef ::= FetGroupRef 
+syntax SourceFetGroupRef ::= AmbIdPointId 
+syntax DestinationFetGroupRef ::= AmbIdPointId 
 syntax FetGroupConnectionRefinement ::= Mfeature Mgroup 
-syntax FetGroupRef ::= Id 
-			| Id MPoint Id 
+syntax FetGroupRef ::= AmbIdPointId
 endmodule

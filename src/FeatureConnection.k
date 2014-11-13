@@ -7,7 +7,6 @@ syntax ConnectionSymbol ::= DirecConnectSymb
 			| BidirectConnectSymb 
 syntax DirecConnectSymb ::= MArrows 
 syntax BidirectConnectSymb ::= MDoubleArrows 
-syntax FetRef ::= Id 
-			| Id MPoint Id 
+syntax FetRef ::= AmbIdPointId
 syntax FetConnectionRefinement ::= Mfeature 
 endmodule

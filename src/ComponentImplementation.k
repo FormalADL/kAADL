@@ -2,7 +2,7 @@ module COMPONENTIMPLEMENTATION-SYNTAX
 
 syntax CmpImpl ::= CmpCategory Mimplementation CmpImplName Mend CmpImplName MSemicolon 
 syntax CmpImpl ::= CmpCategory Mimplementation CmpImplName CmpImplAssocDef Mend CmpImplName MSemicolon 
-syntax CmpImplName ::= Id MPoint Id 
+syntax CmpImplName ::= AmbIdPointId
 syntax CmpImplAssocDefElem ::= ProtoTypeBindings 
 			| Mprototypes ProtoTypeList 
 			| Mprototypes  

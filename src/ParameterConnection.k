@@ -5,6 +5,5 @@ syntax SourceParameterRef ::= ParameterRef
 syntax DirectionalConnectionSymbol ::= MArrows 
 syntax DestinationParameterRef ::= ParameterRef 
 syntax ParameterConnectionRefinement ::= Mparamenter 
-syntax ParameterRef ::= Id 
-			| Id MPoint Id 
+syntax ParameterRef ::= AmbIdPointId
 endmodule

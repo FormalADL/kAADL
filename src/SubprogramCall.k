@@ -12,7 +12,6 @@ syntax SubPgmCall ::= Id Mcolon Msubprogram CalledSubPgm MSemicolon
 syntax SubPgmCall ::= Id Mcolon Msubprogram CalledSubPgm MBraceLeft SubPgmCallPpeAssocList MBraceRight MSemicolon 
 syntax SubPgmCallPpeAssocList ::= PpeAssoc 
 			| PpeAssoc SubPgmCallPpeAssocList 
-syntax CalledSubPgm ::= Id 
-			| Id MPoint Id 
-			| Mprocessor MPoint Id 
+syntax CalledSubPgm ::= AmbIdPointId
+			| AmbProcessorPointId
 endmodule

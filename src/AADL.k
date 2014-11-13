@@ -1,3 +1,4 @@
+require "Ambiguity.k"
 require "Commondef.k"
 require "Package.k"
 require "ComponentType.k"
@@ -71,6 +72,8 @@ module AADL-SYNTAX
   imports PROPERTYEXPRESSION-SYNTAX
 
   imports MACRO
+
+  imports AMBIGUITY
 
 endmodule
 

@@ -5,7 +5,7 @@ syntax FetGroupType ::= Mfeature Mgroup Id Mend Id MSemicolon
 syntax FetGroupTypeAssocDefElem ::= Mprototypes ProtoTypeList 
 			| Mprototypes NoneStatement 
 			| Mfeatures FeatureList 
-			| Minverse Mof UniFetGroupTypeRef 
+			| AmbInverseOfUniFetGroupTypeRef 
 			| Mproperties FetGroupContainedPpeAssocList 
 			| Mproperties NoneStatement 
 			| AnnexSubclauseList 
@@ -24,7 +24,7 @@ syntax FetGroupTypeExtAssocDefElem ::= Mprototypes ProtoTypeList
 			| Mprototypes NoneStatement 
 			| Mfeatures FeatureList 
 			| Mfeatures FetRefinementList 
-			| Minverse Mof UniFetGroupTypeRef 
+			| AmbInverseOfUniFetGroupTypeRef
 			| Mproperties FetGroupContainedPpeAssocList 
 			| Mproperties NoneStatement 
 			| AnnexSubclauseList 
@@ -36,7 +36,7 @@ syntax FetGroupSpec ::= Id Mcolon FetGroupSpecAssocDef
 syntax FetGroupSpecAssocDef ::= Min Mfeature Mgroup InverseOfUniProtoType 
 			| Mout Mfeature Mgroup InverseOfUniProtoType 
 			| Mfeature Mgroup InverseOfUniProtoType 
-syntax InverseOfUniProtoType ::= Minverse Mof UniFetGroupTypeRef 
+syntax InverseOfUniProtoType ::= AmbInverseOfUniFetGroupTypeRef
 		//	| Minverse Mof Id 
 			| UniFetGroupTypeRef 
 		//	| Id 

@@ -26,9 +26,8 @@ syntax ModeTransitionTriggerList ::= ModeTransitionTrigger
 			| ModeTransitionTrigger MComma ModeTransitionTriggerList 
 syntax ModeTransitionTrigger ::= UniPortId 
 			| Mself MPoint Id 
-			| Mprocessor MPoint Id 
-syntax UniPortId ::= Id 
-			| Id MPoint Id 
+			| AmbProcessorPointId
+syntax UniPortId ::= AmbIdPointId
 syntax InModes ::= Min Mmodes MBracketLeft ModeIdList MBracketRight 
 syntax ModeIdList ::= Id 
 			| Id MComma ModeIdList 
