@@ -1,7 +1,13 @@
 module PROTOTYPE-SYNTAX
 
-syntax ProtoType ::= Id Mcolon ProtoTypeDef MSemicolon 
-			| Id Mcolon ProtoTypeDef MBraceLeft ProtoTypePpeAssocList MBraceRight MSemicolon 
+syntax ProtoType ::=  Id Mcolon ProtoTypeDef MBraceLeft ProtoTypePpeAssocList MBraceRight MSemicolon
+			| Id Mcolon FetGroupTypeProtoType MSemicolon 
+			| Id Mcolon FetProtoType MSemicolon  
+			| Id Mcolon CmpCategory MDoubleBracket MSemicolon 
+			| Id Mcolon CmpCategory UniCmpClassifierRef MSemicolon 
+			| Id Mcolon  CmpCategory UniCmpClassifierRef MDoubleBracket MSemicolon 
+			| AmbIdColonCmpCategorySemicolon 
+
 syntax ProtoTypePpeAssocList ::= PpeAssoc 
 			| PpeAssoc ProtoTypePpeAssocList 
 syntax ProtoTypePpeAssoc ::= PpeAssoc 
@@ -13,8 +19,11 @@ syntax CmpProtoType ::= CmpCategory
 			| CmpCategory MDoubleBracket 
 			| CmpCategory UniCmpClassifierRef 
 			| CmpCategory UniCmpClassifierRef MDoubleBracket 
+
+
 syntax FetGroupTypeProtoType ::= Mfeature Mgroup 
-			| Mfeature Mgroup UniFetGroupTypeRef 
+			| AmbFeatureGroupUniFetGroupTypeRef 
+
 syntax FetProtoType ::= Mfeature 
 			| Min Mfeature 
 			| Mout Mfeature 
@@ -35,9 +44,14 @@ syntax CmpProtoTypeActual ::= CmpCategory UniCmpClassifierRef ProtoTypeBindings
 syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual 
 syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual MComma CmpProtoTypeActual 
 syntax CmpProtoTypeActualList ::= MBracketLeft CmpProtoTypeActuralListTmp MBracketRight 
-syntax FetGroupTypeProtoTypeActual ::= Mfeature Mgroup UniFetGroupTypeRef 
+
+
+
+syntax FetGroupTypeProtoTypeActual ::= AmbFeatureGroupUniFetGroupTypeRef 
 			| Mfeature Mgroup UniFetGroupTypeRef ProtoTypeBindings 
 			| Mfeature Mgroup Id 
+
+
 syntax FetProtoTypeActual ::= InOut EventData Mport 
 			| InOut EventData Mport UniCmpClassifierRef 
 			| Require BusDataSubPgm Maccess 

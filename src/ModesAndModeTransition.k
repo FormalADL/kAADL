@@ -28,15 +28,26 @@ syntax ModeTransitionTrigger ::= UniPortId
 			| Mself MPoint Id 
 			| AmbProcessorPointId
 syntax UniPortId ::= AmbIdPointId
-syntax InModes ::= Min Mmodes MBracketLeft ModeIdList MBracketRight 
+
+
+syntax InModes ::= Min Mmodes MBracketLeft  Id MComma ModeIdList MBracketRight
+			| AmbInModesBracketLeftIdBracketRight
+
 syntax ModeIdList ::= Id 
-			| Id MComma ModeIdList 
-syntax CmpInModes ::= Min Mmodes MBracketLeft ModeNameList MBracketRight 
+			| Id MComma ModeIdList
+			
+syntax CmpInModes ::=  AmbInModesBracketLeftIdBracketRight
+			| Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight 
+
 syntax ModeNameList ::= ModeName 
 			| ModeName MComma ModeNameList 
 syntax ModeName ::= Id 
 			| Id MRoughArrow Id 
-syntax InModesAndTransitions ::= Min Mmodes MBracketLeft ModeOrTransitionList MBracketRight 
+
+syntax InModesAndTransitions ::= AmbInModesBracketLeftIdBracketRight
+			| Min Mmodes MBracketLeft Id MComma ModeOrTransitionList MBracketRight 
+
 syntax ModeOrTransitionList ::= Id 
 			| Id MComma ModeOrTransitionList 
 syntax ModePpeAssoc ::= NODEF 

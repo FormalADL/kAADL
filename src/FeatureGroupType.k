@@ -33,9 +33,11 @@ syntax FetGroupTypeExtAssocDef ::= FetGroupTypeExtAssocDefElem
 syntax FetRefinementList ::= FetRefinement 
 			| FetRefinement FetRefinementList 
 syntax FetGroupSpec ::= Id Mcolon FetGroupSpecAssocDef 
+
 syntax FetGroupSpecAssocDef ::= Min Mfeature Mgroup InverseOfUniProtoType 
 			| Mout Mfeature Mgroup InverseOfUniProtoType 
-			| Mfeature Mgroup InverseOfUniProtoType 
+			| AmbFeatureGroupUniFetGroupTypeRef 
+
 syntax InverseOfUniProtoType ::= AmbInverseOfUniFetGroupTypeRef
 		//	| Minverse Mof Id 
 			| UniFetGroupTypeRef 

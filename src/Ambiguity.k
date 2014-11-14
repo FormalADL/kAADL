@@ -16,9 +16,24 @@ module AMBIGUITY
 			| PkgName MDoubleColon Id 
 	*/
 	                       
-
 	syntax AmbIdBracketLeftIdBracketRight ::= Mclassifier MBracketLeft Id MBracketRight 
 
 	syntax AmbReferenceBracketLeftIdBracketRight ::= Mreference MBracketLeft Id MBracketRight
+
+	syntax AmbIdColonSubprogramIdSemicolon ::= Id Mcolon Msubprogram Id MSemicolon 
+
+	syntax AmbIdColonCmpCategorySemicolon ::=  Id Mcolon CmpCategory MSemicolon  // here need unfold CmpCategory
+
+	syntax AmbArrowsIdArrowsSubCmpFlowId ::= MArrows Id MArrows Id
+						| MArrows Id MArrows Id MPoint Id
+	
+	syntax AmbFeatureGroupUniFetGroupTypeRef ::=  Mfeature Mgroup Id
+			| Mfeature Mgroup Id  MDoubleColon Id 
+			| Mfeature Mgroup Id  MDoubleColon Id MDoubleColon Id 
+	
+	syntax AmbInModesBracketLeftIdBracketRight ::= Min Mmodes MBracketLeft Id MBracketRight
+
+	syntax AmbClassifierBracketLeftIdBracketRight ::= Mclassifier MBracketLeft Id MBracketRight 
+
 
 endmodule

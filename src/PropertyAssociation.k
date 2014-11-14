@@ -36,7 +36,8 @@ syntax PpeListValue ::= MBracketLeft MBracketRight
 			| MBracketLeft PpeListValueMidSymbol MBracketRight 
 syntax PpeListValueMidSymbol ::= PpeListValue 
 			| PpeExpression 
-			| PpeListValueMidSymbol MComma PpeListValueMidSymbol 
+			| PpeListValue MComma PpeListValueMidSymbol 
+			| PpeExpression MComma PpeListValueMidSymbol
 syntax InBinding ::= Min Mbinding MBracketLeft PlatformClassifierRefList MBracketRight 
 syntax PlatformClassifierRefList ::= PlatformClassifierRef 
 			| PlatformClassifierRef MComma PlatformClassifierRefList 

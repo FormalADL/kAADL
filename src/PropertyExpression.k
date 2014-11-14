@@ -37,8 +37,11 @@ syntax RealRangeTerm ::= RealRange // RealTerm MDoubleDiont RealTerm
 			| RealRangePpeConstantTerm 
 syntax PpeTerm ::= AmbDoubleColonId
 syntax PpeConstantTerm ::= AmbDoubleColonId
+
+
 syntax CmpClassifierTerm ::= Mclassifier MBracketLeft UniCmpTypeRef MBracketRight 
-			| Mclassifier MBracketLeft UniCmpImplRef MBracketRight 
+			| Mclassifier MBracketLeft PkgName MDoubleColon Id MBracketRight 
+			| AmbClassifierBracketLeftIdBracketRight
 
 syntax RefTerm ::= Mreference MBracketLeft AnnexPath MBracketRight 
 			|  Mreference MBracketLeft ContainedModelElementList AnnexPath MBracketRight 

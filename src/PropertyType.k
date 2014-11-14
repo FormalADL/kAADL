@@ -50,8 +50,13 @@ syntax SignedAadlreal ::= Sign RealLiteral Id
 			| RealLiteral 
 syntax RangeType ::= Mrange Mof NumberType 
 			| Mrange Mof Id 
+
 syntax ClassifierType ::= Mclassifier 
-			| Mclassifier MBracketLeft ClassifierCategoryRefList MBracketRight 
+			| Mclassifier MBracketLeft ClassifierCategoryRef MComma ClassifierCategoryRefList  MBracketRight 
+			| Mclassifier MBracketLeft MBraceLeft Id MAsteriskBrace3 MetaModelClassId MBracketRight
+			| Mclassifier MBracketLeft Id MetaModelClassId MBracketRight
+			| AmbClassifierBracketLeftIdBracketRight
+
 syntax ClassifierCategoryRef ::= ClassifierQualifiedMetaModelId 
 syntax ClassifierQualifiedMetaModelId ::= QualifiedMetaModelId 
 syntax QualifiedMetaModelId ::= MetaModelClassId 
