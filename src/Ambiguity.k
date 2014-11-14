@@ -8,7 +8,14 @@ module AMBIGUITY
 
 	syntax AmbIdRoughArrowPpeValue ::= UniPpeId MRoughArrow PpeValue MSemicolon
 
-	syntax AmbInverseOfUniFetGroupTypeRef ::= Minverse Mof UniFetGroupTypeRef 
+	syntax AmbInverseOfUniFetGroupTypeRef ::= Minverse Mof Id
+						| Minverse Mof Id MDoubleColon Id 
+						| Minverse Mof Id MDoubleColon Id MDoubleColon Id 
+	/*
+	syntax UniFetGroupTypeRef ::= Id 
+			| PkgName MDoubleColon Id 
+	*/
+	                       
 
 	syntax AmbIdBracketLeftIdBracketRight ::= Mclassifier MBracketLeft Id MBracketRight 
 
