@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character 's'
+	File: ../tests/unit/PropertySetTest.aadl
+	Location: (6,1,6,1)

@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character 'P'
+	File: ../tests/unit/Prototypes.aadl
+	Location: (24,3,24,3)
