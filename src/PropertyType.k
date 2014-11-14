@@ -59,7 +59,8 @@ syntax QualifiedMetaModelId ::= MetaModelClassId
 syntax MetaModelClassId ::= Id 
 			| Id MetaModelClassId 
 syntax RefType ::= Mreference 
-			| Mreference MBracketLeft RefCategoryList MBracketRight 
+			| AmbReferenceBracketLeftIdBracketRight 
+			| Mreference MBracketLeft Id MComma RefCategoryList MBracketRight  
 syntax RefCategoryList ::= Id 
 			| Id MComma RefCategoryList 
 syntax UniPpeTypeId ::= AmbDoubleColonId

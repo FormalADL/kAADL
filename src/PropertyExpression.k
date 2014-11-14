@@ -39,7 +39,13 @@ syntax PpeTerm ::= AmbDoubleColonId
 syntax PpeConstantTerm ::= AmbDoubleColonId
 syntax CmpClassifierTerm ::= Mclassifier MBracketLeft UniCmpTypeRef MBracketRight 
 			| Mclassifier MBracketLeft UniCmpImplRef MBracketRight 
-syntax RefTerm ::= Mreference MBracketLeft ContainedModelElementPath MBracketRight 
+
+syntax RefTerm ::= Mreference MBracketLeft AnnexPath MBracketRight 
+			|  Mreference MBracketLeft ContainedModelElementList AnnexPath MBracketRight 
+			|  Mreference MBracketLeft  ContainedModelElement MPoint ContainedModelElementList MBracketRight
+			|  Mreference MBracketLeft NamedElementArraySelectionName MBracketRight 
+			|  AmbReferenceBracketLeftIdBracketRight 
+
 syntax RecordTerm ::= MBracketLeft RecordFieldIdIdList MBracketRight 
 syntax RecordFieldIdIdList ::= AmbIdRoughArrowPpeValue 
 			| Id MRoughArrow PpeValue MSemicolon RecordFieldIdIdList 

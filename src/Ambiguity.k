@@ -10,6 +10,8 @@ module AMBIGUITY
 
 	syntax AmbInverseOfUniFetGroupTypeRef ::= Minverse Mof UniFetGroupTypeRef 
 
-	syntax IdBracketLeftIdBracketRight ::= Mclassifier MBracketLeft Id MBracketRight 
+	syntax AmbIdBracketLeftIdBracketRight ::= Mclassifier MBracketLeft Id MBracketRight 
+
+	syntax AmbReferenceBracketLeftIdBracketRight ::= Mreference MBracketLeft Id MBracketRight
 
 endmodule
