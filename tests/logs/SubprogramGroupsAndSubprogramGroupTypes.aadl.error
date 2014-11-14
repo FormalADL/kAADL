@@ -1,4 +1,4 @@
-[0, 2.624 ms]
+[0, 2.635 ms]
 [Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
 1: UniCmpTypeRef ::= PkgName MDoubleColon Id 
    Base_Types :: Integer
