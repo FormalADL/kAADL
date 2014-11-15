@@ -1,4 +1,4 @@
-Exception in thread "main" java.lang.AssertionError: The greatest lower bound (GLB) of sorts [ClassifierType, AmbIdBracketLeftIdBracketRight, CmpClassifierTerm]doesn't exist!
+Exception in thread "main" java.lang.AssertionError: The greatest lower bound (GLB) of sorts [AmbIdBracketLeftIdBracketRight, CmpClassifierTerm, AmbClassifierBracketLeftIdBracketRight]doesn't exist!
 	at org.kframework.backend.java.kil.KItem.<init>(KItem.java:190)
 	at org.kframework.backend.java.symbolic.KILtoBackendJavaKILTransformer.visit(KILtoBackendJavaKILTransformer.java:159)
 	at org.kframework.backend.java.symbolic.KILtoBackendJavaKILTransformer.visit(KILtoBackendJavaKILTransformer.java:74)
