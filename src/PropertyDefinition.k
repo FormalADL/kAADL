@@ -7,7 +7,7 @@ syntax PpeDefDeclAssocDef ::= Minherit SingleValuedPpe Mapplies Mto MBracketLeft
 			| MultiValuedPpe Mapplies Mto MBracketLeft PpeOwnerList MBracketRight 
 syntax SingleValuedPpe ::= PpeTypeDesignator 
 			| PpeTypeDesignator MRoughArrow DefaultPpeExpression 
-syntax DefaultPpeExpression ::= PpeExpression | MBracketLeft BooleanTerm MBracketRight 
+syntax DefaultPpeExpression ::= PpeExpression | AmbBracketLeftBooleanTermBracketRight 
 syntax MultiValuedPpe ::= ListOf PpeTypeDesignator MRoughArrow DefaultPpeListValue 
 			| ListOf PpeTypeDesignator 
 syntax ListOf ::= Mlist Mof 

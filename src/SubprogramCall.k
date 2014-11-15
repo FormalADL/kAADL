@@ -8,8 +8,12 @@ syntax SubPgmCallList ::= SubPgmCall
 			| SubPgmCall SubPgmCallList 
 syntax CallSequencePpeAssocList ::= PpeAssoc 
 			| PpeAssoc CallSequencePpeAssocList 
-syntax SubPgmCall ::= Id Mcolon Msubprogram CalledSubPgm MSemicolon 
-syntax SubPgmCall ::= Id Mcolon Msubprogram CalledSubPgm MBraceLeft SubPgmCallPpeAssocList MBraceRight MSemicolon 
+
+syntax SubPgmCall ::= Id Mcolon Msubprogram AmbProcessorPointId MSemicolon 
+			| Id Mcolon Msubprogram CalledSubPgm MBraceLeft SubPgmCallPpeAssocList MBraceRight MSemicolon 
+			| Id Mcolon Msubprogram Id MPoint Id MSemicolon 
+			| AmbIdColonSubprogramIdSemicolon 
+
 syntax SubPgmCallPpeAssocList ::= PpeAssoc 
 			| PpeAssoc SubPgmCallPpeAssocList 
 syntax CalledSubPgm ::= AmbIdPointId

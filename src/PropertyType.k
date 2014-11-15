@@ -15,7 +15,7 @@ syntax EnumerationLiteralIdList ::= Id
 			| Id MComma EnumerationLiteralIdList 
 syntax UnitsType ::= Munits UnitsList 
 syntax UnitsList ::= MBracketLeft Id UnitIdList MBracketRight 
-			| MBracketLeft Id MBracketRight 
+			| AmbBracketLeftIdBracketRight  
 syntax UnitIdList ::= MComma Id MRoughArrow Id MBrace NumericLiteral 
 			| MComma Id MRoughArrow Id MBrace NumericLiteral UnitIdList 
 syntax NumberType ::= RealInteger 
@@ -29,7 +29,7 @@ syntax UnitsDesignator ::= UnitsUniPpeTypeId
 syntax UnitsUniPpeTypeId ::= AmbDoubleColonId
 syntax RealRange ::= SignedAadlrealOrConstant MDoubleDiont SignedAadlrealOrConstant 
 
-syntax IntegerRange ::= SignedAadlintegerOrConstant MDoubleDiont SignedAadlintegerOrConstant 
+syntax IntegerRange ::= AmbSignedAadlintegerOrConstantDoubleDiontSignedAadlintegerOrConstant 
 
 syntax SignedAadlrealOrConstant ::= SignedAadlreal 
 			| RealPpeConstantTerm 
@@ -50,8 +50,13 @@ syntax SignedAadlreal ::= Sign RealLiteral Id
 			| RealLiteral 
 syntax RangeType ::= Mrange Mof NumberType 
 			| Mrange Mof Id 
+
 syntax ClassifierType ::= Mclassifier 
-			| Mclassifier MBracketLeft ClassifierCategoryRefList MBracketRight 
+			| Mclassifier MBracketLeft ClassifierCategoryRef MComma ClassifierCategoryRefList  MBracketRight 
+			| Mclassifier MBracketLeft MBraceLeft Id MAsteriskBrace3 MetaModelClassId MBracketRight
+			| Mclassifier MBracketLeft Id MetaModelClassId MBracketRight
+			| AmbClassifierBracketLeftIdBracketRight
+
 syntax ClassifierCategoryRef ::= ClassifierQualifiedMetaModelId 
 syntax ClassifierQualifiedMetaModelId ::= QualifiedMetaModelId 
 syntax QualifiedMetaModelId ::= MetaModelClassId 

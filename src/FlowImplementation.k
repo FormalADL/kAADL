@@ -10,13 +10,19 @@ syntax SubcompentConnectionAssocDef ::= SubCmpFlowId MArrows Id MArrows
 			| SubCmpFlowId MArrows Id MArrows SubcompentConnectionAssocDef 
 syntax FlowSinkImpl ::= Id Mcolon Mflow Msink Id 
 			| Id Mcolon Mflow Msink Id ConnectionSubcompenentFlowAssocDef 
-syntax ConnectionSubcompenentFlowAssocDef ::=  MArrows Id MArrows SubCmpFlowId
+
+syntax ConnectionSubcompenentFlowAssocDef ::= AmbArrowsIdArrowsSubCmpFlowId 
 			| MArrows Id MArrows SubCmpFlowId  ConnectionSubcompenentFlowAssocDef 
+
 syntax FlowPathImpl ::= Id Mcolon Mflow Mpath Id FlowPathImplDefault MArrows SubCmpFlowId 
 			| Id Mcolon Mflow Mpath Id MArrows SubCmpFlowId
 syntax FlowPathImplDefault ::= ConnectIdSubcompenentFlowIdnetifierList MArrows SubCmpFlowId 
-syntax ConnectIdSubcompenentFlowIdnetifierList ::= MArrows Id MArrows SubCmpFlowId 
+
+
+syntax ConnectIdSubcompenentFlowIdnetifierList ::= AmbArrowsIdArrowsSubCmpFlowId 
 			| MArrows Id MArrows SubCmpFlowId  ConnectIdSubcompenentFlowIdnetifierList 
+
+
 syntax SubCmpFlowId ::= AmbIdPointId
 syntax PpeAssocInModes ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
 			| MBraceLeft PpeAssocList MBraceRight 

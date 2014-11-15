@@ -1,7 +1,23 @@
 module SUBCOMPONENT-SYNTAX
 
-syntax SubCmp ::= Id Mcolon CmpCategory SubCmpAssocDef MSemicolon 
-			| Id Mcolon CmpCategory MSemicolon 
+syntax SubCmp ::= AmbIdColonCmpCategorySemicolon 
+			| Id Mcolon AbstractCmpCategory SubCmpAssocDef MSemicolon 
+			| Id Mcolon ExecPlateformCategory SubCmpAssocDef MSemicolon 
+			| Id Mcolon CompositeCategory SubCmpAssocDef MSemicolon 
+			| Id Mcolon Mdata SubCmpAssocDef MSemicolon 
+			| Id Mcolon Msubprogram Mgroup SubCmpAssocDef MSemicolon 
+			| Id Mcolon Mthread  SubCmpAssocDef MSemicolon 
+			| Id Mcolon Mthread Mgroup SubCmpAssocDef MSemicolon 
+			| Id Mcolon Mprocess SubCmpAssocDef MSemicolon 
+			| Id Mcolon Msubprogram SubCmpAssocDefElem SubCmpAssocDef MSemicolon 
+			| Id Mcolon Msubprogram UniCmpClassifierRef MSemicolon 
+			| Id Mcolon Msubprogram UniCmpClassifierRef ProtoTypeBindings MSemicolon 
+			| Id Mcolon Msubprogram ArrayDimension MSemicolon 
+			| Id Mcolon Msubprogram ArrayDimensions ArrayElementImplList MSemicolon 
+			| Id Mcolon Msubprogram MBraceLeft PpeContainedPpeAssocList MBraceRight MSemicolon 
+			| Id Mcolon Msubprogram CmpInModes MSemicolon 
+			| AmbIdColonSubprogramIdSemicolon 
+ 
 syntax SubCmpAssocDefElem ::= UniCmpClassifierRef 
 			| UniCmpClassifierRef ProtoTypeBindings 
 			| Id 
@@ -25,7 +41,16 @@ syntax ArrayDimensionSize ::= Numeral
 		// 	| UniPpeId  // its defination same as UniPpeConstantId
 syntax ArrayElementImplListTmp ::= UniCmpImplRef ProtoTypeBindings 
 			| UniCmpImplRef 
-syntax ArrayElementImplList ::= MBracketLeft ArrayElementImplListTmps MBracketRight 
+
+
+
+syntax ArrayElementImplList ::= MBracketLeft ArrayElementImplListTmp MComma ArrayElementImplListTmps MBracketRight 
+			|  MBracketLeft UniCmpImplRef ProtoTypeBindings MBracketRight 
+			|  MBracketLeft PkgName MDoubleColon CmpImplName MBracketRight 
+			|  MBracketLeft Id MPoint Id MBracketRight 
+			|  AmbBracketLeftIdBracketRight 
+
+
 syntax ArrayElementImplListTmps ::= ArrayElementImplListTmp 
 			| ArrayElementImplListTmp MComma ArrayElementImplListTmps 
 endmodule
