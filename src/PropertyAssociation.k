@@ -32,8 +32,28 @@ syntax ModalPpeValue ::= PpeValue InModes
 syntax PpeValue ::= SinglePpeValue 
 			| PpeListValue 
 syntax SinglePpeValue ::= PpeExpression 
+
+
 syntax PpeListValue ::= MBracketLeft MBracketRight 
-			| MBracketLeft PpeListValueMidSymbol MBracketRight 
+			| MBracketLeft PpeListValue MBracketRight 
+			| MBracketLeft PpeListValue MComma PpeListValueMidSymbol MBracketRight 
+			| MBracketLeft PpeExpression MComma PpeListValueMidSymbol MBracketRight 
+			| MBracketLeft RealTerm MBracketRight 
+			| MBracketLeft IntegerTerm MBracketRight
+			| MBracketLeft StringTerm MBracketRight
+			| MBracketLeft EnumerationTerm MBracketRight
+			| MBracketLeft UnitTerm MBracketRight
+			| MBracketLeft RealRangeTerm MBracketRight
+			| MBracketLeft IntegerRangeTerm MBracketRight
+			| MBracketLeft PpeTerm MBracketRight
+			| MBracketLeft CmpClassifierTerm MBracketRight
+			| MBracketLeft RefTerm MBracketRight
+			| MBracketLeft CmpClassifierTerm MBracketRight
+			| MBracketLeft RecordTerm MBracketRight
+			| MBracketLeft ComputedTerm MBracketRight
+			| AmbBracketLeftBooleanTermBracketRight  
+
+
 syntax PpeListValueMidSymbol ::= PpeListValue 
 			| PpeExpression 
 			| PpeListValue MComma PpeListValueMidSymbol 

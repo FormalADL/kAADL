@@ -1,6 +1,6 @@
 module SUBCOMPONENT-SYNTAX
 
-syntax SubCmp ::= Id Mcolon CmpCategory MSemicolon 
+syntax SubCmp ::= AmbIdColonCmpCategorySemicolon 
 			| Id Mcolon AbstractCmpCategory SubCmpAssocDef MSemicolon 
 			| Id Mcolon ExecPlateformCategory SubCmpAssocDef MSemicolon 
 			| Id Mcolon CompositeCategory SubCmpAssocDef MSemicolon 
@@ -41,7 +41,16 @@ syntax ArrayDimensionSize ::= Numeral
 		// 	| UniPpeId  // its defination same as UniPpeConstantId
 syntax ArrayElementImplListTmp ::= UniCmpImplRef ProtoTypeBindings 
 			| UniCmpImplRef 
-syntax ArrayElementImplList ::= MBracketLeft ArrayElementImplListTmps MBracketRight 
+
+
+
+syntax ArrayElementImplList ::= MBracketLeft ArrayElementImplListTmp MComma ArrayElementImplListTmps MBracketRight 
+			|  MBracketLeft UniCmpImplRef ProtoTypeBindings MBracketRight 
+			|  MBracketLeft PkgName MDoubleColon CmpImplName MBracketRight 
+			|  MBracketLeft Id MPoint Id MBracketRight 
+			|  AmbBracketLeftIdBracketRight 
+
+
 syntax ArrayElementImplListTmps ::= ArrayElementImplListTmp 
 			| ArrayElementImplListTmp MComma ArrayElementImplListTmps 
 endmodule

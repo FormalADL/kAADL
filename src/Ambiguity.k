@@ -35,5 +35,17 @@ module AMBIGUITY
 
 	syntax AmbClassifierBracketLeftIdBracketRight ::= Mclassifier MBracketLeft Id MBracketRight 
 
+        syntax AmbSignedAadlintegerOrConstantDoubleDiontSignedAadlintegerOrConstant ::= SignedAadlintegerOrConstant MDoubleDiont SignedAadlintegerOrConstant 
+
+	syntax AmbBracketLeftIdBracketRight ::= MBracketLeft Id MBracketRight
+
+	syntax  AmbBracketLeftBooleanTermBracketRight ::= MBracketLeft BooleanValue MBracketRight
+						| MBracketLeft Mnot BooleanTerm MBracketRight
+						| MBracketLeft BooleanTerm Mor BooleanTerm Mand BooleanTerm MBracketRight
+						| MBracketLeft MBracketLeft BooleanTerm MBracketRight MBracketRight
+						| MBracketLeft Id MDoubleColon Id MBracketRight
+						| AmbBracketLeftIdBracketRight 
+
+
 
 endmodule

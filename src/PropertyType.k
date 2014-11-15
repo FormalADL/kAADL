@@ -15,7 +15,7 @@ syntax EnumerationLiteralIdList ::= Id
 			| Id MComma EnumerationLiteralIdList 
 syntax UnitsType ::= Munits UnitsList 
 syntax UnitsList ::= MBracketLeft Id UnitIdList MBracketRight 
-			| MBracketLeft Id MBracketRight 
+			| AmbBracketLeftIdBracketRight  
 syntax UnitIdList ::= MComma Id MRoughArrow Id MBrace NumericLiteral 
 			| MComma Id MRoughArrow Id MBrace NumericLiteral UnitIdList 
 syntax NumberType ::= RealInteger 
@@ -29,7 +29,7 @@ syntax UnitsDesignator ::= UnitsUniPpeTypeId
 syntax UnitsUniPpeTypeId ::= AmbDoubleColonId
 syntax RealRange ::= SignedAadlrealOrConstant MDoubleDiont SignedAadlrealOrConstant 
 
-syntax IntegerRange ::= SignedAadlintegerOrConstant MDoubleDiont SignedAadlintegerOrConstant 
+syntax IntegerRange ::= AmbSignedAadlintegerOrConstantDoubleDiontSignedAadlintegerOrConstant 
 
 syntax SignedAadlrealOrConstant ::= SignedAadlreal 
 			| RealPpeConstantTerm 
