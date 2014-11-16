@@ -6,7 +6,7 @@ syntax ProtoType ::=  Id Mcolon ProtoTypeDef MBraceLeft ProtoTypePpeAssocList MB
 			| Id Mcolon CmpCategory MDoubleBracket MSemicolon 
 			| Id Mcolon CmpCategory UniCmpClassifierRef MSemicolon 
 			| Id Mcolon  CmpCategory UniCmpClassifierRef MDoubleBracket MSemicolon 
-			| AmbIdColonCmpCategorySemicolon 
+	//		| AmbIdColonCmpCategorySemicolon 
 
 syntax ProtoTypePpeAssocList ::= PpeAssoc 
 			| PpeAssoc ProtoTypePpeAssocList 

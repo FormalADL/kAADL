@@ -16,7 +16,7 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Msubprogram ArrayDimensions ArrayElementImplList MSemicolon 
 			| Id Mcolon Msubprogram MBraceLeft PpeContainedPpeAssocList MBraceRight MSemicolon 
 			| Id Mcolon Msubprogram CmpInModes MSemicolon 
-			| AmbIdColonSubprogramIdSemicolon 
+//			| AmbIdColonSubprogramIdSemicolon 
  
 syntax SubCmpAssocDefElem ::= UniCmpClassifierRef 
 			| UniCmpClassifierRef ProtoTypeBindings 
