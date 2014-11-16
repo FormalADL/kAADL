@@ -1,4 +1,4 @@
-[0, 2.694 ms]
+[0, 3.387 ms]
 [Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
 1: UniCmpTypeRef ::= PkgName MDoubleColon Id 
    Buses :: RS232
