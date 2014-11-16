@@ -1,3 +1,0 @@
-[Error] Critical: Parse error: Syntax error near unexpected character ' '
-	File: ../tests/unit/FeatureGroupsAndFeatureGroupTypes.aadl
-	Location: (35,34,35,34)
