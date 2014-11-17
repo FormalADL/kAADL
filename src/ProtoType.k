@@ -17,7 +17,7 @@ syntax ProtoTypeDef ::= CmpProtoType
 			| FetProtoType 
 syntax CmpProtoType ::= CmpCategory 
 			| CmpCategory MDoubleBracket 
-			| CmpCategory UniCmpClassifierRef 
+			| AmbCmpCategoryUniCmpClassifierRef 
 			| CmpCategory UniCmpClassifierRef MDoubleBracket 
 
 
@@ -39,7 +39,7 @@ syntax ProtoTypeBinding ::= Id MRoughArrow CmpProtoTypeActual
 			| Id MRoughArrow FetGroupTypeProtoTypeActual 
 			| Id MRoughArrow FetProtoTypeActual 
 syntax CmpProtoTypeActual ::= CmpCategory UniCmpClassifierRef ProtoTypeBindings 
-			| CmpCategory UniCmpClassifierRef 
+			| AmbCmpCategoryUniCmpClassifierRef 
 			| CmpCategory Id 
 syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual 
 syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual MComma CmpProtoTypeActual 

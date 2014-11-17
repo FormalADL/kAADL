@@ -42,6 +42,6 @@ module AMBIGUITY
 						| MBracketLeft Id MDoubleColon Id MBracketRight
 						| AmbBracketLeftIdBracketRight 
 
-
+	syntax AmbCmpCategoryUniCmpClassifierRef ::= CmpCategory UniCmpClassifierRef 
 
 endmodule
