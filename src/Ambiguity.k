@@ -12,7 +12,7 @@ module AMBIGUITY
 						| Minverse Mof Id MDoubleColon Id 
 						| Minverse Mof Id MDoubleColon Id MDoubleColon Id 
 	                       
-	syntax AmbIdBracketLeftIdBracketRight ::= Mclassifier MBracketLeft Id MBracketRight 
+//	syntax AmbIdBracketLeftIdBracketRight ::= Mclassifier MBracketLeft Id MBracketRight 
 
 	syntax AmbReferenceBracketLeftIdBracketRight ::= Mreference MBracketLeft Id MBracketRight
 

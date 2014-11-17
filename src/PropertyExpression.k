@@ -52,9 +52,9 @@ syntax PpeTerm ::= AmbDoubleColonId
 syntax PpeConstantTerm ::= AmbDoubleColonId
 
 
-syntax CmpClassifierTerm ::= Mclassifier MBracketLeft UniCmpTypeRef MBracketRight 
+syntax CmpClassifierTerm ::= AmbClassifierBracketLeftIdBracketRight 
+			| Mclassifier MBracketLeft Id MDoubleColon PkgName MBracketRight 
 			| Mclassifier MBracketLeft PkgName MDoubleColon Id MBracketRight 
-			| AmbClassifierBracketLeftIdBracketRight
 
 syntax RefTerm ::= Mreference MBracketLeft AnnexPath MBracketRight 
 			|  Mreference MBracketLeft ContainedModelElementList AnnexPath MBracketRight 
