@@ -24,7 +24,9 @@ syntax ConnectIdSubcompenentFlowIdnetifierList ::= AmbArrowsIdArrowsSubCmpFlowId
 
 
 syntax SubCmpFlowId ::= AmbIdPointId
-syntax PpeAssocInModes ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
-			| MBraceLeft PpeAssocList MBraceRight 
-			| InModesAndTransitions 
+
+
+syntax PpeAssocInModes ::= AmbEndToEndFlowSpecAssocDefaultPpeInMode 
+
+
 endmodule

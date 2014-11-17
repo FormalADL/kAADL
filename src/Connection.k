@@ -11,9 +11,9 @@ syntax SomeConnections ::= FetConnection PpeInMode
 			| ParameterConnection 
 			| AccessConnection 
 			| FetGroupConnection 
-syntax PpeInMode ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
-			| MBraceLeft PpeAssocList MBraceRight 
-			| InModesAndTransitions 
+
+syntax PpeInMode ::= AmbEndToEndFlowSpecAssocDefaultPpeInMode 
+
 syntax PpeAssocList ::= PpeAssoc 
 			| PpeAssoc PpeAssocList 
 syntax ConnectionRefinement ::= Id Mcolon Mrefined Mto SomeRefinements MSemicolon 

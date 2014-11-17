@@ -44,4 +44,11 @@ module AMBIGUITY
 
 	syntax AmbCmpCategoryUniCmpClassifierRef ::= CmpCategory UniCmpClassifierRef 
 
+
+syntax AmbBraceLeftPpeAssocBraceRight ::= MBraceLeft PpeAssoc MBraceRight // need unfold
+
+syntax AmbEndToEndFlowSpecAssocDefaultPpeInMode ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
+						| InModesAndTransitions
+						| MBraceLeft PpeAssoc PpeAssocList MBraceRight 
+						| MBraceLeft PpeAssoc MBraceRight  
 endmodule

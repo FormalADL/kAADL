@@ -18,13 +18,20 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Msubprogram CmpInModes MSemicolon 
 //			| AmbIdColonSubprogramIdSemicolon 
  
+
+
 syntax SubCmpAssocDefElem ::= UniCmpClassifierRef 
 			| UniCmpClassifierRef ProtoTypeBindings 
 			| Id 
 			| ArrayDimension
 			| ArrayDimensions ArrayElementImplList 
-			| MBraceLeft PpeContainedPpeAssocList MBraceRight 
 			| CmpInModes 
+			| MBraceLeft ContainedPpeAssoc  MBraceRight 
+			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight 
+			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight
+			| AmbBraceLeftPpeAssocBraceRight
+
+
 syntax SubCmpAssocDef ::= SubCmpAssocDefElem 
 			| SubCmpAssocDefElem SubCmpAssocDef 
 syntax SubCmpPpeAssocList ::= PpeAssoc 

@@ -10,9 +10,14 @@ syntax Feature ::= AbstractFetSpec MSemicolon
 			| FetGroupSpec ArrayDimensionFeatrueContrained MSemicolon 
 			| SubCmpAccessSpec ArrayDimensionFeatrueContrained MSemicolon 
 			| ParameterSpec ArrayDimensionFeatrueContrained MSemicolon 
+
 syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
-			| MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 
 			| ArrayDimension MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 
+			| MBraceLeft ContainedPpeAssoc MBraceRight 
+			| MBraceLeft ContainedPpeAssoc FeatrueContrainedPpeAssoc MBraceRight 
+			| MBraceLeft PpeAssoc FeatrueContrainedPpeAssoc MBraceRight 
+			| AmbBraceLeftPpeAssocBraceRight
+
 syntax FeatrueContrainedPpeAssoc ::= ContainedPpeAssoc 
 			| PpeAssoc 
 			| ContainedPpeAssoc FeatrueContrainedPpeAssoc

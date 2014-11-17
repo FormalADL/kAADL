@@ -18,9 +18,9 @@ syntax FlowSpecRefinement ::= FlowSourceSpecRefinement
 			| FlowSinkSpecRefinement 
 			| FlowPathSpecRefinement 
 syntax FlowSourceSpecRefinement ::= Id Mcolon Mrefined Mto Mflow Msource FlowSourceSpecRefinementAssocDef MSemicolon 
-syntax FlowSourceSpecRefinementAssocDef ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
-			| MBraceLeft PpeAssocList MBraceRight 
-			| InModesAndTransitions 
+
+syntax FlowSourceSpecRefinementAssocDef ::= AmbEndToEndFlowSpecAssocDefaultPpeInMode 
+
 syntax FlowSinkSpecRefinement ::= Id Mcolon Mrefined Mto Mflow Msink FlowSinkSpecRefinementAssocDef MSemicolon 
 syntax FlowSinkSpecRefinementAssocDef ::= FlowSourceSpecRefinementAssocDef 
 syntax FlowPathSpecRefinement ::= Id Mcolon Mrefined Mto Mflow Mpath FlowPathSpecRefinementAssocDef MSemicolon 
