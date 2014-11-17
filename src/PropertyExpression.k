@@ -13,6 +13,19 @@ syntax PpeExpression ::= BooleanTerm
 			| RefTerm 
 			| RecordTerm 
 			| ComputedTerm 
+			
+syntax PpeExpressionWithoutBooleanTerm ::=   RealTerm 
+			| IntegerTerm 
+			| StringTerm 
+			| EnumerationTerm 
+			| UnitTerm 
+			| RealRangeTerm 
+			| IntegerRangeTerm 
+			| PpeTerm 
+			| CmpClassifierTerm 
+			| RefTerm 
+			| RecordTerm 
+			| ComputedTerm 
 syntax BooleanTerm ::= BooleanValue 
 			| BooleanPpeConstantTerm 
 			| Mnot BooleanTerm 

@@ -38,19 +38,7 @@ syntax PpeListValue ::= MBracketLeft MBracketRight
 			| MBracketLeft PpeListValue MBracketRight 
 			| MBracketLeft PpeListValue MComma PpeListValueMidSymbol MBracketRight 
 			| MBracketLeft PpeExpression MComma PpeListValueMidSymbol MBracketRight 
-			| MBracketLeft RealTerm MBracketRight 
-			| MBracketLeft IntegerTerm MBracketRight
-			| MBracketLeft StringTerm MBracketRight
-			| MBracketLeft EnumerationTerm MBracketRight
-			| MBracketLeft UnitTerm MBracketRight
-			| MBracketLeft RealRangeTerm MBracketRight
-			| MBracketLeft IntegerRangeTerm MBracketRight
-			| MBracketLeft PpeTerm MBracketRight
-			| MBracketLeft CmpClassifierTerm MBracketRight
-			| MBracketLeft RefTerm MBracketRight
-			| MBracketLeft CmpClassifierTerm MBracketRight
-			| MBracketLeft RecordTerm MBracketRight
-			| MBracketLeft ComputedTerm MBracketRight
+			| MBracketLeft PpeExpressionWithoutBooleanTerm MBracketRight 
 			| AmbBracketLeftBooleanTermBracketRight  
 
 
