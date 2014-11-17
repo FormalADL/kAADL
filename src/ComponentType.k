@@ -55,6 +55,5 @@ syntax CmpTypeExt ::= CmpCategory Id Mextends UniCmpTypeRef Mend Id MSemicolon
 			| CmpCategory Id Mextends UniCmpTypeRef ProtoTypeBindings Mend Id MSemicolon 
 			| CmpCategory Id Mextends UniCmpTypeRef CmpAssocDef Mend Id MSemicolon 
 			| CmpCategory Id Mextends UniCmpTypeRef ProtoTypeBindings CmpAssocDef Mend Id MSemicolon 
-syntax UniCmpTypeRef ::= PkgName MDoubleColon Id 
-			| Id 
+syntax UniCmpTypeRef ::= PkgName 
 endmodule
