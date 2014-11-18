@@ -39,8 +39,9 @@ syntax FlowImplList ::= FlowImplListElem
 syntax CmpImplExt ::= CmpCategory Mimplementation CmpImplName Mextends UniCmpImplRef Mend CmpImplName MSemicolon 
 syntax CmpImplExt ::= CmpCategory Mimplementation CmpImplName Mextends UniCmpImplRef CmpImplExtAssocDef Mend CmpImplName MSemicolon 
 
-syntax UniCmpImplRef ::=  AmbIdPointId
-			| PkgName MDoubleColon AmbIdPointId
+syntax UniCmpImplRef ::=  PkgName 
+			| Id MPoint Id
+			| PkgName MDoubleColon Id MPoint Id
 
 syntax CmpImplExtAssocDefElem ::= ProtoTypeBindings 
 			| Mprototypes ProtoTypeList 
