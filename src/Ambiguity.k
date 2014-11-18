@@ -50,5 +50,5 @@ syntax AmbBraceLeftPpeAssocBraceRight ::= MBraceLeft PpeAssoc MBraceRight // nee
 syntax AmbEndToEndFlowSpecAssocDefaultPpeInMode ::= MBraceLeft PpeAssocList MBraceRight InModesAndTransitions 
 						| InModesAndTransitions
 						| MBraceLeft PpeAssoc PpeAssocList MBraceRight 
-						| MBraceLeft PpeAssoc MBraceRight  
+						| AmbBraceLeftPpeAssocBraceRight   
 endmodule
