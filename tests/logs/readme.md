@@ -1,0 +1,1 @@
+This is log of autoKrun.sh
