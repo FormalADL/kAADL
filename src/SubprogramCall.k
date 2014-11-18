@@ -11,7 +11,7 @@ syntax CallSequencePpeAssocList ::= PpeAssoc
 
 syntax SubPgmCall ::= Id Mcolon Msubprogram AmbProcessorPointId MSemicolon 
 			| Id Mcolon Msubprogram CalledSubPgm MBraceLeft SubPgmCallPpeAssocList MBraceRight MSemicolon 
-			| Id Mcolon Msubprogram Id MPoint Id MSemicolon 
+			| AmbIdColonSubprogramIdPointIdSemicolon
 			| AmbIdColonSubprogramIdSemicolon 
 
 syntax SubPgmCallPpeAssocList ::= PpeAssoc 

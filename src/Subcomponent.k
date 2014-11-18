@@ -11,7 +11,7 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Mprocess SubCmpAssocDef MSemicolon 
 			| Id Mcolon Msubprogram SubCmpAssocDefElem SubCmpAssocDef MSemicolon 
 			| AmbIdColonSubprogramIdSemicolon
-			| Id Mcolon Msubprogram Id MPoint Id MSemicolon
+			| AmbIdColonSubprogramIdPointIdSemicolon 
 			| Id Mcolon Msubprogram Id MDoubleColon PkgName MSemicolon 
 			| Id Mcolon Msubprogram PkgName MDoubleColon AmbIdPointId MSemicolon
 			| Id Mcolon Msubprogram UniCmpClassifierRef ProtoTypeBindings MSemicolon 
@@ -36,6 +36,7 @@ syntax SubCmpAssocDefElem ::= UniCmpClassifierRef
 
 syntax SubCmpAssocDef ::= SubCmpAssocDefElem 
 			| SubCmpAssocDefElem SubCmpAssocDef 
+
 syntax SubCmpPpeAssocList ::= PpeAssoc 
 			| PpeAssoc SubCmpPpeAssocList 
 syntax SubCmpRefinement ::= Id Mrefined Mto CmpCategory SubCmpAssocDef MSemicolon 

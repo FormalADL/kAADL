@@ -51,4 +51,7 @@ syntax AmbEndToEndFlowSpecAssocDefaultPpeInMode ::= MBraceLeft PpeAssocList MBra
 						| InModesAndTransitions
 						| MBraceLeft PpeAssoc PpeAssocList MBraceRight 
 						| AmbBraceLeftPpeAssocBraceRight   
+
+syntax AmbIdColonSubprogramIdPointIdSemicolon ::= Id Mcolon Msubprogram Id MPoint Id MSemicolon| AmbBraceLeftPpeAssocBraceRight   
+
 endmodule

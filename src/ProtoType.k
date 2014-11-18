@@ -12,7 +12,7 @@ syntax ProtoType ::=  Id Mcolon ProtoTypeDef MBraceLeft ProtoTypePpeAssocList MB
 			| Id Mcolon  Mthread UniCmpClassifierRef MSemicolon 
 			| Id Mcolon  Mthread Mgroup UniCmpClassifierRef MSemicolon 
 			| Id Mcolon  Mprocess UniCmpClassifierRef MSemicolon
-			| Id Mcolon Msubprogram Id MPoint Id MSemicolon
+			| AmbIdColonSubprogramIdPointIdSemicolon 
 			| Id Mcolon Msubprogram Id MDoubleColon PkgName MSemicolon 
 			| Id Mcolon Msubprogram PkgName MDoubleColon AmbIdPointId MSemicolon
 			| Id Mcolon  CmpCategory UniCmpClassifierRef MDoubleBracket MSemicolon 
