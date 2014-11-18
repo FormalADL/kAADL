@@ -4,9 +4,19 @@ syntax ProtoType ::=  Id Mcolon ProtoTypeDef MBraceLeft ProtoTypePpeAssocList MB
 			| Id Mcolon FetGroupTypeProtoType MSemicolon 
 			| Id Mcolon FetProtoType MSemicolon  
 			| Id Mcolon CmpCategory MDoubleBracket MSemicolon 
-			| Id Mcolon CmpCategory UniCmpClassifierRef MSemicolon 
+			| Id Mcolon AbstractCmpCategory UniCmpClassifierRef MSemicolon 
+			| Id Mcolon ExecPlateformCategory UniCmpClassifierRef MSemicolon 
+			| Id Mcolon CompositeCategory UniCmpClassifierRef MSemicolon 
+			| Id Mcolon Mdata UniCmpClassifierRef MSemicolon 
+			| Id Mcolon  Msubprogram Mgroup UniCmpClassifierRef MSemicolon
+			| Id Mcolon  Mthread UniCmpClassifierRef MSemicolon 
+			| Id Mcolon  Mthread Mgroup UniCmpClassifierRef MSemicolon 
+			| Id Mcolon  Mprocess UniCmpClassifierRef MSemicolon
+			| Id Mcolon Msubprogram Id MPoint Id MSemicolon
+			| Id Mcolon Msubprogram Id MDoubleColon PkgName MSemicolon 
+			| Id Mcolon Msubprogram PkgName MDoubleColon AmbIdPointId MSemicolon
 			| Id Mcolon  CmpCategory UniCmpClassifierRef MDoubleBracket MSemicolon 
-	//		| AmbIdColonCmpCategorySemicolon 
+			| AmbIdColonCmpCategorySemicolon 
 
 syntax ProtoTypePpeAssocList ::= PpeAssoc 
 			| PpeAssoc ProtoTypePpeAssocList 

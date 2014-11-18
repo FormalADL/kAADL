@@ -10,13 +10,15 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Mthread Mgroup SubCmpAssocDef MSemicolon 
 			| Id Mcolon Mprocess SubCmpAssocDef MSemicolon 
 			| Id Mcolon Msubprogram SubCmpAssocDefElem SubCmpAssocDef MSemicolon 
-			| Id Mcolon Msubprogram UniCmpClassifierRef MSemicolon 
+			| AmbIdColonSubprogramIdSemicolon
+			| Id Mcolon Msubprogram Id MPoint Id MSemicolon
+			| Id Mcolon Msubprogram Id MDoubleColon PkgName MSemicolon 
+			| Id Mcolon Msubprogram PkgName MDoubleColon AmbIdPointId MSemicolon
 			| Id Mcolon Msubprogram UniCmpClassifierRef ProtoTypeBindings MSemicolon 
 			| Id Mcolon Msubprogram ArrayDimension MSemicolon 
 			| Id Mcolon Msubprogram ArrayDimensions ArrayElementImplList MSemicolon 
 			| Id Mcolon Msubprogram MBraceLeft PpeContainedPpeAssocList MBraceRight MSemicolon 
 			| Id Mcolon Msubprogram CmpInModes MSemicolon 
-//			| AmbIdColonSubprogramIdSemicolon 
  
 
 

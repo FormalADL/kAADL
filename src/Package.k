@@ -3,7 +3,7 @@ module PACKAGE-SYNTAX
 syntax PkgSpec ::= Mpackage PkgName PkgDecls Mend PkgName MSemicolon 
 			| Mpackage PkgName PkgDecls PpeDecls Mend PkgName MSemicolon 
 syntax PkgName ::= Id 
-			| PkgName MDoubleColon Id 
+			| Id MDoubleColon PkgName 
 syntax PkgDecls ::= Mpublic 
 			| Mprivate 
 			| Mpublic Mprivate 
