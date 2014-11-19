@@ -48,7 +48,7 @@ syntax RealRangeTerm ::= RealRange // RealTerm MDoubleDiont RealTerm
 			| RealTerm MDoubleDiont RealTerm Mdelta RealTerm 
 			| RealRangePpeConstantTerm 
 syntax PpeTerm ::= Id MDoubleColon Id
-syntax PpeConstantTerm ::= AmbDoubleColonId
+syntax PpeConstantTerm ::= Id MDoubleColon Id 
 
 
 syntax CmpClassifierTerm ::= AmbClassifierBracketLeftIdBracketRight 
