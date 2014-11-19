@@ -44,6 +44,5 @@ syntax InverseOfUniProtoType ::= AmbInverseOfUniFetGroupTypeRef
 			| UniFetGroupTypeRef 
 		//	| Id 
 syntax FetGroupRefinement ::= Id Mcolon Mrefined Mto FetGroupSpecAssocDef 
-syntax UniFetGroupTypeRef ::= Id 
-			| PkgName MDoubleColon Id 
+syntax UniFetGroupTypeRef ::=  PkgName 
 endmodule
