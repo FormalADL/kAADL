@@ -40,7 +40,7 @@ syntax PpeListValue ::= MBracketLeft MBracketRight
 			| MBracketLeft PpeExpression MComma PpeListValueMidSymbol MBracketRight 
 			| MBracketLeft PpeExpressionWithoutBooleanTerm MBracketRight 
 			| AmbBracketLeftBooleanTermBracketRight  
-			| AmbBracketLeftIdBracketRight 
+//			| AmbBracketLeftIdBracketRight 
 
 
 syntax PpeListValueMidSymbol ::= PpeListValue 

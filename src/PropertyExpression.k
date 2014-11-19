@@ -40,15 +40,14 @@ syntax StringTerm ::= StringLiteral
 			| StringPpeConstantTerm 
 syntax EnumerationTerm ::= EnumerationId 
 			| EnumerationPpeConstantTerm 
-syntax UnitTerm ::= Id 
-			| UnitPpeConstantTerm 
+syntax UnitTerm ::=  UnitPpeConstantTerm 
 syntax IntegerRangeTerm ::= AmbSignedAadlintegerOrConstantDoubleDiontSignedAadlintegerOrConstant 
 			| IntegerTerm MDoubleDiont IntegerTerm Mdelta IntegerTerm 
 			| IntegerRangePpeConstantTerm 
 syntax RealRangeTerm ::= RealRange // RealTerm MDoubleDiont RealTerm 
 			| RealTerm MDoubleDiont RealTerm Mdelta RealTerm 
 			| RealRangePpeConstantTerm 
-syntax PpeTerm ::= AmbDoubleColonId
+syntax PpeTerm ::= Id MDoubleColon Id
 syntax PpeConstantTerm ::= AmbDoubleColonId
 
 
