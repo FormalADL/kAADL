@@ -4,7 +4,8 @@ module AMBIGUITY
 
 	syntax AmbProcessorPointId ::= Mprocessor MPoint Id
 
-	syntax AmbDoubleColonId ::= Id | PpeTerm 
+	syntax AmbDoubleColonId ::= Id | AmbIdDoubleColonId 
+	syntax AmbIdDoubleColonId ::= Id MDoubleColon Id
 
 	syntax AmbIdRoughArrowPpeValue ::= UniPpeId MRoughArrow PpeValue MSemicolon
 

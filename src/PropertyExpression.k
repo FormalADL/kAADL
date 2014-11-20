@@ -47,8 +47,8 @@ syntax IntegerRangeTerm ::= AmbSignedAadlintegerOrConstantDoubleDiontSignedAadli
 syntax RealRangeTerm ::= RealRange // RealTerm MDoubleDiont RealTerm 
 			| RealTerm MDoubleDiont RealTerm Mdelta RealTerm 
 			| RealRangePpeConstantTerm 
-syntax PpeTerm ::= Id MDoubleColon Id
-syntax PpeConstantTerm ::= Id MDoubleColon Id 
+syntax PpeTerm ::= AmbIdDoubleColonId
+syntax PpeConstantTerm ::= AmbIdDoubleColonId
 
 
 syntax CmpClassifierTerm ::= AmbClassifierBracketLeftIdBracketRight 

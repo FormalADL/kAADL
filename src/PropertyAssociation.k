@@ -31,6 +31,7 @@ syntax ModalPpeValue ::= PpeValue InModes
 			| PpeValue InModes MComma ModalPpeValue 
 syntax PpeValue ::= SinglePpeValue 
 			| PpeListValue 
+			| Id
 syntax SinglePpeValue ::= PpeExpression 
 
 
