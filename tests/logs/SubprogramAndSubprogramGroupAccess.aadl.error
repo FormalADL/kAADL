@@ -1,0 +1,3 @@
+[Error] Critical: Parse error: Syntax error near unexpected character 'p'
+	File: ../tests/unit/SubprogramAndSubprogramGroupAccess.aadl
+	Location: (52,1,52,1)
