@@ -32,7 +32,6 @@ syntax SubCmpAssocDefElem ::= UniCmpClassifierRef
 			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight 
 			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight
 			| AmbBraceLeftPpeAssocBraceRight
-			| InModes 
 			| AmbBracketLeftIdBracketRight
 
 syntax SubCmpAssocDef ::= SubCmpAssocDefElem 
