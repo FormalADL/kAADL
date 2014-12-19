@@ -34,8 +34,34 @@ syntax SubCmpAssocDefElem ::= UniCmpClassifierRef
 			| AmbBraceLeftPpeAssocBraceRight
 			| AmbBracketLeftIdBracketRight
 
-syntax SubCmpAssocDef ::= SubCmpAssocDefElem 
-			| SubCmpAssocDefElem SubCmpAssocDef 
+syntax SubCmpAssocDef ::= SubCmpAssocDefElem  //  1个SubCmpAssocDefElem  
+			| DoubleSubCmpAssocDefElemAdjust  // 2个SubCmpAssocDefElem  
+			| SubCmpAssocDefElem SubCmpAssocDefElem  SubCmpAssocDef // 多个SubCmpAssocDefElem 
+
+
+syntax DoubleSubCmpAssocDefElemAdjust ::= UniCmpClassifierRef Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| UniCmpClassifierRef ProtoTypeBindings Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| MLeftBracket ArrayDimensionSize MRightBracket Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| ArrayDimensions ArrayElementImplList Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| CmpInModes Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| MBraceLeft ContainedPpeAssoc  MBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| AmbBraceLeftPpeAssocBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| AmbBracketLeftIdBracketRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+
+			//////////////////////////////////////////////////////////////
+			| UniCmpClassifierRef Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| UniCmpClassifierRef ProtoTypeBindings Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| MLeftBracket ArrayDimensionSize MRightBracket Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| ArrayDimensions ArrayElementImplList Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| CmpInModes Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| MBraceLeft ContainedPpeAssoc  MBraceRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| AmbBraceLeftPpeAssocBraceRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+			| AmbBracketLeftIdBracketRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
+
 
 syntax SubCmpPpeAssocList ::= PpeAssoc 
 			| PpeAssoc SubCmpPpeAssocList 
