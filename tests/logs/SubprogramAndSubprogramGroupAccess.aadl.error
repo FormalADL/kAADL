@@ -1,3 +1,1 @@
-[Error] Critical: Parse error: Syntax error near unexpected character 'p'
-	File: ../tests/unit/SubprogramAndSubprogramGroupAccess.aadl
-	Location: (52,1,52,1)
+E:\Work\Kframework\kAADL\kAADL\src\autoKrun.sh: line 21: krun: command not found
