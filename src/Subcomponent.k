@@ -9,16 +9,6 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Mthread  SubCmpAssocDef MSemicolon 
 			| Id Mcolon Mthread Mgroup SubCmpAssocDef MSemicolon 
 			| Id Mcolon Mprocess SubCmpAssocDef MSemicolon 
-			//////////////////////// add when alter Error06 /////////////////////////////////////
-			| Id Mcolon AbstractCmpCategory AmbInModesBracketLeftIdBracketRight MSemicolon 
-			| Id Mcolon ExecPlateformCategory AmbInModesBracketLeftIdBracketRight MSemicolon 
-			| Id Mcolon CompositeCategory AmbInModesBracketLeftIdBracketRight MSemicolon 
-			| Id Mcolon Mdata AmbInModesBracketLeftIdBracketRight MSemicolon 
-			| Id Mcolon Msubprogram Mgroup AmbInModesBracketLeftIdBracketRight MSemicolon 
-			| Id Mcolon Mthread  AmbInModesBracketLeftIdBracketRight MSemicolon 
-			| Id Mcolon Mthread Mgroup AmbInModesBracketLeftIdBracketRight MSemicolon 
-			| Id Mcolon Mprocess AmbInModesBracketLeftIdBracketRight MSemicolon 
-			/////////////////////////////////////////////////////////////////////////////////////
 			| Id Mcolon Msubprogram SubCmpAssocDefElem SubCmpAssocDef MSemicolon 
 			| AmbIdColonSubprogramIdSemicolon
 			| AmbIdColonSubprogramIdPointIdSemicolon 
@@ -49,7 +39,8 @@ syntax SubCmpAssocDef ::= SubCmpAssocDefElem  //  1¸öSubCmpAssocDefElem
 			| SubCmpAssocDefElem SubCmpAssocDefElem  SubCmpAssocDef // ¶à¸öSubCmpAssocDefElem 
 
 
-syntax DoubleSubCmpAssocDefElemAdjust ::= UniCmpClassifierRef Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+syntax DoubleSubCmpAssocDefElemAdjust ::= UniCmpClassifierRef AmbInModesBracketLeftIdBracketRight
+			| UniCmpClassifierRef Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
 			| UniCmpClassifierRef ProtoTypeBindings Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
 			| MLeftBracket ArrayDimensionSize MRightBracket Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
 			| ArrayDimensions ArrayElementImplList Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
