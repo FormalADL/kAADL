@@ -47,7 +47,7 @@ end Gps.Dual;
 
 system implementation Gps.Secure extends Gps.Dual
 subcomponents
-  Secure_Gps: process Gps_Sender.Secure in modes ( Securemode );
+  Secure_Gps: process Gps_Sender.Secure in modes ( Securemode);
 connections
   secureconn: port Secure_Gps.Position -> Position in modes ( Securemode );
 modes

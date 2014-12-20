@@ -9,6 +9,16 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Mthread  SubCmpAssocDef MSemicolon 
 			| Id Mcolon Mthread Mgroup SubCmpAssocDef MSemicolon 
 			| Id Mcolon Mprocess SubCmpAssocDef MSemicolon 
+			//////////////////////// add when alter Error06 /////////////////////////////////////
+			| Id Mcolon AbstractCmpCategory AmbInModesBracketLeftIdBracketRight MSemicolon 
+			| Id Mcolon ExecPlateformCategory AmbInModesBracketLeftIdBracketRight MSemicolon 
+			| Id Mcolon CompositeCategory AmbInModesBracketLeftIdBracketRight MSemicolon 
+			| Id Mcolon Mdata AmbInModesBracketLeftIdBracketRight MSemicolon 
+			| Id Mcolon Msubprogram Mgroup AmbInModesBracketLeftIdBracketRight MSemicolon 
+			| Id Mcolon Mthread  AmbInModesBracketLeftIdBracketRight MSemicolon 
+			| Id Mcolon Mthread Mgroup AmbInModesBracketLeftIdBracketRight MSemicolon 
+			| Id Mcolon Mprocess AmbInModesBracketLeftIdBracketRight MSemicolon 
+			/////////////////////////////////////////////////////////////////////////////////////
 			| Id Mcolon Msubprogram SubCmpAssocDefElem SubCmpAssocDef MSemicolon 
 			| AmbIdColonSubprogramIdSemicolon
 			| AmbIdColonSubprogramIdPointIdSemicolon 
@@ -34,7 +44,7 @@ syntax SubCmpAssocDefElem ::= UniCmpClassifierRef
 			| AmbBraceLeftPpeAssocBraceRight
 			| AmbBracketLeftIdBracketRight
 
-syntax SubCmpAssocDef ::= SubCmpAssocDefElem  //  1个SubCmpAssocDefElem  
+syntax SubCmpAssocDef ::= SubCmpAssocDefElem  //  1个SubCmpAssocDefElem
 			| DoubleSubCmpAssocDefElemAdjust  // 2个SubCmpAssocDefElem  
 			| SubCmpAssocDefElem SubCmpAssocDefElem  SubCmpAssocDef // 多个SubCmpAssocDefElem 
 
@@ -50,7 +60,6 @@ syntax DoubleSubCmpAssocDefElemAdjust ::= UniCmpClassifierRef Min Mmodes MBracke
 			| AmbBraceLeftPpeAssocBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
 			| AmbBracketLeftIdBracketRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
 
-			//////////////////////////////////////////////////////////////
 			| UniCmpClassifierRef Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
 			| UniCmpClassifierRef ProtoTypeBindings Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
 			| MLeftBracket ArrayDimensionSize MRightBracket Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
