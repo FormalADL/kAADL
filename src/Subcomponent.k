@@ -19,49 +19,26 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Msubprogram ArrayDimensions ArrayElementImplList MSemicolon 
 			| Id Mcolon Msubprogram MBraceLeft PpeContainedPpeAssocList MBraceRight MSemicolon 
 			| Id Mcolon Msubprogram CmpInModes MSemicolon 
- 
 
-
-syntax SubCmpAssocDefElem ::= UniCmpClassifierRef 
+syntax SubCmpAssocDefElem ::= Id  MDoubleColon Id MDoubleColon PkgName 
+			| Id MPoint Id
+			| PkgName MDoubleColon Id MPoint Id 
 			| UniCmpClassifierRef ProtoTypeBindings 
-			| Id 
-			| ArrayDimension
+			| MLeftBracket Numeral MRightBracket 
+			| MLeftBracket AmbDoubleColonId MRightBracket 
+			| MLeftBracket  MRightBracket
 			| ArrayDimensions ArrayElementImplList 
-			| CmpInModes 
 			| MBraceLeft ContainedPpeAssoc  MBraceRight 
 			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight 
 			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight
 			| AmbBraceLeftPpeAssocBraceRight
-			| AmbBracketLeftIdBracketRight
-
-syntax SubCmpAssocDef ::= SubCmpAssocDefElem  //  1个SubCmpAssocDefElem
-			| DoubleSubCmpAssocDefElemAdjust  // 2个SubCmpAssocDefElem  
-			| SubCmpAssocDefElem SubCmpAssocDefElem  SubCmpAssocDef // 多个SubCmpAssocDefElem 
-
-
-syntax DoubleSubCmpAssocDefElemAdjust ::= UniCmpClassifierRef AmbInModesBracketLeftIdBracketRight
-			| UniCmpClassifierRef Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| UniCmpClassifierRef ProtoTypeBindings Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| MLeftBracket ArrayDimensionSize MRightBracket Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| ArrayDimensions ArrayElementImplList Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| CmpInModes Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| MBraceLeft ContainedPpeAssoc  MBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| AmbBraceLeftPpeAssocBraceRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| AmbBracketLeftIdBracketRight Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-
-			| UniCmpClassifierRef Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| UniCmpClassifierRef ProtoTypeBindings Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| MLeftBracket ArrayDimensionSize MRightBracket Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| ArrayDimensions ArrayElementImplList Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| CmpInModes Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| MBraceLeft ContainedPpeAssoc  MBraceRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| AmbBraceLeftPpeAssocBraceRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-			| AmbBracketLeftIdBracketRight Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight
-
+syntax SubCmpAssocDefMid ::= SubCmpAssocDefElem 
+			| SubCmpAssocDefElem SubCmpAssocDef 
+syntax SubCmpAssocDef ::= SubCmpAssocDefMid 
+			| SubCmpAssocDefMid  InModes
+			| SubCmpAssocDefMid  Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
+			| SubCmpAssocDefMid  Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight 
+			| AmbOverlapPpeValueSubCmpAssocDefElemInModes 
 
 syntax SubCmpPpeAssocList ::= PpeAssoc 
 			| PpeAssoc SubCmpPpeAssocList 

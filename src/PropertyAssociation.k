@@ -27,12 +27,34 @@ syntax AnnexPath ::= Mannex Id MAsteriskBrace1 AnnexSpecificPath MAsteriskBrace2
 syntax AnnexSpecificPath ::= NODEF 
 syntax Assignment ::= PpeValue 
 			| ModalPpeValue 
+
 syntax ModalPpeValue ::= PpeValue InModes 
-			| PpeValue InModes MComma ModalPpeValue 
-syntax PpeValue ::= SinglePpeValue 
-			| PpeListValue 
-			| Id
-syntax SinglePpeValue ::= PpeExpression 
+			| PpeValue InModes MComma ModalPpeValue
+			| AmbOverlapPpeValueSubCmpAssocDefElemInModes 
+
+syntax PpeValue ::= 	 BooleanValue 
+			| Mnot BooleanTerm 
+			| BooleanTerm Mand BooleanTerm 
+			| BooleanTerm Mor BooleanTerm 
+			| SignedAadlreal 
+			| Sign RealPpeConstantTerm 
+			| SignedAadlinteger 
+			| Sign IntegerPpeConstantTerm 
+			| StringLiteral // String
+			| EnumerationId 
+			| RealRange 
+			| RealTerm MDoubleDiont RealTerm Mdelta RealTerm 
+			| AmbSignedAadlintegerOrConstantDoubleDiontSignedAadlintegerOrConstant 
+			| IntegerTerm MDoubleDiont IntegerTerm Mdelta IntegerTerm 
+			| CmpClassifierTerm 
+			| RefTerm 
+			| RecordTerm 
+			| ComputedTerm 
+			| MBracketLeft PpeListValue MBracketRight 
+			| MBracketLeft PpeListValue MComma PpeListValueMidSymbol MBracketRight 
+			| MBracketLeft PpeExpression MComma PpeListValueMidSymbol MBracketRight 
+			| MBracketLeft PpeExpressionWithoutBooleanTerm MBracketRight 
+			| AmbBracketLeftBooleanTermBracketRight 
 
 
 syntax PpeListValue ::= MBracketLeft MBracketRight 
