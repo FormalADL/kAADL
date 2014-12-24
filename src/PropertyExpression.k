@@ -64,6 +64,7 @@ syntax RefTerm ::= Mreference MBracketLeft AnnexPath MBracketRight
 syntax RecordTerm ::= MBracketLeft RecordFieldIdIdList MBracketRight 
 syntax RecordFieldIdIdList ::= AmbIdRoughArrowPpeValue 
 			| Id MRoughArrow PpeValue MSemicolon RecordFieldIdIdList 
+			| Id MRoughArrow AmbOverlapPpeValueSubCmpAssocDefElem MSemicolon RecordFieldIdIdList 
 syntax ComputedTerm ::= Mcompute MBracketLeft Id MBracketRight 
 syntax BooleanPpeConstantTerm ::= PpeConstantTerm 
 syntax StringLiteral ::= NODEF 

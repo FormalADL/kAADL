@@ -38,7 +38,7 @@ syntax SubCmpAssocDef ::= SubCmpAssocDefMid
 			| SubCmpAssocDefMid  InModes
 			| SubCmpAssocDefMid  Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
 			| SubCmpAssocDefMid  Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight 
-			| AmbOverlapPpeValueSubCmpAssocDefElemInModes 
+			| AmbOverlapPpeValueSubCmpAssocDefElem InModes 
 
 syntax SubCmpPpeAssocList ::= PpeAssoc 
 			| PpeAssoc SubCmpPpeAssocList 

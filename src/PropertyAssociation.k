@@ -26,11 +26,15 @@ syntax ContainedModelElement ::= Id
 syntax AnnexPath ::= Mannex Id MAsteriskBrace1 AnnexSpecificPath MAsteriskBrace2 
 syntax AnnexSpecificPath ::= NODEF 
 syntax Assignment ::= PpeValue 
+			| AmbOverlapPpeValueSubCmpAssocDefElem
 			| ModalPpeValue 
+			
 
 syntax ModalPpeValue ::= PpeValue InModes 
+			| AmbOverlapPpeValueSubCmpAssocDefElem InModes 
 			| PpeValue InModes MComma ModalPpeValue
-			| AmbOverlapPpeValueSubCmpAssocDefElemInModes 
+			| AmbOverlapPpeValueSubCmpAssocDefElem InModes MComma ModalPpeValue
+			
 
 syntax PpeValue ::= 	 BooleanValue 
 			| Mnot BooleanTerm 
@@ -84,7 +88,10 @@ syntax VirtualBusUniCmpClassifierRef ::= NODEF
 syntax MemoryUniCmpClassifierRef ::= NODEF 
 syntax NamedElementArraySelectionName ::= NODEF 
 syntax BasicPpeAssoc ::= UniPpeId MRoughArrow Mconstant PpeValue MSemicolon 
+			| UniPpeId MRoughArrow Mconstant AmbOverlapPpeValueSubCmpAssocDefElem MSemicolon 
 			| AmbIdRoughArrowPpeValue  
 			| UniPpeId MPlusRoughArrow Mconstant PpeValue MSemicolon 
+			| UniPpeId MPlusRoughArrow Mconstant AmbOverlapPpeValueSubCmpAssocDefElem MSemicolon 
 			| UniPpeId MPlusRoughArrow PpeValue MSemicolon 
+			| UniPpeId MPlusRoughArrow AmbOverlapPpeValueSubCmpAssocDefElem MSemicolon 
 endmodule

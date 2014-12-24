@@ -8,6 +8,7 @@ module AMBIGUITY
 	syntax AmbIdDoubleColonId ::= Id MDoubleColon Id
 
 	syntax AmbIdRoughArrowPpeValue ::= UniPpeId MRoughArrow PpeValue MSemicolon
+						| UniPpeId MRoughArrow AmbOverlapPpeValueSubCmpAssocDefElem MSemicolon
 
 	syntax AmbInverseOfUniFetGroupTypeRef ::= Minverse Mof Id
 						| Minverse Mof Id MDoubleColon Id 
@@ -55,8 +56,9 @@ syntax AmbEndToEndFlowSpecAssocDefaultPpeInMode ::= MBraceLeft PpeAssocList MBra
 
 syntax AmbIdColonSubprogramIdPointIdSemicolon ::= Id Mcolon Msubprogram Id MPoint Id MSemicolon| AmbBraceLeftPpeAssocBraceRight   
 
- syntax AmbOverlapPpeValueSubCmpAssocDefElemInModes ::= AmbDoubleColonId InModes
- 						| MBracketLeft MBracketRight InModes
+
+ syntax AmbOverlapPpeValueSubCmpAssocDefElem ::= AmbDoubleColonId
+						| MBracketLeft MBracketRight
 
 
 endmodule
