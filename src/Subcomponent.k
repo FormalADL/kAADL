@@ -21,7 +21,7 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Msubprogram CmpInModes MSemicolon 
 
 syntax SubCmpAssocDefElem ::= Id  MDoubleColon Id MDoubleColon PkgName 
-			| Id MPoint Id
+			| AmbIdPointId
 			| PkgName MDoubleColon Id MPoint Id 
 			| UniCmpClassifierRef ProtoTypeBindings 
 			| MLeftBracket Numeral MRightBracket 
@@ -43,8 +43,6 @@ syntax SubCmpAssocDef ::= SubCmpAssocDefMid
 			| SubCmpAssocDefMid  Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight 	
 			| AmbOverlapPpeValueSubCmpAssocDefElem  Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight 
 
-			
-
 syntax SubCmpPpeAssocList ::= PpeAssoc 
 			| PpeAssoc SubCmpPpeAssocList 
 syntax SubCmpRefinement ::= Id Mrefined Mto CmpCategory SubCmpAssocDef MSemicolon 
@@ -60,14 +58,11 @@ syntax ArrayDimensionSize ::= Numeral
 syntax ArrayElementImplListTmp ::= UniCmpImplRef ProtoTypeBindings 
 			| UniCmpImplRef 
 
-
-
 syntax ArrayElementImplList ::= MBracketLeft ArrayElementImplListTmp MComma ArrayElementImplListTmps MBracketRight 
 			|  MBracketLeft UniCmpImplRef ProtoTypeBindings MBracketRight 
 			|  MBracketLeft PkgName MDoubleColon CmpImplName MBracketRight 
 			|  MBracketLeft Id MPoint Id MBracketRight 
 			|  AmbBracketLeftIdBracketRight 
-
 
 syntax ArrayElementImplListTmps ::= ArrayElementImplListTmp 
 			| ArrayElementImplListTmp MComma ArrayElementImplListTmps 

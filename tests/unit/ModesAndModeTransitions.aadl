@@ -83,3 +83,5 @@ modes
   HiFid: initial mode;
   LowFid: mode;)
 end Altitude.impl;
+
+// [AmbIdPointId, UniCmpImplRef, ContainedModelElementList, SubCmpAssocDefElem]

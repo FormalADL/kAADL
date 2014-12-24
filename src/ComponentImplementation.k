@@ -40,7 +40,7 @@ syntax CmpImplExt ::= CmpCategory Mimplementation CmpImplName Mextends UniCmpImp
 syntax CmpImplExt ::= CmpCategory Mimplementation CmpImplName Mextends UniCmpImplRef CmpImplExtAssocDef Mend CmpImplName MSemicolon 
 
 syntax UniCmpImplRef ::=  PkgName 
-			| Id MPoint Id
+			| AmbIdPointId
 			| PkgName MDoubleColon Id MPoint Id
 
 syntax CmpImplExtAssocDefElem ::= ProtoTypeBindings 
