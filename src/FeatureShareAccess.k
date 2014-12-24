@@ -11,8 +11,10 @@ syntax Feature ::= AbstractFetSpec MSemicolon
 			| SubCmpAccessSpec ArrayDimensionFeatrueContrained MSemicolon 
 			| ParameterSpec ArrayDimensionFeatrueContrained MSemicolon 
 
-syntax ArrayDimensionFeatrueContrained ::= ArrayDimension 
-			| ArrayDimension MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 
+syntax ArrayDimensionFeatrueContrained ::= MLeftBracket ArrayDimensionSize MRightBracket
+			| MLeftBracket MRightBracket
+			| MLeftBracket ArrayDimensionSize MRightBracket MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 
+			| MLeftBracket MRightBracket MBraceLeft FeatrueContrainedPpeAssoc MBraceRight 
 			| MBraceLeft ContainedPpeAssoc MBraceRight 
 			| MBraceLeft ContainedPpeAssoc FeatrueContrainedPpeAssoc MBraceRight 
 			| MBraceLeft PpeAssoc FeatrueContrainedPpeAssoc MBraceRight 

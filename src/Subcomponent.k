@@ -15,7 +15,8 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Msubprogram Id MDoubleColon PkgName MSemicolon 
 			| Id Mcolon Msubprogram PkgName MDoubleColon AmbIdPointId MSemicolon
 			| Id Mcolon Msubprogram UniCmpClassifierRef ProtoTypeBindings MSemicolon 
-			| Id Mcolon Msubprogram ArrayDimension MSemicolon 
+			| Id Mcolon Msubprogram MLeftBracket ArrayDimensionSize MRightBracket MSemicolon 
+			| Id Mcolon Msubprogram MLeftBracket MRightBracket MSemicolon 
 			| Id Mcolon Msubprogram ArrayDimensions ArrayElementImplList MSemicolon 
 			| Id Mcolon Msubprogram MBraceLeft PpeContainedPpeAssocList MBraceRight MSemicolon 
 			| Id Mcolon Msubprogram CmpInModes MSemicolon 
@@ -27,7 +28,9 @@ syntax SubCmpAssocDefElem ::= Id  MDoubleColon Id MDoubleColon PkgName
 			| MLeftBracket Numeral MRightBracket 
 			| MLeftBracket AmbDoubleColonId MRightBracket 
 			| MLeftBracket  MRightBracket
+
 			| ArrayDimensions ArrayElementImplList 
+
 			| MBraceLeft ContainedPpeAssoc  MBraceRight 
 			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight 
 			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight
@@ -48,10 +51,11 @@ syntax SubCmpPpeAssocList ::= PpeAssoc
 syntax SubCmpRefinement ::= Id Mrefined Mto CmpCategory SubCmpAssocDef MSemicolon 
 syntax UniCmpClassifierRef ::= UniCmpTypeRef 
 			| UniCmpImplRef 
-syntax ArrayDimensions ::= ArrayDimension 
-			| ArrayDimension ArrayDimensions 
-syntax ArrayDimension ::= MLeftBracket ArrayDimensionSize MRightBracket 
-			| MLeftBracket  MRightBracket
+syntax ArrayDimensions ::= MLeftBracket ArrayDimensionSize MRightBracket 
+			| MLeftBracket  MRightBracket 
+			| MLeftBracket ArrayDimensionSize MRightBracket  ArrayDimensions 
+			| MLeftBracket  MRightBracket ArrayDimensions
+
 syntax ArrayDimensionSize ::= Numeral 
 			| UniPpeConstantId 
 		// 	| UniPpeId  // its defination same as UniPpeConstantId
