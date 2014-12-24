@@ -1,1 +1,29 @@
-E:\Work\Kframework\kAADL\kAADL\src\autoKrun.sh: line 12: krun: command not found
+[0, 4.651 ms]
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: SubCmpAssocDef ::= SubCmpAssocDefMid Min Mmodes MBracketLeft ModeName MComma
+ModeNameList MBracketRight 
+   (Gps_Sender . Basic) in modes ( Dualmode , Mainmode )
+2: SubCmpAssocDef ::= SubCmpAssocDefMid InModes 
+   (Gps_Sender . Basic) (in modes ( Dualmode , Mainmode ))
+	File: ./tests/unit/ModesAndModeTransitions.aadl
+	Location: (33,21,33,67)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: SubCmpAssocDef ::= SubCmpAssocDefMid Min Mmodes MBracketLeft ModeName MComma
+ModeNameList MBracketRight 
+   (Gps_Sender . Basic) in modes ( Dualmode , Backupmode )
+2: SubCmpAssocDef ::= SubCmpAssocDefMid InModes 
+   (Gps_Sender . Basic) (in modes ( Dualmode , Backupmode ))
+	File: ./tests/unit/ModesAndModeTransitions.aadl
+	Location: (34,23,34,71)
+	Compilation Phase: Ambiguity filter
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: SubCmpAssocDef ::= SubCmpAssocDefMid Min Mmodes MBracketLeft ModeName MComma
+ModeNameList MBracketRight 
+   Calculate in modes ( (LowFid => LowFidelity) , (HiFid => HighFidelity) )
+2: SubCmpAssocDef ::= AmbOverlapPpeValueSubCmpAssocDefElem Min Mmodes
+MBracketLeft ModeName MComma ModeNameList MBracketRight 
+   Calculate in modes ( (LowFid => LowFidelity) , (HiFid => HighFidelity) )
+	File: ./tests/unit/ModesAndModeTransitions.aadl
+	Location: (77,16,77,81)
+	Compilation Phase: Ambiguity filter
