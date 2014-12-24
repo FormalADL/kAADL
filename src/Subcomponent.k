@@ -35,10 +35,12 @@ syntax SubCmpAssocDefElem ::= Id  MDoubleColon Id MDoubleColon PkgName
 syntax SubCmpAssocDefMid ::= SubCmpAssocDefElem 
 			| SubCmpAssocDefElem SubCmpAssocDef 
 syntax SubCmpAssocDef ::= SubCmpAssocDefMid 
+			| AmbOverlapPpeValueSubCmpAssocDefElem
 			| SubCmpAssocDefMid  InModes
+			| AmbOverlapPpeValueSubCmpAssocDefElem InModes 
 			| SubCmpAssocDefMid  Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
 			| SubCmpAssocDefMid  Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight 
-			| AmbOverlapPpeValueSubCmpAssocDefElem InModes 
+			
 
 syntax SubCmpPpeAssocList ::= PpeAssoc 
 			| PpeAssoc SubCmpPpeAssocList 
