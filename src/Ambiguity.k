@@ -1,6 +1,8 @@
 module AMBIGUITY
 
-	syntax AmbIdPointId ::=  Id | Id MPoint Id 
+	syntax AmbIdPointId ::=  Id | AmbPointId
+	
+	syntax AmbPointId ::= Id MPoint Id
 
 	syntax AmbProcessorPointId ::= Mprocessor MPoint Id
 
@@ -61,4 +63,6 @@ syntax AmbIdColonSubprogramIdPointIdSemicolon ::= Id Mcolon Msubprogram Id MPoin
 						| MBracketLeft MBracketRight
 
 
+syntax AmbArrayDimensions ::=  MLeftBracket ArrayDimensionSize MRightBracket
+			| MLeftBracket MRightBracket
 endmodule

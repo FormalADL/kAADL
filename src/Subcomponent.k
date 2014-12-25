@@ -22,12 +22,10 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Msubprogram CmpInModes MSemicolon 
 
 syntax SubCmpAssocDefElem ::= Id  MDoubleColon Id MDoubleColon PkgName 
-			| AmbIdPointId
+			| AmbPointId
 			| PkgName MDoubleColon Id MPoint Id 
 			| UniCmpClassifierRef ProtoTypeBindings 
-			| MLeftBracket Numeral MRightBracket 
-			| MLeftBracket AmbDoubleColonId MRightBracket 
-			| MLeftBracket  MRightBracket
+			| AmbArrayDimensions 
 
 			| ArrayDimensions ArrayElementImplList 
 
@@ -51,8 +49,7 @@ syntax SubCmpPpeAssocList ::= PpeAssoc
 syntax SubCmpRefinement ::= Id Mrefined Mto CmpCategory SubCmpAssocDef MSemicolon 
 syntax UniCmpClassifierRef ::= UniCmpTypeRef 
 			| UniCmpImplRef 
-syntax ArrayDimensions ::= MLeftBracket ArrayDimensionSize MRightBracket 
-			| MLeftBracket  MRightBracket 
+syntax ArrayDimensions ::= AmbArrayDimensions 
 			| MLeftBracket ArrayDimensionSize MRightBracket  ArrayDimensions 
 			| MLeftBracket  MRightBracket ArrayDimensions
 

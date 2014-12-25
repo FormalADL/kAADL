@@ -20,7 +20,7 @@ syntax ContainedModelElementPath ::= AnnexPath
 			| ContainedModelElementList AnnexPath 
 			| ContainedModelElementList 
 syntax ContainedModelElementList ::= ContainedModelElement 
-			| AmbIdPointId
+			| AmbPointId
 			| ContainedModelElement MPoint ContainedModelElement MPoint ContainedModelElementList 
 			
 syntax ContainedModelElement ::= Id 
