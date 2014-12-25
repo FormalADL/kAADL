@@ -38,12 +38,13 @@ syntax ModeIdList ::= Id
 			
 syntax CmpInModes ::=  InModes
 			| Min Mmodes MBracketLeft Id MRoughArrow Id MBracketRight
-			| Min Mmodes MBracketLeft ModeName MComma ModeNameList MBracketRight 
+			| Min Mmodes MBracketLeft Id MComma ModeNameList MBracketRight 
+			| Min Mmodes MBracketLeft Id MRoughArrow Id MComma ModeNameList MBracketRight 
 
-syntax ModeNameList ::= ModeName 
-			| ModeName MComma ModeNameList 
-syntax ModeName ::= Id 
-			| Id MRoughArrow Id 
+syntax ModeNameList ::= Id 
+			| Id MRoughArrow Id
+			| Id  MComma ModeNameList 
+			| Id MRoughArrow Id MComma ModeNameList 
 
 syntax InModesAndTransitions ::= AmbInModesBracketLeftIdBracketRight
 			| Min Mmodes MBracketLeft Id MComma ModeOrTransitionList MBracketRight 

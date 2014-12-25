@@ -20,8 +20,9 @@ syntax ContainedModelElementPath ::= AnnexPath
 			| ContainedModelElementList AnnexPath 
 			| ContainedModelElementList 
 syntax ContainedModelElementList ::= ContainedModelElement 
-			| ContainedModelElement MPoint ContainedModelElementList 
 			| AmbIdPointId
+			| ContainedModelElement MPoint ContainedModelElement MPoint ContainedModelElementList 
+			
 syntax ContainedModelElement ::= Id 
 			| NamedElementArraySelectionName 
 syntax AnnexPath ::= Mannex Id MAsteriskBrace1 AnnexSpecificPath MAsteriskBrace2 
