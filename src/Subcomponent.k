@@ -21,20 +21,19 @@ syntax SubCmp ::= AmbIdColonCmpCategorySemicolon
 			| Id Mcolon Msubprogram MBraceLeft PpeContainedPpeAssocList MBraceRight MSemicolon 
 			| Id Mcolon Msubprogram CmpInModes MSemicolon 
 
-syntax SubCmpAssocDefElem ::= Id  MDoubleColon Id MDoubleColon PkgName 
+syntax SubCmpAssocDefElem ::= AmbIdDoubleColonIdDoubleColonPkgName 
 			| AmbPointId
 			| PkgName MDoubleColon Id MPoint Id 
 			| UniCmpClassifierRef ProtoTypeBindings 
 			| AmbArrayDimensions 
-
 			| ArrayDimensions ArrayElementImplList 
-
 			| MBraceLeft ContainedPpeAssoc  MBraceRight 
 			| MBraceLeft PpeAssoc PpeContainedPpeAssocList MBraceRight 
 			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight
 			| AmbBraceLeftPpeAssocBraceRight
 syntax SubCmpAssocDefMid ::= SubCmpAssocDefElem 
-			| SubCmpAssocDefElem SubCmpAssocDef 
+			| SubCmpAssocDefElem SubCmpAssocMid 
+			| Id SubCmpAssocMid
 syntax SubCmpAssocDef ::= SubCmpAssocDefMid 
 			| AmbOverlapPpeValueSubCmpAssocDefElem
 			| SubCmpAssocDefMid  InModes

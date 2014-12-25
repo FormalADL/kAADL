@@ -65,4 +65,6 @@ syntax AmbIdColonSubprogramIdPointIdSemicolon ::= Id Mcolon Msubprogram Id MPoin
 
 syntax AmbArrayDimensions ::=  MLeftBracket ArrayDimensionSize MRightBracket
 			| MLeftBracket MRightBracket
+
+syntax AmbIdDoubleColonIdDoubleColonPkgName::= Id  MDoubleColon Id MDoubleColon PkgName 
 endmodule
