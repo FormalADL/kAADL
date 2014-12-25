@@ -1,11 +1,1 @@
-[0, 3.411 ms]
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: SubCmpAssocDef ::= AmbOverlapPpeValueSubCmpAssocDefElem Min Mmodes
-MBracketLeft Id MRoughArrow Id MComma ModeNameList MBracketRight 
-   Calculate in modes ( LowFid => LowFidelity , (HiFid => HighFidelity) )
-2: SubCmpAssocDef ::= SubCmpAssocDefMid Min Mmodes MBracketLeft Id MRoughArrow
-Id MComma ModeNameList MBracketRight 
-   Calculate in modes ( LowFid => LowFidelity , (HiFid => HighFidelity) )
-	File: ./tests/unit/ModesAndModeTransitions.aadl
-	Location: (77,16,77,81)
-	Compilation Phase: Ambiguity filter
+[0, 4.281 ms]
