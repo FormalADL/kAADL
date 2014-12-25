@@ -81,10 +81,9 @@ endmodule
 module AADL
   imports AADL-SYNTAX
 
-  syntax AADLSpecification ::= PkgSpecPpeSetList
-  syntax PkgSpecPpeSetList ::= PkgSpecPpeSetListElem 
-				     | PkgSpecPpeSetListElem PkgSpecPpeSetList
-  syntax PkgSpecPpeSetListElem ::= PkgSpec 
+  syntax AADLSpecification ::=  AADLSpecFactor  
+				     | AADLSpecFactor  PkgSpecPpeSetList
+  syntax AADLSpecFactor  ::= PkgSpec 
                              | PpeSet
                              | CmpType
                              | CmpImpl
