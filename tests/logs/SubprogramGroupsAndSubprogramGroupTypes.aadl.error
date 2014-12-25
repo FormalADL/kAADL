@@ -1,10 +1,1 @@
-[0, 2.668 ms]
-[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
-1: AmbIdPointId ::= Id MPoint Id 
-   Primes . On_Received_Prime_One
-2: ContainedModelElementList ::= ContainedModelElement MPoint
-ContainedModelElementList 
-   Primes . On_Received_Prime_One
-	File: ./tests/unit/SubprogramGroupsAndSubprogramGroupTypes.aadl
-	Location: (10,138,10,166)
-	Compilation Phase: Ambiguity filter
+[0, 3.414 ms]
