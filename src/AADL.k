@@ -82,7 +82,7 @@ module AADL
   imports AADL-SYNTAX
 
   syntax AADLSpecification ::=  AADLSpecFactor  
-				     | AADLSpecFactor  PkgSpecPpeSetList
+				     | AADLSpecFactor  AADLSpecification
   syntax AADLSpecFactor  ::= PkgSpec 
                              | PpeSet
                              | CmpType
