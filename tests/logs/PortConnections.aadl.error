@@ -1,3 +1,1 @@
-[Error] Critical: Parse error: Syntax error near unexpected character '['
-	File: ./tests/unit/PortConnections.aadl
-	Location: (10,30,10,30)
+[0, 2.657 ms]

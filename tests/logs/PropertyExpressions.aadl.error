@@ -1,3 +1,1 @@
-[Error] Critical: Parse error: Syntax error near unexpected character '{'
-	File: ./tests/unit/PropertyExpressions.aadl
-	Location: (20,5,20,5)
+[0, 2.886 ms]
