@@ -32,8 +32,8 @@ syntax SubCmpAssocDefElem ::= AmbIdDoubleColonIdDoubleColonPkgName
 			| MBraceLeft ContainedPpeAssoc PpeContainedPpeAssocList MBraceRight
 			| AmbBraceLeftPpeAssocBraceRight
 syntax SubCmpAssocDefMid ::= SubCmpAssocDefElem 
-			| SubCmpAssocDefElem SubCmpAssocMid 
-			| Id SubCmpAssocMid
+			| SubCmpAssocDefElem SubCmpAssocDefMid 
+			| Id SubCmpAssocDefMid
 syntax SubCmpAssocDef ::= SubCmpAssocDefMid 
 			| AmbOverlapPpeValueSubCmpAssocDefElem
 			| SubCmpAssocDefMid  InModes
