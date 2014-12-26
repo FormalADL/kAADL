@@ -21,8 +21,8 @@ connections
   outprimary: port primary.outsignal -> outsignal;
   outbackup: port backup.outsignal -> outsignal;
 modes
-  Primarymode: initial mode;
-  Backupmode: mode;
+  (Primarymode: initial mode;
+  Backupmode: mode;)
 end flowComponent.primaryBackup;
 
 data signal

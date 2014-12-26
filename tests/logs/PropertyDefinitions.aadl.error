@@ -1,1 +1,55 @@
-[0, 2.731 ms]
+[0, 2.644 ms]
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: PpeTempDecls ::= PpeTypeDecl PpeTempDecls 
+   (Value_Type : type (enumeration ( (estimate , (benchmark , measured)) )) ;)
+((
+     Rotation_Units : type (units (( rpm ))) ;) ((Position : type (record ( ((
+     int1 : aadlinteger ;) (int2 : aadlinteger ;)) )) ;) (GPS_Position : ((mine
+
+     :: Position) applies to ( system1 )) ;)))
+2: PpeSetAssocDef ::= PpeTempDecls PpeSetAssocDef 
+   ((Value_Type : type (enumeration ( (estimate , (benchmark , measured)) )) ;)
+(
+     (Rotation_Units : type (units (( rpm ))) ;) (Position : type (record ( ((
+     int1 : aadlinteger ;) (int2 : aadlinteger ;)) )) ;))) (GPS_Position :
+((mine
+      :: Position) applies to ( system1 )) ;)
+3: PpeSetAssocDef ::= PpeTempDecls PpeSetAssocDef 
+   ((Value_Type : type (enumeration ( (estimate , (benchmark , measured)) )) ;)
+(
+     Rotation_Units : type (units (( rpm ))) ;)) amb(
+       (Position : type (record ( ((int1 : aadlinteger ;) (int2 : aadlinteger
+;))
+          )) ;) (GPS_Position : ((mine :: Position) applies to ( system1 )) ;),
+       (Position : type (record ( ((int1 : aadlinteger ;) (int2 : aadlinteger
+;))
+          )) ;) (GPS_Position : ((mine :: Position) applies to ( system1 )) ;)
+   )
+4: PpeSetAssocDef ::= PpeTempDecls PpeSetAssocDef 
+   (Value_Type : type (enumeration ( (estimate , (benchmark , measured)) )) ;) 
+     amb(
+       (Rotation_Units : type (units (( rpm ))) ;) ((Position : type (record (
+((
+         int1 : aadlinteger ;) (int2 : aadlinteger ;)) )) ;) (GPS_Position : ((
+         mine :: Position) applies to ( system1 )) ;)),
+       ((Rotation_Units : type (units (( rpm ))) ;) (Position : type (record (
+((
+         int1 : aadlinteger ;) (int2 : aadlinteger ;)) )) ;)) (GPS_Position :
+((
+         mine :: Position) applies to ( system1 )) ;),
+       (Rotation_Units : type (units (( rpm ))) ;) amb(
+           (Position : type (record ( ((int1 : aadlinteger ;) (int2 :
+aadlinteger
+              ;)) )) ;) (GPS_Position : ((mine :: Position) applies to (
+system1 
+             )) ;),
+           (Position : type (record ( ((int1 : aadlinteger ;) (int2 :
+aadlinteger
+              ;)) )) ;) (GPS_Position : ((mine :: Position) applies to (
+system1 
+             )) ;)
+       )
+   )
+	File: ./tests/unit/PropertyDefinitions.aadl
+	Location: (2,1,7,54)
+	Compilation Phase: Ambiguity filter
