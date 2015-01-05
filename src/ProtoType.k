@@ -65,8 +65,9 @@ syntax FetGroupTypeProtoTypeActual ::= AmbFeatureGroupUniFetGroupTypeRef
 syntax FetProtoTypeActual ::= InOut EventData Mport 
 			| InOut EventData Mport UniCmpClassifierRef 
 
-			| EventData Mport 
-			| EventData Mport UniCmpClassifierRef 
+			| PortType 
+			| Mevent Mport UniCmpClassifierRef 
+			| Mdata Mport UniCmpClassifierRef 
 
 			| InOut Mport 
 			| InOut Mport UniCmpClassifierRef 
