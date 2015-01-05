@@ -1,3 +1,9 @@
-[Error] Critical: Parse error: Syntax error near unexpected character 'e'
+[0, 3.113 ms]
+[Warning] Inner Parser: Parsing ambiguity. Arbitrarily choosing the first.
+1: CmpProtoTypeActual ::= CmpCategory Id 
+   process controller
+2: AmbCmpCategoryUniCmpClassifierRef ::= CmpCategory UniCmpClassifierRef 
+   process controller
 	File: ./tests/unit/Prototypes.aadl
-	Location: (34,82,34,82)
+	Location: (42,53,42,71)
+	Compilation Phase: Ambiguity filter
