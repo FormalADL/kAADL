@@ -64,6 +64,7 @@ syntax FetGroupTypeProtoTypeActual ::= AmbFeatureGroupUniFetGroupTypeRef
 
 syntax FetProtoTypeActual ::= InOut EventData Mport 
 			| InOut EventData Mport UniCmpClassifierRef 
+			
 			| Require BusDataSubPgm Maccess 
 			| Require BusDataSubPgm Maccess UniCmpClassifierRef 
 			| Min Mfeature Id 
