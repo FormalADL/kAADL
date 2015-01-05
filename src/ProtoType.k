@@ -50,7 +50,7 @@ syntax ProtoTypeBinding ::= Id MRoughArrow CmpProtoTypeActual
 			| Id MRoughArrow FetProtoTypeActual 
 syntax CmpProtoTypeActual ::= CmpCategory UniCmpClassifierRef ProtoTypeBindings 
 			| AmbCmpCategoryUniCmpClassifierRef 
-			| CmpCategory Id 
+		//	| CmpCategory Id 
 syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual 
 syntax CmpProtoTypeActuralListTmp ::= CmpProtoTypeActual MComma CmpProtoTypeActual 
 syntax CmpProtoTypeActualList ::= MBracketLeft CmpProtoTypeActuralListTmp MBracketRight 
